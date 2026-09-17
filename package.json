@@ -1,0 +1,14 @@
+{
+  "name": "no-limit-roofing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "No Limit Roofing marketing site",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
