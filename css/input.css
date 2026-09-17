@@ -160,7 +160,7 @@
   .site-header.is-scrolled { box-shadow: var(--shadow-sm); }
   .header-bar { @apply flex items-center justify-between gap-6 py-3; }
   .brand { @apply flex shrink-0 items-center; }
-  .brand img { @apply h-11 w-auto sm:h-13; }
+  .brand img { @apply h-12 w-auto sm:h-14 lg:h-16; }
 
   .main-nav { @apply flex items-center gap-8; }
   .main-nav ul { @apply flex items-center gap-6; }
@@ -258,20 +258,43 @@
   .hero--page { @apply py-0; }
   .hero--page .hero-inner { @apply py-18 pb-12; }
 
-  /* ---------- Trust bar ---------- */
+  /* ---------- Trust bar / certification marquee ---------- */
   .trust-bar { @apply border-b border-mist bg-paper; }
-  .trust-bar-inner { @apply flex flex-wrap items-center gap-8 py-6; }
-  .trust-bar-label {
-    @apply shrink-0 text-[0.78rem] font-extrabold uppercase text-steel;
-    letter-spacing: 0.1em;
+  .trust-bar-inner { @apply py-6; }
+
+  /* A continuously-scrolling logo strip: the track holds two identical
+     groups back to back and animates left by exactly one group's width,
+     looping seamlessly. Pauses on hover so it's easy to read on purpose. */
+  .cert-marquee {
+    @apply relative w-full overflow-hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
   }
-  .trust-logos { @apply flex flex-1 flex-wrap items-center gap-8; }
-  .trust-logos img {
-    @apply h-10 w-auto shrink-0 grayscale opacity-72;
+  .cert-marquee-track {
+    @apply flex w-max items-center gap-12;
+    animation: cert-marquee-scroll 32s linear infinite;
+  }
+  .cert-marquee:hover .cert-marquee-track,
+  .cert-marquee:focus-within .cert-marquee-track {
+    animation-play-state: paused;
+  }
+  .cert-marquee-group { @apply flex shrink-0 items-center gap-12; }
+  .cert-marquee-track img {
+    @apply h-10 w-auto shrink-0;
     max-width: none;
-    transition: opacity 0.15s ease, filter 0.15s ease;
   }
-  .trust-logos img:hover { @apply grayscale-0 opacity-100; }
+  @keyframes cert-marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  /* Motion-sensitive users get the plain, fully-visible wrapped row instead
+     of an auto-scrolling one — the duplicate group (only needed to make the
+     loop seamless) is hidden so it doesn't just wrap into a repeated list. */
+  @media (prefers-reduced-motion: reduce) {
+    .cert-marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; }
+    .cert-marquee-track { width: 100%; flex-wrap: wrap; justify-content: center; }
+    .cert-marquee-group.cert-marquee-dup { display: none; }
+  }
 
   /* ---------- Cards ---------- */
   .card {
@@ -456,7 +479,9 @@
   .mobile-call-bar a {
     @apply flex items-center justify-center gap-2 rounded-full bg-accent px-3.5 py-3.5 font-extrabold text-white;
   }
-  @media (max-width: 720px) {
+  /* Matches the nav-collapse breakpoint above (min-width: 64rem) — the call
+     bar should be there any time the nav is a hamburger, not just on phones. */
+  @media (max-width: 63.9375rem) {
     .mobile-call-bar { @apply block; }
     body { @apply pb-[72px]; }
   }
