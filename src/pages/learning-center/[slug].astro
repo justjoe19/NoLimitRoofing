@@ -1,0 +1,94 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("learningCenter", ({ data }) => !data.draft);
+  return articles.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const canonical = `https://nolimitroofingin.com/learning-center/${entry.id}.html`;
+const ogImage = `https://nolimitroofingin.com${d.heroImage}`;
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Learning Center", item: "https://nolimitroofingin.com/learning-center.html" },
+      { "@type": "ListItem", position: 3, name: d.title, item: canonical },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: d.title,
+    description: d.metaDescription,
+    image: ogImage,
+    datePublished: d.publishDate.toISOString(),
+    dateModified: (d.updatedDate ?? d.publishDate).toISOString(),
+    author: { "@type": "Organization", name: "No Limit Roofing" },
+    publisher: { "@type": "Organization", name: "No Limit Roofing", logo: { "@type": "ImageObject", url: "https://nolimitroofingin.com/images/nlr-logo.png" } },
+  },
+];
+---
+
+<BaseLayout
+  title={`${d.title} | No Limit Roofing Learning Center`}
+  description={d.metaDescription}
+  canonical={canonical}
+  ogImage={ogImage}
+  preloadImage={d.heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${d.heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span>
+        <a href="/learning-center.html">Learning Center</a><span aria-hidden="true">/</span>
+        <span class="current">{d.title}</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">Learning Center</p>
+      <h1>{d.title}</h1>
+      <p class="lede">{d.excerpt}</p>
+      <p class="mt-4 text-[0.85rem] text-[#b7bec6]">
+        {dateFormatter.format(d.publishDate)} · {d.author}
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <div class="max-prose article-body">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Have A Roofing Question Like This?</h2>
+          <p>Get a free, no-pressure answer from a GAF-certified crew — not another search result.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Get My Free Estimate</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

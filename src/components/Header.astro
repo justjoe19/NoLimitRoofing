@@ -73,6 +73,7 @@ const isServicesActive = allServiceLinks.some((l) => currentPath === l.href);
 
         <li><a href="/gallery.html" aria-current={isActive("/gallery.html") ? "page" : undefined}>Projects</a></li>
         <li><a href="/areas.html" aria-current={isActive("/areas.html") ? "page" : undefined}>Areas</a></li>
+        <li><a href="/learning-center.html" aria-current={currentPath.startsWith("/learning-center") ? "page" : undefined}>Learning Center</a></li>
         <li><a href="/about.html" aria-current={isActive("/about.html") ? "page" : undefined}>About</a></li>
         <li><a href="tel:+15743600525" class="nav-phone">(574) 360-0525</a></li>
       </ul>

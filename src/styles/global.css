@@ -570,6 +570,26 @@
     @apply mt-auto inline-flex items-center gap-1.5 text-[0.92rem] font-bold text-accent;
   }
 
+  /* ---------- Article body (Learning Center markdown output) ----------
+     Base layer strips all default margins/list-styles site-wide (every
+     other block on this site uses explicit utility spacing instead), so
+     raw markdown output needs its own prose rules reintroducing them. */
+  .article-body > * + * { @apply mt-5; }
+  .article-body h2 { @apply mt-10 text-[1.5rem]; }
+  .article-body h2:first-child { @apply mt-0; }
+  .article-body h3 { @apply mt-8 text-[1.2rem]; }
+  .article-body p { @apply text-steel leading-relaxed; }
+  .article-body ul, .article-body ol { @apply flex flex-col gap-2 pl-6 text-steel; }
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+  .article-body li::marker { color: var(--color-accent); }
+  .article-body a { @apply font-semibold text-accent underline underline-offset-2; }
+  .article-body a:hover { @apply text-accent-dark; }
+  .article-body blockquote {
+    @apply border-l-4 border-accent bg-fog px-5 py-4 text-steel italic;
+  }
+  .article-body strong { @apply text-ink; }
+
   /* ---------- Misc ---------- */
   .max-prose { @apply max-w-[70ch]; }
 }

@@ -45,4 +45,18 @@ const locations = defineCollection({
   }),
 });
 
-export const collections = { services, locations };
+const learningCenter = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/learning-center" }),
+  schema: z.object({
+    title: z.string(),
+    metaDescription: z.string(),
+    publishDate: z.date(),
+    updatedDate: z.date().optional(),
+    author: z.string().default("No Limit Roofing"),
+    excerpt: z.string(),
+    heroImage: z.string().default("/images/drone-aerial-finished-roof-charcoal.webp"),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { services, locations, learningCenter };

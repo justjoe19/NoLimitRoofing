@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where images uploaded through the editor get saved, and the URL path
+# the site serves them from.
+media_folder: "public/images/learning-center"
+public_folder: "/images/learning-center"
+
+# Shows a "draft" preview link and requires a review step before a change
+# goes live, instead of publishing the instant you hit save.
+publish_mode: editorial_workflow
+
+collections:
+  - name: "learning-center"
+    label: "Learning Center Articles"
+    folder: "src/content/learning-center"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{publishDate}}"
+    sortable_fields: ["publishDate", "title"]
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "This also generates the article's web address, so changing it later changes the URL."
+
+      - label: "Short Summary"
+        name: "excerpt"
+        widget: "text"
+        hint: "1-2 sentences. Shown on the Learning Center listing page under the title."
+
+      - label: "Search Description"
+        name: "metaDescription"
+        widget: "text"
+        hint: "1-2 sentences describing the article for Google search results. Not shown on the page itself."
+
+      - label: "Cover Photo"
+        name: "heroImage"
+        widget: "image"
+        default: "/images/drone-aerial-finished-roof-charcoal.webp"
+        hint: "The banner image at the top of the article and on the listing card."
+
+      - label: "Publish Date"
+        name: "publishDate"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Last Updated (optional)"
+        name: "updatedDate"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "No Limit Roofing"
+
+      - label: "Save as draft (hides it from the live site until you're ready)"
+        name: "draft"
+        widget: "boolean"
+        default: true
+
+      - label: "Article"
+        name: "body"
+        widget: "markdown"
+        hint: "Write the article here. Use the toolbar for headings, bold, links, lists, etc."

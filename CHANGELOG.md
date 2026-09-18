@@ -2,6 +2,21 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 9 — Learning Center blog, editable by the client via Decap CMS
+
+Requested: a Learning Center the client can write their own articles for, rather than a static set of pages only a developer can edit.
+
+- Added a `learningCenter` content collection (`src/content.config.ts`, `src/content/learning-center/*.md`) plus a blog index (`/learning-center.html`) and article template (`src/pages/learning-center/[slug].astro`). Unlike the `services`/`locations` collections, this one has **no manual `slug` frontmatter field** — the filename itself (Astro's `entry.id`) drives the URL, specifically so the CMS form below doesn't need a "type a URL-safe slug correctly" field for a non-technical user to get wrong.
+- Wired up **Decap CMS** at `/admin` (`public/admin/index.html` + `config.yml`), using the `git-gateway` backend — no database, no server code; saving in the CMS commits a markdown file to this repo and a normal Netlify build picks it up. `publish_mode: editorial_workflow` gives it a draft → review → publish flow rather than instant-publish-on-save, and new articles default to "draft" in the CMS so a half-written post can't go live by accident.
+- Nav gets a "Learning Center" link back (it was deliberately left out in Session 7 since there was nothing behind it yet).
+- Added `.article-body` prose CSS (`global.css`) — needed because the base layer strips all default margins and list-styles site-wide (every other block on this site uses explicit utility spacing instead), which would otherwise render raw markdown output as an unspaced wall of text with no bullets.
+- Seeded 3 real example articles (Repair vs. Replacement, what hail damage actually looks like, how long a roof lasts in Northern Indiana) — enough to prove the template end-to-end and give the client a working model to follow, not an attempt to write all 15 Learning Center topics from the brief. Careful on the cost-guide-shaped topics in particular: didn't invent specific dollar figures anywhere, since no real pricing data exists to ground them in — those articles talk through the *factors* that affect cost instead.
+- **Real bug caught in browser testing**: article dates were off by one day (a `2026-09-15` entry displayed as "September 14"). Classic cause — the date parses as UTC midnight, then `Intl.DateTimeFormat` was formatting in whatever timezone the browser/server is in, shifting it back. Fixed by pinning `timeZone: "UTC"` on both date formatters.
+
+**Setup this needs from the client/account owner that I can't do myself** (see README "Learning Center & CMS" for exact steps): enable Netlify Identity, restrict registration to invite-only, enable Git Gateway, and send the client an Identity invite. Until that's done, `/admin` loads fine (it's just a static page) but the login form has nothing to authenticate against — verified structurally correct here by confirming Decap parses `config.yml` and reaches its login screen locally, which is as far as it can be tested without a real deployed site.
+
+Verified: `npm run build` (37 pages, zero errors), the internal-link-crawl script (zero broken links), and a live browser check of the Learning Center index, an article page (prose rendering, corrected date), and `/admin` loading Decap CMS without console errors.
+
 ## Session 8 — Nav fixes, commit Phase 1, and the first 5 Phase 2 city pages
 
 Follow-up to Session 7, requested after a local review turned up real nav problems:

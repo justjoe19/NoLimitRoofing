@@ -1,12 +1,12 @@
 # No Limit Roofing — Website
 
-A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture (currently 33 pages: the original 6 content pages + 404, 3 service-group hubs, 13 service pages, and 10 city pages (5 Phase 1 + 5 Phase 2), with more city and Learning Center pages planned — see `CHANGELOG.md`).
+A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture. Currently 37 pages: the original 6 content pages + 404, 3 service-group hubs, 13 service pages, 10 city pages, and a Learning Center blog the client can write their own posts for (see "Learning Center & CMS" below). Full history in `CHANGELOG.md`.
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
 ## Tech stack
 
-- **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 33 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
+- **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 37 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
 - **Tailwind CSS v4** via `@tailwindcss/vite` — source lives in `src/styles/global.css` (uses `@theme`/`@layer`, CSS-first config, no `tailwind.config.js`), compiled automatically as part of the Astro build. No separate CSS build step, no build artifact to avoid hand-editing.
 - **Vanilla JS** (`public/js/main.js`, no dependencies, loaded on every page) — mobile nav drawer, contact form validation + submission, lite YouTube embed, header scroll shadow.
 - **System font stack only** — no webfonts, by design. Zero font-load network cost, zero layout shift from font swap.
@@ -34,26 +34,36 @@ URLs are unchanged from the original static site (`/about.html`, not `/about`) �
 
 ```
 src/
-  content.config.ts     Zod schemas for the `services` and `locations`
-                        content collections (src/content/).
+  content.config.ts     Zod schemas for the `services`, `locations` and
+                        `learningCenter` content collections (src/content/).
   content/
     services/*.md        13 leaf service pages (frontmatter: hero copy,
                         highlights, FAQs, related links; body = long copy).
-    locations/*.md        5 priority city pages, same shape.
+    locations/*.md        10 city pages, same shape.
+    learning-center/*.md  Blog posts. Editable via the site (developer) or
+                        through Decap CMS at /admin (the client) — see
+                        "Learning Center & CMS" below. No `slug` frontmatter
+                        field — the filename IS the URL slug (entry.id).
   layouts/
     BaseLayout.astro   <head> (meta/OG/schema/favicons), skip-link, Header,
                         <main> slot, Footer, mobile call bar, main.js tag.
   components/
-    Header.astro        Nav + mobile drawer toggle + the Roofing/Storm
-                        Damage/Commercial dropdowns (<details>/<summary>,
-                        same accessible pattern as the FAQ accordion — no
-                        JS required). Sets aria-current from the current URL.
+    Header.astro        Nav + mobile drawer toggle + the single "Services"
+                        dropdown (Roofing/Storm Damage/Commercial as three
+                        grouped columns — a mega-menu, not three separate
+                        top-level dropdowns). Built on <details>/<summary>
+                        (same pattern as the FAQ accordion); main.js adds
+                        click-outside/Escape/link-click closing on top.
+                        Sets aria-current from the current URL.
     Footer.astro         Full site footer + the sticky mobile call bar.
     CertMarquee.astro    The auto-scrolling manufacturer-badge strip
                         (used on Home and About).
   styles/
     global.css          Tailwind source — design tokens (@theme) + component
                         classes (@layer components), e.g. .btn, .card, .hero.
+                        `.article-body` holds the Learning Center's markdown
+                        prose rules (headings/lists/links) since the base
+                        layer strips default spacing/list-styles site-wide.
   pages/
     index.astro, about.astro, services.astro,   The original 6 pages + 404.
     gallery.astro, areas.astro, contact.astro,
@@ -68,16 +78,27 @@ src/
                         template files.
     service-areas/[slug].astro   Dynamic route rendering all 10 city pages
                         from the `locations` collection.
+    learning-center/index.astro, learning-center/[slug].astro   Blog index
+                        + article template, from the `learningCenter`
+                        collection.
 
 public/                  Served as-is, unprocessed — same convention as the
                         old repo root.
+  admin/index.html, admin/config.yml   Decap CMS — see "Learning Center &
+                        CMS" below. config.yml is currently scoped to the
+                        `learning-center` collection only.
   images/*.webp          All site imagery, WebP only.
   images/*-hero.webp      Extra-compressed variants used as full-bleed hero
                           backgrounds (see "Hero images" below).
   images/badge-*.webp     Manufacturer certification badges.
+  images/learning-center/  Where Decap CMS saves images the client uploads
+                          through the article editor.
   images/nlr-logo.{png,webp}  Company logo (png kept for JSON-LD/og:image use).
-  js/main.js              Mobile nav, contact form, lite YouTube embed,
-                          header scroll shadow. No dependencies.
+  js/main.js              Mobile nav, contact/quick-inspection form
+                          validation + AJAX submit (generic — handles any
+                          data-netlify form on the page, not hardcoded to
+                          one form id), nav dropdown close behavior, lite
+                          YouTube embed, header scroll shadow. No dependencies.
   favicon.ico, favicon-*.png,  Favicon set generated FROM THE ORIGINAL
   apple-touch-icon.png,        SITE's actual favicon (a portrait of their
   icon-192.png, icon-512.png   roofer mascot) — not a custom mark.
@@ -123,6 +144,22 @@ The form on `src/pages/contact.astro` posts to **Netlify Forms** — no backend 
 - `netlify-honeypot="company-website"` + a hidden `company-website` field — spam trap.
 - `public/js/main.js` progressively enhances the form: client-side validation, then an AJAX `fetch` POST with a normal-form fallback if JS fails.
 - Submissions land in the Netlify dashboard (Forms tab) once deployed. No email/webhook is wired up yet — set that up in Netlify's UI if you want notifications.
+
+## Learning Center & CMS
+
+The Learning Center (`/learning-center.html` + `src/pages/learning-center/[slug].astro`) is a blog, backed by the `learningCenter` content collection (`src/content/learning-center/*.md`) and editable through **Decap CMS** at `/admin` — a free, git-based CMS with no database and no server code: the client fills out a form in the browser, Decap commits a markdown file to this repo, and Netlify rebuilds the site automatically, same as any other push.
+
+**One-time setup required in the Netlify dashboard before `/admin` will actually work** (I can't do this myself — it's account-level config, not code):
+1. Site settings → Identity → **Enable Identity**.
+2. Site settings → Identity → **Registration** → set to "Invite only" (so random people can't self-register as editors).
+3. Site settings → Identity → Services → **Git Gateway** → Enable. This is what lets Decap commit to the repo on the client's behalf without giving them a real GitHub account or credentials.
+4. Identity tab → **Invite users** → send the client an invite at their email. They'll set a password and can then log in at `yoursite.com/admin`.
+
+Until that's done, `/admin` will load (it's just a static page) but the login form has nothing to authenticate against.
+
+**What the client can do**: create, edit and delete Learning Center articles — title, cover photo, publish date, and the article body via a markdown editor — without touching code or GitHub directly. New articles default to "draft" (hidden from the live site) so a half-finished post can't accidentally go live; the client unchecks that when it's ready. `publish_mode: editorial_workflow` in `public/admin/config.yml` also means changes go through a draft → review → publish flow in the CMS UI rather than committing straight to `main` on every keystroke-save.
+
+**Scope**: the CMS is currently wired to the `learning-center` collection only. Extending it to services, locations, reviews or FAQs later just means adding another `collections` entry to `public/admin/config.yml` with matching fields — the pattern is already established.
 
 ## Business facts reference
 
