@@ -4,6 +4,15 @@ metaDescription: "What actually determines a roof replacement timeline — size,
 publishDate: 2026-07-14
 excerpt: "Most residential replacements take one to three days — but a few specific factors can stretch that timeline."
 heroImage: "/images/drone-aerial-finished-roof-charcoal-hero.webp"
+faqs:
+  - question: "Do I need to be home during the roof replacement?"
+    answer: "Not necessarily for the whole job, but it's helpful for the crew to be able to reach you if something unexpected comes up, like decking damage that needs a decision. We'll confirm expectations before the crew starts."
+  - question: "Will my yard and driveway be damaged during the project?"
+    answer: "Crews take precautions — tarping landscaping near the work area, using driveway protection where staging equipment — and do a cleanup pass including a magnetic nail sweep at the end. Ask about specific precautions for your property during the estimate."
+  - question: "Can I stay in my house during a roof replacement?"
+    answer: "Yes, most homeowners do. It's noisy during active work hours, but there's no health or safety reason you can't remain in the home for a standard residential replacement."
+  - question: "What happens if it rains partway through the job?"
+    answer: "Crews plan around forecasts and avoid leaving a roof exposed overnight if rain is expected, using temporary dry-in protection when a job has to pause mid-process. A brief weather delay extends the calendar timeline but doesn't put your home at risk."
 draft: false
 ---
 
@@ -28,6 +37,14 @@ Asphalt shingle replacement is generally the fastest. Metal roofing, tile, and s
 ## Permitting and material availability
 
 Depending on the municipality, permit processing time can add to the overall project timeline before work even starts, separate from the on-roof installation time itself. Material availability for less common products can also affect scheduling.
+
+## What a typical day looks like on-site
+
+Most residential jobs start early to make full use of daylight and good working temperatures. Tear-off happens first, then the crew inspects the exposed decking, replaces any damaged sections, installs underlayment and ice and water shield in the vulnerable areas, then installs the new roofing material itself, followed by flashing, ventilation components, and a final cleanup pass. On a straightforward single-story roof, this entire sequence can happen in one day; larger or more complex roofs spread the same sequence across two or three.
+
+## Cleanup and what "done" actually means
+
+A job isn't finished when the last shingle goes on — cleanup includes removing debris, a magnetic sweep of the yard and driveway for stray nails, and a final walk-through where any questions about the finished work get addressed before the crew leaves. If something doesn't look right once it's done, that's the time to raise it, not weeks later.
 
 ## What we tell you before the crew shows up
 

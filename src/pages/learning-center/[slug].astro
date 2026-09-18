@@ -40,6 +40,19 @@ const schema = [
     author: { "@type": "Organization", name: "No Limit Roofing" },
     publisher: { "@type": "Organization", name: "No Limit Roofing", logo: { "@type": "ImageObject", url: "https://nolimitroofingin.com/images/nlr-logo.png" } },
   },
+  ...(d.faqs.length
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: d.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        },
+      ]
+    : []),
 ];
 ---
 
@@ -75,6 +88,25 @@ const schema = [
       </div>
     </div>
   </section>
+
+  {d.faqs.length > 0 && (
+    <section class="section section--fog" aria-labelledby="faq-heading">
+      <div class="container" style="max-width:820px">
+        <div class="section-head center">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-heading">Common Questions</h2>
+        </div>
+        <div>
+          {d.faqs.map((f, i) => (
+            <details class="faq-item" open={i === 0}>
+              <summary>{f.question}<span class="plus" aria-hidden="true"></span></summary>
+              <p>{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="section section--tight">
     <div class="container">

@@ -4,6 +4,15 @@ metaDescription: "Yes — and it's one of the most commonly missed forms of stor
 publishDate: 2026-07-07
 excerpt: "Yes, and it's one of the easiest kinds of storm damage to miss entirely."
 heroImage: "/images/drone-aerial-finished-roof-pool-hero.webp"
+faqs:
+  - question: "How soon after a windstorm should I get my roof checked?"
+    answer: "There's no strict deadline, but sooner is better — a broken seal or crease doesn't cause immediate damage on its own, but it leaves the roof more vulnerable to whatever weather comes next. Scheduling an inspection within a couple of weeks of a known high-wind event is a reasonable window."
+  - question: "Will a wind inspection show up as a claim on my insurance?"
+    answer: "An inspection itself isn't a claim — it's just an assessment. Whether and when to file an insurance claim based on what we find is entirely your decision, and we'll give you honest documentation either way."
+  - question: "Can I spot wind damage myself from a ladder?"
+    answer: "Partially, but not reliably. Lifted seals and creases are often only visible or feel-able from directly on the roof surface, which is why a ground-level or eave-level look can easily miss real damage."
+  - question: "Does wind damage always come from major storms?"
+    answer: "No — sustained straight-line winds from an ordinary strong thunderstorm can lift and break shingle seals just as easily as a named storm system. It's about wind speed and duration at your specific roof, not the storm's overall notoriety."
 draft: false
 ---
 
@@ -24,6 +33,14 @@ A shingle with a broken seal or a crease no longer sheds water the way it's desi
 ## What to look for (and why it's hard to see yourself)
 
 Creased or lifted shingles, disturbed flashing, and loosened vents or pipe boots are the signs — and all of them are far easier to spot from on the roof than from the ground or a ladder at the eave. If you know your area had a high-wind event (thunderstorms, straight-line winds, anything with sustained gusts), it's worth a free inspection even if nothing looks wrong from the driveway.
+
+## Why wind and hail often show up together
+
+Michiana's storm season regularly brings wind and hail in the same weather system, and a roof can end up with both kinds of damage from a single event — lifted or creased shingles from wind, granule loss or bruising from hail. That combination is part of why a full inspection after a significant storm makes more sense than checking for just one type of damage. See our related article on [what hail damage actually looks like](/learning-center/what-does-hail-damage-look-like.html) for the visual signs of the other half of that picture.
+
+## How age affects wind vulnerability
+
+Older shingles with weakened or degraded sealant strips are more prone to wind lift than newer ones, even at wind speeds that wouldn't affect a recently installed roof. This is one more reason a roof nearing the end of its expected service life is worth a closer look after any significant wind event, even if a newer roof on the same street shows no signs of trouble.
 
 ## What happens if we find it
 

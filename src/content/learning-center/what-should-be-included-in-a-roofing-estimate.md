@@ -4,6 +4,15 @@ metaDescription: "What a real, trustworthy roofing estimate should spell out —
 publishDate: 2026-08-18
 excerpt: "A real estimate is specific enough that you could hand it to someone else and know exactly what you're getting. Here's what that looks like."
 heroImage: "/images/crew-roofer-chimney-flashing-hero.webp"
+faqs:
+  - question: "Should an estimate include payment terms?"
+    answer: "Yes — when payment is due (deposit, progress payments, final payment) should be spelled out clearly, not left as a verbal understanding."
+  - question: "What if my estimate doesn't mention ventilation?"
+    answer: "Ask about it directly. Ventilation is a real factor in how long a roof lasts (see our related article on roof lifespan in this climate), and it should be addressed explicitly rather than assumed."
+  - question: "Is it normal for an estimate to change after the roof is opened up?"
+    answer: "Only in one specific, well-defined way: if decking damage is found that couldn't be assessed before tear-off. A trustworthy estimate explains this possibility upfront rather than surprising you with it, and shows you the actual damage before charging for it."
+  - question: "How detailed should the material list actually be?"
+    answer: "Specific enough that you could hand the estimate to a different contractor and they'd know exactly what's being installed — brand, product line, and where each component (underlayment, ice and water shield, flashing) is going."
 draft: false
 ---
 
@@ -36,6 +45,18 @@ Whether tear-off debris removal and job-site cleanup are included, and what that
 ## Contact and licensing information
 
 The contractor's license, bonding and insurance status should be verifiable, not just claimed. Ask if you're not sure how to confirm it.
+
+## Payment terms and schedule
+
+When payment is expected — a deposit before work starts, a progress payment, a final payment on completion — should be written out clearly, along with accepted payment methods. Vague or entirely upfront payment requests are worth questioning directly.
+
+## Ventilation, in writing
+
+Ventilation upgrades or corrections (ridge vents, soffit vents, and how they work together) are easy to leave out of an estimate since they're not always visually obvious the way shingle color is — but they're a real factor in how long the new roof will actually last. If ventilation isn't mentioned in an estimate you've received, that's a fair thing to ask about directly.
+
+## How to read an estimate you weren't given in writing
+
+If a contractor gives you a number over the phone or in a quick conversation without a written breakdown, that's not yet a real estimate regardless of how specific it sounded verbally. Ask for it in writing before making any decision — a legitimate contractor will have no issue providing that.
 
 ## What we include
 

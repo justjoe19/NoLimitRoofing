@@ -4,6 +4,15 @@ metaDescription: "The questions worth asking any roofing contractor before you h
 publishDate: 2026-08-25
 excerpt: "The right questions tell you more about a contractor than any sales pitch will."
 heroImage: "/images/service-roof-inspection-hero.webp"
+faqs:
+  - question: "Is it normal to get multiple quotes before choosing a contractor?"
+    answer: "Yes, and a confident contractor won't discourage you from doing it. Just make sure you're comparing quotes that cover the same scope and material grade — see our guide on what a roofing estimate should include."
+  - question: "Should I be worried about a contractor who wants payment in full upfront?"
+    answer: "A request for full payment before any work begins is worth asking more questions about. Reasonable payment structures vary, but a contractor unwilling to explain their payment terms clearly is a signal worth paying attention to."
+  - question: "How do I verify a contractor's license and insurance myself?"
+    answer: "Ask for the documentation directly, and don't hesitate to ask how to independently confirm it. A legitimate contractor won't be defensive about the question."
+  - question: "Does a lower price always mean a less qualified contractor?"
+    answer: "Not necessarily — but if a quote is dramatically lower than others you've received with no clear explanation, it's worth asking directly what accounts for the difference before assuming it's simply a better deal."
 draft: false
 ---
 
@@ -40,6 +49,18 @@ Photos of completed jobs, ideally with some context (location, scope, material u
 ## How do you handle a customer who isn't happy with something?
 
 This is as much about how the answer is given as what it says — a contractor confident in their process will have a real answer, not a defensive one.
+
+## Red flags worth watching for
+
+Beyond the questions themselves, a few patterns are worth noticing on their own: door-to-door solicitation immediately after a local storm, pressure to sign the same day with a discount that expires if you don't, a request for full payment before any work begins, and a refusal to put anything in writing. None of these alone automatically means a scam, but together they're a pattern worth being cautious around — a legitimate, established local contractor doesn't usually need to rely on urgency to earn your business.
+
+## Local vs. traveling "storm chaser" crews
+
+After major storms, it's common for out-of-town crews to canvas the hardest-hit neighborhoods offering fast, discounted work. Some are legitimate; many disappear before a warranty ever needs to be honored, leaving homeowners with no one to call if something goes wrong later. A locally based, established contractor with a verifiable address and history is easier to hold accountable years down the road, which matters given how long a roof is expected to last.
+
+## Why local, long-term presence matters
+
+A contractor who's been serving the same community for years has a real reputation at stake and a practical need to still be reachable if a warranty issue comes up. That's worth weighing alongside price and material specs, especially for a project with a service life measured in decades.
 
 ## Our answers to these questions
 

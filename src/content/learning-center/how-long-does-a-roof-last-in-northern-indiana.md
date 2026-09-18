@@ -4,6 +4,15 @@ metaDescription: "What actually determines how long a roof lasts in the Michiana
 publishDate: 2026-09-03
 excerpt: "The material matters less than most homeowners think. Here's what actually determines a roof's lifespan here."
 heroImage: "/images/drone-aerial-finished-roof-manicured-hero.webp"
+faqs:
+  - question: "Does roof color affect lifespan in this climate?"
+    answer: "Lighter colors reflect more heat and can run slightly cooler in summer, but the effect on overall lifespan is modest compared to ventilation and installation quality. Color is a reasonable factor to weigh, but not the deciding one."
+  - question: "How often should I have my roof inspected as it ages?"
+    answer: "An annual check is a reasonable baseline for a roof past the 15-year mark, plus an inspection after any significant storm regardless of the roof's age."
+  - question: "Can improving ventilation on an old roof extend its life?"
+    answer: "Sometimes, if the roofing material itself is still sound and the problem is genuinely ventilation rather than age-related wear. We can assess whether that's a realistic option for your specific roof during an inspection."
+  - question: "Does a steeper roof last longer than a low-slope one?"
+    answer: "Pitch affects water and snow shedding more than raw material lifespan — a steeper roof sheds water faster, which can reduce certain risks like ponding, but a well-ventilated, well-installed low-slope roof isn't automatically shorter-lived."
 draft: false
 ---
 
@@ -24,6 +33,14 @@ Attic ventilation controls temperature and moisture in the space directly under 
 ## Installation quality compounds over decades, not days
 
 Correct underlayment, ice and water shield in vulnerable areas, proper flashing around every penetration, and correct nailing pattern don't show up as a visible difference the week after installation — but they're the difference between a roof that needs attention at year 15 and one that's still solid at year 25. This is also why factory certification matters: it means the installation methods have been verified by the manufacturer, not just the crew's own habits.
+
+## Signs a roof is approaching the end of its service life
+
+Rather than relying on age alone, a few physical signs matter more directly: shingles that are curling, cupping, or losing granules broadly across the roof (not just in one storm-damaged spot); daylight visible through the roof deck from inside the attic; shingles that feel brittle rather than flexible; and repair calls becoming more frequent over a short period. Any one of these is worth an inspection regardless of the roof's exact age.
+
+## Maintenance that actually extends lifespan
+
+Keeping gutters clear (so water doesn't back up under the eaves), trimming overhanging branches (which cause abrasion and hold moisture against the roof surface), and addressing minor issues — a lifted shingle, a small flashing gap — promptly rather than letting them sit are the maintenance habits that make the biggest real difference. None of it is expensive or complicated; it's mostly about not ignoring small problems until they become bigger ones.
 
 ## The practical takeaway
 

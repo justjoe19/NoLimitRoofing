@@ -55,6 +55,7 @@ const learningCenter = defineCollection({
     author: z.string().default("No Limit Roofing"),
     excerpt: z.string(),
     heroImage: z.string().default("/images/drone-aerial-finished-roof-charcoal-hero.webp"),
+    faqs: z.array(faqSchema).default([]),
     draft: z.boolean().default(false),
   }),
 });
