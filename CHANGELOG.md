@@ -2,6 +2,16 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 11 — Chasing the homepage's last Lighthouse point
+
+Follow-up to Session 10: asked to try closing the homepage's 99-Performance gap even though it meant touching the hero image treatment. Documenting this because the *process* matters as much as the result — several plausible fixes were tried and measured, not just declared.
+
+- **Confirmed the gap is a mobile-throttle-simulation artifact, not a code defect**: same build scored a perfect 100/100 with 0.4s LCP under Lighthouse's `--preset=desktop` (lighter throttling). The default CLI invocation simulates a throttled mobile CPU + slow network, which is standard practice but inflates timings well past what `lcp-breakdown-insight`'s own (unthrottled) numbers showed (~71ms total).
+- **Tried, worked**: recompressed the homepage hero image further (37KB → 12KB) and deprioritized `main.js` (`defer` + `fetchpriority="low"`, since it was competing for bandwidth with the hero image fetch in the critical path). Moved LCP from 2.1s → 2.0s, score 0.96 → 0.97 — real, measured, kept.
+- **Tried, made it worse — reverted**: `build.inlineStylesheets: "always"` (Astro's built-in critical-CSS-adjacent option, inlines the stylesheet into `<head>` instead of a separate `<link>`). This removed one render-blocking request but made the *initial HTML document itself* bigger, which had to fully download before any paint could start — net LCP went from 2.1s to 2.2s. Not used.
+- **Result**: homepage stable at 99 Performance across 3 repeated runs (not noise this time — confirmed by re-running, unlike the transient 99s seen elsewhere in Session 10). Every other tested page remains a literal 100/100/100/100, unaffected by these changes (spot-checked after the main.js change, which is global).
+- **Not attempted**: removing or shrinking the full-bleed hero image treatment itself, or building real critical-CSS extraction tooling (Tailwind v4 has no built-in support for this, and the blunt "inline everything" version already tested worse) — both would be materially larger interventions for an uncertain payoff on a metric that's already well inside Google's "Good" Core Web Vitals band (LCP ≤2.5s; we're at 2.0s) and that field data (real users, not synthetic throttling) is what actually affects search ranking, not this specific lab score.
+
 ## Session 10 — Full QA pass: zero errors, SEO audit against the brief, Lighthouse
 
 Requested: confirm the site has zero errors, is SEO-optimized per the client's brief, and gets perfect Lighthouse scores. Found and fixed several real issues rather than just confirming things looked fine — this wasn't a rubber-stamp pass.
