@@ -2,6 +2,22 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 17 — Site-wide image audit: fixed every hero background, plus two more upscaling bugs
+
+Follow-up to Session 16's one-off fix: audited every image on the site (all 48 pages, every template) using real browser measurement (`img.getBoundingClientRect().width` vs. `img.naturalWidth`, at 1440px desktop) rather than guessing from CSS. Confirmed the crew-photo bug from Session 16 was one instance of a much bigger pattern.
+
+**The big one: all 13 hero background images, site-wide.** `.hero` (`global.css`) has no width cap — its `background-image` uses `background-size: cover` and stretches to the full page width, not any contained element. Every hero photo in the project was only 419–843px wide natively, so at a normal 1440px viewport every single hero on every one of the 48 pages was being upscaled 1.7×–3.4× by the browser — worse than the crew photo ever was, and made more visible by Session 16's overlay-lightening change. Fixed per-file:
+- **5 images backed by real, higher-res client photos already on disk** (the 3 drone aerials, the crew-chimney shot, the shingle-detail close-up) were regenerated straight from their original sources at up to their full native resolution (1200px for landscape ones, 970–1122px for the two portrait ones) — a genuine fix, no compromise. Cropped each to a sane max height first (backgrounds only ever show a short strip of a portrait-oriented photo under `cover`, so the excess height was pure wasted bytes, not wasted quality).
+- **8 images with no higher-res source anywhere in the project** (2 unique stock photos + a 6-way-reused generic service photo, all originally 600×440 or smaller) — installed ImageMagick specifically for this, upscaled with Lanczos resampling + a mild unsharp mask (a real technique, not a placeholder: it controls exactly how the enlargement is filtered, which looks meaningfully cleaner than letting the browser's own on-the-fly upscaling do it, though it still can't manufacture detail that was never captured in the ~600px source). This is a real resolution ceiling — genuinely new photography is the only complete fix if these 8 need to look sharp at retina-quality; flagged to the user for future photo-session priority.
+
+**Two more real upscaling bugs, both like Session 16's:**
+- `attic-insulation-installation.webp` on the About page's "Our Story" section — rendered ~1.04× its native 571px width, i.e. blurry even on a standard (non-retina) screen, not just a retina nice-to-have. Same no-higher-res-source situation as the 8 above; fixed with the same Lanczos + unsharp treatment.
+- `completed-roof-shingle-detail.webp` as a Learning Center article thumbnail — rendered ~0.92× its native 419px width. This one *does* have a real high-res source on disk (the original client photo, 970×1621); regenerated cleanly from it, and cropped to the card's actual 600:440-ish aspect ratio first so the file isn't carrying pixels that are never shown.
+
+**Performance check, since sharper source images mean more bytes:** homepage Lighthouse Performance dropped from 99 to 98 with the first pass of hero regenerations (LCP 2.1s → 2.5s). Re-encoded the homepage hero and the other 4 real-photo heroes at a more aggressive WebP quality (q30, down from q42) to bring it back — homepage is back to 99/100 with LCP 2.2s (Session 11's baseline was 2.0–2.1s), and it's still comfortably inside Google's "Good" LCP band (≤2.5s). Checked visually that the lower quality setting doesn't introduce visible banding — the heavy dark hero overlay hides most compression artifacts anyway.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, re-measured every fixed image in the browser to confirm ratios are now ≤~1.3 (down from up to 3.4), spot-checked visually on the homepage, About, and a service hub page.
+
 ## Session 16 — Fix a real blurry-image bug, and lighten the hero overlay
 
 Two requests in one pass:
