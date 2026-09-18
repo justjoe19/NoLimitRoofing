@@ -2,6 +2,14 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 15 — Bring back the YouTube video on the homepage
+
+Requested: swap the static image in the "What's Under Your Shingles Matters" (Roofing System) section for the YouTube video the original pre-Astro site had, instead of a photo.
+
+The lite-YouTube-embed pattern (`.video-facade` CSS, the click-to-swap-in-a-real-iframe JS in `main.js`) was never removed during the Session 7 homepage rebuild — it just stopped being *used*, since the brief's new homepage structure didn't include the old "Why Homeowners Choose Us" section that used to house it. So this was a markup-only change: replaced the `.media-frame` static image in the Roofing System section with the same `video-facade` button, same real video (`SkxqF_gHMD0`, the client's actual "No Limit Roofing of Indiana" YouTube video, previously verified real content from Session 1) and thumbnail. No CSS or JS changes needed.
+
+Verified by actually clicking play in the browser: the facade correctly swaps to a real embedded YouTube iframe (confirmed the real channel name and video loading), 0 console errors, 0 SEO audit issues across all 48 pages.
+
 ## Session 14 — Remove the Projects (gallery) page, for now
 
 Requested: take down the Projects page. Removed `src/pages/gallery.astro` entirely (not deployed anywhere yet, so a clean removal rather than a redirect/soft-hide), plus every reference to it: the "Projects" nav item, the "Projects" footer link, and the "View Our Projects" button on the homepage's Real Projects section — the section itself (the inline real-photo showcase) stays, since it doesn't depend on a page to link out to.
