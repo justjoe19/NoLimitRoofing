@@ -2,6 +2,25 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 8 — Nav fixes, commit Phase 1, and the first 5 Phase 2 city pages
+
+Follow-up to Session 7, requested after a local review turned up real nav problems:
+
+**Nav fixes** (all in `Header.astro` / `global.css` / `main.js`):
+- The Roofing/Storm Damage/Commercial dropdowns didn't auto-close on outside click, Escape, or after picking a link — native `<details>` doesn't do any of that on its own. Added the missing handling in `main.js`.
+- The desktop breakpoint had been pushed from the site's normal 1024px to 1280px in Session 7 just to fit three separate top-level dropdowns. Rather than accept that, consolidated Roofing/Storm Damage/Commercial into **one "Services" dropdown with three grouped columns** (a small mega-menu) — cut the nav down enough that 1024px works again, fixing the actual overflow instead of pushing the breakpoint out further. Verified against a live boundary check at 1040px (mobile) and 1200px (desktop, comfortable margin).
+- The mobile hamburger icon looked "weird" — turned out the X itself renders correctly (confirmed via a forced-state check and a real interaction with the transition allowed to finish; an earlier screenshot had just caught it mid-fade). Thickened and rounded the bars anyway (2px → 3px, squared → rounded caps) to match the site's bolder icon style elsewhere, since thin bars were a reasonable thing to read as "off."
+
+**Committed and merged**: Sessions 6–7 had been sitting uncommitted this whole time. Committed as one commit (`Migrate to Astro and build Phase 1 of the SEO/design rebuild`) and fast-forward merged into `main` — no conflicts, `main` hadn't diverged.
+
+**5 more city pages** (brief §6, Phase 2 priority list): Buchanan, Edwardsburg, Goshen, Plymouth, St. Joseph (MI). Same `locations` content collection and template from Session 7, no new infrastructure needed. Notes:
+- Plymouth gets the same "home to a regional office" framing as Mishawaka already had — a real, previously-established fact (see README's business-facts reference), not new.
+- St. Joseph, MI is disambiguated from St. Joseph County, IN (home to South Bend/Mishawaka) via an FAQ entry, since both are legitimately in the service area under similar names.
+- Goshen's body copy originally over-stated the service area (claimed "Elkhart County" as a formal fifth-plus county alongside the real established five) — caught and fixed before publishing; the established language is "Greater South Bend–Elkhart Region," not a formal county claim.
+- `areas.html`'s Priority Service Areas chip row now lists all 10 city pages; Berrien County's city list picked up Buchanan.
+
+Verified: `npm run build` (33 pages, zero errors), the same internal-link-crawl script from Session 7 (zero broken links across all 33 pages), and a live browser check of a new city page plus the updated areas page.
+
 ## Session 7 — Content collections, homepage rebuild, 13 service pages, 5 city pages
 
 Built out the Phase 1 content called for in the Design + SEO Build Brief, on top of the Astro scaffold from Session 6: content collections, a rebuilt homepage, all core SEO service pages, and the first 5 priority city pages.

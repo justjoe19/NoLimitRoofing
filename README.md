@@ -1,12 +1,12 @@
 # No Limit Roofing — Website
 
-A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture (currently 28 pages: the original 6 content pages + 404, 3 service-group hubs, 13 service pages, and 5 city pages, with more city and Learning Center pages planned — see `CHANGELOG.md`).
+A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture (currently 33 pages: the original 6 content pages + 404, 3 service-group hubs, 13 service pages, and 10 city pages (5 Phase 1 + 5 Phase 2), with more city and Learning Center pages planned — see `CHANGELOG.md`).
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
 ## Tech stack
 
-- **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 28 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
+- **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 33 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
 - **Tailwind CSS v4** via `@tailwindcss/vite` — source lives in `src/styles/global.css` (uses `@theme`/`@layer`, CSS-first config, no `tailwind.config.js`), compiled automatically as part of the Astro build. No separate CSS build step, no build artifact to avoid hand-editing.
 - **Vanilla JS** (`public/js/main.js`, no dependencies, loaded on every page) — mobile nav drawer, contact form validation + submission, lite YouTube embed, header scroll shadow.
 - **System font stack only** — no webfonts, by design. Zero font-load network cost, zero layout shift from font swap.
@@ -66,7 +66,7 @@ src/
                         pages from the `services` collection, keyed by each
                         entry's `group`/`slug` frontmatter — not 3 separate
                         template files.
-    service-areas/[slug].astro   Dynamic route rendering all 5 city pages
+    service-areas/[slug].astro   Dynamic route rendering all 10 city pages
                         from the `locations` collection.
 
 public/                  Served as-is, unprocessed — same convention as the
