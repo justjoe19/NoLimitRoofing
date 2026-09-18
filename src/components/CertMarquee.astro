@@ -1,0 +1,27 @@
+---
+const badges = [
+  { src: "/images/badge-gaf-certified.webp", alt: "GAF Certified Contractor", width: 40 },
+  { src: "/images/badge-iko-select.webp", alt: "IKO RoofPro Select Contractor", width: 40 },
+  { src: "/images/badge-iko-preferred.webp", alt: "IKO RoofPro Preferred Contractor", width: 40 },
+  { src: "/images/badge-owens-corning.webp", alt: "Owens Corning Roofing Contractor", width: 44 },
+  { src: "/images/badge-malarkey.webp", alt: "Malarkey Roofing Products Contractor", width: 180 },
+  { src: "/images/badge-atlas.webp", alt: "Atlas Roofing Contractor", width: 57 },
+  { src: "/images/badge-certainteed-shinglemaster.webp", alt: "CertainTeed Shingle Master", width: 41 },
+  { src: "/images/badge-srs-topshield-pro.webp", alt: "SRS TopShield PRO Contractor", width: 85 },
+];
+---
+
+<div class="cert-marquee">
+  <div class="cert-marquee-track">
+    <div class="cert-marquee-group">
+      {badges.map((b) => (
+        <img src={b.src} alt={b.alt} width={b.width} height="40" loading="lazy" />
+      ))}
+    </div>
+    <div class="cert-marquee-group cert-marquee-dup" aria-hidden="true">
+      {badges.map((b) => (
+        <img src={b.src} alt="" width={b.width} height="40" loading="lazy" />
+      ))}
+    </div>
+  </div>
+</div>

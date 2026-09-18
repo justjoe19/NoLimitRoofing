@@ -1,14 +1,20 @@
 {
   "name": "no-limit-roofing",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "No Limit Roofing marketing site",
+  "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
-    "watch:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --watch"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.3",
     "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4"
   }
 }

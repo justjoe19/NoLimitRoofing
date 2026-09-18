@@ -1,0 +1,83 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  themeColor?: string;
+  preloadImage?: string;
+  /** One or more JSON-LD objects, emitted as separate <script type="application/ld+json"> tags. */
+  schema?: object[];
+  /** Set on 404 and other pages that should never be indexed. */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogTitle = title,
+  ogDescription = description,
+  themeColor = "#14171a",
+  preloadImage,
+  schema = [],
+  noindex = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+{noindex ? (
+  <meta name="robots" content="noindex" />
+) : (
+  <>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="No Limit Roofing" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </>
+)}
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content={themeColor} />
+
+{preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+
+{schema.map((item) => (
+  <script type="application/ld+json" set:html={JSON.stringify(item)} />
+))}
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<Header />
+
+<main id="main">
+  <slot />
+</main>
+
+<Footer />
+
+<script is:inline src="/js/main.js"></script>
+</body>
+</html>

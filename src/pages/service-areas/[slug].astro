@@ -1,0 +1,143 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const locations = await getCollection("locations");
+  return locations.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const canonical = `https://nolimitroofingin.com/service-areas/${d.slug}.html`;
+const ogImage = `https://nolimitroofingin.com${d.heroImage.replace("-hero.webp", ".webp")}`;
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://nolimitroofingin.com/areas.html" },
+      { "@type": "ListItem", position: 3, name: d.city, item: canonical },
+    ],
+  },
+  ...(d.faqs.length
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: d.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        },
+      ]
+    : []),
+];
+---
+
+<BaseLayout
+  title={d.metaTitle}
+  description={d.metaDescription}
+  canonical={canonical}
+  ogImage={ogImage}
+  preloadImage={d.heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${d.heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span>
+        <a href="/areas.html">Service Areas</a><span aria-hidden="true">/</span>
+        <span class="current">{d.city}</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">{d.heroEyebrow}</p>
+      <h1>{d.heroHeadline}</h1>
+      <p class="lede">{d.heroLede}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact.html">Get a Free Estimate</a>
+        <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split" style="align-items:start">
+      <div class="max-prose">
+        <Content />
+        <p class="lede mt-4">{d.localContext}</p>
+      </div>
+      <div class="card p-8">
+        <h2 class="text-[1.25rem]">Services Available In {d.city}</h2>
+        <ul class="checklist mt-3">
+          {d.servicesOffered.map((s) => (
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ul>
+        <a class="btn btn-primary btn-block mt-4" href="/contact.html">Get My Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Explore</p>
+        <h2>Roofing Services In {d.city}</h2>
+      </div>
+      <div class="chip-row" style="justify-content:center">
+        <a class="chip" href="/roofing.html">Residential Roofing</a>
+        <a class="chip" href="/roofing/roof-replacement.html">Roof Replacement</a>
+        <a class="chip" href="/roofing/roof-repair.html">Roof Repair</a>
+        <a class="chip" href="/storm-damage.html">Storm Damage</a>
+        <a class="chip" href="/commercial.html">Commercial Roofing</a>
+      </div>
+    </div>
+  </section>
+
+  {d.faqs.length > 0 && (
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container" style="max-width:820px">
+        <div class="section-head center">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-heading">{d.city} Roofing Questions</h2>
+        </div>
+        <div>
+          {d.faqs.map((f, i) => (
+            <details class="faq-item" open={i === 0}>
+              <summary>{f.question}<span class="plus" aria-hidden="true"></span></summary>
+              <p>{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Ready To Get Your {d.city} Roof Checked?</h2>
+          <p>Free, no-pressure estimates from an owner-supervised, GAF-certified crew.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Get My Free Estimate</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

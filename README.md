@@ -1,65 +1,93 @@
 # No Limit Roofing — Website
 
-A six-page static marketing site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design.
+A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture (currently 28 pages: the original 6 content pages + 404, 3 service-group hubs, 13 service pages, and 5 city pages, with more city and Learning Center pages planned — see `CHANGELOG.md`).
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
 ## Tech stack
 
-- **Plain static HTML** — no JS framework, no bundler beyond Tailwind's CLI. 6 content pages + a 404 page.
-- **Tailwind CSS v4** — source lives in `css/input.css` (uses `@theme`/`@layer`, CSS-first config, no `tailwind.config.js`), compiled to `css/styles.css`. Never hand-edit `styles.css` — it's a build artifact.
-- **Vanilla JS** (`js/main.js`, no dependencies) — mobile nav drawer, contact form validation + submission, lite YouTube embed, header scroll shadow.
+- **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 28 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
+- **Tailwind CSS v4** via `@tailwindcss/vite` — source lives in `src/styles/global.css` (uses `@theme`/`@layer`, CSS-first config, no `tailwind.config.js`), compiled automatically as part of the Astro build. No separate CSS build step, no build artifact to avoid hand-editing.
+- **Vanilla JS** (`public/js/main.js`, no dependencies, loaded on every page) — mobile nav drawer, contact form validation + submission, lite YouTube embed, header scroll shadow.
 - **System font stack only** — no webfonts, by design. Zero font-load network cost, zero layout shift from font swap.
-- **Images** — WebP only, optimized with `cwebp`. Real company/project photography plus manufacturer certification badges (GAF, IKO, Owens Corning, Malarkey, Atlas, CertainTeed, SRS).
+- **Images** — WebP only, optimized with `cwebp`, served from `public/images/`. Real company/project photography plus manufacturer certification badges (GAF, IKO, Owens Corning, Malarkey, Atlas, CertainTeed, SRS).
 - **Netlify Forms** for the contact form (no backend). See [Contact form](#contact-form) below.
-- **Deployment**: Netlify. `netlify.toml` already sets the build command and cache/security headers.
+- **Deployment**: Netlify. `netlify.toml` already sets the build command (`npm run build`, publishing `dist/`) and cache/security headers.
 
 ## Quick start
 
 ```bash
-npm install                 # installs tailwindcss + @tailwindcss/cli only
-npm run build:css           # compiles css/input.css -> css/styles.css
-python3 -m http.server 8099 # serve the site locally
-# open http://localhost:8099/
+npm install     # installs Astro + the Tailwind Vite plugin
+npm run dev      # starts the Astro dev server (prints the local URL)
 ```
-
-While actively editing styles:
 
 ```bash
-npm run watch:css           # rebuilds css/styles.css on every save
+npm run build    # builds the static site into dist/
+npm run preview  # serves the dist/ build locally, for a production-accurate check
 ```
 
-There is no other build step. HTML files are edited directly; there's no templating — shared markup (header, footer, nav) is duplicated across each page by hand. When editing shared structure (e.g. nav links, footer), grep across all 7 HTML files and update each one.
+Shared markup — header, footer, nav, cert-badge marquee — lives once each in `src/components/` and `src/layouts/BaseLayout.astro`, not duplicated per page. Page-specific content lives directly in each `src/pages/*.astro` file. When editing shared structure (nav links, footer, etc.), there is exactly one file to change, not seven.
+
+URLs are unchanged from the original static site (`/about.html`, not `/about`) — `astro.config.mjs` sets `build.format: "file"` specifically to preserve this, so no redirects were needed for this migration.
 
 ## Project structure
 
 ```
-index.html, about.html, services.html,      6 content pages + 404.
-gallery.html, areas.html, contact.html,
-404.html
+src/
+  content.config.ts     Zod schemas for the `services` and `locations`
+                        content collections (src/content/).
+  content/
+    services/*.md        13 leaf service pages (frontmatter: hero copy,
+                        highlights, FAQs, related links; body = long copy).
+    locations/*.md        5 priority city pages, same shape.
+  layouts/
+    BaseLayout.astro   <head> (meta/OG/schema/favicons), skip-link, Header,
+                        <main> slot, Footer, mobile call bar, main.js tag.
+  components/
+    Header.astro        Nav + mobile drawer toggle + the Roofing/Storm
+                        Damage/Commercial dropdowns (<details>/<summary>,
+                        same accessible pattern as the FAQ accordion — no
+                        JS required). Sets aria-current from the current URL.
+    Footer.astro         Full site footer + the sticky mobile call bar.
+    CertMarquee.astro    The auto-scrolling manufacturer-badge strip
+                        (used on Home and About).
+  styles/
+    global.css          Tailwind source — design tokens (@theme) + component
+                        classes (@layer components), e.g. .btn, .card, .hero.
+  pages/
+    index.astro, about.astro, services.astro,   The original 6 pages + 404.
+    gallery.astro, areas.astro, contact.astro,
+    404.astro
+    roofing/index.astro, storm-damage/index.astro,   Group hub pages —
+    commercial/index.astro                            hand-written, list
+                                                        that group's services
+                                                        from the collection.
+    [group]/[slug].astro   ONE dynamic route rendering all 13 service leaf
+                        pages from the `services` collection, keyed by each
+                        entry's `group`/`slug` frontmatter — not 3 separate
+                        template files.
+    service-areas/[slug].astro   Dynamic route rendering all 5 city pages
+                        from the `locations` collection.
 
-css/
-  input.css        Tailwind source — design tokens (@theme) + component
-                    classes (@layer components), e.g. .btn, .card, .hero
-  styles.css        Compiled output. Do not hand-edit.
+public/                  Served as-is, unprocessed — same convention as the
+                        old repo root.
+  images/*.webp          All site imagery, WebP only.
+  images/*-hero.webp      Extra-compressed variants used as full-bleed hero
+                          backgrounds (see "Hero images" below).
+  images/badge-*.webp     Manufacturer certification badges.
+  images/nlr-logo.{png,webp}  Company logo (png kept for JSON-LD/og:image use).
+  js/main.js              Mobile nav, contact form, lite YouTube embed,
+                          header scroll shadow. No dependencies.
+  favicon.ico, favicon-*.png,  Favicon set generated FROM THE ORIGINAL
+  apple-touch-icon.png,        SITE's actual favicon (a portrait of their
+  icon-192.png, icon-512.png   roofer mascot) — not a custom mark.
+  site.webmanifest, robots.txt   sitemap.xml is no longer a static file here
+                                — @astrojs/sitemap generates sitemap-index.xml
+                                and sitemap-0.xml at build time from the
+                                actual page set, so it can't go stale.
 
-js/
-  main.js           Mobile nav, contact form, lite YouTube embed, header
-                    scroll shadow. No dependencies.
-
-images/
-  *.webp            All site imagery, WebP only.
-  *-hero.webp        Extra-compressed variants used as full-bleed hero
-                     backgrounds (see "Hero images" below).
-  badge-*.webp       Manufacturer certification badges.
-  nlr-logo.{png,webp}  Company logo (png kept for JSON-LD/og:image use).
-
-favicon.ico, favicon-*.png,  Favicon set generated FROM THE ORIGINAL
-apple-touch-icon.png,        SITE's actual favicon (a portrait of their
-icon-192.png, icon-512.png   roofer mascot) — not a custom mark.
-
-site.webmanifest, robots.txt, sitemap.xml, netlify.toml
-package.json, package-lock.json   Tailwind CLI only.
+astro.config.mjs, tsconfig.json, netlify.toml
+package.json, package-lock.json   Astro + Tailwind Vite plugin only.
 ```
 
 ## Design system
@@ -89,11 +117,11 @@ To change a page's hero photo: swap that URL, add/update the matching `<link rel
 
 ## Contact form
 
-The form on `contact.html` posts to **Netlify Forms** — no backend code. Relevant bits:
+The form on `src/pages/contact.astro` posts to **Netlify Forms** — no backend code. Relevant bits:
 
-- `data-netlify="true"` + `name="contact"` on the `<form>` — Netlify's build-time scanner detects this from the static HTML.
+- `data-netlify="true"` + `name="contact"` on the `<form>` — Netlify's build-time scanner needs this to be present in the *built* static HTML, which it is (Astro renders it at build time, same as before).
 - `netlify-honeypot="company-website"` + a hidden `company-website` field — spam trap.
-- `js/main.js` progressively enhances the form: client-side validation, then an AJAX `fetch` POST with a normal-form fallback if JS fails.
+- `public/js/main.js` progressively enhances the form: client-side validation, then an AJAX `fetch` POST with a normal-form fallback if JS fails.
 - Submissions land in the Netlify dashboard (Forms tab) once deployed. No email/webhook is wired up yet — set that up in Netlify's UI if you want notifications.
 
 ## Business facts reference
@@ -112,13 +140,14 @@ So future edits don't have to re-derive these from the old site:
 ## Testing
 
 ```bash
-# Lighthouse (run against the local server, all 6 pages)
-npx lighthouse http://localhost:8099/ --chrome-flags="--headless" --only-categories=performance,accessibility,best-practices,seo
+npm run build && npm run preview   # serve the actual production build
+# Lighthouse (run against the preview server, all 6 pages)
+npx lighthouse http://localhost:4321/ --chrome-flags="--headless" --only-categories=performance,accessibility,best-practices,seo
 ```
 
-Current scores: 98–100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO on every page.
+Always test against `npm run preview` (the real static build), not `npm run dev` (Astro's dev server does extra work per request and won't give representative Lighthouse numbers).
 
-**Known flakiness**: `python3 -m http.server` is single-threaded and occasionally drops a connection under Lighthouse's concurrent image fetches (`ERR_CONNECTION_RESET` / `ERR_SOCKET_NOT_CONNECTED`), causing a spurious Performance or Best Practices dip. This is a dev-server artifact, not a real bug — always re-run before treating a local Lighthouse dip as real. It will not happen on Netlify's production CDN.
+Current scores as of the last static-HTML version: 98–100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO on every page. Re-verify after the Astro migration before trusting these — the markup output is intended to be byte-for-byte equivalent, but re-run Lighthouse to confirm rather than assuming.
 
 For anything beyond a quick sanity check, `puppeteer-core` (installed with `npm install --no-save puppeteer-core`, pointed at the system Chrome via `executablePath`) is useful for scripted viewport sweeps and screenshots — see git history / CHANGELOG for example scripts. Don't commit it to `package.json`; it's a diagnostic tool, not a site dependency.
 
@@ -133,9 +162,9 @@ For anything beyond a quick sanity check, `puppeteer-core` (installed with `npm 
 ## Deployment
 
 Connect this repo to Netlify. `netlify.toml` already configures:
-- Build command: `npm run build:css`
-- Publish directory: `.` (repo root)
-- Cache headers (long-cache for images, short for HTML/CSS/JS)
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Cache headers (immutable long-cache for fingerprinted `/_astro/*` assets and images, short for HTML)
 - Security headers (`X-Content-Type-Options`, `X-Frame-Options`, etc.)
 
 No environment variables or secrets are required.

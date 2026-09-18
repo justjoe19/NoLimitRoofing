@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allServices = await getCollection("services");
+const roofingServices = allServices.filter((s) => s.data.group === "roofing");
+
+const heroImage = "/images/drone-aerial-finished-roof-pool-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Roofing", item: "https://nolimitroofingin.com/roofing.html" },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Residential Roofing Contractor in Michiana | No Limit Roofing"
+  description="Residential roofing — repair, replacement, inspections and asphalt shingle installation — from a GAF-certified, owner-supervised crew serving Michiana since 2010."
+  canonical="https://nolimitroofingin.com/roofing.html"
+  ogImage="https://nolimitroofingin.com/images/drone-aerial-finished-roof-pool.webp"
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span class="current">Roofing</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">Residential Roofing</p>
+      <h1>Roofing Built To Protect What's Underneath It</h1>
+      <p class="lede">Repair, replacement, inspections and shingle installation from an owner-supervised, GAF factory-certified crew — serving South Bend, Mishawaka, Plymouth and the greater Michiana region since 2010.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact.html">Get a Free Estimate</a>
+        <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="roofing-services-heading">
+    <div class="container">
+      <h2 id="roofing-services-heading" class="visually-hidden">Roofing Services</h2>
+      <div class="grid grid-3">
+        {roofingServices.map((s) => (
+          <article class="card service-card">
+            <div class="media"><img src={s.data.heroImage.replace("-hero.webp", ".webp")} alt={s.data.title} width="600" height="440" loading="lazy" /></div>
+            <div class="body">
+              <h3>{s.data.title}</h3>
+              <p>{s.data.heroLede}</p>
+              <a class="more" href={`/roofing/${s.data.slug}.html`}>Learn more<span class="visually-hidden"> about {s.data.title}</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Not Sure Which Service You Need?</h2>
+          <p>Tell us what's going on — we'll take a look and recommend the right fix.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Get My Free Estimate</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -2,6 +2,61 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 7 — Content collections, homepage rebuild, 13 service pages, 5 city pages
+
+Built out the Phase 1 content called for in the Design + SEO Build Brief, on top of the Astro scaffold from Session 6: content collections, a rebuilt homepage, all core SEO service pages, and the first 5 priority city pages.
+
+**Photo audit, before using anything**: the client sent 16 images alongside the brief. Only 5 turned out to be real usable photography — 3 drone/aerial finished-roof shots, 1 real crew-on-roof photo, 1 elevated shingle-detail shot. The other 11 were branded promotional/ad graphics (bold yellow/black templates with a cartoon mascot and baked-in headline text) — genuinely the client's own brand material (same mascot as the real, monochrome site logo, just the full-color original), but not usable as web photography: wrong format, text baked in, and a louder style than the brief's own "premium black/charcoal" direction calls for. The 5 real photos were resized and re-encoded to WebP (matching the project's existing `cwebp` convention, including `-hero` extra-compressed variants) and used for the new homepage hero and several service/city hero images. **Still missing, per the brief's own photo table**: a CertainTeed RoofRunner installation photo, a branded truck photo, and an office photo — none were in what was sent, so no substitute was used for those (the README's own "Known gotchas" section already documents what happens when a wrong photo gets relabeled to fit a slot it doesn't belong in).
+
+**Content collections** (`src/content.config.ts`, Astro's Content Layer API): a `services` collection (zod-validated: hero copy, highlights, FAQs, related links, body) and a `locations` collection, same shape. This is what makes 13 service pages and 5 city pages come from one template each instead of 18 hand-written files — see README's "Project structure" for the exact file layout.
+
+**Pages built**, matching brief §5's core-SEO-pages table exactly (16 rows → 3 hand-written hub pages + 13 collection-driven leaf pages via one dynamic `[group]/[slug].astro` route): Roofing (Residential hub, Replacement, Repair, Emergency Repair, Inspections, Asphalt Shingle), Storm Damage (hub, Hail, Wind), Commercial (hub, Repair, Replacement, TPO, EPDM, Roof Coatings, Maintenance). Plus 5 city pages (`service-areas/[slug].astro`, brief's Phase 1 list: South Bend, Mishawaka, Granger, Elkhart, Niles), cross-linked from the existing `areas.html`.
+
+**Homepage rebuilt** per brief §3's full structure — hero, trust strip, "what brought you here" problem-selector cards, real-projects gallery, the No Limit Roof Check™ 4-step process, a roofing-system explainer, Storm Center, a dark Commercial section, reviews, About/local proof, service-area map+chips, FAQ, and a short final-CTA form. Deliberately scoped down from the brief in a few places, called out here rather than faked:
+- **Reviews stayed a static grid** of the 6 real, already-sourced testimonials — no "live Google Reviews" widget, since that needs a real API integration this session doesn't have credentials for.
+- **No before/after slider or review carousel** — the brief asks for both, but they're genuine interactive-island work (see the Astro migration plan) better done as a follow-up than bolted on here. Also intentionally did **not** bring back scroll-triggered reveal animation — CHANGELOG Session 3 already documents why that was removed (a real Lighthouse accessibility failure).
+- **"Real Projects" section links to the existing gallery**, not a new case-study engine — that's explicitly Phase 2 in the brief's own build order (§14), and building it now would mean either fabricating project data or shipping an empty template.
+- **Roofing-system explainer** uses the real shingle-detail photo with honest, generic "what's under the shingles" copy — not labeled as a CertainTeed RoofRunner photo, since that specific photo wasn't provided (see photo audit above).
+- Compliance guardrails from brief §15 were followed throughout: no invented review counts, project counts, or certifications beyond what's already verified in the README's business-facts reference; hail/wind-damage copy explicitly does not promise insurance claim outcomes, only that damage will be documented.
+
+**Navigation rebuilt** to match brief §4/§16: Roofing/Storm Damage/Commercial became dropdown menus, built on `<details>/<summary>` (same accessible, JS-free pattern the FAQ accordion already used) rather than a JS-driven mega-menu. "Resources" (Learning Center) was left out of the nav since no Learning Center pages exist yet — a nav item with nothing behind it isn't better than no nav item.
+
+**Two real bugs found and fixed while building the nav**, not just cosmetic:
+1. The dropdown CSS used `.nav-dropdown > summary` (direct-child selector), but the actual DOM is `<li class="nav-dropdown"><details><summary>` — `summary` is a *grandchild*, not a direct child, so the rule silently never matched and every dropdown rendered as an unstyled native disclosure triangle. Fixed by switching to a descendant selector.
+2. Setting `open={isGroupActive(...)}` on `<details>` was meant to visually mark the current section active, but `open` on `<details>` doesn't just style it — it expands the panel, which then sat `position: absolute` on top of the page's H1 on every page in that section. Separated "active styling" (`aria-current` on `<summary>`, styled like the other nav links) from "open state" (left alone, closed by default).
+3. **Nav breakpoint bumped from `lg` (1024px) to `xl` (1280px)**, deliberately, and reusing the exact 1280px value Session 2 originally used for the same reason before Session 3 brought it back down: measuring actual rendered width, the dropdown-enlarged nav no longer fit at 1024px (confirmed via a live browser check, not guessed) — even the site's 1200px content container cap couldn't be widened past this without the nav wrapping. If nav content shrinks again later, this can likely come back down.
+
+**Sitemap**: added `@astrojs/sitemap` and removed the hand-maintained `public/sitemap.xml` (was already stale, only listing 6 of the site's now 28 pages) — `sitemap-index.xml`/`sitemap-0.xml` are generated at build time from the real route set, so they can't drift again. `robots.txt` updated to point at the new filename.
+
+**Verified before calling this done**: full `npm run build` (28 pages, zero errors), a script crawling every built page's internal `href`s against the actual output file set (zero broken links), and a live browser pass — homepage, a service leaf page, the commercial hub, a city page, dropdown interaction, active-state styling, no console errors.
+
+**Not done, deliberately** (see brief §14 Phase 2/3, and the gaps called out above): Decap CMS wiring, Learning Center pages, the project case-study engine, live Google Reviews integration, before/after slider, review carousel, remaining Phase 2/3 city pages, and the three missing photo categories (RoofRunner install, branded truck, office).
+
+## Session 6 — Migrate to Astro (Phase 1 of the SEO/design rebuild)
+
+The client sent over a full Website Design + SEO Build Brief plus real project photography (drone/aerial roof shots, crew, branded truck, office, CertainTeed RoofRunner install), specifying a much larger site: ~15 core SEO service pages, a 60-mile city-page architecture across Northern Indiana + Southwest Michigan, a project case-study engine, a Learning Center, and a CMS so staff can add content. The existing plain-HTML site (7 hand-duplicated pages) doesn't scale to that — every new page or shared-markup change meant touching every file by hand.
+
+Chose **Astro** over a React/Next SPA: the brief's own requirements (Core Web Vitals, crawlability, 100 Lighthouse) are exactly what a client-rendered SPA works against, and the real problem was templating/content-scaling, not interactivity. Astro ships zero JS by default, supports component/layout reuse, and can host framework islands later for the few genuinely interactive pieces the brief wants (before/after slider, review carousel) without turning the whole site into an app. Content collections + a git-based CMS (Decap, planned) are the intended answer to "staff can add projects/photos/FAQs/reviews."
+
+**This session was step 1 only — scaffold + a 1:1 migration, no new content yet** — done first specifically to prove the move is safe before building anything new on top:
+
+- Added Astro (`astro`, `@tailwindcss/vite`) and Tailwind v4 now runs through Astro's Vite pipeline instead of the standalone Tailwind CLI — `npm run build:css` / `watch:css` are gone; `npm run dev` / `build` / `preview` replace them.
+- Moved all 6 pages + 404 into `src/pages/*.astro`, all shared markup (header, footer, mobile call bar, nav, cert-badge marquee) into `src/layouts/BaseLayout.astro` and `src/components/`. Page-specific content (hero copy, cards, testimonials, FAQ, schema) stayed inline per page — no content-collection abstraction yet, to keep this step's diff to "same output, different file organization."
+- Set `build.format: "file"` in `astro.config.mjs` specifically so output URLs stay `/about.html` etc., identical to the pre-migration site — no redirect map was needed for this step.
+- `public/js/main.js` (mobile nav, form validation/submit, lite YouTube embed, header shadow) ported verbatim and is still loaded as one global `<script src="/js/main.js">` — it wasn't converted to a framework island, since none of that behavior needs per-page data.
+- Fixed one real bug surfaced by the migration: `Header.astro`'s `aria-current="page"` logic compared against `Astro.url.pathname`, which resolves to `/index.html` for the homepage under `build.format: "file"` (not `/`) — the Home nav link silently lost its active state until this was special-cased.
+- Verified via `npm run build` + `npm run preview` + browser check (desktop and 390px mobile, hamburger drawer, 404 route, no console errors) that output is visually and structurally equivalent to the pre-migration site before removing the old static files.
+- Updated `netlify.toml` (`build.format`/publish dir → `dist`, cache headers → `/_astro/*` immutable) and README for the new build system.
+
+Not done yet, deliberately deferred to later Phase 1/2 sessions per the brief's own build order: new homepage sections, the 15 service pages, city pages, project case studies, Learning Center, Decap CMS wiring, `@astrojs/sitemap`.
+
+## Session 5 — Certification logo marquee, bigger nav logo, call bar breakpoint fix
+
+- Removed the "Factory Certified By" label from the home trust bar.
+- All 8 manufacturer badges (home page was missing IKO Preferred and SRS TopShield PRO) now show full-color at all times, as a continuously auto-scrolling marquee instead of a wrapping grid — pauses on hover/focus, falls back to a static wrapped row for `prefers-reduced-motion` users.
+- Increased the nav logo size now that the wordmark next to it is gone (removed in Session 3).
+- The sticky "Call Now" bar now shows any time the nav is collapsed to a hamburger (<1024px), not just on phones (<720px) — it was previously only tied to the phone breakpoint, leaving tablets with a hamburger nav but no persistent call CTA.
+
 ## Session 4 — Git setup
 
 - Initialized the git repo (it hadn't existed before — the project was built entirely as local files) and pushed the full site to `https://github.com/justjoe19/NoLimitRoofing.git` as the initial commit.

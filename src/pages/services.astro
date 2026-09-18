@@ -1,0 +1,249 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const heroImage = "/images/commercial-roofing-project-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://nolimitroofingin.com/services.html" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you offer free estimates?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes. Every inspection and written estimate is free with no obligation, whether it's a small repair or a full commercial roof replacement." },
+      },
+      {
+        "@type": "Question",
+        name: "How fast can you respond to an emergency roof repair?",
+        acceptedAnswer: { "@type": "Answer", text: "We prioritize emergency calls for active leaks and storm damage and aim to get a crew out quickly to stop further damage — call (574) 360-0525 for the fastest response." },
+      },
+      {
+        "@type": "Question",
+        name: "What roofing materials do you install?",
+        acceptedAnswer: { "@type": "Answer", text: "We install asphalt and composite shingles, metal roofing, wood shakes, tile, and flat/low-slope systems including EPDM, TPO, PVC, KEE and self-adhered modified bitumen." },
+      },
+      {
+        "@type": "Question",
+        name: "Are you licensed, bonded and insured?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes, No Limit Roofing is fully licensed, bonded and insured, and is a GAF factory-certified contractor." },
+      },
+      {
+        "@type": "Question",
+        name: "Do you work on commercial and industrial buildings?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes. We handle residential, commercial and industrial roofing, including flat roof systems for commercial properties." },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Roofing Services | Emergency Repair, Replacement & Commercial Roofing"
+  description="Emergency roof repair, tear-off & replacement, commercial roofing, overlay, maintenance, inspections, soft wash cleaning, decking, insulation & siding — serving Michiana since 2010."
+  canonical="https://nolimitroofingin.com/services.html"
+  ogImage="https://nolimitroofingin.com/images/commercial-roofing-project-hero.webp"
+  ogTitle="Roofing Services | No Limit Roofing"
+  ogDescription="Emergency repair, replacement, commercial roofing, decking, insulation and siding — serving Michiana since 2010."
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span class="current">Services</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">Roofing &amp; Repair Services</p>
+      <h1>Residential, Commercial &amp; Industrial Roofing</h1>
+      <p class="lede">Every service below is backed by a GAF factory-certified, owner-supervised crew — and a free written estimate before any work begins.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="all-services-heading">
+    <div class="container">
+      <h2 id="all-services-heading" class="visually-hidden">All Roofing &amp; Exterior Services</h2>
+      <div class="grid grid-3">
+
+        <article class="card service-card" id="emergency-repairs">
+          <div class="media"><img src="/images/service-emergency-repair.webp" alt="Emergency roof repair after storm damage" width="600" height="440" /></div>
+          <div class="body">
+            <h3>Emergency Roof Repairs</h3>
+            <p>Active leak or storm damage? We respond quickly to tarp, stabilize and repair the roof before more damage happens.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="commercial-roofing">
+          <div class="media"><img src="/images/commercial-roofing-project.webp" alt="Commercial flat roof installation" width="843" height="317" loading="lazy" /></div>
+          <div class="body">
+            <h3>Commercial Roofing</h3>
+            <p>Flat and low-slope systems for offices, retail and industrial buildings — EPDM, TPO, PVC, KEE and modified bitumen.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="tear-off-replacement">
+          <div class="media"><img src="/images/service-tear-off-replacement.webp" alt="Full roof tear off and replacement" width="600" height="440" loading="lazy" /></div>
+          <div class="body">
+            <h3>Tear-Off &amp; Replacement</h3>
+            <p>Complete removal down to the decking and a fresh install with the material of your choice, done to code.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="roof-overlay">
+          <div class="media"><img src="/images/service-roof-overlay.webp" alt="Roof overlay installation over existing shingles" width="600" height="440" loading="lazy" /></div>
+          <div class="body">
+            <h3>Roof Overlay</h3>
+            <p>A budget-friendly way to refresh a roof by installing a new layer over sound existing shingles, when conditions qualify.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="inspections-maintenance">
+          <div class="media"><img src="/images/service-roof-inspection.webp" alt="Roof inspection and maintenance visit" width="600" height="440" loading="lazy" /></div>
+          <div class="body">
+            <h3>Roof Inspections &amp; Maintenance</h3>
+            <p>Scheduled inspections and maintenance catch small issues — flashing, sealant, granule loss — before they become leaks.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="soft-wash-cleaning">
+          <div class="media"><img src="/images/service-soft-wash-cleaning.webp" alt="Soft wash roof cleaning to remove algae and moss" width="600" height="440" loading="lazy" /></div>
+          <div class="body">
+            <h3>Soft Wash Roof Cleaning</h3>
+            <p>Low-pressure cleaning removes moss, algae and streaking safely, extending the life and look of your roof.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="insulation">
+          <div class="media"><img src="/images/attic-insulation-installation.webp" alt="Attic insulation installation" width="571" height="330" loading="lazy" /></div>
+          <div class="body">
+            <h3>Insulation Installation</h3>
+            <p>Proper attic and roof insulation improves energy efficiency and helps prevent ice damming in winter.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="decking">
+          <div class="media"><img src="/images/service-decking.webp" alt="Deck building and restoration project" width="571" height="330" loading="lazy" /></div>
+          <div class="body">
+            <h3>Decking — Build &amp; Restore</h3>
+            <p>New deck construction and restoration of existing decks, built to handle Michiana's seasons.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="remodels">
+          <div class="media"><img src="/images/service-remodel.webp" alt="Home remodeling project" width="571" height="330" loading="lazy" /></div>
+          <div class="body">
+            <h3>Remodels</h3>
+            <p>Exterior remodeling that pairs with your roofing project for a cohesive, updated look.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="siding">
+          <div class="media"><img src="/images/completed-roofing-project.webp" alt="Completed home exterior roofing project" width="1024" height="576" loading="lazy" /></div>
+          <div class="body">
+            <h3>Siding Repair &amp; Replacement</h3>
+            <p>Protect and refresh your home's exterior with professional siding repair and replacement.</p>
+          </div>
+        </article>
+
+        <article class="card service-card" id="shingle-options">
+          <div class="media"><img src="/images/shingle-color-options.webp" alt="Roof shingle color and style options" width="600" height="141" loading="lazy" /></div>
+          <div class="body">
+            <h3>Roof Shingles &amp; Color Options</h3>
+            <p>Browse a range of GAF, IKO, Owens Corning, Malarkey and Atlas shingle colors and styles for your home.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Materials We Install</p>
+        <h2>Every Roofing System, Done Right</h2>
+      </div>
+      <div class="chip-row" style="justify-content:center">
+        <span class="chip">Asphalt / Composite Shingles</span>
+        <span class="chip">Metal Roofing</span>
+        <span class="chip">Wood Shakes</span>
+        <span class="chip">Tile</span>
+        <span class="chip">EPDM (Flat Roof)</span>
+        <span class="chip">TPO</span>
+        <span class="chip">PVC</span>
+        <span class="chip">KEE</span>
+        <span class="chip">Self-Adhered Modified Bitumen</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">How It Works</p>
+        <h2>A Straightforward Process, From Estimate To Warranty</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Free Inspection</h3><p>We assess your roof in person and walk you through exactly what it needs.</p></div>
+        <div class="step"><h3>Written Estimate</h3><p>A clear, no-pressure quote with material options and timelines — no surprises.</p></div>
+        <div class="step"><h3>Professional Install</h3><p>An owner-supervised crew completes the work to factory-certified standards.</p></div>
+        <div class="step"><h3>Final Walkthrough</h3><p>We review the finished job with you and register your warranty coverage.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog" aria-labelledby="faq-heading">
+    <div class="container" style="max-width:820px">
+      <div class="section-head center">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-heading">Common Roofing Questions</h2>
+      </div>
+      <div>
+        <details class="faq-item" open>
+          <summary>Do you offer free estimates?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Yes. Every inspection and written estimate is free with no obligation, whether it's a small repair or a full commercial roof replacement.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How fast can you respond to an emergency roof repair?<span class="plus" aria-hidden="true"></span></summary>
+          <p>We prioritize emergency calls for active leaks and storm damage and aim to get a crew out quickly to stop further damage. Call (574) 360-0525 for the fastest response.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What roofing materials do you install?<span class="plus" aria-hidden="true"></span></summary>
+          <p>We install asphalt and composite shingles, metal roofing, wood shakes, tile, and flat/low-slope systems including EPDM, TPO, PVC, KEE and self-adhered modified bitumen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are you licensed, bonded and insured?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Yes — No Limit Roofing is fully licensed, bonded and insured, and is a GAF factory-certified contractor.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work on commercial and industrial buildings?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Yes. We handle residential, commercial and industrial roofing, including flat roof systems for commercial properties.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Not Sure Which Service You Need?</h2>
+          <p>Tell us what's going on — we'll take a look and recommend the right fix.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Get My Free Estimate</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

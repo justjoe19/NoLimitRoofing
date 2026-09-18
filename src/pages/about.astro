@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CertMarquee from "../components/CertMarquee.astro";
+
+const heroImage = "/images/service-roof-inspection-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "About", item: "https://nolimitroofingin.com/about.html" },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="About No Limit Roofing | Locally Owned Since 2010"
+  description="Meet No Limit Roofing — a locally owned, licensed, bonded and insured roofing contractor led by owner Jonathan Smith, serving Michiana since 2010."
+  canonical="https://nolimitroofingin.com/about.html"
+  ogImage="https://nolimitroofingin.com/images/service-roof-inspection-hero.webp"
+  ogTitle="About No Limit Roofing | Locally Owned Since 2010"
+  ogDescription="Locally owned, licensed, bonded and insured roofing contractor serving Michiana since 2010."
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span class="current">About</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">About Us</p>
+      <h1>Built On Craftsmanship, Not Shortcuts</h1>
+      <p class="lede">No Limit Roofing is a locally owned and operated, fully licensed, bonded and insured roofing contractor serving the Michiana region since 2010.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Our Story</p>
+        <h2>25+ Years Of Experience, One Name You Can Trust</h2>
+        <p class="lede mt-2">Founded in 2010, No Limit Roofing was built on a simple idea: give homeowners and business owners a roofing contractor who shows up, does the job right, and stands behind the work. Owner Jonathan Smith brings more than 25 years of roofing experience to every project and personally supervises each crew — from the first inspection to the final walkthrough.</p>
+        <p class="lede mt-2">Today, No Limit Roofing operates regional offices in Mishawaka and Plymouth, Indiana, with an Ohio location opening soon, specializing in residential, commercial and industrial roofing restoration across the greater South Bend–Elkhart region.</p>
+        <div class="chip-row mt-3">
+          <span class="chip">Licensed</span>
+          <span class="chip">Bonded</span>
+          <span class="chip">Insured</span>
+          <span class="chip">GAF Factory-Certified</span>
+          <span class="chip">Established 2010</span>
+        </div>
+      </div>
+      <div class="media-frame"><img src="/images/attic-insulation-installation.webp" alt="No Limit Roofing crew installing attic insulation" width="571" height="330" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="section section--fog">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Our Values</p>
+        <h2>What You Can Expect From Our Crew</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="card p-6">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
+          <h3 class="mt-2">Craftsmanship</h3>
+          <p class="mt-1 text-steel">Factory-certified installation methods on every roof, every time — no cut corners.</p>
+        </div>
+        <div class="card p-6">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/></svg></div>
+          <h3 class="mt-2">Integrity</h3>
+          <p class="mt-1 text-steel">Honest, written estimates and no-pressure recommendations — we tell you what your roof actually needs.</p>
+        </div>
+        <div class="card p-6">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3 class="mt-2">Communication</h3>
+          <p class="mt-1 text-steel">You'll always know your timeline, your options and your costs — before work begins.</p>
+        </div>
+        <div class="card p-6">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3 class="mt-2">Safety</h3>
+          <p class="mt-1 text-steel">Fully licensed, bonded and insured crews who follow strict jobsite safety practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="certs-heading">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Manufacturer Certifications</p>
+        <h2 id="certs-heading">Factory-Trained. Factory-Certified.</h2>
+        <p class="lede">Our certifications mean stronger warranty options and installation methods verified by the manufacturers themselves.</p>
+      </div>
+      <CertMarquee />
+    </div>
+  </section>
+
+  <section class="section section--fog" id="reviews" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Customer Reviews</p>
+        <h2 id="reviews-heading">Real Feedback From Michiana Homeowners</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <blockquote>&ldquo;They were prompt, accurate, and professional. I will definitely recommend them for your roofing needs.&rdquo;</blockquote>
+          <footer>K. Hall — South Bend, IN</footer>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <blockquote>&ldquo;Jon gave us stellar customer service and I didn't have to worry!! Highly recommend!!&rdquo;</blockquote>
+          <footer>L. Bauer — South Bend, IN</footer>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <blockquote>&ldquo;I am very happy with the work that was done and will definitely be recommending him to my friends and family!&rdquo;</blockquote>
+          <footer>S. Wilcox — South Bend, IN</footer>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <blockquote>&ldquo;Jonathan was very professional and his team moved very quickly to get my new roof completed. Thank you!&rdquo;</blockquote>
+          <footer>S. Rosado — Michiana</footer>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <blockquote>&ldquo;They worked real hard and got the job done. We love the look of the roof and received several compliments from the neighbors.&rdquo;</blockquote>
+          <footer>D. Beery — South Bend, IN</footer>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+          <blockquote>&ldquo;They were quick to respond. Repairs were done with thoughtfulness to avoid future similar problems!&rdquo;</blockquote>
+          <footer>S. Zellers — Greater South Bend</footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Let's Talk About Your Roof</h2>
+          <p>Free, no-pressure estimates from an owner-supervised crew.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Get My Free Estimate</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

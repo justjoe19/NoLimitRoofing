@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const heroImage = "/images/attic-insulation-installation-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Gallery", item: "https://nolimitroofingin.com/gallery.html" },
+    ],
+  },
+];
+
+const items = [
+  { src: "/images/service-tear-off-replacement.webp", alt: "Full roof tear off and replacement project", w: 600, h: 440, tag: "Tear-Off & Replacement", eager: true },
+  { src: "/images/completed-roofing-project.webp", alt: "Completed residential roof replacement", w: 1024, h: 576, tag: "Completed Project" },
+  { src: "/images/commercial-roofing-project.webp", alt: "Commercial roofing project", w: 843, h: 317, tag: "Commercial Roofing" },
+  { src: "/images/service-roof-overlay.webp", alt: "Roof overlay installation", w: 600, h: 440, tag: "Roof Overlay" },
+  { src: "/images/service-emergency-repair.webp", alt: "Emergency roof repair after storm damage", w: 600, h: 440, tag: "Emergency Repair" },
+  { src: "/images/service-roof-inspection.webp", alt: "Roof inspection in progress", w: 600, h: 440, tag: "Roof Inspection" },
+  { src: "/images/service-soft-wash-cleaning.webp", alt: "Soft wash roof cleaning treatment", w: 600, h: 440, tag: "Soft Wash Cleaning" },
+  { src: "/images/service-decking.webp", alt: "New deck build project", w: 571, h: 330, tag: "Decking" },
+  { src: "/images/service-remodel.webp", alt: "Home exterior remodel project", w: 571, h: 330, tag: "Remodel" },
+  { src: "/images/attic-insulation-installation.webp", alt: "Attic insulation installation", w: 571, h: 330, tag: "Insulation" },
+  { src: "/images/shingle-color-options.webp", alt: "Shingle color and style options", w: 600, h: 141, tag: "Shingle Options" },
+  { src: "/images/service-roof-maintenance.webp", alt: "Roof maintenance service", w: 600, h: 440, tag: "Maintenance" },
+];
+---
+
+<BaseLayout
+  title="Project Gallery | No Limit Roofing"
+  description="See completed roofing, decking, remodeling and commercial projects from No Limit Roofing across the Michiana region."
+  canonical="https://nolimitroofingin.com/gallery.html"
+  ogImage="https://nolimitroofingin.com/images/attic-insulation-installation-hero.webp"
+  ogTitle="Project Gallery | No Limit Roofing"
+  ogDescription="Completed roofing, decking, remodeling and commercial projects across the Michiana region."
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span class="current">Gallery</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">Our Work</p>
+      <h1>Recent Roofing &amp; Exterior Projects</h1>
+      <p class="lede">A look at real repairs, replacements and builds completed across South Bend, Mishawaka, Plymouth and the surrounding Michiana region.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-grid">
+        {items.map((item) => (
+          <figure class="gallery-item">
+            <img src={item.src} alt={item.alt} width={item.w} height={item.h} loading={item.eager ? undefined : "lazy"} />
+            <figcaption class="tag">{item.tag}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Have A Project Like This?</h2>
+          <p>Get a free estimate and see what No Limit Roofing can do for your home or business.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Get My Free Estimate</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

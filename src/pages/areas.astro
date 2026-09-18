@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const heroImage = "/images/service-roof-overlay-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://nolimitroofingin.com/areas.html" },
+    ],
+  },
+];
+
+const locationPinPath = "M20.9 17.4 12 22l-8.9-4.6A2 2 0 0 1 2 15.6V8.4a2 2 0 0 1 1.1-1.8L12 2l8.9 4.6A2 2 0 0 1 22 8.4v7.2a2 2 0 0 1-1.1 1.8Z";
+
+const counties = [
+  { name: "St. Joseph County, IN", note: "Home to our Mishawaka regional office.", cities: ["South Bend", "Mishawaka", "Granger", "Osceola"] },
+  { name: "LaPorte County, IN", note: "Residential and commercial roofing coverage.", cities: ["LaPorte", "Michigan City", "Westville"] },
+  { name: "Marshall County, IN", note: "Home to our Plymouth regional office.", cities: ["Plymouth", "Bourbon", "Bremen"] },
+  { name: "Berrien County, MI", note: "Cross-border coverage into southwest Michigan.", cities: ["St. Joseph", "Benton Harbor", "Niles"] },
+  { name: "Cass County, MI", note: "Serving communities across southwest Michigan.", cities: ["Cassopolis", "Dowagiac", "Edwardsburg"] },
+  { name: "Greater South Bend–Elkhart Region", note: "Regional coverage across the wider Michiana area.", cities: ["Elkhart", "Goshen", "Nappanee"] },
+];
+---
+
+<BaseLayout
+  title="Service Areas | Roofing Contractor Serving Michiana"
+  description="No Limit Roofing serves St. Joseph, LaPorte & Marshall Counties in Indiana and Berrien & Cass Counties in Michigan, with regional offices in Mishawaka and Plymouth, IN."
+  canonical="https://nolimitroofingin.com/areas.html"
+  ogImage="https://nolimitroofingin.com/images/service-roof-overlay-hero.webp"
+  ogTitle="Service Areas | No Limit Roofing"
+  ogDescription="Serving St. Joseph, LaPorte & Marshall Counties IN and Berrien & Cass Counties MI."
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span class="current">Service Areas</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">Where We Work</p>
+      <h1>Proudly Serving The Michiana Region</h1>
+      <p class="lede">Regional offices in Mishawaka and Plymouth, Indiana put a factory-certified crew close to home across five counties — with an Ohio location opening soon.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="counties-heading">
+    <div class="container">
+      <h2 id="counties-heading" class="visually-hidden">Counties We Serve</h2>
+      <div class="grid grid-3">
+        {counties.map((county) => (
+          <div class="area-card">
+            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={locationPinPath}/><path d="M12 22V12M12 12 3.1 6.6M12 12l8.9-5.4"/></svg></div>
+            <h3>{county.name}</h3>
+            <p class="text-steel">{county.note}</p>
+            <ul>
+              {county.cities.map((city) => <li>{city}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="priority-cities-heading">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">City Pages</p>
+        <h2 id="priority-cities-heading">Priority Service Areas</h2>
+        <p class="lede">Detailed, city-specific pages for our core markets — more are added as our project history grows in each area.</p>
+      </div>
+      <div class="chip-row" style="justify-content:center">
+        <a class="chip" href="/service-areas/south-bend.html">South Bend, IN</a>
+        <a class="chip" href="/service-areas/mishawaka.html">Mishawaka, IN</a>
+        <a class="chip" href="/service-areas/granger.html">Granger, IN</a>
+        <a class="chip" href="/service-areas/elkhart.html">Elkhart, IN</a>
+        <a class="chip" href="/service-areas/niles.html">Niles, MI</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Our Locations</p>
+        <h2>Two Regional Offices, One More On The Way</h2>
+        <p class="lede mt-2">We keep crews close to the neighborhoods we serve. Give us a call and we'll connect you with the team nearest you.</p>
+        <div class="grid grid-cols-2 mt-6">
+          <div class="card p-6">
+            <h3>Mishawaka, IN</h3>
+            <p class="mt-1 text-steel">Regional Office</p>
+            <a class="btn btn-outline-dark mt-3" href="tel:+15743600525">Call This Office</a>
+          </div>
+          <div class="card p-6">
+            <h3>Plymouth, IN</h3>
+            <p class="mt-1 text-steel">Regional Office</p>
+            <a class="btn btn-outline-dark mt-3" href="tel:+15743600525">Call This Office</a>
+          </div>
+        </div>
+        <p class="mt-3 text-steel">A new location is opening soon in Ohio.</p>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Mishawaka,+IN&output=embed" title="Map of No Limit Roofing's Michiana service area" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Don't See Your Area Listed?</h2>
+          <p>Give us a call — we may still be able to help outside these counties.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Get My Free Estimate</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+const serviceGroups = [
+  {
+    title: "Roofing",
+    href: "/roofing.html",
+    links: [
+      { href: "/roofing/roof-replacement.html", label: "Roof Replacement" },
+      { href: "/roofing/roof-repair.html", label: "Roof Repair" },
+      { href: "/roofing/emergency-roof-repair.html", label: "Emergency Roof Repair" },
+      { href: "/roofing/roof-inspections.html", label: "Roof Inspections" },
+      { href: "/roofing/asphalt-shingle-roofing.html", label: "Asphalt Shingle Roofing" },
+    ],
+  },
+  {
+    title: "Storm Damage",
+    href: "/storm-damage.html",
+    links: [
+      { href: "/storm-damage/hail-damage.html", label: "Hail Damage" },
+      { href: "/storm-damage/wind-damage.html", label: "Wind Damage" },
+    ],
+  },
+  {
+    title: "Commercial",
+    href: "/commercial.html",
+    links: [
+      { href: "/commercial/repair.html", label: "Commercial Repair" },
+      { href: "/commercial/replacement.html", label: "Commercial Replacement" },
+      { href: "/commercial/tpo.html", label: "TPO Roofing" },
+      { href: "/commercial/epdm.html", label: "EPDM Roofing" },
+      { href: "/commercial/roof-coatings.html", label: "Roof Coatings" },
+      { href: "/commercial/maintenance.html", label: "Commercial Maintenance" },
+    ],
+  },
+];
+const allServiceLinks = serviceGroups.flatMap((g) => [{ href: g.href, label: g.title }, ...g.links]);
+
+// build.format "file" resolves the homepage's build-time URL to
+// "/index.html" rather than "/" — normalize so the Home link still matches.
+const currentPath = Astro.url.pathname === "/index.html" ? "/" : Astro.url.pathname;
+
+const isActive = (href: string) => currentPath === href;
+const isServicesActive = allServiceLinks.some((l) => currentPath === l.href);
+---
+
+<header class="site-header">
+  <div class="container header-bar">
+    <a class="brand" href="/">
+      <img src="/images/nlr-logo.webp" alt="No Limit Roofing logo" width="150" height="54" />
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul>
+        <li class="nav-dropdown">
+          <details>
+            <summary aria-current={isServicesActive ? "page" : undefined}>
+              Services
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="nav-dropdown-panel nav-dropdown-panel--mega">
+              {serviceGroups.map((group) => (
+                <div class="nav-dropdown-group">
+                  <a href={group.href} class="nav-dropdown-group-title" aria-current={isActive(group.href) ? "page" : undefined}>{group.title}</a>
+                  {group.links.map((l) => <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined}>{l.label}</a>)}
+                </div>
+              ))}
+            </div>
+          </details>
+        </li>
+
+        <li><a href="/gallery.html" aria-current={isActive("/gallery.html") ? "page" : undefined}>Projects</a></li>
+        <li><a href="/areas.html" aria-current={isActive("/areas.html") ? "page" : undefined}>Areas</a></li>
+        <li><a href="/about.html" aria-current={isActive("/about.html") ? "page" : undefined}>About</a></li>
+        <li><a href="tel:+15743600525" class="nav-phone">(574) 360-0525</a></li>
+      </ul>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="/contact.html">Free Inspection</a>
+      </div>
+    </nav>
+  </div>
+</header>

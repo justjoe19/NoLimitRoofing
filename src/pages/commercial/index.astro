@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allServices = await getCollection("services");
+const commercialServices = allServices.filter((s) => s.data.group === "commercial");
+
+const heroImage = "/images/commercial-roofing-project-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Commercial", item: "https://nolimitroofingin.com/commercial.html" },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Commercial Roofing in Michiana | No Limit Roofing"
+  description="Commercial roof inspections, repair, replacement, TPO, EPDM, coatings and maintenance across Northern Indiana and Southwest Michigan."
+  canonical="https://nolimitroofingin.com/commercial.html"
+  ogImage="https://nolimitroofingin.com/images/commercial-roofing-project.webp"
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span class="current">Commercial</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">No Limit Commercial</p>
+      <h1>Protect The Building. Protect The Business Underneath It.</h1>
+      <p class="lede">Commercial roof inspections, repair, replacement, TPO, EPDM, roof coatings and scheduled maintenance across Northern Indiana and Southwest Michigan.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact.html">Request a Commercial Roof Assessment</a>
+        <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="commercial-services-heading">
+    <div class="container">
+      <h2 id="commercial-services-heading" class="visually-hidden">Commercial Roofing Services</h2>
+      <div class="grid grid-3">
+        {commercialServices.map((s) => (
+          <article class="card service-card">
+            <div class="media"><img src={s.data.heroImage.replace("-hero.webp", ".webp")} alt={s.data.title} width="843" height="317" loading="lazy" /></div>
+            <div class="body">
+              <h3>{s.data.title}</h3>
+              <p>{s.data.heroLede}</p>
+              <a class="more" href={`/commercial/${s.data.slug}.html`}>Learn more<span class="visually-hidden"> about {s.data.title}</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Ready For A Commercial Roof Assessment?</h2>
+          <p>Free inspection and written estimate — planned around your business, not the other way around.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Request an Assessment</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

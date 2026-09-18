@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allServices = await getCollection("services");
+const stormServices = allServices.filter((s) => s.data.group === "storm-damage");
+
+const heroImage = "/images/service-roof-overlay-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Storm Damage", item: "https://nolimitroofingin.com/storm-damage.html" },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Storm Damage Roof Inspection in Michiana | No Limit Roofing"
+  description="Hail damage, wind damage and storm damage inspections across Northern Indiana and Southwest Michigan. Free inspection, honest assessment, clear documentation."
+  canonical="https://nolimitroofingin.com/storm-damage.html"
+  ogImage="https://nolimitroofingin.com/images/service-roof-overlay.webp"
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <section class="hero hero--page" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container hero-inner wide">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span class="current">Storm Damage</span>
+      </nav>
+      <p class="eyebrow eyebrow--on-dark mt-3">Storm Damage</p>
+      <h1>Storms Don't Make Appointments</h1>
+      <p class="lede">Hail, wind, missing shingles, active leaks — roof damage isn't always obvious from the ground. We inspect it, document it, and explain it honestly.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact.html">Check My Roof</a>
+        <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="storm-services-heading">
+    <div class="container">
+      <h2 id="storm-services-heading" class="visually-hidden">Storm Damage Services</h2>
+      <div class="grid grid-3">
+        <article class="card service-card">
+          <div class="media"><img src="/images/service-emergency-repair.webp" alt="Emergency roof repair after storm damage" width="600" height="440" loading="lazy" /></div>
+          <div class="body">
+            <h3>Emergency Roof Repair</h3>
+            <p>Active leak or visible damage right now? This gets priority.</p>
+            <a class="more" href="/roofing/emergency-roof-repair.html">Learn more<span class="visually-hidden"> about Emergency Roof Repair</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        {stormServices.map((s) => (
+          <article class="card service-card">
+            <div class="media"><img src={s.data.heroImage.replace("-hero.webp", ".webp")} alt={s.data.title} width="600" height="440" loading="lazy" /></div>
+            <div class="body">
+              <h3>{s.data.title}</h3>
+              <p>{s.data.heroLede}</p>
+              <a class="more" href={`/storm-damage/${s.data.slug}.html`}>Learn more<span class="visually-hidden"> about {s.data.title}</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">The No Limit Roof Check™</p>
+        <h2>We Inspect It. We Photograph It. We Explain It. You Decide.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>We Inspect</h3><p>Accessible shingles, flashing, penetrations, vents, ridges, valleys and visible decking condition.</p></div>
+        <div class="step"><h3>We Photograph</h3><p>Clear documentation of what we find — useful whether you file an insurance claim or not.</p></div>
+        <div class="step"><h3>We Explain</h3><p>A plain-language rundown of what it means, with no upsell and no pressure.</p></div>
+        <div class="step"><h3>You Decide</h3><p>Repair, replace, or do nothing — it's your call, backed by an honest inspection.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Not Sure If Your Roof Was Damaged?</h2>
+          <p>A free inspection is the only way to know for sure.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0">
+          <a class="btn bg-white text-accent-dark" href="/contact.html">Schedule My Roof Check</a>
+          <a class="btn btn-outline-light" href="tel:+15743600525">Call (574) 360-0525</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
