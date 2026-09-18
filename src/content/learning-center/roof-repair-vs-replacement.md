@@ -1,9 +1,9 @@
 ---
-title: "Roof Repair vs. Roof Replacement: How To Decide"
+title: "Roof Repair vs. Replacement: How To Decide"
 metaDescription: "How to tell whether your roof needs a repair or a full replacement — the factors that actually matter, explained plainly."
 publishDate: 2026-09-15
 excerpt: "Not every roof problem means a new roof. Here's how to actually tell the difference."
-heroImage: "/images/crew-roofer-chimney-flashing.webp"
+heroImage: "/images/crew-roofer-chimney-flashing-hero.webp"
 draft: false
 ---
 

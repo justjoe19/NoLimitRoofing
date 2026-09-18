@@ -41,15 +41,16 @@ const schema = [
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" aria-labelledby="articles-heading">
     <div class="container">
+      <h2 id="articles-heading" class="visually-hidden">Latest Articles</h2>
       {articles.length === 0 ? (
         <p class="lede text-center">New articles are on the way — check back soon.</p>
       ) : (
         <div class="grid grid-3">
           {articles.map((article) => (
             <article class="card service-card">
-              <div class="media"><img src={article.data.heroImage} alt={article.data.title} width="600" height="440" loading="lazy" /></div>
+              <div class="media"><img src={article.data.heroImage.replace("-hero.webp", ".webp")} alt={article.data.title} width="600" height="440" loading="lazy" /></div>
               <div class="body">
                 <p class="text-[0.8rem] font-bold text-steel">{dateFormatter.format(article.data.publishDate)}</p>
                 <h3>{article.data.title}</h3>

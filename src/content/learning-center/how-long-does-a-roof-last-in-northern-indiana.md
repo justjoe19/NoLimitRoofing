@@ -3,7 +3,7 @@ title: "How Long Does A Roof Last In Northern Indiana?"
 metaDescription: "What actually determines how long a roof lasts in the Michiana climate — material, installation quality, and ventilation, explained."
 publishDate: 2026-09-03
 excerpt: "The material matters less than most homeowners think. Here's what actually determines a roof's lifespan here."
-heroImage: "/images/drone-aerial-finished-roof-manicured.webp"
+heroImage: "/images/drone-aerial-finished-roof-manicured-hero.webp"
 draft: false
 ---
 

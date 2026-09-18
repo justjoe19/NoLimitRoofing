@@ -15,7 +15,7 @@ const { Content } = await render(entry);
 const d = entry.data;
 
 const canonical = `https://nolimitroofingin.com/learning-center/${entry.id}.html`;
-const ogImage = `https://nolimitroofingin.com${d.heroImage}`;
+const ogImage = `https://nolimitroofingin.com${d.heroImage.replace("-hero.webp", ".webp")}`;
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
@@ -44,7 +44,7 @@ const schema = [
 ---
 
 <BaseLayout
-  title={`${d.title} | No Limit Roofing Learning Center`}
+  title={`${d.title} | No Limit Roofing`}
   description={d.metaDescription}
   canonical={canonical}
   ogImage={ogImage}

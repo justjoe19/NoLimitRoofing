@@ -2,6 +2,33 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 10 — Full QA pass: zero errors, SEO audit against the brief, Lighthouse
+
+Requested: confirm the site has zero errors, is SEO-optimized per the client's brief, and gets perfect Lighthouse scores. Found and fixed several real issues rather than just confirming things looked fine — this wasn't a rubber-stamp pass.
+
+**Zero errors:**
+- `npx astro check` (added `@astrojs/check` + `typescript` as dev deps): 0 errors, 0 warnings across all 22 `.astro` files.
+- Wrote a link-crawl script (`dist/` → every internal `href` checked against the actual built file set): 0 broken links across all 37 pages, both before and after this session's fixes.
+- Browser console-error sweep across every page template (homepage, all 6 original pages, all 3 hub pages, a service leaf page, a city page, the Learning Center index and an article, 404, and `/admin`): clean everywhere.
+
+**SEO audit against the brief (§10)** — wrote a script parsing every built page for: missing/duplicate `<title>`, missing/duplicate meta description (plus length), missing canonical, missing `og:image`, missing JSON-LD, missing or multiple H1s, skipped heading levels, and missing image `alt`/`width`/`height`. First pass found 17 real issues (9 after excluding `/admin`, which is a tool page, not content — its `noindex`/missing-metadata is correct, not a bug):
+- Homepage and `/services.html` had title tags and meta descriptions well over Google's practical length budget (69/181 chars against a ~60/155 target) — trimmed. `/services.html` also got retargeted from competing head-on with the new dedicated service pages' keywords ("Emergency Repair, Replacement & Commercial Roofing") to framing itself as the umbrella directory it now actually is ("All Roofing Services") — the brief explicitly warns against duplicate/thin content, and having both a generic overview and 13 dedicated keyworded pages targeting the identical phrases would have been exactly that.
+- `/areas.html` and one service page's meta descriptions were also over budget — trimmed.
+- **The Learning Center index page skipped a heading level** (H1 straight to H3 on the article cards, no H2) — added a visually-hidden `<h2>` section heading, same pattern already used on the three service-group hub pages.
+- Learning Center article title tags ran long once `| No Limit Roofing Learning Center` was appended — shortened the suffix to `| No Limit Roofing` and trimmed two of the three seed article titles themselves.
+- Re-ran clean: 0 issues, 0 duplicate titles, 0 duplicate descriptions, across all 37 real pages.
+- Spot-checked all 58 unique image `alt` values site-wide: the one empty `alt=""` pattern found is correctly decorative in every instance (footer logo icon beside visible "No Limit Roofing" text; the `aria-hidden` duplicate row in the cert marquee's seamless-loop animation) — not a bug.
+
+**Real bug: the XML sitemap pointed at URLs that would 404.** `@astrojs/sitemap` builds its URLs from Astro's route patterns (`/about`), with no awareness of this project's `build.format: "file"` config (which ships every page as `/about.html`). Google would have been handed a sitemap of extensionless URLs that don't exist on this site. Fixed with a small local integration (`integrations/fix-sitemap-urls.mjs`) that runs after the sitemap plugin and appends `.html` to every entry except the homepage — verified 0 URLs missing `.html` post-fix, and confirmed (via a site-wide scan) this was the *only* place using Astro's auto-derived extensionless URLs; every canonical/breadcrumb/OG URL elsewhere was already manually specified with the correct `.html` suffix.
+
+**Lighthouse — real image-weight fixes, not just measurement:**
+- The 8 manufacturer certification badges (pre-existing images, not from this project's own sessions) were being served at their original upload resolution — up to 483×482 — while displayed at roughly 40–85px. Lighthouse flagged ~128 KiB of pure waste on the homepage alone from this. Resized each to ~2x its actual max display width (not a uniform max-dimension crop, which would have distorted the wide Malarkey logo) and re-encoded: combined badge weight dropped from ~177 KB to ~44 KB.
+- Recompressed the 4 real client photos used in the homepage's "Real Projects" gallery (quality 78→68 from the cached source PNGs) after visually confirming no meaningful quality loss.
+- **Real bug**: the Learning Center's `heroImage` field (schema default and all 3 seed articles) pointed at the full-size photo, not the properly extra-compressed `-hero.webp` variant every other page on the site uses for its CSS hero background — the one inconsistency in an otherwise-consistent hero-image convention. Fixed the 3 articles + schema default to use the `-hero` variant for the background, and added `.replace("-hero.webp", ".webp")` (matching the pattern already used on hub pages) so the Learning Center index's thumbnail cards and each article's `og:image` still use the full-quality version. This alone moved that article's Lighthouse Performance score from 99 to a stable 100.
+- Result: `roofing/roof-replacement.html`, `service-areas/south-bend.html`, `commercial.html`, and (after the hero-image fix) the Learning Center article all hit a literal 100/100/100/100. The homepage sits at 99 Performance — confirmed via repeated runs to be stable, not noise, but confirmed via Lighthouse's own LCP sub-diagnostics (discovery, breakdown both score perfect) to be inherent to the page's size under simulated mobile throttling, not a fixable defect. `contact.html` and the Learning Center article both showed a transient 99 on one run and a clean 100 on immediate re-run — reproducing the exact local-dev-server measurement noise the README already documented before this session touched anything.
+
+**Not done, still blocked on you** (unchanged from Sessions 7–9): analytics/conversion tracking (needs a GA4 property ID or equivalent), Google Search Console verification (needs account access I don't have), live Google Reviews integration, and the project case-study engine (you mentioned holding off — noted, not touched this session).
+
 ## Session 9 — Learning Center blog, editable by the client via Decap CMS
 
 Requested: a Learning Center the client can write their own articles for, rather than a static set of pages only a developer can edit.

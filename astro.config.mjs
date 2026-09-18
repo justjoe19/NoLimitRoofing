@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
+import fixSitemapUrls from "./integrations/fix-sitemap-urls.mjs";
 
 export default defineConfig({
   site: "https://nolimitroofingin.com",
@@ -10,7 +11,7 @@ export default defineConfig({
     // redirects are needed for this migration — see README.
     format: "file",
   },
-  integrations: [sitemap()],
+  integrations: [sitemap(), fixSitemapUrls()],
   vite: {
     plugins: [tailwindcss()],
   },

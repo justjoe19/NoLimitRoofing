@@ -1,9 +1,9 @@
 ---
-title: "What Does Hail Damage Actually Look Like On A Roof?"
+title: "What Does Hail Damage Look Like On A Roof?"
 metaDescription: "Hail damage rarely looks dramatic from the ground. Here's what to actually look for, and why an inspection matters more than a visual check."
 publishDate: 2026-09-10
 excerpt: "It almost never looks like what people expect. Here's what hail damage actually looks like up close."
-heroImage: "/images/service-emergency-repair.webp"
+heroImage: "/images/service-emergency-repair-hero.webp"
 draft: false
 ---
 

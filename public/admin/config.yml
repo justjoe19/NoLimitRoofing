@@ -41,8 +41,8 @@ collections:
       - label: "Cover Photo"
         name: "heroImage"
         widget: "image"
-        default: "/images/drone-aerial-finished-roof-charcoal.webp"
-        hint: "The banner image at the top of the article and on the listing card."
+        default: "/images/drone-aerial-finished-roof-charcoal-hero.webp"
+        hint: "The banner image at the top of the article and on the listing card. Landscape photos work best — around 1200px wide is plenty; there's no need to upload a huge original file."
 
       - label: "Publish Date"
         name: "publishDate"

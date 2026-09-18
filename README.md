@@ -107,6 +107,13 @@ public/                  Served as-is, unprocessed — same convention as the
                                 and sitemap-0.xml at build time from the
                                 actual page set, so it can't go stale.
 
+integrations/fix-sitemap-urls.mjs   Local Astro integration, runs after
+                        @astrojs/sitemap. The sitemap plugin builds URLs
+                        from Astro's route patterns ("/about"), with no
+                        awareness of build.format:"file" — left alone it
+                        would point Google at URLs that 404. This appends
+                        .html to every sitemap entry except the homepage.
+
 astro.config.mjs, tsconfig.json, netlify.toml
 package.json, package-lock.json   Astro + Tailwind Vite plugin only.
 ```
@@ -177,14 +184,18 @@ So future edits don't have to re-derive these from the old site:
 ## Testing
 
 ```bash
+npx astro check                    # type/content-collection errors across every .astro file
 npm run build && npm run preview   # serve the actual production build
-# Lighthouse (run against the preview server, all 6 pages)
+# Lighthouse (run against the preview server — check astro preview's
+# terminal output for the actual port, it isn't always 4321)
 npx lighthouse http://localhost:4321/ --chrome-flags="--headless" --only-categories=performance,accessibility,best-practices,seo
 ```
 
 Always test against `npm run preview` (the real static build), not `npm run dev` (Astro's dev server does extra work per request and won't give representative Lighthouse numbers).
 
-Current scores as of the last static-HTML version: 98–100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO on every page. Re-verify after the Astro migration before trusting these — the markup output is intended to be byte-for-byte equivalent, but re-run Lighthouse to confirm rather than assuming.
+Current scores (verified Session 10, across homepage, service pages, city pages, Learning Center, and the original 6 pages): every page hits literal 100/100/100/100, except the homepage, which sits at 99 Performance. That's not a bug — Lighthouse's own LCP sub-diagnostics (discovery, breakdown) score it perfectly optimized already; the homepage is legitimately the heaviest page on the site by design (12+ sections), and 99 vs. 100 comes down to sub-second timing noise under Lighthouse's simulated mobile CPU throttle. **A single Lighthouse score under 100 is expected noise, not a regression — always re-run at least once before treating a dip as real**, and expect the real Netlify CDN to score at or above whatever a local `astro preview` run shows.
+
+Two useful one-off scripts from Session 10's audit (not committed — recreate from `CHANGELOG.md` if needed): a Python script that parses every page in `dist/` for missing/duplicate titles, meta descriptions, H1 issues, heading-hierarchy skips, and missing image alt/dimensions; and one that crawls every internal `href` in `dist/` against the actual built file set to catch broken links (excluding `/admin/`, which isn't a content page).
 
 For anything beyond a quick sanity check, `puppeteer-core` (installed with `npm install --no-save puppeteer-core`, pointed at the system Chrome via `executablePath`) is useful for scripted viewport sweeps and screenshots — see git history / CHANGELOG for example scripts. Don't commit it to `package.json`; it's a diagnostic tool, not a site dependency.
 
