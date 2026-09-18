@@ -29,3 +29,5 @@ relatedLinks:
 Flat and low-slope commercial roofs fail gradually, most often through slow drainage problems, seam wear, or flashing that's come loose — all of which are inexpensive to catch early and expensive to ignore. A scheduled maintenance program from No Limit Roofing means a documented visit that checks drainage and ponding water, seams, flashing and penetrations, with a written report after every visit rather than a verbal "looks fine."
 
 Ponding water in particular is one of the more common causes of premature membrane failure on flat roofs, and it's often addressable before it becomes a leak. We serve commercial and industrial buildings across Northern Indiana and Southwest Michigan, and we can set up a maintenance schedule that fits your building and budget.
+
+If regular maintenance is turning up more wear than it used to, our Learning Center guide on [commercial roof coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) explains how to think about the next step.

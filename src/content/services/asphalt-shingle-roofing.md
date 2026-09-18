@@ -32,4 +32,4 @@ Asphalt and composite shingles are the roofing system on the large majority of h
 
 The shingle itself is only part of what determines how a roof performs. Proper decking, ice and water shield protection in vulnerable areas, correct underlayment, starter strip, ridge protection, drip edge, and — critically — attic ventilation all affect how long a shingle roof actually lasts versus its rated warranty term. A well-installed mid-tier shingle will often outperform a premium shingle installed poorly underneath.
 
-Whether you're deciding between standard 3-tab and architectural (dimensional) shingles, or comparing manufacturer color and style options, we'll walk through it as part of a free, no-pressure written estimate.
+Whether you're deciding between standard 3-tab and architectural (dimensional) shingles, or comparing manufacturer color and style options, we'll walk through it as part of a free, no-pressure written estimate. If you're weighing impact resistance for hail season too, our Learning Center guide on [architectural vs. impact-resistant shingles](/learning-center/architectural-vs-impact-resistant-shingles.html) explains the real difference.

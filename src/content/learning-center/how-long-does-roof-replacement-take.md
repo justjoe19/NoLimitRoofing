@@ -26,7 +26,7 @@ A straightforward, simply-shaped roof on a single-story home moves faster than a
 
 A tear-off that reveals damaged or soft decking adds time, since that decking has to be replaced before new roofing can go on — this is also one of the reasons a firm timeline can't be promised until the crew is actually on the roof.
 
-## Weather
+## How Michiana weather affects roof replacement timelines
 
 Roofing work depends on dry conditions and reasonable temperatures for proper shingle sealing. Rain can pause work mid-job, and very cold weather (see our related article on winter roof replacement) can affect how shingles seal, though it doesn't rule out winter work entirely.
 
@@ -46,6 +46,6 @@ Most residential jobs start early to make full use of daylight and good working 
 
 A job isn't finished when the last shingle goes on — cleanup includes removing debris, a magnetic sweep of the yard and driveway for stray nails, and a final walk-through where any questions about the finished work get addressed before the crew leaves. If something doesn't look right once it's done, that's the time to raise it, not weeks later.
 
-## What we tell you before the crew shows up
+## Getting an accurate roof replacement timeline
 
 Every estimate includes a specific timeline for your roof, not a generic range — based on its actual size, complexity, and the materials you've chosen. If timing matters for your situation (an upcoming sale, an insurance deadline, a specific event), tell us during the estimate and we'll factor it into scheduling where we can. Call (574) 360-0525 or request a free inspection to get a real timeline for your project.

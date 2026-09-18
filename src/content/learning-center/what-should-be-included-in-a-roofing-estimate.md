@@ -44,7 +44,7 @@ Whether tear-off debris removal and job-site cleanup are included, and what that
 
 ## Contact and licensing information
 
-The contractor's license, bonding and insurance status should be verifiable, not just claimed. Ask if you're not sure how to confirm it.
+For any contractor working in St. Joseph, LaPorte or Marshall Counties in Indiana or Berrien and Cass Counties in Michigan, license, bonding and insurance status should be verifiable, not just claimed. Ask if you're not sure how to confirm it.
 
 ## Payment terms and schedule
 
@@ -58,6 +58,6 @@ Ventilation upgrades or corrections (ridge vents, soffit vents, and how they wor
 
 If a contractor gives you a number over the phone or in a quick conversation without a written breakdown, that's not yet a real estimate regardless of how specific it sounded verbally. Ask for it in writing before making any decision — a legitimate contractor will have no issue providing that.
 
-## What we include
+## What a No Limit Roofing estimate includes
 
 Every estimate we provide covers all of the above, in writing, before any work begins — free, with no obligation. If a competing estimate you've received doesn't include most of this, that's worth asking the other contractor about directly. Call (574) 360-0525 or request a free inspection to see what a complete estimate actually looks like.

@@ -34,3 +34,5 @@ A leaking roof doesn't always mean a full replacement — most of the repair cal
 Every repair starts with a free inspection. We look at accessible shingles, flashing, penetrations, vents, ridges and valleys, and visible decking condition, and we explain what we find before recommending anything — not after. If the fix is a targeted repair, that's what we'll quote. If we think the roof is past the point repairs make sense, we'll tell you that honestly instead of patching something that won't last.
 
 We handle gutter repair alongside roof repairs when the two are related, since water management around the roofline is often part of the same underlying problem. All repair work comes from an owner-supervised, GAF factory-certified crew, with the same free-estimate, no-pressure approach we use on every job.
+
+Not sure whether your roof needs a repair or something more? Our Learning Center guide on [repair vs. replacement](/learning-center/roof-repair-vs-replacement.html) walks through the factors that actually decide it.

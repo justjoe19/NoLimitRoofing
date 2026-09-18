@@ -58,6 +58,6 @@ A few patterns show up again and again: accepting a bid from a contractor who ne
 
 Two estimates with very different totals aren't necessarily one "good deal" and one "rip-off" — they might simply cover different things. Before comparing price, line up: the specific material brand and product line (not just "architectural shingles"), whether it's a tear-off or an overlay, what's included for decking replacement if damage is found, the warranty terms on both material and labor, and whether cleanup and disposal are included. Once those match, the price difference actually means something.
 
-## Why we don't publish a price list
+## Why we don't publish roof replacement prices online
 
 Any number we put on a page without seeing your actual roof would be a guess dressed up as a quote — and guesses are how homeowners end up with a "quote" that doubles once someone actually gets on the roof. What we do instead: a free, in-person inspection, followed by a written estimate that reflects your specific roof, not an average. If you want a real number, that's the fastest way to get one — call (574) 360-0525 or request an inspection online.

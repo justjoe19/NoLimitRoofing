@@ -16,21 +16,21 @@ faqs:
 draft: false
 ---
 
-Most people picture hail damage as something obvious — a hole punched through the roof, shingles visibly torn up. In reality, hail damage on an asphalt shingle roof is usually much subtler than that, which is exactly why so much of it goes unnoticed until it turns into a leak.
+Across Michiana, most people picture hail damage as something obvious — a hole punched through the roof, shingles visibly torn up. In reality, hail damage on an asphalt shingle roof is usually much subtler than that, which is exactly why so much of it goes unnoticed until it turns into a leak.
 
-## Granule loss
+## Hail damage: granule loss on shingles
 
 Asphalt shingles are coated in a layer of granules that protect the asphalt underneath from UV damage and give the shingle its color. A hail strike can knock those granules loose in a small, roughly circular area. From the ground, this can look like nothing at all — from up close, it shows up as a bare or discolored spot where the darker asphalt layer is exposed.
 
-## Bruising
+## Hail damage: bruised shingles
 
 A "bruise" on a shingle is an area where the hail impact has compressed the shingle's mat without fully cracking it. It often feels soft or slightly spongy when pressed, and can be hard to spot visually until it's pointed out — but it weakens the shingle at that spot and can develop into a crack or a leak over time.
 
-## Cracking and splitting
+## Hail damage: cracked and split shingles
 
 Harder or larger hail can crack a shingle outright, sometimes in a spiderweb pattern around the impact point. This is more visible than granule loss or bruising, but it's still often missed from the ground, especially on a multi-story roof or one with a steep pitch.
 
-## Damage to soft metals
+## Hail damage to vents, flashing and gutters
 
 Hail doesn't just affect shingles. Vents, flashing, gutters, and other soft metal components on a roof can show dents from hail even when the shingles nearby look fine. Dented gutters or vent caps are sometimes the most visible sign from the ground that a roof took a hail hit worth having checked out.
 

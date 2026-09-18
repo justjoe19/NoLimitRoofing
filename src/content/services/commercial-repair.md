@@ -29,3 +29,5 @@ relatedLinks:
 Flat and low-slope commercial roofs fail differently than residential shingle roofs, and finding the actual source of a leak often means tracing it — water on a low-slope membrane can travel well away from the point where it actually entered. No Limit Roofing repairs EPDM, TPO, PVC, KEE and modified bitumen systems across Northern Indiana and Southwest Michigan, with the same free-inspection, honest-assessment approach we use on residential work.
 
 A commercial roof leak is also a business interruption, not just a maintenance issue, so scheduling matters. We'll work with your operating hours and constraints where the repair allows, and give you a clear written estimate and timeline before work begins — no surprises mid-job.
+
+If you're comparing membrane systems for the repair or a future replacement, our Learning Center guide on [TPO vs. EPDM for commercial buildings](/learning-center/tpo-vs-epdm-for-commercial-buildings.html) breaks down the real tradeoffs.

@@ -33,3 +33,5 @@ Hail is one of the least obvious forms of roof damage — a storm can pass throu
 A hail damage inspection from No Limit Roofing means getting up on the roof and checking for the specific signs hail leaves behind, not just a glance from the ground. We document what we find with photos and explain it in plain language — including telling you honestly if the damage doesn't warrant a claim or repair.
 
 If you do decide to file an insurance claim, we can provide clear documentation of the damage we found to support that process. We're a roofing contractor, not an insurance company, and we won't promise a claim outcome that isn't ours to guarantee — but an accurate, honest inspection is the best starting point either way.
+
+Not sure what you're looking for? Our Learning Center guide on [what hail damage actually looks like on a roof](/learning-center/what-does-hail-damage-look-like.html) walks through the specific, often-subtle signs.

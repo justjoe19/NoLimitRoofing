@@ -18,7 +18,7 @@ draft: false
 
 Yes — and it's genuinely one of the more commonly missed forms of roof damage, because the assumption that "no missing shingles means no damage" is wrong. Wind can compromise a roof's protection without removing a single shingle.
 
-## How this actually happens
+## How wind breaks a shingle seal without removing it
 
 Asphalt shingles are sealed to each other and to the roof deck with an adhesive strip that activates in warm weather. A strong gust can lift a shingle's edge just enough to break that seal without tearing the shingle off entirely. The shingle can settle back down and look completely normal — while the seal underneath it is now broken.
 
@@ -26,22 +26,22 @@ Asphalt shingles are sealed to each other and to the roof deck with an adhesive 
 
 Wind can also crease a shingle along its width, creating a visible or barely visible line where the shingle has been bent. A creased shingle has been structurally weakened at that line even if it's still fully attached and covering the roof.
 
-## Why this matters
+## Why wind-damaged shingles still leak later
 
 A shingle with a broken seal or a crease no longer sheds water the way it's designed to. It doesn't necessarily leak immediately — it can take weeks or months of subsequent rain and wind before a leak actually shows up, which makes it easy to miss the connection back to the original storm.
 
-## What to look for (and why it's hard to see yourself)
+## Signs of wind damage on a roof
 
-Creased or lifted shingles, disturbed flashing, and loosened vents or pipe boots are the signs — and all of them are far easier to spot from on the roof than from the ground or a ladder at the eave. If you know your area had a high-wind event (thunderstorms, straight-line winds, anything with sustained gusts), it's worth a free inspection even if nothing looks wrong from the driveway.
+Across Northern Indiana and Southwest Michigan, creased or lifted shingles, disturbed flashing, and loosened vents or pipe boots are the signs — and all of them are far easier to spot from on the roof than from the ground or a ladder at the eave. If you know your area had a high-wind event (thunderstorms, straight-line winds, anything with sustained gusts), it's worth a free inspection even if nothing looks wrong from the driveway.
 
 ## Why wind and hail often show up together
 
 Michiana's storm season regularly brings wind and hail in the same weather system, and a roof can end up with both kinds of damage from a single event — lifted or creased shingles from wind, granule loss or bruising from hail. That combination is part of why a full inspection after a significant storm makes more sense than checking for just one type of damage. See our related article on [what hail damage actually looks like](/learning-center/what-does-hail-damage-look-like.html) for the visual signs of the other half of that picture.
 
-## How age affects wind vulnerability
+## How roof age affects wind damage risk
 
 Older shingles with weakened or degraded sealant strips are more prone to wind lift than newer ones, even at wind speeds that wouldn't affect a recently installed roof. This is one more reason a roof nearing the end of its expected service life is worth a closer look after any significant wind event, even if a newer roof on the same street shows no signs of trouble.
 
-## What happens if we find it
+## Wind damage repair: what to expect
 
 In most cases, a targeted repair of the affected shingles is enough — wind damage doesn't automatically mean replacement. We'll inspect, document what we find with photos, and explain it honestly before recommending anything. Call (574) 360-0525 or request a free inspection if your area has had recent storms.

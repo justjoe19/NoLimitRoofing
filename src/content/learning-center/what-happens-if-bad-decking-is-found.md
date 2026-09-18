@@ -18,15 +18,15 @@ draft: false
 
 Decking is the wood layer underneath your shingles, underlayment, and ice and water shield — it's the structural surface everything else is attached to. It's also the one part of a roofing system you genuinely can't fully evaluate until the old roofing material comes off, which is why "we found some bad decking" is one of the more common things homeowners hear mid-project. Here's what it actually means.
 
-## Why decking fails
+## What causes roof decking to fail
 
-Long-term moisture intrusion — from an old leak, ice damming, or age-related wear in ventilation — is the most common cause. Decking can also be damaged by wood rot, insect activity, or simply age in an older home. None of this is usually visible from inside the attic unless the damage is already severe.
+Long-term moisture intrusion — from an old leak, ice damming, or age-related wear in ventilation, all common in Michiana's freeze-thaw climate — is the most common cause. Decking can also be damaged by wood rot, insect activity, or simply age in an older home. None of this is usually visible from inside the attic unless the damage is already severe.
 
-## How it's found
+## How bad decking is found during tear-off
 
 During tear-off, the crew walks the deck and checks for soft spots, visible rot, delamination (plywood layers separating), or sagging. This is a normal, expected part of any full roof replacement — checking the decking isn't optional, because installing new roofing over bad decking just seals the problem in rather than fixing it.
 
-## What happens next
+## What happens after bad decking is found
 
 Damaged decking sections get cut out and replaced with new material before the new roofing system goes on. This is priced separately from the base roofing estimate, specifically because it can't be accurately assessed — or priced — until the old roof is actually off. A trustworthy contractor will show you the damage, explain what's being replaced and why, and give you a clear price before doing the work, not just add a surprise line item to the final bill.
 

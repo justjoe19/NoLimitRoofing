@@ -28,4 +28,4 @@ relatedLinks:
 
 EPDM rubber membrane roofing has one of the longest track records of any commercial low-slope system, and it remains a straightforward, durable choice for flat and low-slope buildings across Northern Indiana and Southwest Michigan. No Limit Roofing installs new EPDM systems and repairs existing ones — seams and flashing are the most common points needing attention on an aging EPDM roof, and they're usually addressable without a full replacement.
 
-If you're weighing EPDM against TPO or another membrane system for a new roof or replacement, we'll go through the practical differences for your specific building as part of a free estimate.
+If you're weighing EPDM against TPO or another membrane system for a new roof or replacement, we'll go through the practical differences for your specific building as part of a free estimate. See our Learning Center guide on [TPO vs. EPDM for commercial buildings](/learning-center/tpo-vs-epdm-for-commercial-buildings.html) for the full comparison.

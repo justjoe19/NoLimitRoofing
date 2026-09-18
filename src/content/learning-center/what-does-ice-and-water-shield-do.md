@@ -22,11 +22,11 @@ Ice and water shield is a self-adhering waterproof membrane installed directly o
 
 Two specific failure modes: ice damming and wind-driven rain. An ice dam forms when heat escaping from the attic melts snow on the upper roof, which then refreezes at the colder eaves, creating a ridge of ice that can back water up underneath the shingles above it. Wind-driven rain can be forced sideways and upward under shingles during severe storms, especially in valleys where two roof planes meet. Regular shingles and standard underlayment aren't designed to handle water pushed in that direction — ice and water shield is.
 
-## Where it goes
+## Where ice and water shield is installed
 
 Typically along the eaves (extending far enough up-roof to get past where ice dams commonly form), in valleys, around chimneys and other penetrations, and along roof-to-wall intersections — the specific spots on a roof where water is most likely to find a way in if it isn't protected.
 
-## How it works
+## How ice and water shield actually works
 
 Unlike standard felt or synthetic underlayment, ice and water shield is self-sealing around fastener penetrations — when a nail goes through it during shingle installation, the membrane seals back around the nail shank rather than leaving an open puncture point. That's what allows it to hold up under standing water or ice, not just shed rain that's flowing downhill normally.
 

@@ -30,18 +30,18 @@ This is a separate rating, tested by dropping steel balls onto the shingle to si
 
 Hail is a real factor in this region's storm season, and Class 4 impact-resistant shingles are specifically built to hold up better against it — fewer bruises, less granule loss, fewer post-storm repair calls over the life of the roof. Some homeowners' insurance carriers also offer premium discounts for Class 4 roofing, though that varies by carrier and policy — worth checking directly with your insurance company rather than assuming.
 
-## How the impact rating is actually tested
+## How UL 2218 testing rates impact-resistant shingles
 
 UL 2218 rates shingles on a scale from Class 1 to Class 4 by dropping steel balls of increasing size from set heights directly onto the shingle and inspecting for cracking on the underside — the layer that indicates the shingle's waterproofing has actually been compromised, not just cosmetic marking on the surface. Class 4, the highest rating, means the shingle withstood the largest steel ball (2 inches, simulating a significant hailstone) without that kind of cracking. It's a real, standardized lab test, not a marketing claim — which is why it's worth asking a contractor for the specific product's UL rating rather than taking "impact-resistant" as a given.
 
-## What "architectural" doesn't tell you
+## Architectural shingles aren't automatically impact-resistant
 
 Because architectural shingles are the more premium-looking, more common choice on new installations, it's an easy assumption that they're automatically tougher against hail too — but construction quality and impact resistance are tested and rated separately. A beautiful, thick architectural shingle with no Class 4 rating will perform against hail the way a standard-rated shingle does, not automatically better just because it looks and feels more substantial.
 
-## Life expectancy and warranty differences
+## Impact-resistant shingle warranty and lifespan
 
 Because Class 4 shingles resist granule loss and cracking from hail impact better over time, some manufacturers back them with warranty terms that reflect that — worth comparing directly against a standard architectural product's warranty terms for the same manufacturer line, rather than assuming they're identical.
 
-## How to decide
+## Choosing between architectural and impact-resistant shingles
 
 If you're already choosing architectural shingles for their look and durability, asking about a Class 4 impact-resistant option from the same manufacturer line is a reasonable next question — it's often a modest cost difference for a real reduction in storm-damage risk. We'll walk through the specific architectural and impact-resistant options available from our certified manufacturers (GAF, IKO, Owens Corning, Malarkey, Atlas) as part of your estimate. Call (574) 360-0525 or request a free inspection to see real samples and pricing for your roof.

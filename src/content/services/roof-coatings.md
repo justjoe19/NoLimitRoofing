@@ -29,3 +29,5 @@ relatedLinks:
 Not every aging commercial roof needs a full replacement. When the underlying membrane and structure are still sound, a coating system — including silicone coatings — can seal minor wear, add a reflective layer that can help with cooling costs, and meaningfully extend the roof's service life at a fraction of full replacement cost.
 
 The key is an honest assessment before recommending a coating. No Limit Roofing will tell you directly if a roof is a good candidate for coating versus needing repair or replacement instead — a coating applied to a roof with real structural or membrane damage just delays a bigger problem rather than solving it. We serve commercial and industrial buildings across Northern Indiana and Southwest Michigan.
+
+See our Learning Center guide on [commercial roof coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) for the full breakdown of when each option actually makes sense.

@@ -2,6 +2,18 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 19 — Tighten the actual wording for SEO, not just structure
+
+Follow-up to Session 18, prompted by a direct question: "are the articles worded in a way that increases SEO?" The honest answer was no, not fully — the FAQ schema and added length from Session 18 helped, but a closer look at the actual wording turned up three real gaps:
+
+**Most H2 subheadings carried no keyword.** Headings like "Why this matters," "The bottom line," "Seaming method," and "What doesn't change" read fine to a person but gave Google nothing to match a search query against or pull into a featured snippet. Rewrote the generic ones across all 15 articles into keyword-descriptive headings — e.g. "Seaming method" → "TPO vs. EPDM Seaming: Heat-Welded vs. Adhesive," "How this actually happens" → "How Wind Breaks A Shingle Seal Without Removing It." Left headings alone where they already did this job (the hiring-questions article's question-format H2s, the roofing-estimate article's line-item labels).
+
+**Local keywords were nearly absent.** Checked and found 9 of the 15 articles never mentioned Michiana, Indiana, Michigan, or any city/county name anywhere in the body — a real gap for a local service business where every article is additional surface area for local-relevance signal. Added a natural local reference (Michiana, Northern Indiana, Southwest Michigan, or the specific county list) to every article that lacked one, without forcing it into places it didn't fit.
+
+**Internal linking was sparse and entirely one-directional.** Only 8 cross-links existed across all 15 Learning Center articles, and — checked directly — zero links existed from any of the 13 service pages into the Learning Center. Added one contextual, on-topic link from every service page's body copy into its most relevant Learning Center article (e.g. Roof Replacement → the cost and timeline guides, TPO/EPDM pages → the TPO vs. EPDM comparison, Hail/Wind Damage pages → their matching damage-signs articles), so authority and relevance now flow both directions instead of only outward from the Learning Center.
+
+Verified: 0 SEO audit issues and 0 broken links across all 48 pages after the changes.
+
 ## Session 18 — Deepen all 15 Learning Center articles for SEO
 
 Requested: make sure every Learning Center article has "plenty of content that is optimized for SEO." The 15 articles (written in Sessions 9 and 12) were solid but thin — 389–527 words each, no FAQ content, no FAQPage structured data. Thin content on educational/informational pages is a real, well-established SEO weakness (less topical coverage for Google to match against related searches, fewer internal-linking opportunities, no rich-result eligibility), so this wasn't cosmetic.

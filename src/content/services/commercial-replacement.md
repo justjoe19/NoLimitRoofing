@@ -29,3 +29,5 @@ relatedLinks:
 A commercial roof replacement is a significant investment, and it deserves the same transparency we bring to residential work: a full tear-off, an honest look at the deck and insulation underneath, and a written scope of work before anything starts. No Limit Roofing replaces EPDM, TPO, PVC, KEE and modified bitumen systems for offices, retail and industrial buildings across Northern Indiana and Southwest Michigan.
 
 Because a commercial replacement is a larger project than a repair, scheduling and sequencing matter even more — we'll plan the work around your operation where possible and give you a clear timeline as part of the estimate, not a vague window.
+
+Not sure a full replacement is what your roof actually needs? See our Learning Center guide on [commercial roof coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html).

@@ -16,7 +16,7 @@ faqs:
 draft: false
 ---
 
-Commercial roof coatings get pitched two very different ways depending on who's selling them: as a smart, cost-effective way to extend a sound roof's life, or as a way to make an aging roof "look fixed" without addressing what's actually wrong with it. The honest answer is that coatings are a legitimate tool — for the right roof, and not for every roof.
+For commercial and industrial buildings across Northern Indiana and Southwest Michigan, roof coatings get pitched two very different ways depending on who's selling them: as a smart, cost-effective way to extend a sound roof's life, or as a way to make an aging roof "look fixed" without addressing what's actually wrong with it. The honest answer is that coatings are a legitimate tool — for the right roof, and not for every roof.
 
 ## When a coating makes sense
 
@@ -26,7 +26,7 @@ A coating is a good fit when the underlying membrane and structure are still sou
 
 If the membrane has significant seam failure, if there's evidence of water intrusion into the insulation or deck below, or if the roof has multiple recurring leaks in different areas, a coating doesn't fix any of that — it seals over the surface while the underlying problem continues. This is the scenario where a coating gets used to delay an honest conversation about repair or replacement, and it's the one we won't recommend, because it typically costs more in the long run once the real problem eventually forces a replacement anyway.
 
-## How to actually tell which situation you're in
+## How to tell if your roof needs a coating or replacement
 
 This requires a real inspection, not a guess from the ground or a quick walk-through — checking the membrane condition, seams, flashing, drainage, and (where there's reason for concern) taking a look at what's happening at the deck level. A moisture scan can identify wet insulation under an intact-looking membrane, which is often the deciding factor between "coat it" and "replace it."
 
@@ -34,7 +34,7 @@ This requires a real inspection, not a guess from the ground or a quick walk-thr
 
 Coating products vary by base chemistry (silicone, acrylic, and others), each with different strengths around UV resistance, ponding water tolerance, and application conditions. The right product depends on your specific membrane type, climate exposure, and roof geometry — not a single universal "best" coating regardless of building.
 
-## Budgeting for the roof's full remaining life, not just this decision
+## Budgeting for commercial roof replacement vs. coating
 
 A coating decision shouldn't be made in isolation from the roof's overall age and condition. If a roof is genuinely early-to-mid in its service life and structurally sound, a coating is a legitimate way to extend value. If a roof is already near the end of its realistic lifespan regardless of surface condition, a coating mainly delays an expense that's coming anyway — worth factoring into a facility's longer-term capital planning rather than treating as a standalone, one-time choice.
 
@@ -42,6 +42,6 @@ A coating decision shouldn't be made in isolation from the roof's overall age an
 
 Beyond a visual walk of the membrane, a thorough assessment includes checking seam integrity, flashing at every penetration and roof edge, drainage performance (including where water is pooling and for how long after rain), and, where warranted, a moisture scan to check for wet insulation beneath an intact-looking surface. The output is a specific, documented picture of your roof's real condition — not a guess based on how it looks from the ground or a quick walk-through.
 
-## The honest tradeoff
+## Commercial roof coating vs. replacement: the honest tradeoff
 
 A coating is meaningfully less expensive than a full replacement, which is exactly why it's tempting to reach for it even when it isn't the right fit. We'll tell you directly which situation your roof is actually in — including when the honest answer is that a coating would just delay a bigger expense — rather than default to whichever option is easier to sell. Call (574) 360-0525 or request a free commercial roof assessment.

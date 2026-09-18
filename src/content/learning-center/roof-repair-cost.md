@@ -16,13 +16,13 @@ faqs:
 draft: false
 ---
 
-Roof repair cost has a wider range than most homeowners expect, mostly because "repair" covers everything from resealing one piece of flashing to replacing a significant section of decking and shingles after storm damage. The factors below are what actually separate a small repair bill from a large one.
+Across Michiana, roof repair cost has a wider range than most homeowners expect, mostly because "repair" covers everything from resealing one piece of flashing to replacing a significant section of decking and shingles after storm damage. The factors below are what actually separate a small repair bill from a large one.
 
-## What actually needs fixing
+## What type of damage drives roof repair cost
 
 A single failed flashing point or a small area of wind-damaged shingles is a straightforward, lower-cost repair. Damage that extends into the decking — soft spots, rot, or storm damage that's punched through — costs more, because decking material and additional labor get added to the job.
 
-## How accessible the damage is
+## Roof accessibility and repair pricing
 
 A repair on an easily accessible section of a single-story roof is faster and less expensive than the same repair on a steep, multi-story roof requiring more safety equipment and setup time.
 
@@ -38,14 +38,14 @@ An emergency repair — stabilizing an active leak or storm damage same-day or n
 
 Not every repair is a like-for-like patch. Sometimes the more cost-effective and longer-lasting fix is replacing a larger section around the damage rather than patching the smallest possible area — especially if the surrounding material is already near the end of its service life or shows early signs of the same wear that caused the original problem. We'll explain the tradeoff honestly rather than defaulting to the smallest, cheapest-looking fix if it isn't actually the better value.
 
-## Signs a repair is turning into a pattern
+## Signs you need roof replacement, not another repair
 
 If you've had more than one repair call in the past couple of years, it's worth stepping back and asking whether the roof is nearing the point where repeated repairs cost more over time than a single replacement would. See our [repair vs. replacement guide](/learning-center/roof-repair-vs-replacement.html) for the specific factors that tip that decision one way or the other.
 
-## What's typically covered by insurance vs. out of pocket
+## Does homeowners insurance cover roof repair?
 
 Repairs tied to a specific storm event — wind, hail, a fallen branch — are often eligible for insurance coverage depending on your policy and your carrier's assessment. Repairs from gradual wear, age, or a maintenance issue (like ongoing minor leaks from ventilation problems) typically aren't. We can document the cause of damage clearly to support a claim either way, but whether it's covered is ultimately your insurance company's call.
 
-## Why a phone quote isn't a real quote
+## Why we don't quote roof repairs over the phone
 
 Nobody can accurately price a roof repair without seeing it — "it's leaking" could mean a five-minute flashing fix or a much larger problem, and there's no way to tell which from a phone call. That's why every job starts with a free, in-person inspection: we look at the actual damage, explain what we find, and give you a written estimate based on your roof, not a phone-call guess. Call (574) 360-0525, or request an inspection online, and we'll give you a real number instead of a range that may not apply to your situation.

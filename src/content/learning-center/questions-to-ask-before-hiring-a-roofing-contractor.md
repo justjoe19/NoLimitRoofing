@@ -56,7 +56,7 @@ Beyond the questions themselves, a few patterns are worth noticing on their own:
 
 ## Local vs. traveling "storm chaser" crews
 
-After major storms, it's common for out-of-town crews to canvas the hardest-hit neighborhoods offering fast, discounted work. Some are legitimate; many disappear before a warranty ever needs to be honored, leaving homeowners with no one to call if something goes wrong later. A locally based, established contractor with a verifiable address and history is easier to hold accountable years down the road, which matters given how long a roof is expected to last.
+After major storms across Michiana, it's common for out-of-town crews to canvas the hardest-hit neighborhoods offering fast, discounted work. Some are legitimate; many disappear before a warranty ever needs to be honored, leaving homeowners with no one to call if something goes wrong later. A locally based, established contractor with a verifiable address and history is easier to hold accountable years down the road, which matters given how long a roof is expected to last.
 
 ## Why local, long-term presence matters
 

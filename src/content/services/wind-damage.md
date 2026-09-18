@@ -33,3 +33,5 @@ High wind is one of the more deceptive causes of roof damage, because it doesn't
 No Limit Roofing inspects for the specific signs wind damage leaves behind: creased or lifted shingles, disturbed flashing, and loosened vents or penetrations, in addition to the more obvious signs like missing shingles or exposed decking. If we find damage, we'll explain exactly what happened and what it will take to fix, and in most cases a targeted repair is enough — a full replacement isn't automatically the answer.
 
 If your area has recently had a high-wind event, a free inspection is worth scheduling even without visible damage from the ground. No Limit Roofing serves St. Joseph, LaPorte and Marshall Counties in Indiana and Berrien and Cass Counties in Michigan, and every inspection comes with a free, no-pressure written estimate.
+
+For more on how this happens, see our Learning Center guide on [wind damage that doesn't blow shingles off](/learning-center/can-wind-damage-shingles-without-blowing-off.html).

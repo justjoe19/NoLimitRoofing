@@ -42,6 +42,6 @@ Rather than relying on age alone, a few physical signs matter more directly: shi
 
 Keeping gutters clear (so water doesn't back up under the eaves), trimming overhanging branches (which cause abrasion and hold moisture against the roof surface), and addressing minor issues — a lifted shingle, a small flashing gap — promptly rather than letting them sit are the maintenance habits that make the biggest real difference. None of it is expensive or complicated; it's mostly about not ignoring small problems until they become bigger ones.
 
-## The practical takeaway
+## How long should your roof actually last?
 
 If you want a rough planning number: a well-installed architectural shingle roof with proper ventilation, in this climate, commonly reaches 20-25+ years before replacement becomes the clear right call — but that number moves in both directions based on installation quality, ventilation, and how well the roof has been maintained and inspected along the way. A roof inspection can tell you far more about where your specific roof actually stands than any general number can.

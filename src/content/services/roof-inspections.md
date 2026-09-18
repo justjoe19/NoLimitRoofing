@@ -34,3 +34,5 @@ Not every roof problem is visible from the ground, and not every homeowner needs
 A typical inspection covers accessible shingles, flashing around chimneys and walls, roof penetrations like vents and pipes, ridges and valleys, gutters, and visible decking condition — the places small problems actually start. If we find something worth addressing, we'll explain what it is, why it matters, and what it would take to fix, as part of a free written estimate. If the roof checks out, we'll tell you that too.
 
 Inspections are useful on a regular schedule (catching wear before it becomes a leak) and especially after a storm, when hail or wind damage isn't always obvious from a ladder or the ground. No Limit Roofing has performed inspections across the Michiana region since 2010, and every one is free, with no obligation.
+
+Hiring a contractor for the first time? Our Learning Center guide on [questions to ask before hiring a roofing contractor](/learning-center/questions-to-ask-before-hiring-a-roofing-contractor.html) covers what to look for beyond the inspection itself.
