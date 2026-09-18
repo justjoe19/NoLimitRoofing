@@ -1,0 +1,21 @@
+---
+// A static, evenly-spaced row of manufacturer badges — deliberately not a
+// scrolling marquee (see CHANGELOG). Every badge always stays on one line;
+// CSS shrinks them together as the viewport narrows instead of wrapping.
+const badges = [
+  { src: "/images/badge-gaf-certified.webp", alt: "GAF Certified Contractor", width: 80, height: 80 },
+  { src: "/images/badge-iko-select.webp", alt: "IKO RoofPro Select Contractor", width: 80, height: 80 },
+  { src: "/images/badge-iko-preferred.webp", alt: "IKO RoofPro Preferred Contractor", width: 80, height: 80 },
+  { src: "/images/badge-owens-corning.webp", alt: "Owens Corning Roofing Contractor", width: 88, height: 80 },
+  { src: "/images/badge-malarkey.webp", alt: "Malarkey Roofing Products Contractor", width: 360, height: 80 },
+  { src: "/images/badge-atlas.webp", alt: "Atlas Roofing Contractor", width: 114, height: 79 },
+  { src: "/images/badge-certainteed-shinglemaster.webp", alt: "CertainTeed Shingle Master", width: 82, height: 79 },
+  { src: "/images/badge-srs-topshield-pro.webp", alt: "SRS TopShield PRO Contractor", width: 170, height: 80 },
+];
+---
+
+<div class="cert-row">
+  {badges.map((b) => (
+    <img src={b.src} alt={b.alt} width={b.width} height={b.height} loading="lazy" />
+  ))}
+</div>

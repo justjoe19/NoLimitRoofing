@@ -2,6 +2,17 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 13 — Certification badges: scrolling marquee → static row
+
+Requested: the manufacturer badges under the hero shouldn't scroll — one static row, evenly spaced, sized properly, resizing with the browser but never wrapping to a second line.
+
+- Removed the auto-scrolling marquee entirely (the `cert-marquee-track` animation, the duplicated `aria-hidden` badge group needed only to make the scroll loop seamless, the hover-to-pause handling, and the `prefers-reduced-motion` fallback it needed — all of that existed to serve the scroll behavior, so all of it goes with it, not just the animation itself).
+- Renamed `CertMarquee.astro` → `CertBadges.astro` and `.cert-marquee*` → `.cert-row*` — the old names described scrolling, and leaving "marquee" in the code after removing all motion would mislead whoever touches this next.
+- **No-wrap-while-shrinking, the actual technical ask**: `.cert-row` is a `flex-nowrap` row with `justify-content: space-between` for even spacing. Each badge gets `min-width: 0` — without it, flexbox's default `min-width: auto` floors every image at its own intrinsic width, which is exactly what forces wrapping once the row runs out of space. With it, `flex-shrink` can actually do its job: all 8 badges shrink together in proportion as the viewport narrows (verified at both ~1400px desktop and 380px mobile — same row, same order, no wrap, aspect ratios intact, Malarkey's wide logo and GAF's square badge both scale correctly rather than one hogging space).
+- Used each badge's real current file dimensions (from Session 10's resize) as the `width`/`height` attributes, replacing the old Session 7 placeholder values.
+
+Verified: build clean, 0 SEO audit issues across all 49 pages, checked visually on both the homepage and About page (both use this component) at desktop and mobile widths, 0 console errors.
+
 ## Session 12 — The remaining 12 Learning Center articles
 
 All 15 topics from the brief's §9 Learning Center list are now written (3 were seeded in Session 9; this session wrote the other 12): new roof cost factors, repair cost factors, wind damage without missing shingles, replacement timeline, bad decking, winter replacement, ice & water shield, architectural vs. impact-resistant shingles, what belongs in a roofing estimate, questions to ask before hiring a contractor, TPO vs. EPDM, and commercial coating vs. replacement.

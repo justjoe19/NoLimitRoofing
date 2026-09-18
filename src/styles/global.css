@@ -316,42 +316,28 @@
   .hero--page { @apply py-0; }
   .hero--page .hero-inner { @apply py-18 pb-12; }
 
-  /* ---------- Trust bar / certification marquee ---------- */
+  /* ---------- Trust bar / certification badge row ---------- */
   .trust-bar { @apply border-b border-mist bg-paper; }
   .trust-bar-inner { @apply py-6; }
 
-  /* A continuously-scrolling logo strip: the track holds two identical
-     groups back to back and animates left by exactly one group's width,
-     looping seamlessly. Pauses on hover so it's easy to read on purpose. */
-  .cert-marquee {
-    @apply relative w-full overflow-hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-    mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  /* A static row of manufacturer badges — deliberately not a scrolling
+     marquee. Every badge stays on one line at every viewport width:
+     flex-shrink (enabled via min-width: 0, which overrides the browser's
+     default min-width:auto that would otherwise floor each image at its
+     intrinsic size) lets them all shrink together in proportion as the
+     row narrows, instead of wrapping. justify-content spreads them evenly
+     across the full row width. */
+  .cert-row {
+    @apply flex w-full flex-nowrap items-center justify-between;
+    gap: clamp(0.75rem, 2.5vw, 2.5rem);
   }
-  .cert-marquee-track {
-    @apply flex w-max items-center gap-12;
-    animation: cert-marquee-scroll 32s linear infinite;
-  }
-  .cert-marquee:hover .cert-marquee-track,
-  .cert-marquee:focus-within .cert-marquee-track {
-    animation-play-state: paused;
-  }
-  .cert-marquee-group { @apply flex shrink-0 items-center gap-12; }
-  .cert-marquee-track img {
-    @apply h-10 w-auto shrink-0;
-    max-width: none;
-  }
-  @keyframes cert-marquee-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  /* Motion-sensitive users get the plain, fully-visible wrapped row instead
-     of an auto-scrolling one — the duplicate group (only needed to make the
-     loop seamless) is hidden so it doesn't just wrap into a repeated list. */
-  @media (prefers-reduced-motion: reduce) {
-    .cert-marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; }
-    .cert-marquee-track { width: 100%; flex-wrap: wrap; justify-content: center; }
-    .cert-marquee-group.cert-marquee-dup { display: none; }
+  .cert-row img {
+    flex: 0 1 auto;
+    min-width: 0;
+    width: auto;
+    height: auto;
+    max-height: 40px;
+    max-width: 100%;
   }
 
   /* ---------- Cards ---------- */
