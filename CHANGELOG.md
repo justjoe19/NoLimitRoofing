@@ -2,6 +2,16 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 16 — Fix a real blurry-image bug, and lighten the hero overlay
+
+Two requests in one pass:
+
+**"Built Here. Roofing Here." image was blurry and too large.** Turned out to be a real bug, not just a styling preference: `crew-roofer-chimney-flashing.webp` had been resized down to 560×700 back in Session 7, but the homepage displays it in a `.media-frame` that stretches to fill roughly half its grid column — comfortably wider than 560px on any normal desktop viewport, so the browser was upscaling a too-small source image, which is exactly what blur like this usually is. Regenerated the file from the original client-provided source photo (still on disk, 1122×1402) at 800×999 — sharp at the sizes it's actually displayed at anywhere on the site. Separately, capped this specific section's image at `max-width: 400px` (not a global `.media-frame` change, since that class is also used elsewhere like the About page) to address "takes up too much space."
+
+**Hero image overlay was too dark.** The dark gradient sitting over every hero background image (`.hero` in `global.css`) was at 90–93% opacity — dark enough that the actual photography underneath was barely visible, which undercuts the brief's own "cinematic drone/final-roof image" hero direction. Reduced to 64–72% opacity. This is a global change (affects every page's hero, not just the homepage), so checked color contrast wasn't compromised across hero photos of varying brightness — homepage, a bright-lawn photo (wind-damage), and a sky-heavy photo (commercial) — all still score a clean 100 Accessibility / color-contrast pass.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, Lighthouse accessibility 100 confirmed on 3 different hero photos after the overlay change.
+
 ## Session 15 — Bring back the YouTube video on the homepage
 
 Requested: swap the static image in the "What's Under Your Shingles Matters" (Roofing System) section for the YouTube video the original pre-Astro site had, instead of a photo.
