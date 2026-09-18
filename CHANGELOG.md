@@ -2,6 +2,18 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 12 — The remaining 12 Learning Center articles
+
+All 15 topics from the brief's §9 Learning Center list are now written (3 were seeded in Session 9; this session wrote the other 12): new roof cost factors, repair cost factors, wind damage without missing shingles, replacement timeline, bad decking, winter replacement, ice & water shield, architectural vs. impact-resistant shingles, what belongs in a roofing estimate, questions to ask before hiring a contractor, TPO vs. EPDM, and commercial coating vs. replacement.
+
+- **No invented pricing anywhere**, including on the two cost-guide topics the brief explicitly lists ("How Much Does a New Roof Cost," "How Much Does Roof Repair Cost") — both talk through the real factors that drive cost (size, complexity, material, decking condition, accessibility) rather than publishing a number with nothing real behind it. Matches the compliance guardrail from the brief and the approach already used in Session 9's seed articles.
+- Publish dates staggered weekly from 2026-06-23 through 2026-09-08 (ahead of the 3 existing articles' Sept dates) for a realistic-looking posting cadence, not all 15 dumped on one date.
+- Hero images assigned from the real client photography catalog (no stock/placeholder images used) with reasonable variety across articles.
+- Added 2 real internal cross-links between topically adjacent articles (estimate ↔ hiring questions, cost ↔ repair-vs-replacement) — small, but genuine internal linking per brief §10, not just decorative.
+- Same title-length audit script from Session 10 caught 3 article titles running long once ` | No Limit Roofing` was appended (69–76 chars) — trimmed all 3. Re-ran clean: 0 issues, 0 broken links, across all 49 pages (37 + 12 new articles).
+
+Site is now 49 pages. Learning Center content coverage from the brief is complete; going forward, new articles are the client's to add via the CMS built in Session 9, not something that needs another developer session by default.
+
 ## Session 11 — Chasing the homepage's last Lighthouse point
 
 Follow-up to Session 10: asked to try closing the homepage's 99-Performance gap even though it meant touching the hero image treatment. Documenting this because the *process* matters as much as the result — several plausible fixes were tried and measured, not just declared.
