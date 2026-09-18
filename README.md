@@ -1,12 +1,12 @@
 # No Limit Roofing — Website
 
-A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture. Currently 37 pages: the original 6 content pages + 404, 3 service-group hubs, 13 service pages, 10 city pages, and a Learning Center blog the client can write their own posts for (see "Learning Center & CMS" below). Full history in `CHANGELOG.md`.
+A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture. Currently 48 pages: 5 of the original 6 content pages + 404 (the Projects/gallery page was removed — see CHANGELOG Session 14), 3 service-group hubs, 13 service pages, 10 city pages, and a 15-article Learning Center blog the client can write their own posts for (see "Learning Center & CMS" below). Full history in `CHANGELOG.md`.
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
 ## Tech stack
 
-- **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 37 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
+- **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 48 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
 - **Tailwind CSS v4** via `@tailwindcss/vite` — source lives in `src/styles/global.css` (uses `@theme`/`@layer`, CSS-first config, no `tailwind.config.js`), compiled automatically as part of the Astro build. No separate CSS build step, no build artifact to avoid hand-editing.
 - **Vanilla JS** (`public/js/main.js`, no dependencies, loaded on every page) — mobile nav drawer, contact form validation + submission, lite YouTube embed, header scroll shadow.
 - **System font stack only** — no webfonts, by design. Zero font-load network cost, zero layout shift from font swap.
@@ -26,7 +26,7 @@ npm run build    # builds the static site into dist/
 npm run preview  # serves the dist/ build locally, for a production-accurate check
 ```
 
-Shared markup — header, footer, nav, cert-badge marquee — lives once each in `src/components/` and `src/layouts/BaseLayout.astro`, not duplicated per page. Page-specific content lives directly in each `src/pages/*.astro` file. When editing shared structure (nav links, footer, etc.), there is exactly one file to change, not seven.
+Shared markup — header, footer, nav, cert badge row — lives once each in `src/components/` and `src/layouts/BaseLayout.astro`, not duplicated per page. Page-specific content lives directly in each `src/pages/*.astro` file. When editing shared structure (nav links, footer, etc.), there is exactly one file to change, not seven.
 
 URLs are unchanged from the original static site (`/about.html`, not `/about`) — `astro.config.mjs` sets `build.format: "file"` specifically to preserve this, so no redirects were needed for this migration.
 
@@ -56,8 +56,9 @@ src/
                         click-outside/Escape/link-click closing on top.
                         Sets aria-current from the current URL.
     Footer.astro         Full site footer + the sticky mobile call bar.
-    CertMarquee.astro    The auto-scrolling manufacturer-badge strip
-                        (used on Home and About).
+    CertBadges.astro     Static, evenly-spaced manufacturer-badge row —
+                        never wraps, shrinks together as the viewport
+                        narrows (used on Home and About).
   styles/
     global.css          Tailwind source — design tokens (@theme) + component
                         classes (@layer components), e.g. .btn, .card, .hero.
@@ -65,9 +66,9 @@ src/
                         prose rules (headings/lists/links) since the base
                         layer strips default spacing/list-styles site-wide.
   pages/
-    index.astro, about.astro, services.astro,   The original 6 pages + 404.
-    gallery.astro, areas.astro, contact.astro,
-    404.astro
+    index.astro, about.astro, services.astro,   5 of the original 6 pages
+    areas.astro, contact.astro, 404.astro        (gallery.astro/Projects was
+                                                   removed — Session 14).
     roofing/index.astro, storm-damage/index.astro,   Group hub pages —
     commercial/index.astro                            hand-written, list
                                                         that group's services

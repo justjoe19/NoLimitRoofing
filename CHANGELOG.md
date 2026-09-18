@@ -2,6 +2,12 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 14 — Remove the Projects (gallery) page, for now
+
+Requested: take down the Projects page. Removed `src/pages/gallery.astro` entirely (not deployed anywhere yet, so a clean removal rather than a redirect/soft-hide), plus every reference to it: the "Projects" nav item, the "Projects" footer link, and the "View Our Projects" button on the homepage's Real Projects section — the section itself (the inline real-photo showcase) stays, since it doesn't depend on a page to link out to.
+
+`/gallery.html` now 404s. Re-ran the link-crawl and SEO audit scripts: 0 broken links, 0 issues, across the remaining 48 pages.
+
 ## Session 13 — Certification badges: scrolling marquee → static row
 
 Requested: the manufacturer badges under the hero shouldn't scroll — one static row, evenly spaced, sized properly, resizing with the browser but never wrapping to a second line.
