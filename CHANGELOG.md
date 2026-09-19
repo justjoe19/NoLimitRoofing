@@ -2,6 +2,14 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 22 — Hero overlay 2% darker, to mask upscaled-source softness
+
+Requested: darken the hero image overlay by 2% to help hide the pixelation on the 8 hero images that have no higher-res source (Session 17's real resolution ceiling — upscaled with Lanczos + unsharp mask as a best effort, but still soft compared to the 5 real-photo heroes).
+
+Bumped `.hero`'s dark linear-gradient wash by 2 percentage points at each of its 3 stops (`global.css`): 0.72→0.74, 0.66→0.68, 0.64→0.66. Left the orange radial accent glow untouched — this was specifically about the dark wash that sits over the photo, not the brand accent. A small, deliberate move in the opposite direction of Session 16's overlay-lightening change, not a reversal of it — 2 points back toward darker, not anywhere near the original 90-93%.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, checked visually on the homepage (real-photo hero) and an emergency-repair service page (upscaled-source hero) — the softness is less noticeable on the upscaled hero without meaningfully dimming the real-photo ones.
+
 ## Session 21 — Cert badges: two fixed rows, uniform viewport-driven sizing
 
 Follow-up to Session 20's badge work, in three quick passes: "a little bigger" (max-height 56px → 68px), then "put them into two rows, space them evenly apart to go the length of the page, and adjust size and spacing as the browser gets smaller," then a specific reorder mid-task (top row: Malarkey, Owens Corning, Atlas, SRS TopShield PRO; bottom row: the other 5).
