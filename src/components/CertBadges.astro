@@ -1,7 +1,7 @@
 ---
 // A static, evenly-spaced row of manufacturer badges — deliberately not a
-// scrolling marquee (see CHANGELOG). Every badge always stays on one line;
-// CSS shrinks them together as the viewport narrows instead of wrapping.
+// scrolling marquee (see CHANGELOG). CSS shrinks badges together as the
+// viewport narrows, and wraps to a second line if there isn't room.
 const badges = [
   { src: "/images/badge-gaf-certified.webp", alt: "GAF Certified Contractor", width: 80, height: 80 },
   { src: "/images/badge-iko-select.webp", alt: "IKO RoofPro Select Contractor", width: 80, height: 80 },
@@ -9,7 +9,8 @@ const badges = [
   { src: "/images/badge-owens-corning.webp", alt: "Owens Corning Roofing Contractor", width: 88, height: 80 },
   { src: "/images/badge-malarkey.webp", alt: "Malarkey Roofing Products Contractor", width: 360, height: 80 },
   { src: "/images/badge-atlas.webp", alt: "Atlas Roofing Contractor", width: 114, height: 79 },
-  { src: "/images/badge-certainteed-shinglemaster.webp", alt: "CertainTeed Shingle Master", width: 82, height: 79 },
+  { src: "/images/badge-certainteed-shinglemaster.webp", alt: "CertainTeed Select Shingle Master", width: 82, height: 79 },
+  { src: "/images/badge-certainteed-shinglemaster-2.webp", alt: "CertainTeed Shingle Master", width: 80, height: 80 },
   { src: "/images/badge-srs-topshield-pro.webp", alt: "SRS TopShield PRO Contractor", width: 170, height: 80 },
 ];
 ---

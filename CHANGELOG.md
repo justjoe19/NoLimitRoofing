@@ -2,6 +2,17 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 20 — Sharper GAF badge, a new CertainTeed badge, bigger cert row
+
+Pulled from the live `nolimitroofingin.com` site's "Exceptional at Roofs and more" section, which turned out to hold real, current badge assets not yet reflected here:
+
+- **`badge-gaf-certified.webp` was a blurry upscale.** The live site has the same badge at a clean 300×300 source; ours had been sourced/resized down to 80×80 at some earlier point and looked visibly soft next to it (compared side-by-side before touching anything). Regenerated from the live source at 160×160 (2× the badge's 80×80 display size, for a sharp retina render) — same badge, same claim, just no longer blurry.
+- **Found 3 more real badges on the live site not used anywhere on this one**: a GAF Lifetime Limited Warranty seal, a Google 5-star rating badge, and a second CertainTeed badge — "ShingleMaster," visually distinct from the "Select ShingleMaster" badge already in the cert row. Flagged the CertainTeed one specifically rather than assuming it was safe to swap in, since a different badge design could reflect an actual certification-tier change, not just a visual refresh — confirmed with the user it should be **added alongside** the existing one, not replace it, since both may be separately valid. The GAF Warranty and 5-star badges were declined for this pass.
+- Added `badge-certainteed-shinglemaster-2.webp` (168×168 source, sharp at the row's 80×80 display size) as a 9th badge.
+- **Cert row redesigned for the bigger set**: max badge height raised from 40px to 56px per explicit request ("bigger... easier to read"), and the row's Session 13 hard "never wrap" constraint was deliberately relaxed — `flex-nowrap` + `justify-content: space-between` (which shrank every badge together to force one line) replaced with `flex-wrap` + `justify-content: center`, so badges now hold their size and wrap to a second line on narrow viewports instead of shrinking. Verified by constraining the row to a 400px box and confirming it wraps to multiple rows (height grew from a single row to 396px, all 9 badges still present) rather than overflowing or over-shrinking.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, confirmed visually on both the homepage and About page (both use this shared component).
+
 ## Session 19 — Tighten the actual wording for SEO, not just structure
 
 Follow-up to Session 18, prompted by a direct question: "are the articles worded in a way that increases SEO?" The honest answer was no, not fully — the FAQ schema and added length from Session 18 helped, but a closer look at the actual wording turned up three real gaps:

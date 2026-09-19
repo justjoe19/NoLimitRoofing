@@ -328,15 +328,15 @@
      row narrows, instead of wrapping. justify-content spreads them evenly
      across the full row width. */
   .cert-row {
-    @apply flex w-full flex-nowrap items-center justify-between;
-    gap: clamp(0.75rem, 2.5vw, 2.5rem);
+    @apply flex w-full flex-wrap items-center justify-center;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
   }
   .cert-row img {
     flex: 0 1 auto;
     min-width: 0;
     width: auto;
     height: auto;
-    max-height: 40px;
+    max-height: 56px;
     max-width: 100%;
   }
 
