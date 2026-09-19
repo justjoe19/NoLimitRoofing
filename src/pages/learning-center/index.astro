@@ -6,7 +6,7 @@ const articles = (await getCollection("learningCenter", ({ data }) => !data.draf
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 
-const heroImage = "/images/service-roof-inspection-hero.webp";
+const heroImage = "/images/crew-shingle-install-hero.webp";
 const dateFormatter = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
 const schema = [

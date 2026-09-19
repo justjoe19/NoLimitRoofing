@@ -9,7 +9,7 @@ metaDescription: "Full roof replacement from a GAF factory-certified crew servin
 heroEyebrow: "Roof Replacement"
 heroHeadline: "A Full Replacement, Done Down To The Decking"
 heroLede: "When a roof is past the point repairs can fix, we replace it right — full tear-off, deck inspection, and a factory-certified installation built to outlast the warranty."
-heroImage: "/images/service-tear-off-replacement-hero.webp"
+heroImage: "/images/crew-shingle-install-hero.webp"
 highlights:
   - "Complete tear-off to the decking — no overlay shortcuts on a full replacement"
   - "Decking inspected and replaced where needed before any new material goes down"

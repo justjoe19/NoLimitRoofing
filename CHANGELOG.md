@@ -2,6 +2,38 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 24 — Pulled real photos from the live site to cut down image reuse
+
+Prompted by the user's own diagnosis of the underlying problem: "I don't have any additional photos to use right now, and we are re-using the ones we have over and over." Asked to (1) pull every usable real image off `nolimitroofingin.com` to combine with what we already have, (2) stop reusing the same photo across unrelated pages where avoidable, (3) put the best images in hero sections, and (4) not regress Lighthouse doing it.
+
+**Full site crawl, not just the homepage.** Fetched every page on the live site (`about-us`, `commercial-roofing`, `decking`, `emergency-roof-repairs`, `insulation`, `remodels`, `roof-inspections`, `roof-overlay`, `roof-shingles`, `roofing-maintenance`, `service-areas`, `services`, `soft-wash-roof-cleaning`, `tear-off-and-replace`) and extracted every `data-src`/`data-srcset` image URL from the raw HTML (the visible `src` is a lazy-load placeholder SVG, not the real image).
+
+**Verified every candidate before using it — this mattered.** Three real integrity problems caught by actually opening the files, not trusting filenames:
+- `NLR_COM_001.jpg` (used on their own `/commercial-roofing/` and `/roof-inspections/` pages) has a **"Fred Meyer" store sign** clearly visible in the background — a Pacific Northwest grocery chain with zero locations in Indiana or Michigan. Not a real No Limit Roofing job photo.
+- `NLR_COM_007.jpg` shows palm trees and arid hillside terrain — also geographically inconsistent with Michiana.
+- Two more (`No-Limit-Roofing-Commercial.png`, a mountain-backdrop metal roof close-up) had no verifiable connection to the company and read as generic stock. Excluded all five, despite them being the only "commercial roofing" photos found anywhere, including the client's own site — using them would have contradicted this site's own "real projects, not a sales pitch" positioning. The Commercial hero photo problem remains genuinely unsolved; still recommend real client photography as the actual fix.
+- The `service-*` stock photos already in use (emergency, inspections, maintenance, overlay, soft-wash, tear-off) turned out to be **the exact same files** at the exact same 600×440 resolution on the live site — confirmed this is a real, external resolution ceiling, not something this project failed to find a better source for.
+
+**What was genuinely real and new, verified by inspection:**
+- **5 county landmark photos** (`/service-areas/`, 675×390, the site's own upload ceiling — no larger version exists): the Michigan City lighthouse (LaPorte County), Four Winds Casino Dowagiac (Cass County), a Lake Michigan beach (Berrien County), downtown South Bend (St. Joseph County), a historic log cabin (Marshall County) — each checked against the actual place it claims to represent.
+- **2 real in-progress install action shots** (`services-img1871.png`, `services-img1872.png`) — visible crew, GAF shingle bundles, no geographic red flags.
+- **1 real deck/patio photo** (`decking-img0870.jpg`, 736×552) — a genuine resolution upgrade over the 571×330 file already in use for this exact content.
+- **1 real aerial "after" shot** (`about-img1880.jpg`) with a small baked-in watermark, consistent with other real photos already accepted on this site.
+- Also surfaced **one previously-overlooked real photo already sitting in this project's own source folder** (`6D930683…`, a 6th high-res, watermark-free residential drone shot from the client's original 16-photo batch) that had never been identified or used.
+
+**Reallocation, prioritizing the worst repeat offenders:**
+- **10 location pages** (previously drawing from just 3–4 recycled drone photos): the 5 real county landmarks now cover 8 of the 10 cities by their actual county (St. Joseph → South Bend/Mishawaka/Granger, Berrien → Buchanan/Niles/St. Joseph MI, Cass → Edwardsburg, Marshall → Plymouth); Elkhart and Goshen (Elkhart County has no landmark photo) got the newly-surfaced drone photo and one of the new action shots instead.
+- **About page**: replaced a thematically-mismatched roof-inspection stock photo with the real aerial "after" shot.
+- **Areas hub page**: replaced the same low-res stock overlay photo with the LaPorte County lighthouse — a genuine "here's the region we serve" fit for an area-overview page.
+- **Learning Center index + Roof Replacement service page**: moved off repeated stock/low-res heroes onto the two new real action shots.
+- **`service-decking.webp`** regenerated from the new higher-res source in place (same filename, same usage, just sharper).
+
+**Net effect on reuse** (counting every `-hero.webp` reference across all content): the worst offenders outside Commercial dropped from 5–6 repeats down to 2–3 (`service-roof-overlay` 5→2, `service-roof-inspection` 4→2, `drone-aerial-manicured` 6→3, `drone-aerial-pool` 4→2), and 8 more distinct real photos entered rotation. `commercial-roofing-project-hero` stays at 10 uses — unavoidable without real commercial photography, and now clearly documented as the one deliberate exception rather than an oversight.
+
+**Lighthouse, checked directly, not assumed**: ran Lighthouse against the actual preview build post-change — homepage 99 (unchanged), About 99, South Bend location page 100/100/100/100 (all four categories), Roof Replacement service page 100 Performance. New hero images went through the same Session 17 pipeline (Lanczos + unsharp for anything below native hero width, cropped to cut wasted background-position height, WebP at a tuned quality budget) specifically to avoid repeating that regression.
+
+Verified: 0 SEO/broken-link issues across all 48 pages (including a dedicated check for `--hero-image:url()` CSS references, which the standard href/src link checker doesn't catch), 0 console errors, spot-checked new heroes visually on South Bend, Edwardsburg, About, and Roof Replacement.
+
 ## Session 23 — Hero overlay another 5% darker
 
 Follow-up to Session 22: darkened the same 3 gradient stops another 5 points (0.74/0.68/0.66 → 0.79/0.73/0.71). Same rationale — masking the upscaled-source heroes' softness — just further in the same direction.
