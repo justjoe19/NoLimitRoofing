@@ -2,6 +2,12 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 23 — Hero overlay another 5% darker
+
+Follow-up to Session 22: darkened the same 3 gradient stops another 5 points (0.74/0.68/0.66 → 0.79/0.73/0.71). Same rationale — masking the upscaled-source heroes' softness — just further in the same direction.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, checked visually on the homepage.
+
 ## Session 22 — Hero overlay 2% darker, to mask upscaled-source softness
 
 Requested: darken the hero image overlay by 2% to help hide the pixelation on the 8 hero images that have no higher-res source (Session 17's real resolution ceiling — upscaled with Lanczos + unsharp mask as a best effort, but still soft compared to the 5 real-photo heroes).
