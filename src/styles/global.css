@@ -327,16 +327,18 @@
      intrinsic size) lets them all shrink together in proportion as the
      row narrows, instead of wrapping. justify-content spreads them evenly
      across the full row width. */
+  .cert-rows {
+    @apply flex w-full flex-col;
+    gap: clamp(1rem, 3vw, 2rem);
+  }
   .cert-row {
-    @apply flex w-full flex-wrap items-center justify-center;
-    gap: clamp(1.5rem, 4vw, 3.5rem);
+    @apply flex w-full flex-nowrap items-center justify-between;
+    gap: clamp(0.5rem, 3vw, 2rem);
   }
   .cert-row img {
-    flex: 0 1 auto;
-    min-width: 0;
+    flex: 0 0 auto;
     width: auto;
-    height: auto;
-    max-height: 68px;
+    height: clamp(28px, 6vw, 68px);
     max-width: 100%;
   }
 

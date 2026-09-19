@@ -1,22 +1,31 @@
 ---
-// A static, evenly-spaced row of manufacturer badges — deliberately not a
-// scrolling marquee (see CHANGELOG). CSS shrinks badges together as the
-// viewport narrows, and wraps to a second line if there isn't room.
-const badges = [
-  { src: "/images/badge-gaf-certified.webp", alt: "GAF Certified Contractor", width: 80, height: 80 },
-  { src: "/images/badge-iko-select.webp", alt: "IKO RoofPro Select Contractor", width: 80, height: 80 },
-  { src: "/images/badge-iko-preferred.webp", alt: "IKO RoofPro Preferred Contractor", width: 80, height: 80 },
-  { src: "/images/badge-owens-corning.webp", alt: "Owens Corning Roofing Contractor", width: 88, height: 80 },
-  { src: "/images/badge-malarkey.webp", alt: "Malarkey Roofing Products Contractor", width: 360, height: 80 },
-  { src: "/images/badge-atlas.webp", alt: "Atlas Roofing Contractor", width: 114, height: 79 },
-  { src: "/images/badge-certainteed-shinglemaster.webp", alt: "CertainTeed Select Shingle Master", width: 82, height: 79 },
-  { src: "/images/badge-certainteed-shinglemaster-2.webp", alt: "CertainTeed Shingle Master", width: 80, height: 80 },
-  { src: "/images/badge-srs-topshield-pro.webp", alt: "SRS TopShield PRO Contractor", width: 170, height: 80 },
+// Two static, evenly-spaced rows of manufacturer badges — deliberately not a
+// scrolling marquee (see CHANGELOG). Each row spans the full container width
+// with space-between, and badge size + row gap scale smoothly with the
+// viewport (see .cert-row img / .cert-rows in global.css) rather than
+// wrapping or shrinking only when a row runs out of room.
+const gaf = { src: "/images/badge-gaf-certified.webp", alt: "GAF Certified Contractor", width: 80, height: 80 };
+const ikoSelect = { src: "/images/badge-iko-select.webp", alt: "IKO RoofPro Select Contractor", width: 80, height: 80 };
+const ikoPreferred = { src: "/images/badge-iko-preferred.webp", alt: "IKO RoofPro Preferred Contractor", width: 80, height: 80 };
+const owensCorning = { src: "/images/badge-owens-corning.webp", alt: "Owens Corning Roofing Contractor", width: 88, height: 80 };
+const malarkey = { src: "/images/badge-malarkey.webp", alt: "Malarkey Roofing Products Contractor", width: 360, height: 80 };
+const atlas = { src: "/images/badge-atlas.webp", alt: "Atlas Roofing Contractor", width: 114, height: 79 };
+const certainteedSelect = { src: "/images/badge-certainteed-shinglemaster.webp", alt: "CertainTeed Select Shingle Master", width: 82, height: 79 };
+const certainteed = { src: "/images/badge-certainteed-shinglemaster-2.webp", alt: "CertainTeed Shingle Master", width: 80, height: 80 };
+const srs = { src: "/images/badge-srs-topshield-pro.webp", alt: "SRS TopShield PRO Contractor", width: 170, height: 80 };
+
+const rows = [
+  [malarkey, owensCorning, atlas, srs],
+  [gaf, ikoSelect, ikoPreferred, certainteedSelect, certainteed],
 ];
 ---
 
-<div class="cert-row">
-  {badges.map((b) => (
-    <img src={b.src} alt={b.alt} width={b.width} height={b.height} loading="lazy" />
+<div class="cert-rows">
+  {rows.map((row) => (
+    <div class="cert-row">
+      {row.map((b) => (
+        <img src={b.src} alt={b.alt} width={b.width} height={b.height} loading="lazy" />
+      ))}
+    </div>
   ))}
 </div>

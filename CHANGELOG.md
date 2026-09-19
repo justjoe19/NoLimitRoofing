@@ -2,6 +2,17 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 21 — Cert badges: two fixed rows, uniform viewport-driven sizing
+
+Follow-up to Session 20's badge work, in three quick passes: "a little bigger" (max-height 56px → 68px), then "put them into two rows, space them evenly apart to go the length of the page, and adjust size and spacing as the browser gets smaller," then a specific reorder mid-task (top row: Malarkey, Owens Corning, Atlas, SRS TopShield PRO; bottom row: the other 5).
+
+- **Two explicit rows, not organic wrap.** `CertBadges.astro` now defines the 9 badges as named constants and assigns them to two fixed arrays (4 + 5) in a specific order, rather than auto-splitting the list in half — needed once the requested row order (Malarkey/Owens Corning/Atlas/SRS on top) didn't match the source array's order.
+- **Each row spans the full container width** via `flex-nowrap` + `justify-content: space-between` (reverted from Session 20's `flex-wrap` + `center`, which let rows wrap organically instead of being a deliberate two-row layout).
+- **Real bug caught while testing "adjust size as the browser gets smaller":** the first pass sized badges with `max-height` + `min-width:0` flex-shrink, which shrinks each row independently based on how much content is in it — with a 4-badge and a 5-badge row of different total widths, this produced *different badge sizes between the two rows* at narrow widths (measured: 34px in one row, 58px in the other, at the same container width). Fixed by switching to `flex: 0 0 auto` (no shrink) with `height: clamp(28px, 6vw, 68px)` — a pure viewport-width-driven size shared identically by every badge in both rows, so they always stay the same size as each other and shrink in sync with the actual browser width. Row gap uses the same `clamp()` pattern so spacing shrinks in step with badge size.
+- Verified the narrow end doesn't overflow: simulated a 390px viewport (real `resize_window` calls weren't taking effect on this tab this session — `window.innerWidth` stayed stuck at the actual window size regardless — so verified by constraining the row's own container width and forcing badge height to the clamp's floor value directly, then checking `scrollWidth` against `clientWidth`) — confirmed both rows fit with no horizontal overflow at the size floor.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, confirmed all 9 badges render at identical heights within each row at both the viewport ceiling (1791px → 68px) and the simulated floor.
+
 ## Session 20 — Sharper GAF badge, a new CertainTeed badge, bigger cert row
 
 Pulled from the live `nolimitroofingin.com` site's "Exceptional at Roofs and more" section, which turned out to hold real, current badge assets not yet reflected here:
