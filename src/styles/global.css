@@ -7,17 +7,17 @@
 */
 
 @theme {
-  --color-ink: #14171a;
-  --color-ink-soft: #23272c;
-  --color-ink-softer: #343a40;
+  --color-ink: #0c1115;
+  --color-ink-soft: #161c21;
+  --color-ink-softer: #232b31;
   --color-paper: #ffffff;
-  --color-fog: #f5f6f8;
+  --color-fog: #f2f3f5;
   --color-mist: #e4e7eb;
   --color-steel: #545d68;
   --color-steel-light: #7b8794;
-  --color-accent: #c23a0e;
-  --color-accent-dark: #9c2f0a;
-  --color-accent-light: #e2531c;
+  --color-accent: #e56115;
+  --color-accent-dark: #b84c0f;
+  --color-accent-light: #f0813a;
   --color-success: #1c7c3f;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -67,15 +67,15 @@
 
   h1 {
     font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
-    @apply font-extrabold tracking-tight;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    @apply font-black uppercase tracking-tight;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
   }
   h2 {
     font-size: clamp(1.75rem, 1.45rem + 1.3vw, 2.75rem);
-    @apply font-extrabold;
-    line-height: 1.14;
-    letter-spacing: -0.015em;
+    @apply font-black uppercase;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
   }
   h3 {
     font-size: clamp(1.2rem, 1.08rem + 0.5vw, 1.5rem);
@@ -89,7 +89,7 @@
 
   /* ---------- Accessibility helpers ---------- */
   .skip-link {
-    @apply absolute -left-[9999px] top-0 z-1000 rounded-br-sm bg-accent px-6 py-4 font-bold text-white;
+    @apply absolute -left-[9999px] top-0 z-1000 rounded-br-sm bg-accent-dark px-6 py-4 font-bold text-white;
   }
   .skip-link:focus { @apply left-0; }
 
@@ -109,7 +109,7 @@
     line-height: 1.55;
   }
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-[0.8rem] font-extrabold uppercase text-accent;
+    @apply inline-flex items-center gap-2 text-[0.8rem] font-extrabold uppercase text-accent-dark;
     letter-spacing: 0.14em;
   }
   .eyebrow::before {
@@ -142,8 +142,8 @@
   }
   .btn:active { @apply translate-y-px; }
   .btn-primary {
-    @apply bg-accent text-white hover:-translate-y-0.5 hover:bg-accent-dark;
-    box-shadow: 0 10px 24px -8px rgba(194,58,14,0.55);
+    @apply bg-accent-dark text-white hover:-translate-y-0.5 hover:bg-[#9c3f0c];
+    box-shadow: 0 10px 24px -8px rgba(229,97,21,0.55);
   }
   .btn-outline-light { @apply text-white; border-color: rgba(255,255,255,0.55); }
   .btn-outline-light:hover { @apply border-white -translate-y-0.5; background: rgba(255,255,255,0.08); }
@@ -176,7 +176,7 @@
   .main-nav ul a:hover::after,
   .main-nav ul a[aria-current="page"]::after { right: 0; }
   .main-nav ul a[aria-current="page"] { @apply text-ink; }
-  .main-nav ul a.nav-phone { @apply text-accent; }
+  .main-nav ul a.nav-phone { @apply text-accent-dark; }
   .main-nav ul a.nav-phone:hover { @apply text-accent-dark; }
 
   .header-cta { @apply flex items-center gap-4; }
@@ -204,7 +204,7 @@
   .nav-dropdown details[open] > summary .chev { @apply rotate-180; }
   .nav-dropdown-panel { @apply flex flex-col gap-0.5 pb-2 pl-3; }
   .nav-dropdown-panel a { @apply block rounded-sm px-3 py-2 text-[0.92rem] font-medium text-steel; }
-  .nav-dropdown-panel a:hover { @apply text-accent; }
+  .nav-dropdown-panel a:hover { @apply text-accent-dark; }
 
   /* Mobile: each service group gets a small bold header above its links,
      all stacked in one flat list — no extra nested tap targets. */
@@ -212,7 +212,7 @@
   .nav-dropdown-group-title {
     @apply block rounded-sm px-3 py-2 text-[0.92rem] font-bold text-ink;
   }
-  .nav-dropdown-group-title:hover { @apply text-accent; }
+  .nav-dropdown-group-title:hover { @apply text-accent-dark; }
 
   @media (min-width: 64rem) {
     .nav-dropdown-panel {
@@ -231,7 +231,7 @@
       @apply mt-0 pl-4;
     }
     .nav-dropdown-panel--mega .nav-dropdown-group-title {
-      @apply mb-1 border-b border-mist pb-2 text-accent;
+      @apply mb-1 border-b border-mist pb-2 text-accent-dark;
     }
   }
 
@@ -287,8 +287,8 @@
   .hero {
     @apply relative overflow-clip text-white;
     background-image:
-      radial-gradient(1100px 480px at 85% -10%, rgba(194,58,14,0.38), transparent 60%),
-      linear-gradient(160deg, rgba(20,23,26,0.79) 0%, rgba(29,34,38,0.73) 55%, rgba(35,39,44,0.71) 100%),
+      radial-gradient(1100px 480px at 85% -10%, rgba(229,97,21,0.4), transparent 60%),
+      linear-gradient(160deg, rgba(12,17,21,0.79) 0%, rgba(22,28,33,0.73) 55%, rgba(35,43,49,0.71) 100%),
       var(--hero-image, none);
     background-size: auto, auto, cover;
     background-position: center, center, center;
@@ -356,12 +356,12 @@
   .service-card .body { @apply flex flex-1 flex-col gap-2.5 p-6; }
   .service-card .body p { @apply text-[0.95rem] text-steel; }
   .service-card .body a.more {
-    @apply mt-auto inline-flex items-center gap-1.5 text-[0.92rem] font-bold text-accent;
+    @apply mt-auto inline-flex items-center gap-1.5 text-[0.92rem] font-bold text-accent-dark;
   }
 
   .icon-tile {
     @apply flex size-13 shrink-0 items-center justify-center rounded-sm text-accent;
-    background: rgba(194,58,14,0.1);
+    background: rgba(229,97,21,0.1);
   }
   .icon-tile svg { @apply size-6.5; }
 
@@ -414,14 +414,14 @@
   .field { @apply flex flex-col gap-1.5; }
   .field.full { @apply col-span-full; }
   .field label { @apply text-[0.9rem] font-bold; }
-  .field .req { @apply text-accent; }
+  .field .req { @apply text-accent-dark; }
   .field input, .field select, .field textarea {
     @apply rounded-sm border-[1.5px] border-mist bg-paper px-4 py-3.5;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
   .field input:focus, .field select:focus, .field textarea:focus {
     @apply border-accent outline-none;
-    box-shadow: 0 0 0 4px rgba(194,58,14,0.12);
+    box-shadow: 0 0 0 4px rgba(229,97,21,0.12);
   }
   .field textarea { @apply min-h-[130px] resize-y; }
   .field small.hint { @apply text-[0.8rem] text-steel; }
@@ -468,7 +468,7 @@
   .gallery-item:hover img { @apply scale-[1.06]; }
   .gallery-item .tag {
     @apply absolute bottom-3 left-3 rounded-full px-3 py-1.5 text-[0.78rem] font-bold text-white;
-    background: rgba(20,23,26,0.78);
+    background: rgba(12,17,21,0.78);
   }
 
   /* ---------- Area cards ---------- */
@@ -523,7 +523,7 @@
     box-shadow: 0 -6px 20px rgba(0,0,0,0.18);
   }
   .mobile-call-bar a {
-    @apply flex items-center justify-center gap-2 rounded-full bg-accent px-3.5 py-3.5 font-extrabold text-white;
+    @apply flex items-center justify-center gap-2 rounded-full bg-accent-dark px-3.5 py-3.5 font-extrabold text-white;
   }
   /* Matches the nav-collapse breakpoint above (min-width: 64rem) — the call
      bar should be there any time the nav is a hamburger, not just on phones. */
@@ -537,7 +537,7 @@
     @apply relative mx-auto block aspect-video w-full max-w-[900px] cursor-pointer overflow-hidden rounded-lg bg-ink shadow-lg;
     transition: box-shadow 0.25s ease;
   }
-  .video-facade:hover { box-shadow: var(--shadow-lg), 0 0 0 4px rgba(194,58,14,0.15); }
+  .video-facade:hover { box-shadow: var(--shadow-lg), 0 0 0 4px rgba(229,97,21,0.15); }
   .video-facade img {
     @apply h-full w-full object-cover opacity-85;
     transition: opacity 0.25s ease, transform 0.4s ease;
@@ -546,7 +546,7 @@
   .video-facade .play-btn { @apply pointer-events-none absolute inset-0 flex items-center justify-center; }
   .video-facade .play-btn span {
     @apply flex size-20 items-center justify-center rounded-full bg-accent text-white;
-    box-shadow: 0 12px 32px -8px rgba(194,58,14,0.7);
+    box-shadow: 0 12px 32px -8px rgba(229,97,21,0.7);
     transition: transform 0.2s ease;
   }
   .video-facade:hover .play-btn span { @apply scale-110; }
@@ -555,7 +555,7 @@
 
   /* ---------- Problem selector / "what brought you here" cards ---------- */
   .problem-card-arrow {
-    @apply mt-auto inline-flex items-center gap-1.5 text-[0.92rem] font-bold text-accent;
+    @apply mt-auto inline-flex items-center gap-1.5 text-[0.92rem] font-bold text-accent-dark;
   }
 
   /* ---------- Article body (Learning Center markdown output) ----------
@@ -571,7 +571,7 @@
   .article-body ul { list-style: disc; }
   .article-body ol { list-style: decimal; }
   .article-body li::marker { color: var(--color-accent); }
-  .article-body a { @apply font-semibold text-accent underline underline-offset-2; }
+  .article-body a { @apply font-semibold text-accent-dark underline underline-offset-2; }
   .article-body a:hover { @apply text-accent-dark; }
   .article-body blockquote {
     @apply border-l-4 border-accent bg-fog px-5 py-4 text-steel italic;
