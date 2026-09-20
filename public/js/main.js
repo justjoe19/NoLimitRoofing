@@ -184,4 +184,21 @@
       iframe.style.border = "0";
     });
   });
+
+  // Testimonial carousel: one review visible at a time, prev/next cycles
+  var carousel = document.getElementById("testimonial-carousel");
+  if (carousel) {
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll(".testimonial-slide"));
+    var current = slides.findIndex(function (s) { return s.classList.contains("is-active"); });
+    if (current < 0) current = 0;
+    var show = function (index) {
+      slides[current].classList.remove("is-active");
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add("is-active");
+    };
+    var prevBtn = carousel.querySelector(".carousel-prev");
+    var nextBtn = carousel.querySelector(".carousel-next");
+    if (prevBtn) prevBtn.addEventListener("click", function () { show(current - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { show(current + 1); });
+  }
 })();

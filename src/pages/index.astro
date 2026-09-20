@@ -81,9 +81,9 @@ const schema = [
 
   <section class="hero" style={`--hero-image:url("${heroImage}")`}>
     <div class="container hero-inner">
-      <p class="eyebrow eyebrow--on-dark">No Limit Roofing</p>
+      <p class="eyebrow eyebrow--on-dark">Residential Roofing &middot; Commercial Roofing &middot; Storm Restoration</p>
       <h1>Your Roof Has One Job.<br />So Do We.</h1>
-      <p class="lede">Protect what's underneath it. Residential Roofing · Commercial Roofing · Storm Restoration — Northern Indiana + Southwest Michigan.</p>
+      <p class="lede">Protect what's underneath it. Northern Indiana + Southwest Michigan.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="/contact.html">Get My Free Roof Inspection</a>
         <a class="btn btn-outline-light" href="tel:+15743600525">
@@ -91,11 +91,31 @@ const schema = [
           Call (574) 360-0525
         </a>
       </div>
-      <div class="hero-meta">
-        <div><strong>1000+</strong><span>Roofs Completed</span></div>
-        <div><strong>25+</strong><span>Years of Experience</span></div>
-        <div><strong>5.0★</strong><span>Average Customer Rating</span></div>
-        <div><strong>100%</strong><span>Licensed, Bonded &amp; Insured</span></div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-strip">
+    <div class="container trust-strip-inner">
+      <div class="trust-strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4z"/></svg>
+        <span>Licensed, Bonded &amp; Insured</span>
+      </div>
+      <div class="trust-strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>GAF Factory-Certified</span>
+      </div>
+      <div class="trust-strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Locally Owned &amp; Operated</span>
+      </div>
+      <div class="trust-strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        <span>Residential &amp; Commercial</span>
+      </div>
+      <div class="trust-strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.8A5 5 0 0 0 6 18"/></svg>
+        <span>Same-Day Storm Response</span>
       </div>
     </div>
   </section>
@@ -106,46 +126,59 @@ const schema = [
     </div>
   </section>
 
-  <!-- WHAT BROUGHT YOU HERE -->
-  <section class="section" aria-labelledby="problem-selector-heading">
+  <!-- OUR SERVICES -->
+  <section class="section" aria-labelledby="services-grid-heading">
     <div class="container">
       <div class="section-head center">
-        <p class="eyebrow">What Brought You Here?</p>
-        <h2 id="problem-selector-heading">Tell Us What's Going On</h2>
+        <p class="eyebrow">Our Services</p>
+        <h2 id="services-grid-heading">Complete Roofing Solutions</h2>
+        <p class="lede">From storm damage to full roof replacements, No Limit Roofing delivers reliable, high-quality craftsmanship for residential and commercial properties.</p>
       </div>
-      <div class="grid grid-4">
-        <a class="card service-card" href="/roofing/roof-repair.html">
-          <div class="media"><img src="/images/crew-roofer-chimney-flashing.webp" alt="Roofer repairing flashing on a residential roof" width="600" height="440" loading="lazy" /></div>
-          <div class="body">
-            <h3>My Roof Is Leaking</h3>
-            <p>Find the source and get it fixed.</p>
-            <span class="problem-card-arrow">Find the source <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
+      <div class="grid grid-3 service-tile-grid">
+        <a class="service-tile" href="/storm-damage/hail-damage.html">
+          <img src="/images/service-emergency-repair.webp" alt="Hail damage on an asphalt shingle roof" width="600" height="440" loading="lazy" />
+          <span class="service-tile-label">Hail Damage <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="card service-card" href="/storm-damage.html">
-          <div class="media"><img src="/images/service-emergency-repair.webp" alt="Roof damage from a recent storm" width="600" height="440" loading="lazy" /></div>
-          <div class="body">
-            <h3>A Storm Just Hit</h3>
-            <p>Check for hail and wind damage.</p>
-            <span class="problem-card-arrow">Check for damage <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
+        <a class="service-tile" href="/roofing/roof-replacement.html">
+          <img src="/images/crew-shingle-install.webp" alt="Crew installing a new asphalt shingle roof" width="700" height="392" loading="lazy" />
+          <span class="service-tile-label">Roof Installations <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="card service-card" href="/roofing/roof-replacement.html">
-          <div class="media"><img src="/images/drone-aerial-finished-roof-manicured.webp" alt="Finished residential roof replacement" width="600" height="440" loading="lazy" /></div>
-          <div class="body">
-            <h3>I Need A New Roof</h3>
-            <p>Explore full replacement options.</p>
-            <span class="problem-card-arrow">Explore replacement <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
+        <a class="service-tile" href="/roofing/roof-repair.html">
+          <img src="/images/crew-roofer-chimney-flashing.webp" alt="Roofer repairing flashing on a residential roof" width="800" height="999" loading="lazy" />
+          <span class="service-tile-label">Roof Repairs <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="card service-card" href="/commercial.html">
-          <div class="media"><img src="/images/commercial-roofing-project.webp" alt="Completed commercial roofing installation" width="843" height="317" loading="lazy" /></div>
-          <div class="body">
-            <h3>I Have A Commercial Property</h3>
-            <p>Flat and low-slope roofing solutions.</p>
-            <span class="problem-card-arrow">Commercial solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
+        <a class="service-tile" href="/storm-damage.html">
+          <img src="/images/drone-aerial-finished-roof-pool.webp" alt="Aerial view of a finished residential roof" width="900" height="645" loading="lazy" />
+          <span class="service-tile-label">Storm Damage <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
+        <a class="service-tile" href="/commercial.html">
+          <img src="/images/commercial-roofing-project.webp" alt="Completed commercial roofing installation" width="1400" height="526" loading="lazy" />
+          <span class="service-tile-label">Commercial Roofing <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="service-tile" href="/about.html">
+          <img src="/images/aerial-completed-roof.webp" alt="Aerial view of a completed No Limit Roofing project" width="700" height="377" loading="lazy" />
+          <span class="service-tile-label">About Us <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="section section--ink why-choose">
+    <div class="container split why-choose-inner">
+      <div class="why-choose-mark" aria-hidden="true">
+        <img src="/images/nlr-logo.webp" alt="" width="500" height="264" loading="lazy" />
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--on-dark">Why Choose No Limit Roofing?</p>
+        <h2 class="text-white">Built On Craftsmanship, Backed By Experience</h2>
+        <p class="lede mt-2 text-[#c7cdd3]">We're more than a roofing company — owner Jonathan Smith personally supervises every crew, and every estimate is free, written, and honest about what your roof actually needs.</p>
+        <div class="why-choose-stats">
+          <div><strong>1000+</strong><span>Roofs Completed</span></div>
+          <div><strong>25+</strong><span>Years of Experience</span></div>
+          <div><strong>5.0★</strong><span>Customer Rating</span></div>
+          <div><strong>100%</strong><span>Locally Owned</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -264,29 +297,43 @@ const schema = [
       <div class="section-head center">
         <p class="eyebrow">Customer Reviews</p>
         <h2 id="reviews-heading">What Our Customers Say</h2>
+        <div class="stars stars-lg" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
       </div>
-      <div class="grid grid-3">
-        <div class="testimonial-card">
-          <div class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          </div>
-          <blockquote>&ldquo;They were prompt, accurate, and professional. I will definitely recommend them for your roofing needs.&rdquo;</blockquote>
-          <footer>K. Hall — South Bend, IN</footer>
+      <div class="testimonial-carousel" id="testimonial-carousel">
+        <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="testimonial-slides">
+          <blockquote class="testimonial-slide is-active">
+            <p>&ldquo;They were prompt, accurate, and professional. I will definitely recommend them for your roofing needs.&rdquo;</p>
+            <footer>K. Hall — South Bend, IN</footer>
+          </blockquote>
+          <blockquote class="testimonial-slide">
+            <p>&ldquo;Jon gave us stellar customer service and I didn't have to worry!! Highly recommend!!&rdquo;</p>
+            <footer>L. Bauer — South Bend, IN</footer>
+          </blockquote>
+          <blockquote class="testimonial-slide">
+            <p>&ldquo;I am very happy with the work that was done and will definitely be recommending him to my friends and family!&rdquo;</p>
+            <footer>S. Wilcox — South Bend, IN</footer>
+          </blockquote>
+          <blockquote class="testimonial-slide">
+            <p>&ldquo;Jonathan was very professional and his team moved very quickly to get my new roof completed. Thank you!&rdquo;</p>
+            <footer>S. Rosado — Michiana</footer>
+          </blockquote>
+          <blockquote class="testimonial-slide">
+            <p>&ldquo;They worked real hard and got the job done. We love the look of the roof and received several compliments from the neighbors.&rdquo;</p>
+            <footer>D. Beery — South Bend, IN</footer>
+          </blockquote>
+          <blockquote class="testimonial-slide">
+            <p>&ldquo;They were quick to respond. Repairs were done with thoughtfulness to avoid future similar problems!&rdquo;</p>
+            <footer>S. Zellers — Greater South Bend</footer>
+          </blockquote>
         </div>
-        <div class="testimonial-card">
-          <div class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          </div>
-          <blockquote>&ldquo;Jonathan was very professional and his team moved very quickly to get my new roof completed. Thank you!&rdquo;</blockquote>
-          <footer>S. Rosado — Michiana</footer>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          </div>
-          <blockquote>&ldquo;They worked real hard and got the job done. We love the look of the roof and received several compliments from the neighbors.&rdquo;</blockquote>
-          <footer>D. Beery — South Bend, IN</footer>
-        </div>
+        <button type="button" class="carousel-arrow carousel-next" aria-label="Next review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
       <p class="text-center mt-4"><a class="btn btn-outline-dark" href="/about.html#reviews">Read More Reviews</a></p>
     </div>

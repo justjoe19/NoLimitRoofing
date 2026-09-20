@@ -316,6 +316,16 @@
   .hero--page { @apply py-0; }
   .hero--page .hero-inner { @apply py-18 pb-12; }
 
+  /* ---------- Trust strip (icon row directly under the hero) ---------- */
+  .trust-strip { @apply bg-ink-soft py-6; }
+  .trust-strip-inner {
+    @apply flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-center sm:justify-between;
+  }
+  .trust-strip-item {
+    @apply flex items-center gap-2.5 text-[0.88rem] font-semibold text-white;
+  }
+  .trust-strip-item svg { @apply size-5 shrink-0 text-accent-light; }
+
   /* ---------- Trust bar / certification badge row ---------- */
   .trust-bar { @apply border-b border-mist bg-paper; }
   .trust-bar-inner { @apply py-6; }
@@ -365,6 +375,31 @@
   }
   .icon-tile svg { @apply size-6.5; }
 
+  /* ---------- Service tile grid (homepage "Complete Roofing Solutions") ---------- */
+  .service-tile-grid { @apply gap-4; }
+  .service-tile {
+    @apply relative block aspect-[4/3] overflow-hidden rounded-md;
+    box-shadow: var(--shadow-sm);
+  }
+  .service-tile img {
+    @apply h-full w-full object-cover;
+    transition: transform 0.3s ease;
+  }
+  .service-tile:hover img { @apply scale-105; }
+  .service-tile::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(0deg, rgba(12,17,21,0.85) 0%, rgba(12,17,21,0.15) 55%, transparent 75%);
+  }
+  .service-tile-label {
+    @apply absolute inset-x-4 bottom-4 z-10 flex items-center justify-between gap-2 text-[1.02rem] font-bold text-white;
+  }
+  .service-tile-label svg {
+    @apply flex size-8 shrink-0 items-center justify-center rounded-full bg-accent-dark p-1.5;
+    transition: transform 0.2s ease;
+  }
+  .service-tile:hover .service-tile-label svg { @apply translate-x-1; }
+
   .testimonial-card {
     @apply relative flex h-full flex-col gap-4 overflow-hidden rounded-md border border-mist bg-paper p-6 shadow-sm;
   }
@@ -376,6 +411,39 @@
   .testimonial-card .stars svg { @apply size-4; }
   .testimonial-card blockquote { @apply relative m-0 text-[1.02rem] leading-relaxed; }
   .testimonial-card footer { @apply relative text-[0.85rem] font-bold text-steel; }
+
+  /* ---------- Testimonial carousel (homepage) ---------- */
+  .stars-lg { @apply mt-4 flex justify-center gap-1 text-accent; }
+  .stars-lg svg { @apply size-6; }
+  .testimonial-carousel { @apply mx-auto mt-10 flex max-w-[720px] items-center gap-3 sm:gap-6; }
+  .carousel-arrow {
+    @apply flex size-11 shrink-0 items-center justify-center rounded-full border border-mist bg-paper text-ink;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .carousel-arrow:hover { @apply border-accent-dark bg-accent-dark text-white; }
+  .carousel-arrow svg { @apply size-5; }
+  .testimonial-slides { @apply relative min-h-[9rem] flex-1 overflow-hidden text-center sm:min-h-[7rem]; }
+  .testimonial-slide {
+    @apply absolute inset-0 m-0 flex flex-col items-center justify-center gap-4 opacity-0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+  .testimonial-slide.is-active { @apply relative opacity-100; pointer-events: auto; }
+  .testimonial-slide p { @apply m-0 text-[1.1rem] leading-relaxed text-ink; }
+  .testimonial-slide footer { @apply text-[0.85rem] font-bold text-steel; }
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-slide { transition: none; }
+  }
+
+  /* ---------- Why Choose (homepage dark stat section) ---------- */
+  .why-choose-inner { @apply items-center gap-16; }
+  .why-choose-mark { @apply flex items-center justify-center opacity-90; }
+  .why-choose-mark img { @apply w-full max-w-[320px]; filter: drop-shadow(0 12px 32px rgba(0,0,0,0.4)); }
+  .why-choose-stats {
+    @apply mt-8 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-white/15 pt-8 sm:grid-cols-4;
+  }
+  .why-choose-stats strong { @apply block text-[1.7rem] font-black text-white; }
+  .why-choose-stats span { @apply text-[0.82rem] text-[#aeb6bd]; }
 
   .stat-card { @apply rounded-md border border-mist p-6 text-center; }
   .stat-card strong { @apply block text-[2rem] font-extrabold text-ink; }
