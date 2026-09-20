@@ -2,6 +2,29 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 28 — Real logo file, replacing the Session 25 screenshot extraction
+
+The client sent over a proper recreated logo file (clean vector-quality artwork on a solid black background, 1725×912) — a real replacement for the raster screenshot-crop placeholder flagged as temporary back in Session 25.
+
+- Removed the black background via a luminance-threshold chroma key (with a soft-edge falloff band rather than a hard cutoff, for cleaner anti-aliasing than Session 25's version) — verified the alpha channel directly rather than trusting how the preview tool renders transparency (it composites onto a dark backdrop by default, which made the result look unchanged at first glance; confirmed by sampling background pixels and checked again by compositing onto white).
+- Replaced `nlr-logo.webp` / `nlr-logo.png` in place. New aspect ratio (500×232, vs. the old 500×264) meant the `width`/`height` attributes in `Header.astro`, `Footer.astro`, and `404.astro` needed updating too, not just the image file — checked each one against the real new dimensions rather than leaving stale values that would cause layout shift.
+- **Rebuilt the full favicon set from this logo** (`favicon.ico`, `favicon-16/32/48.png`, `apple-touch-icon.png`, `icon-192/512.png`) — previously the client's real favicon from their live site (Session 1), now superseded since this recreated logo represents the actual current brand mark. Cropped just the roof-and-window icon mark for these (the full wide wordmark doesn't read at 16–32px), placed on a solid dark background so it stays visible in both light and dark browser tab bars, generated every size from that one source rather than scaling the tiny 16px version up.
+- Caught two more stale references to the pre-restyle dark color while in here: `site.webmanifest`'s `theme_color` and `BaseLayout.astro`'s default `themeColor` prop were still `#14171a` (the color from before Session 25's palette change), not the current `#0c1115` — fixed both.
+
+Verified: Lighthouse 99/100/100/100 (performance/accessibility/best-practices/SEO) on the homepage, 0 SEO/broken-link issues across all 48 pages, 0 console errors, confirmed the favicon reads clearly at actual 32px size and the header logo renders sharp (no more screenshot-compression softness) at 2x zoom.
+
+## Session 27 — Dark nav bar, matching the mockup
+
+Requested: make the nav bar the same dark color as the client's reference mockup. Session 25 had deliberately kept the header white to limit the blast radius of that pass; this session took the change on directly.
+
+Updated `.site-header` background to the dark `--color-ink` token (previously white), then worked through every element that depended on a light header to stay readable, rather than just flipping the background and calling it done:
+- Nav link text, the "Services" dropdown trigger, and the phone number switched to light/on-dark colors (`#c7cdd3` resting, white on hover/active — matches the same on-dark pattern already used in the hero and footer).
+- The hamburger icon bars switched from dark to white.
+- The mobile slide-out nav panel switched from a white background to dark, with its dividers updated to a subtle white/10 line instead of the light-mode gray border.
+- Left the desktop "Services" mega-menu dropdown panel white/unchanged — it's a separate floating surface, and swapping it dark too wasn't part of what was asked or shown in the mockup.
+
+Verified: Lighthouse Accessibility 100 (checked specifically for color-contrast failures given how many text colors changed at once) across homepage, About, and a service page; 0 SEO/broken-link issues across all 48 pages; 0 console errors; confirmed visually that the desktop dropdown panel still renders correctly against the new dark trigger.
+
 ## Session 26 — Homepage structure rebuilt to match the mockup
 
 Follow-up to Session 25's palette/logo restyle: asked to make the homepage "exactly like" the reference mockup. Flagged a direct conflict first — the mockup's whole homepage is built around insurance-claim messaging and nav items ("Insurance Claims," "Project Gallery") the user had just told me to leave out. Confirmed: match the mockup's *layout and visual patterns*, keep our real copy and service focus, no insurance-claim framing.
