@@ -2,6 +2,16 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 31 — Nav weight, footer credit wording, a couple of quick checks
+
+Four small follow-up requests after Session 30's nav revert:
+- **Nav links bumped to `font-bold`** (was `font-semibold`, the exact pre-Antigravity value) — the user wanted the bolder weight back specifically, separate from the uppercase/tracking treatment already removed in Session 30. Applied to both `.main-nav ul a` and `.nav-dropdown summary` for consistency between top-level links and the Services trigger.
+- **Checked whether the dropdown's sub-menu items use the site's real accent color**: yes — the group titles (Roofing/Storm Damage/Commercial) already use `--color-accent-dark`, the same token used for buttons and every other piece of small orange text sitewide. No change needed; confirmed rather than assumed.
+- **Footer credit changed** from "Developed by Michiana.dev" to "Website by Michiana.dev".
+- **Asked whether the footer copyright year auto-updates** — it already does. `main.js` sets `#year`'s content from `new Date().getFullYear()` on load; the "2026" in the markup is just the static pre-JS fallback. Confirmed working rather than assumed, no change needed.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, Lighthouse Accessibility 100 (checked given the font-weight change touches text rendering), confirmed the new copy and bold weight visually and via the DOM.
+
 ## Session 30 — Revert navigation changes made outside this project's workflow
 
 The user made a round of changes using a different tool (Antigravity) directly against the repo — one commit, `d58011a`, "Align homepage layout, copy, and components to IMG_5613 mockup and refresh site imagery." Asked to review everything, then narrowed it to: keep the new homepage layout, copy, and imagery (including the new stock/AI-generated photos — flagged that finding, but the user was explicit they're fine with it for now), revert only the navigation.

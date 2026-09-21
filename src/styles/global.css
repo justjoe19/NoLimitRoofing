@@ -169,7 +169,7 @@
   .main-nav { @apply flex items-center gap-8; }
   .main-nav ul { @apply flex items-center gap-6; }
   .main-nav ul a {
-    @apply relative inline-block px-[0.15rem] py-2 text-[0.95rem] font-semibold text-[#c7cdd3];
+    @apply relative inline-block px-[0.15rem] py-2 text-[0.95rem] font-bold text-[#c7cdd3];
   }
   .main-nav ul a:hover { @apply text-white; }
   .main-nav ul a::after {
@@ -195,7 +195,7 @@
      closing on top, since <details> doesn't do any of that natively. */
   .nav-dropdown { @apply relative; }
   .nav-dropdown summary {
-    @apply relative inline-flex cursor-pointer items-center gap-1 px-[0.15rem] py-2 text-[0.95rem] font-semibold text-[#c7cdd3];
+    @apply relative inline-flex cursor-pointer items-center gap-1 px-[0.15rem] py-2 text-[0.95rem] font-bold text-[#c7cdd3];
     list-style: none;
   }
   .nav-dropdown summary:hover { @apply text-white; }
