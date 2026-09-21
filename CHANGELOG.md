@@ -2,6 +2,24 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 30 — Revert navigation changes made outside this project's workflow
+
+The user made a round of changes using a different tool (Antigravity) directly against the repo — one commit, `d58011a`, "Align homepage layout, copy, and components to IMG_5613 mockup and refresh site imagery." Asked to review everything, then narrowed it to: keep the new homepage layout, copy, and imagery (including the new stock/AI-generated photos — flagged that finding, but the user was explicit they're fine with it for now), revert only the navigation.
+
+**What the navigation changes actually were, found by diffing against the last known-good commit** rather than guessing from a screenshot:
+- A nav item literally labeled **"Insurance Claims"** that linked to `/storm-damage.html`, not any insurance-specific content — misleading, and a direct reversal of the client's own explicit answer in Session 26 ("Not now — skip it").
+- A nav item literally labeled **"Project Gallery"** that linked to `/services.html`, not a real gallery — also misleading, and a reversal of the Session 14 removal (reconfirmed in Session 26).
+- The direct `tel:` click-to-call phone link was removed from the nav entirely.
+- Areas and Learning Center were demoted from top-level nav items into a new "Resources" group nested inside the Services dropdown, reducing their visibility.
+- A second footer variant (`footerVariant="minimal"`, used only on the homepage) carried the same two mislabeled links, plus new social links pointing at the bare `instagram.com`/`tiktok.com` homepages — not real, client-specific profile URLs (no evidence the client has either account — see README's verified social list: Facebook, LinkedIn, YouTube only).
+- Nav link typography switched to uppercase/bold/wide-tracking, and the header CTA switched from the site's established pill-shaped `.btn-primary` to a new sharp-cornered `.btn-header-cta` with black text.
+
+**Fix**: checked out `Header.astro`, `Footer.astro`, and `BaseLayout.astro` from the prior commit (`1f0b153`) wholesale, rather than hand-editing — restores the real Services mega-menu (with its chevron), top-level Areas/Learning Center/About links, the direct phone link, and the original pill CTA button, and removes both mislabeled links and the fake social links in one move. Removed the `footerVariant="minimal"` prop usage from `index.astro` (the prop no longer exists) and hand-reverted just the nav-specific rules in `global.css` (`.main-nav ul a`, `.nav-dropdown summary` typography; removed the now-orphaned `.btn-header-cta` and `.site-footer-minimal`/`.footer-minimal-*` rules) — left every other new rule from the Antigravity commit alone (the new homepage hero/services-grid/why-choose/pre-footer-CTA section styles), since those are homepage layout, not navigation, and the user asked to keep those.
+
+**Flagged, not fixed (outside the requested scope)**: Lighthouse performance on the homepage dropped from 98-99 to **81**, LCP from ~2.2s to **5.2s** — many existing hero images were replaced with versions 3-5x larger in file size (e.g. `drone-aerial-finished-roof-charcoal-hero.webp` 55KB → 242KB), and the new stock/AI hero images are large and uncompressed by this project's standards. This wasn't part of "the navigation," so it wasn't touched — but it's a real, measured regression against a value this project has protected across ~20 sessions, and worth a deliberate decision (recompress in place, or accept the tradeoff) rather than leaving unaddressed by default.
+
+Verified: 0 SEO/broken-link issues across all 48 pages, 0 console errors, confirmed visually (and via `document.querySelector`) that the homepage now renders the real dropdown and the standard footer, checked an interior page (About) to confirm the header/footer are correct sitewide, not just on the homepage.
+
 ## Session 29 — Unused-image cleanup + documentation pass
 
 Requested: delete any image files no longer used, and bring `README.md`/`CHANGELOG.md` up to date so the project can be picked back up cleanly after a break.

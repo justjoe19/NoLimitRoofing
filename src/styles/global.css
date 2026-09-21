@@ -169,7 +169,7 @@
   .main-nav { @apply flex items-center gap-8; }
   .main-nav ul { @apply flex items-center gap-6; }
   .main-nav ul a {
-    @apply relative inline-block px-[0.15rem] py-2 text-[0.88rem] font-bold uppercase tracking-wider text-[#c7cdd3];
+    @apply relative inline-block px-[0.15rem] py-2 text-[0.95rem] font-semibold text-[#c7cdd3];
   }
   .main-nav ul a:hover { @apply text-white; }
   .main-nav ul a::after {
@@ -185,9 +185,6 @@
   .main-nav ul a.nav-phone:hover { @apply text-accent-light; }
 
   .header-cta { @apply flex items-center gap-4; }
-  .btn-header-cta {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-sm bg-accent px-5 py-2.5 text-[0.82rem] font-black uppercase tracking-wider text-black transition-all hover:bg-[#d4530f] hover:shadow-md;
-  }
 
   /* ---------- Nav dropdown ("Services": Roofing / Storm Damage / Commercial) ----------
      One dropdown, three labeled sub-groups inside (a small mega-menu),
@@ -198,7 +195,7 @@
      closing on top, since <details> doesn't do any of that natively. */
   .nav-dropdown { @apply relative; }
   .nav-dropdown summary {
-    @apply relative inline-flex cursor-pointer items-center gap-1 px-[0.15rem] py-2 text-[0.88rem] font-bold uppercase tracking-wider text-[#c7cdd3];
+    @apply relative inline-flex cursor-pointer items-center gap-1 px-[0.15rem] py-2 text-[0.95rem] font-semibold text-[#c7cdd3];
     list-style: none;
   }
   .nav-dropdown summary:hover { @apply text-white; }
@@ -659,32 +656,6 @@
   .max-prose { @apply max-w-[70ch]; }
 
   /* ---------- Mockup specific components ---------- */
-
-  /* Minimal single-bar light footer (Mockup section 8) */
-  .site-footer-minimal {
-    @apply border-t border-mist bg-[#f4f5f7] py-6 text-[#12161b];
-  }
-  .footer-minimal-bar {
-    @apply flex flex-col items-center justify-between gap-6 md:flex-row;
-  }
-  .footer-minimal-nav {
-    @apply flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[0.84rem] font-black uppercase tracking-wider text-[#12161b] md:justify-start;
-  }
-  .footer-minimal-nav a {
-    @apply text-[#12161b] transition-colors duration-150;
-  }
-  .footer-minimal-nav a:hover {
-    @apply text-accent;
-  }
-  .footer-minimal-social {
-    @apply flex items-center gap-5 text-[#12161b];
-  }
-  .footer-minimal-social a {
-    @apply text-[#12161b] transition-colors duration-150 hover:text-accent;
-  }
-  .footer-minimal-social svg {
-    @apply size-5 fill-current;
-  }
 
   /* Pre-Footer CTA Banner (Mockup section 7) */
   .pre-footer-cta {

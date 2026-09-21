@@ -16,8 +16,6 @@ interface Props {
   schema?: object[];
   /** Set on 404 and other pages that should never be indexed. */
   noindex?: boolean;
-  /** Choose between standard multi-column dark footer or minimal light bar footer */
-  footerVariant?: "standard" | "minimal";
 }
 
 const {
@@ -31,7 +29,6 @@ const {
   preloadImage,
   schema = [],
   noindex = false,
-  footerVariant = "standard",
 } = Astro.props;
 ---
 
@@ -79,7 +76,7 @@ const {
   <slot />
 </main>
 
-<Footer variant={footerVariant} />
+<Footer />
 
 <script is:inline src="/js/main.js" defer fetchpriority="low"></script>
 </body>

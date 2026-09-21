@@ -44,8 +44,8 @@ const isServicesActive = allServiceLinks.some((l) => currentPath === l.href);
 
 <header class="site-header">
   <div class="container header-bar">
-    <a class="brand" href="/" aria-label="No Limit Roofing Home">
-      <img src="/images/nlr-logo.webp" alt="No Limit Roofing logo" width="160" height="74" />
+    <a class="brand" href="/">
+      <img src="/images/nlr-logo.webp" alt="No Limit Roofing logo" width="150" height="70" />
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
@@ -54,11 +54,11 @@ const isServicesActive = allServiceLinks.some((l) => currentPath === l.href);
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <ul>
-        <li><a href="/" aria-current={isActive("/") ? "page" : undefined} class="whitespace-nowrap">HOME</a></li>
         <li class="nav-dropdown">
           <details>
-            <summary aria-current={isServicesActive ? "page" : undefined} class="whitespace-nowrap">
-              SERVICES
+            <summary aria-current={isServicesActive ? "page" : undefined}>
+              Services
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="nav-dropdown-panel nav-dropdown-panel--mega">
               {serviceGroups.map((group) => (
@@ -67,28 +67,17 @@ const isServicesActive = allServiceLinks.some((l) => currentPath === l.href);
                   {group.links.map((l) => <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined}>{l.label}</a>)}
                 </div>
               ))}
-              <div class="nav-dropdown-group">
-                <span class="nav-dropdown-group-title">Resources</span>
-                <a href="/areas.html" aria-current={isActive("/areas.html") ? "page" : undefined}>Service Areas</a>
-                <a href="/learning-center.html" aria-current={currentPath.startsWith("/learning-center") ? "page" : undefined}>Learning Center</a>
-                <a href="/services.html" aria-current={isActive("/services.html") ? "page" : undefined}>All Services</a>
-              </div>
             </div>
           </details>
         </li>
 
-        <li><a href="/storm-damage.html" aria-current={isActive("/storm-damage.html") ? "page" : undefined} class="whitespace-nowrap">INSURANCE CLAIMS</a></li>
-        <li><a href="/about.html" aria-current={isActive("/about.html") ? "page" : undefined} class="whitespace-nowrap">ABOUT US</a></li>
-        <li><a href="/services.html" aria-current={isActive("/services.html") ? "page" : undefined} class="whitespace-nowrap">PROJECT GALLERY</a></li>
-        <li><a href="/contact.html" aria-current={isActive("/contact.html") ? "page" : undefined} class="whitespace-nowrap">CONTACT</a></li>
+        <li><a href="/areas.html" aria-current={isActive("/areas.html") ? "page" : undefined}>Areas</a></li>
+        <li><a href="/learning-center.html" aria-current={currentPath.startsWith("/learning-center") ? "page" : undefined}>Learning Center</a></li>
+        <li><a href="/about.html" aria-current={isActive("/about.html") ? "page" : undefined}>About</a></li>
+        <li><a href="tel:+15743600525" class="nav-phone">(574) 360-0525</a></li>
       </ul>
       <div class="header-cta">
-        <a class="btn-header-cta" href="/contact.html">
-          GET A FREE INSPECTION
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4 ml-1" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
-        </a>
+        <a class="btn btn-primary" href="/contact.html">Free Inspection</a>
       </div>
     </nav>
   </div>
