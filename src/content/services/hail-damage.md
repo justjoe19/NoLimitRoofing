@@ -9,7 +9,7 @@ metaDescription: "Hail can damage a roof without it being obvious from the groun
 heroEyebrow: "Storm Damage"
 heroHeadline: "Hail Damage Isn't Always Visible From The Ground"
 heroLede: "Bruised or cracked shingles, granule loss, and dented soft metals can all come from hail — and none of it is easy to spot without getting up on the roof."
-heroImage: "/images/service-emergency-repair-hero.webp"
+heroImage: "/images/hail-damage-hero.webp"
 highlights:
   - "Free inspection focused on hail-specific damage: bruising, cracking, granule loss"
   - "Clear photo documentation of what we find"

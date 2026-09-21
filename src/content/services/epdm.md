@@ -9,7 +9,7 @@ metaDescription: "EPDM rubber membrane installation and repair for flat and low-
 heroEyebrow: "Commercial"
 heroHeadline: "EPDM: A Proven Rubber Membrane For Flat Roofs"
 heroLede: "EPDM has one of the longest track records of any commercial roofing membrane — a straightforward, durable option for flat and low-slope buildings."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/commercial-epdm-roof-hero.webp"
 highlights:
   - "Synthetic rubber membrane with decades of proven performance industry-wide"
   - "Suited to flat and low-slope commercial and industrial roofs"

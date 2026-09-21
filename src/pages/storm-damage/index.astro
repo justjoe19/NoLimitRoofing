@@ -5,7 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const allServices = await getCollection("services");
 const stormServices = allServices.filter((s) => s.data.group === "storm-damage");
 
-const heroImage = "/images/service-roof-overlay-hero.webp";
+const heroImage = "/images/storm-damage-hero.webp";
 
 const schema = [
   {
@@ -23,7 +23,7 @@ const schema = [
   title="Storm Damage Roof Inspection in Michiana | No Limit Roofing"
   description="Hail damage, wind damage and storm damage inspections across Northern Indiana and Southwest Michigan. Free inspection, honest assessment, clear documentation."
   canonical="https://nolimitroofingin.com/storm-damage.html"
-  ogImage="https://nolimitroofingin.com/images/service-roof-overlay.webp"
+  ogImage="https://nolimitroofingin.com/images/storm-damage-hero.webp"
   preloadImage={heroImage}
   schema={schema}
 >

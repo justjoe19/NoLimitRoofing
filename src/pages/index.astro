@@ -1,20 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CertBadges from "../components/CertBadges.astro";
 
-const heroImage = "/images/drone-aerial-finished-roof-charcoal-hero.webp";
+const heroImage = "/images/hero-craftsman-dusk.webp";
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
     name: "No Limit Roofing",
-    image: "https://nolimitroofingin.com/images/drone-aerial-finished-roof-charcoal.webp",
+    image: "https://nolimitroofingin.com/images/hero-craftsman-dusk.webp",
     logo: "https://nolimitroofingin.com/images/nlr-logo.png",
     url: "https://nolimitroofingin.com/",
     telephone: "+1-574-360-0525",
     priceRange: "$$",
-    description: "Locally owned and operated roofing contractor providing residential and commercial roofing, repair, replacement, storm damage restoration, decking, insulation and siding services across Michiana since 2010.",
+    description: "Locally owned and trusted roofing contractor serving the Michiana area since 2010. Providing residential and commercial roofing, roof repair, replacements, hail damage repair, and storm damage restoration.",
     founder: { "@type": "Person", name: "Jonathan Smith" },
     foundingDate: "2010",
     areaServed: [
@@ -39,421 +38,399 @@ const schema = [
       reviewCount: "6",
     },
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What areas does No Limit Roofing serve?",
-        acceptedAnswer: { "@type": "Answer", text: "St. Joseph, LaPorte and Marshall Counties in Indiana, and Berrien and Cass Counties in Michigan — roughly Northern Indiana and Southwest Michigan, centered on the South Bend / Mishawaka area." },
-      },
-      {
-        "@type": "Question",
-        name: "Is No Limit Roofing licensed, bonded and insured?",
-        acceptedAnswer: { "@type": "Answer", text: "Yes, and we're a GAF factory-certified contractor, along with IKO, Owens Corning, Malarkey, Atlas, CertainTeed and SRS certifications." },
-      },
-      {
-        "@type": "Question",
-        name: "Is the inspection really free?",
-        acceptedAnswer: { "@type": "Answer", text: "Yes. Every inspection and written estimate is free with no obligation, whether it's a small repair or a full commercial roof replacement." },
-      },
-      {
-        "@type": "Question",
-        name: "How is No Limit Roofing different from other roofing contractors?",
-        acceptedAnswer: { "@type": "Answer", text: "Owner Jonathan Smith personally supervises jobs, every inspection includes clear photo documentation and a plain-language explanation before any work is recommended, and every estimate is free and written — no pressure, no vague verbal quotes." },
-      },
-    ],
-  },
 ];
 ---
 
 <BaseLayout
-  title="No Limit Roofing | Roofing Contractor in Michiana, IN"
-  description="Residential, commercial and storm-damage roofing across Northern Indiana & Southwest Michigan. GAF-certified since 2010. Request a free roof inspection."
+  title="No Limit Roofing | Michiana Roofing Contractor"
+  description="More than roofs. We restore peace of mind. Residential, commercial, and storm damage roofing across Northern Indiana and Southwest Michigan. Free inspections."
   canonical="https://nolimitroofingin.com/"
-  ogImage="https://nolimitroofingin.com/images/drone-aerial-finished-roof-charcoal.webp"
-  ogTitle="No Limit Roofing | Roofing Contractor in Michiana, IN"
-  ogDescription="Locally owned, GAF-certified roofing contractor serving Michiana since 2010. Residential, commercial and storm-damage roofing. Free inspections."
+  ogImage="https://nolimitroofingin.com/images/hero-craftsman-dusk.webp"
+  ogTitle="No Limit Roofing | More Than Roofs. We Restore Peace of Mind."
+  ogDescription="Locally owned and trusted roofing experts serving Michiana. Free roof inspections, storm damage repair, full roof replacements, and commercial roofing."
   preloadImage={heroImage}
   schema={schema}
+  footerVariant="minimal"
 >
 
-  <section class="hero" style={`--hero-image:url("${heroImage}")`}>
-    <div class="container hero-inner">
-      <p class="eyebrow eyebrow--on-dark">Residential Roofing &middot; Commercial Roofing &middot; Storm Restoration</p>
-      <h1>Your Roof Has One Job.<br />So Do We.</h1>
-      <p class="lede">Protect what's underneath it. Northern Indiana + Southwest Michigan.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="/contact.html">Get My Free Roof Inspection</a>
-        <a class="btn btn-outline-light" href="tel:+15743600525">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call (574) 360-0525
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST STRIP -->
-  <section class="trust-strip">
-    <div class="container trust-strip-inner">
-      <div class="trust-strip-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4z"/></svg>
-        <span>Licensed, Bonded &amp; Insured</span>
-      </div>
-      <div class="trust-strip-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <span>GAF Factory-Certified</span>
-      </div>
-      <div class="trust-strip-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <span>Locally Owned &amp; Operated</span>
-      </div>
-      <div class="trust-strip-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        <span>Residential &amp; Commercial</span>
-      </div>
-      <div class="trust-strip-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.8A5 5 0 0 0 6 18"/></svg>
-        <span>Same-Day Storm Response</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="trust-bar" aria-label="Manufacturer certifications">
-    <div class="container trust-bar-inner">
-      <CertBadges />
-    </div>
-  </section>
-
-  <!-- OUR SERVICES -->
-  <section class="section" aria-labelledby="services-grid-heading">
-    <div class="container">
-      <div class="section-head center">
-        <p class="eyebrow">Our Services</p>
-        <h2 id="services-grid-heading">Complete Roofing Solutions</h2>
-        <p class="lede">From storm damage to full roof replacements, No Limit Roofing delivers reliable, high-quality craftsmanship for residential and commercial properties.</p>
-      </div>
-      <div class="grid grid-3 service-tile-grid">
-        <a class="service-tile" href="/storm-damage/hail-damage.html">
-          <img src="/images/service-emergency-repair.webp" alt="Hail damage on an asphalt shingle roof" width="600" height="440" loading="lazy" />
-          <span class="service-tile-label">Hail Damage <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service-tile" href="/roofing/roof-replacement.html">
-          <img src="/images/crew-shingle-install.webp" alt="Crew installing a new asphalt shingle roof" width="700" height="392" loading="lazy" />
-          <span class="service-tile-label">Roof Installations <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service-tile" href="/roofing/roof-repair.html">
-          <img src="/images/crew-roofer-chimney-flashing.webp" alt="Roofer repairing flashing on a residential roof" width="800" height="999" loading="lazy" />
-          <span class="service-tile-label">Roof Repairs <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service-tile" href="/storm-damage.html">
-          <img src="/images/drone-aerial-finished-roof-pool.webp" alt="Aerial view of a finished residential roof" width="900" height="645" loading="lazy" />
-          <span class="service-tile-label">Storm Damage <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service-tile" href="/commercial.html">
-          <img src="/images/commercial-roofing-project.webp" alt="Completed commercial roofing installation" width="1400" height="526" loading="lazy" />
-          <span class="service-tile-label">Commercial Roofing <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service-tile" href="/about.html">
-          <img src="/images/aerial-completed-roof.webp" alt="Aerial view of a completed No Limit Roofing project" width="700" height="377" loading="lazy" />
-          <span class="service-tile-label">About Us <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE -->
-  <section class="section section--ink why-choose">
-    <div class="container split why-choose-inner">
-      <div class="why-choose-mark" aria-hidden="true">
-        <img src="/images/nlr-logo.webp" alt="" width="500" height="264" loading="lazy" />
-      </div>
+  <!-- SECTION 2: HERO -->
+  <section class="hero-mockup" aria-label="Hero">
+    <div class="container hero-mockup-inner">
       <div>
-        <p class="eyebrow eyebrow--on-dark">Why Choose No Limit Roofing?</p>
-        <h2 class="text-white">Built On Craftsmanship, Backed By Experience</h2>
-        <p class="lede mt-2 text-[#c7cdd3]">We're more than a roofing company — owner Jonathan Smith personally supervises every crew, and every estimate is free, written, and honest about what your roof actually needs.</p>
-        <div class="why-choose-stats">
-          <div><strong>1000+</strong><span>Roofs Completed</span></div>
-          <div><strong>25+</strong><span>Years of Experience</span></div>
-          <div><strong>5.0★</strong><span>Customer Rating</span></div>
-          <div><strong>100%</strong><span>Locally Owned</span></div>
+        <p class="hero-eyebrow text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-[#d6dbe0] mb-4">
+          STORM DAMAGE &bull; INSURANCE RESTORATION &bull; RESIDENTIAL &amp; COMMERCIAL
+        </p>
+        <h1 class="hero-title text-white font-black uppercase text-3xl sm:text-4xl lg:text-[3.25rem] tracking-tight leading-[1.08]">
+          MORE THAN<br />
+          <span class="text-accent">ROOFS.</span> WE RESTORE<br />
+          PEACE OF MIND.
+        </h1>
+        <p class="lede mt-5 max-w-[560px] text-[#d6dbe0] text-base sm:text-lg leading-relaxed">
+          At No Limit Roofing, we specialize in storm damage restoration, roof replacements, and insurance claim support. We handle the process so you can focus on what matters most.
+        </p>
+        <div class="hero-actions mt-8 flex flex-wrap gap-4 items-center">
+          <a class="btn-hero-primary" href="/contact.html">
+            GET A FREE INSPECTION
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4.5" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+          <a class="btn-hero-outline" href="tel:+15743600525">
+            CALL NOW
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-4.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center lg:justify-end">
+        <img
+          src="/images/hero-storms-hit-callout.webp"
+          alt="When Storms Hit... We Build Back Stronger"
+          class="hero-script-callout"
+          width="400"
+          height="327"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TRUST STRIP -->
+  <section class="trust-strip-stacked" aria-label="Trust highlights">
+    <div class="container trust-strip-stacked-grid">
+      <div class="trust-strip-stacked-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-8 shrink-0 text-white" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M12 2v20"/>
+          <path d="M4 10h16"/>
+          <path d="M4 5.5l8-2.5v7H4z" fill="currentColor" opacity="0.9"/>
+          <path d="M12 10h8c0 4.5-3.5 9-8 11.5V10z" fill="currentColor" opacity="0.9"/>
+        </svg>
+        <span class="label">INSURANCE CLAIM<br />EXPERTS</span>
+      </div>
+
+      <div class="trust-strip-stacked-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="m8 12 3 3 6-6"/>
+        </svg>
+        <span class="label">HIGH QUALITY<br />MATERIALS</span>
+      </div>
+
+      <div class="trust-strip-stacked-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <span class="label">EXPERIENCED<br />&amp; TRUSTED</span>
+      </div>
+
+      <div class="trust-strip-stacked-item">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="size-8 shrink-0 text-white" aria-hidden="true">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          <path d="M17 4h2v3.5l-2-1.8z" />
+        </svg>
+        <span class="label">RESIDENTIAL &amp;<br />COMMERCIAL</span>
+      </div>
+
+      <div class="trust-strip-stacked-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true">
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          <path d="m11 13-3 6h4l-1 5 5-7h-4l2-4"/>
+        </svg>
+        <span class="label">24/7 STORM<br />RESPONSE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: COMPLETE ROOFING SOLUTIONS -->
+  <section class="section" aria-labelledby="complete-solutions-heading">
+    <div class="container">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-mist/40">
+        <div>
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-[#12161b]">
+            OUR SERVICES
+          </span>
+          <h2 id="complete-solutions-heading" class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#12161b] mt-1">
+            COMPLETE ROOFING SOLUTIONS
+          </h2>
+          <div class="w-14 h-1 bg-accent mt-2.5"></div>
+        </div>
+        <p class="max-w-[540px] text-sm sm:text-base text-[#4a5568] leading-relaxed">
+          From storm damage to full roof replacements, No Limit Roofing delivers reliable, high-quality craftsmanship for residential and commercial properties.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-3.5 mt-8">
+        <!-- CARD 1: HAIL DAMAGE -->
+        <a class="service-card-mockup group" href="/storm-damage/hail-damage.html">
+          <div class="service-card-img-wrap">
+            <img
+              src="/images/service-card-hail-damage.webp"
+              alt="Hail damage on asphalt shingles"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card-bottom">
+            <span class="service-card-title whitespace-nowrap">HAIL DAMAGE</span>
+            <span class="service-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- CARD 2: ROOF INSTALLATIONS -->
+        <a class="service-card-mockup group" href="/roofing/roof-replacement.html">
+          <div class="service-card-img-wrap">
+            <img
+              src="/images/service-card-roof-installations.webp"
+              alt="New architectural shingle roof installation"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card-bottom">
+            <span class="service-card-title">ROOF<br />INSTALLATIONS</span>
+            <span class="service-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- CARD 3: ROOF REPAIRS -->
+        <a class="service-card-mockup group" href="/roofing/roof-repair.html">
+          <div class="service-card-img-wrap">
+            <img
+              src="/images/service-card-roof-repairs.webp"
+              alt="Professional roofer performing precise roof repair"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card-bottom">
+            <span class="service-card-title whitespace-nowrap">ROOF REPAIRS</span>
+            <span class="service-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- CARD 4: STORM DAMAGE -->
+        <a class="service-card-mockup group" href="/storm-damage.html">
+          <div class="service-card-img-wrap">
+            <img
+              src="/images/service-card-storm-damage.webp"
+              alt="Storm clouds and lightning over suburban homes"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card-bottom">
+            <span class="service-card-title whitespace-nowrap">STORM DAMAGE</span>
+            <span class="service-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- CARD 5: COMMERCIAL ROOFING -->
+        <a class="service-card-mockup group" href="/commercial.html">
+          <div class="service-card-img-wrap">
+            <img
+              src="/images/service-card-commercial-roofing.webp"
+              alt="Commercial flat roof membrane installation"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card-bottom">
+            <span class="service-card-title">COMMERCIAL<br />ROOFING</span>
+            <span class="service-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- CARD 6: ABOUT US -->
+        <a class="service-card-mockup group" href="/about.html">
+          <div class="service-card-img-wrap">
+            <img
+              src="/images/service-card-about-us.webp"
+              alt="Beautiful finished family home with new roof"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card-bottom">
+            <span class="service-card-title whitespace-nowrap">ABOUT US</span>
+            <span class="service-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: WHY CHOOSE NO LIMIT ROOFING -->
+  <section class="why-choose-mockup" aria-labelledby="why-choose-heading">
+    <div class="container split items-center gap-12 lg:gap-16">
+      <div class="flex flex-col items-center justify-center text-center">
+        <img
+          src="/images/nlr-logo.webp"
+          alt="No Limit Roofing"
+          width="360"
+          height="166"
+          loading="lazy"
+          class="max-w-[300px] sm:max-w-[340px] w-full drop-shadow-2xl"
+        />
+        <p class="mt-4 text-xs sm:text-sm font-black uppercase tracking-[0.22em] text-white/90">
+          BUILDING A STRONGER TOMORROW
+        </p>
+      </div>
+
+      <div>
+        <h2 id="why-choose-heading" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl tracking-tight">
+          WHY CHOOSE NO LIMIT ROOFING?
+        </h2>
+        <div class="w-14 h-1 bg-accent mt-2.5 mb-4"></div>
+        <p class="text-[#c7cdd3] leading-relaxed text-[1.02rem]">
+          We're more than a roofing company — we're a team committed to protecting what matters most. With extensive experience in insurance restoration and a reputation for integrity, we go above and beyond to deliver exceptional results.
+        </p>
+
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/15">
+          <div class="why-choose-stat-box">
+            <strong>1000+</strong>
+            <span>ROOFS COMPLETED</span>
+          </div>
+          <div class="why-choose-stat-box">
+            <strong>5 STAR</strong>
+            <span>CUSTOMER RATING</span>
+          </div>
+          <div class="why-choose-stat-box">
+            <strong>FAST</strong>
+            <span>CLAIM SUPPORT</span>
+          </div>
+          <div class="why-choose-stat-box">
+            <strong>LOCALLY</strong>
+            <span>OWNED &amp; OPERATED</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REAL PROJECTS -->
-  <section class="section section--fog">
-    <div class="container">
-      <div class="section-head center">
-        <p class="eyebrow">Real Projects</p>
-        <h2>Don't Believe The Sales Pitch. Look At The Roofs.</h2>
-        <p class="lede">Real finished roofs from real jobs across the Michiana region — no stock photography.</p>
-      </div>
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <img src="/images/drone-aerial-finished-roof-charcoal.webp" alt="Finished asphalt shingle roof, aerial view" width="600" height="440" loading="lazy" />
-          <figcaption class="tag">Finished Roof — Aerial</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="/images/drone-aerial-finished-roof-pool.webp" alt="Finished residential roof with pool, aerial view" width="600" height="440" loading="lazy" />
-          <figcaption class="tag">Finished Roof — Aerial</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="/images/crew-roofer-chimney-flashing.webp" alt="No Limit Roofing crew member working on flashing near a chimney" width="600" height="440" loading="lazy" />
-          <figcaption class="tag">Crew At Work</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- NO LIMIT ROOF CHECK -->
-  <section class="section" aria-labelledby="roof-check-heading">
-    <div class="container">
-      <div class="section-head center">
-        <p class="eyebrow">The No Limit Roof Check™</p>
-        <h2 id="roof-check-heading">We Inspect It. We Photograph It. We Explain It. You Decide.</h2>
-        <p class="lede">Every inspection covers accessible shingles, flashing, penetrations, vents, ridges, valleys, visible decking condition, gutters and visible storm indicators.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><h3>We Inspect</h3><p>A thorough, in-person look — not a guess from the driveway.</p></div>
-        <div class="step"><h3>We Photograph</h3><p>Clear documentation of exactly what we find.</p></div>
-        <div class="step"><h3>We Explain</h3><p>Plain language, no upsell, no pressure.</p></div>
-        <div class="step"><h3>You Decide</h3><p>Repair, replace, or do nothing — your call.</p></div>
-      </div>
-      <p class="text-center mt-6"><a class="btn btn-primary" href="/contact.html">Schedule My Roof Check</a></p>
-    </div>
-  </section>
-
-  <!-- ROOFING SYSTEM EXPLAINER -->
-  <section class="section section--fog">
-    <div class="container split">
-      <button
-        type="button"
-        class="video-facade"
-        id="roofing-system-video"
-        data-yt-id="SkxqF_gHMD0"
-        aria-label="Play video: a No Limit Roofing tear-off and replacement project"
-      >
-        <img src="/images/video-thumbnail.webp" alt="" width="960" height="540" loading="lazy" />
-        <span class="play-btn" aria-hidden="true">
-          <span>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-        </span>
-      </button>
-      <div>
-        <p class="eyebrow">Roofing System</p>
-        <h2>What's Under Your Shingles Matters</h2>
-        <p class="lede mt-2">The shingle is the part you see. What actually determines how long a roof lasts is everything underneath it.</p>
-        <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Decking, inspected and replaced where needed</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ice &amp; water protection in vulnerable areas</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Proper underlayment and starter strip</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Flashing, penetrations and ridge protection</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ventilation and drip edge, done to spec</span></li>
-        </ul>
-        <a class="btn btn-primary mt-4" href="/roofing/asphalt-shingle-roofing.html">Learn About Our Shingle Roofing</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORM CENTER -->
-  <section class="section" aria-labelledby="storm-center-heading">
-    <div class="container">
-      <div class="section-head center">
-        <p class="eyebrow">Storm Center</p>
-        <h2 id="storm-center-heading">Storms Don't Make Appointments</h2>
-        <p class="lede">Hail · Wind · Missing Shingles · Leaks · Emergency Damage — roof damage isn't always obvious from the ground.</p>
-      </div>
-      <div class="chip-row" style="justify-content:center">
-        <a class="chip" href="/storm-damage/hail-damage.html">Hail Damage</a>
-        <a class="chip" href="/storm-damage/wind-damage.html">Wind Damage</a>
-        <a class="chip" href="/roofing/roof-repair.html">Missing Shingles</a>
-        <a class="chip" href="/roofing/roof-repair.html">Leaks</a>
-        <a class="chip" href="/roofing/emergency-roof-repair.html">Emergency Damage</a>
-      </div>
-      <p class="text-center mt-6"><a class="btn btn-outline-dark" href="/storm-damage.html">Check My Roof</a></p>
-    </div>
-  </section>
-
-  <!-- COMMERCIAL -->
-  <section class="section section--ink">
-    <div class="container split">
-      <div>
-        <p class="eyebrow eyebrow--on-dark">No Limit Commercial</p>
-        <h2 class="text-white">Protect The Building. Protect The Business Underneath It.</h2>
-        <p class="lede mt-2 text-[#c7cdd3]">Commercial roof inspections, repair, replacement, TPO, EPDM, roof coatings and scheduled maintenance across Northern Indiana and Southwest Michigan.</p>
-        <a class="btn btn-primary mt-4" href="/commercial.html">Request A Commercial Roof Assessment</a>
-      </div>
-      <div class="media-frame"><img src="/images/commercial-roofing-project.webp" alt="Completed commercial flat roof installation" width="843" height="317" loading="lazy" /></div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
+  <!-- SECTION 6: WHAT OUR CUSTOMERS SAY -->
   <section class="section section--fog" aria-labelledby="reviews-heading">
     <div class="container">
       <div class="section-head center">
-        <p class="eyebrow">Customer Reviews</p>
-        <h2 id="reviews-heading">What Our Customers Say</h2>
-        <div class="stars stars-lg" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <h2 id="reviews-heading" class="font-black uppercase tracking-tight">WHAT OUR CUSTOMERS SAY</h2>
+        <div class="stars stars-lg justify-center mt-3 text-accent" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
         </div>
       </div>
+
       <div class="testimonial-carousel" id="testimonial-carousel">
         <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous review">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
         <div class="testimonial-slides">
           <blockquote class="testimonial-slide is-active">
+            <p>&ldquo;No Limit Roofing made the entire process so easy. They handled everything with the insurance company and our new roof looks amazing!&rdquo;</p>
+            <footer>&mdash; HAPPY HOMEOWNER</footer>
+          </blockquote>
+          <blockquote class="testimonial-slide">
             <p>&ldquo;They were prompt, accurate, and professional. I will definitely recommend them for your roofing needs.&rdquo;</p>
-            <footer>K. Hall — South Bend, IN</footer>
+            <footer>&mdash; K. HALL, SOUTH BEND, IN</footer>
           </blockquote>
           <blockquote class="testimonial-slide">
             <p>&ldquo;Jon gave us stellar customer service and I didn't have to worry!! Highly recommend!!&rdquo;</p>
-            <footer>L. Bauer — South Bend, IN</footer>
+            <footer>&mdash; L. BAUER, SOUTH BEND, IN</footer>
           </blockquote>
           <blockquote class="testimonial-slide">
             <p>&ldquo;I am very happy with the work that was done and will definitely be recommending him to my friends and family!&rdquo;</p>
-            <footer>S. Wilcox — South Bend, IN</footer>
+            <footer>&mdash; S. WILCOX, SOUTH BEND, IN</footer>
           </blockquote>
           <blockquote class="testimonial-slide">
             <p>&ldquo;Jonathan was very professional and his team moved very quickly to get my new roof completed. Thank you!&rdquo;</p>
-            <footer>S. Rosado — Michiana</footer>
+            <footer>&mdash; S. ROSADO, MICHIANA</footer>
           </blockquote>
           <blockquote class="testimonial-slide">
             <p>&ldquo;They worked real hard and got the job done. We love the look of the roof and received several compliments from the neighbors.&rdquo;</p>
-            <footer>D. Beery — South Bend, IN</footer>
-          </blockquote>
-          <blockquote class="testimonial-slide">
-            <p>&ldquo;They were quick to respond. Repairs were done with thoughtfulness to avoid future similar problems!&rdquo;</p>
-            <footer>S. Zellers — Greater South Bend</footer>
+            <footer>&mdash; D. BEERY, SOUTH BEND, IN</footer>
           </blockquote>
         </div>
         <button type="button" class="carousel-arrow carousel-next" aria-label="Next review">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
-      <p class="text-center mt-4"><a class="btn btn-outline-dark" href="/about.html#reviews">Read More Reviews</a></p>
     </div>
   </section>
 
-  <!-- ABOUT / LOCAL PROOF -->
-  <section class="section">
-    <div class="container split">
-      <div class="media-frame" style="max-width:400px;margin-inline:auto"><img src="/images/crew-roofer-chimney-flashing.webp" alt="No Limit Roofing crew member at work on a residential roof" width="800" height="999" loading="lazy" /></div>
+  <!-- SECTION 7: PRE-FOOTER CTA BANNER -->
+  <section class="pre-footer-cta" aria-label="Schedule an inspection">
+    <div class="container pre-footer-cta-inner">
       <div>
-        <p class="eyebrow">About Us</p>
-        <h2>Built Here. Roofing Here.</h2>
-        <p class="lede mt-2">Founded in 2010, No Limit Roofing is locally owned and operated by Jonathan Smith, who brings more than 25 years of roofing experience and personally supervises every crew. Regional offices in Mishawaka and Plymouth, Indiana put us close to the neighborhoods we serve — with an Ohio location opening soon.</p>
-        <a class="btn btn-primary mt-4" href="/about.html">Meet No Limit Roofing</a>
+        <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">
+          READY TO GET STARTED?
+        </p>
+        <h2 class="text-white font-black uppercase text-xl sm:text-2xl lg:text-[1.75rem] leading-[1.15] tracking-tight whitespace-nowrap">
+          SCHEDULE YOUR<br />
+          <span class="text-accent">FREE ROOF INSPECTION</span> TODAY.
+        </h2>
       </div>
-    </div>
-  </section>
 
-  <!-- SERVICE AREA -->
-  <section class="section section--fog">
-    <div class="container">
-      <div class="section-head center">
-        <p class="eyebrow">Where We Work</p>
-        <h2>Roofing Across Michiana</h2>
-        <p class="lede">Northern Indiana and Southwest Michigan, roughly 60 miles from our Mishawaka office — with more city pages added as our project history grows in each area.</p>
-      </div>
-      <div class="chip-row" style="justify-content:center">
-        <a class="chip" href="/service-areas/south-bend.html">South Bend, IN</a>
-        <a class="chip" href="/service-areas/mishawaka.html">Mishawaka, IN</a>
-        <a class="chip" href="/service-areas/granger.html">Granger, IN</a>
-        <a class="chip" href="/service-areas/elkhart.html">Elkhart, IN</a>
-        <a class="chip" href="/service-areas/niles.html">Niles, MI</a>
-      </div>
-      <p class="text-center mt-6"><a class="btn btn-outline-dark" href="/areas.html">See All Service Areas</a></p>
-    </div>
-  </section>
+      <div class="pre-footer-actions-col flex flex-col justify-center gap-5 border-y lg:border-y-0 lg:border-x border-white/20 py-6 lg:py-0 lg:px-10">
+        <a href="tel:+15743600525" class="cta-action-row group">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL NOW</span>
+        </a>
 
-  <!-- FAQ -->
-  <section class="section" aria-labelledby="faq-heading">
-    <div class="container" style="max-width:820px">
-      <div class="section-head center">
-        <p class="eyebrow">FAQ</p>
-        <h2 id="faq-heading">Questions Homeowners Ask Us Most</h2>
-      </div>
-      <div>
-        <details class="faq-item" open>
-          <summary>What areas does No Limit Roofing serve?<span class="plus" aria-hidden="true"></span></summary>
-          <p>St. Joseph, LaPorte and Marshall Counties in Indiana, and Berrien and Cass Counties in Michigan — roughly Northern Indiana and Southwest Michigan, centered on the South Bend / Mishawaka area.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is No Limit Roofing licensed, bonded and insured?<span class="plus" aria-hidden="true"></span></summary>
-          <p>Yes, and we're a GAF factory-certified contractor, along with IKO, Owens Corning, Malarkey, Atlas, CertainTeed and SRS certifications.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is the inspection really free?<span class="plus" aria-hidden="true"></span></summary>
-          <p>Yes. Every inspection and written estimate is free with no obligation, whether it's a small repair or a full commercial roof replacement.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How is No Limit Roofing different from other roofing contractors?<span class="plus" aria-hidden="true"></span></summary>
-          <p>Owner Jonathan Smith personally supervises jobs, every inspection includes clear photo documentation and a plain-language explanation before any work is recommended, and every estimate is free and written — no pressure, no vague verbal quotes.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+        <a href="/contact.html" class="cta-action-row group">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+            <line x1="16" x2="16" y1="2" y2="6"/>
+            <line x1="8" x2="8" y1="2" y2="6"/>
+            <line x1="3" x2="21" y1="10" y2="10"/>
+            <path d="m9 16 2 2 4-4"/>
+          </svg>
+          <span class="font-black uppercase tracking-wider text-[1.05rem]">SCHEDULE ONLINE</span>
+        </a>
 
-  <!-- FINAL CTA -->
-  <section class="section section--tight" id="free-inspection">
-    <div class="container">
-      <div class="card p-8" style="max-width:760px;margin:0 auto">
-        <div class="section-head center" style="margin-bottom:1.5rem">
-          <p class="eyebrow">Free Inspection</p>
-          <h2>Your Roof Isn't Going To Fix Itself.</h2>
-          <p class="lede">Let's find out what it actually needs.</p>
-        </div>
+        <a href="/contact.html" class="cta-action-row group">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <line x1="8" x2="16" y1="9" y2="9"/>
+            <line x1="8" x2="13" y1="13" y2="13"/>
+          </svg>
+          <span class="font-black uppercase tracking-wider text-[1.05rem]">REQUEST A QUOTE</span>
+        </a>
+      </div>
 
-        <form id="quick-inspection-form" name="quick-inspection" method="POST" data-netlify="true" netlify-honeypot="company-website">
-          <input type="hidden" name="form-name" value="quick-inspection" />
-          <p class="honeypot">
-            <label>Don't fill this out if you're human: <input name="company-website" tabindex="-1" autocomplete="off" /></label>
-          </p>
-          <div class="form-grid">
-            <div class="field">
-              <label for="qi-name">Full Name <span class="req">*</span></label>
-              <input type="text" id="qi-name" name="name" autocomplete="name" required aria-describedby="qi-name-error" />
-              <div class="field-error" id="qi-name-error"></div>
-            </div>
-            <div class="field">
-              <label for="qi-phone">Phone <span class="req">*</span></label>
-              <input type="tel" id="qi-phone" name="phone" autocomplete="tel" required aria-describedby="qi-phone-error" />
-              <div class="field-error" id="qi-phone-error"></div>
-            </div>
-            <div class="field">
-              <label for="qi-email">Email <span class="req">*</span></label>
-              <input type="email" id="qi-email" name="email" autocomplete="email" required aria-describedby="qi-email-error" />
-              <div class="field-error" id="qi-email-error"></div>
-            </div>
-            <div class="field">
-              <label for="qi-address">Property Address <span class="req">*</span></label>
-              <input type="text" id="qi-address" name="address" autocomplete="street-address" required aria-describedby="qi-address-error" />
-              <div class="field-error" id="qi-address-error"></div>
-            </div>
-            <div class="field full">
-              <label for="qi-service">Service Needed</label>
-              <select id="qi-service" name="service">
-                <option value="Not sure yet">Not sure yet</option>
-                <option value="Roof Repair">Roof Repair</option>
-                <option value="Roof Replacement">Roof Replacement</option>
-                <option value="Storm Damage">Storm Damage</option>
-                <option value="Commercial Roofing">Commercial Roofing</option>
-                <option value="Roof Inspection">Roof Inspection</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label for="qi-message">Message (optional)</label>
-              <textarea id="qi-message" name="message" placeholder="Anything else we should know?"></textarea>
-            </div>
-          </div>
-          <div class="form-status" id="quick-inspection-status" role="status"></div>
-          <button type="submit" class="btn btn-primary btn-block mt-3">Schedule My Free Roof Inspection</button>
-        </form>
+      <div class="pre-footer-brand">
+        <img
+          src="/images/nlr-logo.webp"
+          alt="No Limit Roofing"
+          width="260"
+          height="120"
+          loading="lazy"
+        />
+        <p class="pre-footer-slogan">NO LIMITS. JUST RESULTS.</p>
       </div>
     </div>
   </section>

@@ -3,7 +3,7 @@ title: "What Does Hail Damage Look Like On A Roof?"
 metaDescription: "Hail damage rarely looks dramatic from the ground. Here's what to actually look for, and why an inspection matters more than a visual check."
 publishDate: 2026-09-10
 excerpt: "It almost never looks like what people expect. Here's what hail damage actually looks like up close."
-heroImage: "/images/service-emergency-repair-hero.webp"
+heroImage: "/images/hail-damage-hero.webp"
 faqs:
   - question: "How long after a hailstorm can damage still be found?"
     answer: "Hail damage doesn't disappear or heal — a roof that took a hail hit months ago will still show the same signs during an inspection today. There's no expiration on when it's worth checking, though earlier is better for catching problems before they lead to a leak."

@@ -9,7 +9,7 @@ metaDescription: "High wind can lift, crease or loosen shingles without blowing 
 heroEyebrow: "Storm Damage"
 heroHeadline: "Wind Can Damage A Roof Without Removing A Single Shingle"
 heroLede: "Creased, lifted or loosened shingles from high wind often still look intact from the ground — but the seal is broken, and that's where leaks start."
-heroImage: "/images/drone-aerial-finished-roof-manicured-hero.webp"
+heroImage: "/images/storm-damage-hero.webp"
 highlights:
   - "Inspection for creased, lifted or loosened shingles, not just missing ones"
   - "Flashing and vent checks — common failure points in high wind"
