@@ -2,6 +2,18 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 33 — The real bug behind the dropdown sub-menu color: CSS specificity, not color choice
+
+User reported the Session 32 "fix" hadn't actually changed anything — sub-menu items still showed as off-white/gray, and disappeared entirely on hover. That symptom (invisible-on-hover) was the tell: this was never a color-choice problem.
+
+**Root cause**: `.main-nav ul a` (specificity `(0,1,2)`) was silently beating `.nav-dropdown-panel a` (specificity `(0,1,1)`) — the dropdown's individual links live inside `<ul>` under `.main-nav`, so *both* selectors matched, and the higher-specificity one won regardless of source order. Confirmed empirically via computed style, not just by reading the source CSS: the resting color was `rgb(199,205,211)` (`#c7cdd3`, the top-level on-dark nav link color) — 1.6:1 contrast on white, a genuine WCAG failure, not the `text-ink` Session 32 had set. On hover it got worse: `.main-nav ul a:hover` (white text) also out-specifies `.nav-dropdown-panel a:hover`, so hovering turned the text white on the dropdown's white background — invisible, exactly as reported. Session 32's fix was real CSS that never once applied.
+
+**Why Lighthouse never caught it**: the dropdown is a collapsed `<details>` by default, and Lighthouse's accessibility audit doesn't open interactive content before scanning — the failing 1.6:1 contrast was sitting there undetected through every prior Lighthouse check this session.
+
+**Fix**: prefixed the dropdown-specific selectors with `.main-nav` (`.main-nav .nav-dropdown-panel a`, `.main-nav .nav-dropdown-panel a:hover`, `.main-nav .nav-dropdown-group-title`, `.main-nav .nav-dropdown-group-title:hover`) so they definitively out-specify `.main-nav ul a` / `.main-nav ul a:hover` instead of losing a specificity fight that source order can't rescue. Also fixed the mobile-only group-title rule (`Roofing`/`Storm Damage`/`Commercial` headers), which had the identical vulnerability but happened not to show it because the desktop `@media (min-width: 64rem)` override has its own, separately-sufficient specificity — the mobile path was still broken.
+
+Verified this time with computed styles, not a screenshot: resting color now reads `rgb(12,17,21)` (`--color-ink`) at the DOM level, confirmed correct. Real interactive `:hover` proved hard to capture in a stable screenshot this session (the dropdown kept closing mid-automation — a tooling issue, not a CSS one); confirmed the hover fix instead by computing both rules' specificity directly (`.main-nav .nav-dropdown-panel a:hover` = `(0,3,1)`, unambiguously beats `.main-nav ul a:hover` = `(0,2,2)`) rather than fighting the automation further. 0 SEO/broken-link issues across all 48 pages, 0 console errors.
+
 ## Session 32 — Dropdown sub-menu contrast, and a stale-dist build artifact
 
 **Dropdown sub-menu items were hard to read.** User flagged the non-hover color of the Services mega-menu's individual links (Roof Replacement, Hail Damage, etc.) — `.nav-dropdown-panel a` was `text-steel` (#545d68), which technically passes contrast (6.68:1 on white) but reads as washed-out next to the bold orange group headers above it. Changed to `text-ink` + `font-semibold` (was `font-medium`) for real visual prominence, not just a passing contrast number. Hover state (`text-accent-dark`) untouched.
