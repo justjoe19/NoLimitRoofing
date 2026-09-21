@@ -209,8 +209,8 @@
   .nav-dropdown summary .chev { @apply size-3 transition-transform duration-150; }
   .nav-dropdown details[open] > summary .chev { @apply rotate-180; }
   .nav-dropdown-panel { @apply flex flex-col gap-0.5 pb-2 pl-3; }
-  .main-nav .nav-dropdown-panel a { @apply block rounded-sm px-3 py-2 text-[0.92rem] font-semibold text-ink; }
-  .main-nav .nav-dropdown-panel a:hover { @apply text-accent-dark; }
+  .main-nav .nav-dropdown-panel a { @apply block rounded-sm px-3 py-2 text-[0.92rem] font-semibold text-mist; }
+  .main-nav .nav-dropdown-panel a:hover { @apply text-accent-light; }
 
   /* Mobile: each service group gets a small bold header above its links,
      all stacked in one flat list — no extra nested tap targets. */
@@ -226,6 +226,8 @@
       min-width: 230px;
       box-shadow: var(--shadow-md);
     }
+    .main-nav .nav-dropdown-panel a { @apply text-ink; }
+    .main-nav .nav-dropdown-panel a:hover { @apply text-accent-dark; }
     .nav-dropdown-panel--mega {
       @apply flex-row gap-1 p-4;
       min-width: 620px;
