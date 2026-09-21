@@ -2,6 +2,18 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 29 — Unused-image cleanup + documentation pass
+
+Requested: delete any image files no longer used, and bring `README.md`/`CHANGELOG.md` up to date so the project can be picked back up cleanly after a break.
+
+**Image audit**: cross-referenced every file in `public/images/` against every literal `/images/...` reference in `src/`, plus every `-hero.webp` reference's derived non-hero equivalent (`heroImage.replace("-hero.webp", ".webp")` — used by the service/location/learning-center templates for `og:image`, so a file can be "used" without ever appearing as a literal string). Two real orphans found and removed: `service-roof-maintenance.webp` and `service-roof-maintenance-hero.webp` — no content file references them (Commercial Maintenance uses `commercial-roofing-project-hero.webp` instead; these look like leftovers from an earlier hero reassignment pass). Also removed the now-empty `public/images/learning-center/` directory — Decap CMS recreates it automatically the first time someone uploads an image through `/admin`. Verified after deleting: 0 broken links/assets across all 48 pages, including a dedicated check that every `og:image` meta tag still resolves (a category the general link-checker regex doesn't catch).
+
+**Documentation pass on `README.md`**, since several sections had gone stale across the Session 25-28 restyle arc without being caught at the time:
+- The Design System section pointed at `css/input.css`, a pre-Astro-migration path that hasn't existed since Session 6, and listed the *old* color palette (`#14171a`/`#c23a0e`) instead of Session 25's actual live values. Rewrote with the correct file path and current token table, including the two tokens (`--color-ink-soft`/`-softer`) that were never documented at all, and a note on which accent shade to use for text vs. large elements (the real contrast rule Session 25 had to work out empirically).
+- The favicon/logo description still said "the original site's real favicon, not a custom mark" — true through Session 24, wrong since Session 28 replaced it with the client's own recreated logo. Updated, and added a note about the logo's specific aspect ratio and the hardcoded `width`/`height` attrs in `Header.astro`/`Footer.astro`/`404.astro` that don't derive from it automatically (this exact mismatch happened in both Session 25 and Session 28).
+- Added 3 new "Known gotchas" entries from real mistakes/discoveries this arc: the brand-color contrast issue (Session 25), the Read-tool-composites-transparent-PNGs-on-black surprise (Session 28), and `resize_window`'s unreliability for real mobile-viewport testing (Session 26) — each with what to do differently next time, not just what went wrong.
+- Added a **"Project status"** section up top, specifically for the "picking this back up after a break" use case this session was asked to support: what's mid-flight, what's genuinely blocked on the client vs. more dev work, and the fact that `main` currently sits ahead of `origin/main` (local commits not pushed) — easy to miss without checking, and exactly the kind of state a resumed session would otherwise have to rediscover the hard way.
+
 ## Session 28 — Real logo file, replacing the Session 25 screenshot extraction
 
 The client sent over a proper recreated logo file (clean vector-quality artwork on a solid black background, 1725×912) — a real replacement for the raster screenshot-crop placeholder flagged as temporary back in Session 25.

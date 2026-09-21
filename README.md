@@ -4,6 +4,21 @@ A static marketing + local-SEO site for **No Limit Roofing**, a roofing contract
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
+## Project status (updated Session 29 — read this first if picking the project back up)
+
+**Site direction**: mid-restyle. The client sent a reference mockup (different site's homepage) asking to match its look — Sessions 25-28 rebuilt the visual system (dark/orange palette, bold uppercase type, a real logo, dark nav bar) and the homepage's structure (trust strip, services grid, "Why Choose" stat section, a real testimonial carousel) to match it, while deliberately keeping this site's own real content, copy, and service focus rather than copying the mockup's insurance-claim-heavy messaging (explicitly declined by the client — see CHANGELOG Session 26).
+
+**Local commits not yet pushed to GitHub**: as of Session 29, `main` is ahead of `origin/main` — check `git log --oneline origin/main..HEAD` before assuming the live repo (and therefore Netlify, once connected) reflects the latest work. This project's standing rule is to only push when explicitly asked.
+
+**Genuinely open items, most blocked on the client, not on more dev work**:
+- **Netlify Identity + Git Gateway** still need enabling in the Netlify dashboard (account-level, can't be done from code) before `/admin` (Decap CMS) actually works for the client — see "Learning Center & CMS" below.
+- **Analytics (GA4) and Google Search Console** aren't wired up — need a GA4 property ID and Google account access from the client.
+- **Live Google Reviews widget** — currently a static grid of real, verified testimonials; going live needs API credentials tied to the client's Google Business Profile.
+- **No real commercial-job photo exists anywhere** — checked this project's own assets, the original 16 client photos, every page of the live site, Facebook, and LinkedIn (Session 24). The Commercial pages' hero/content image is a real photo but below-ideal resolution with no higher-res source available. Don't swap in a residential photo to "solve" this — ask the client for a real commercial job photo instead.
+- **3 photo categories from the original Session 6 brief are still missing**: a CertainTeed RoofRunner install shot, a branded truck photo, an office photo. No substitute has been used for these.
+- **Mobile-viewport visual QA is incomplete for the Session 25-28 restyle** — `resize_window` wasn't reliably affecting real viewport width this arc (see Known gotchas), so verification leaned on Lighthouse's mobile-emulated audit rather than an actual hands-on mobile walkthrough. Worth a manual check before treating the restyle as fully done.
+- **Project Gallery and an "Insurance Claims" nav item were deliberately left out** of the restyle (client confirmed, Session 26) — Project Gallery was removed earlier (Session 14) for lack of real project content to show; revisit either if the client's priorities change.
+
 ## Tech stack
 
 - **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 48 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
@@ -93,16 +108,30 @@ public/                  Served as-is, unprocessed — same convention as the
                           backgrounds (see "Hero images" below).
   images/badge-*.webp     Manufacturer certification badges.
   images/learning-center/  Where Decap CMS saves images the client uploads
-                          through the article editor.
-  images/nlr-logo.{png,webp}  Company logo (png kept for JSON-LD/og:image use).
+                          through the article editor. Not committed while
+                          empty — Decap/git will recreate it the first time
+                          someone uploads an image through /admin.
+  images/nlr-logo.{png,webp}  Company logo — the client's real recreated
+                          artwork (Session 28), background removed. png kept
+                          for JSON-LD/og:image use. Aspect ratio is 500:232;
+                          if this file is ever replaced again, check the new
+                          ratio against the hardcoded width/height attrs in
+                          Header.astro, Footer.astro and 404.astro — they
+                          don't derive automatically and will distort the
+                          logo if left stale (this exact mistake happened
+                          twice already, see CHANGELOG Sessions 25 and 28).
   js/main.js              Mobile nav, contact/quick-inspection form
                           validation + AJAX submit (generic — handles any
                           data-netlify form on the page, not hardcoded to
                           one form id), nav dropdown close behavior, lite
                           YouTube embed, header scroll shadow. No dependencies.
-  favicon.ico, favicon-*.png,  Favicon set generated FROM THE ORIGINAL
-  apple-touch-icon.png,        SITE's actual favicon (a portrait of their
-  icon-192.png, icon-512.png   roofer mascot) — not a custom mark.
+  favicon.ico, favicon-*.png,  Favicon set generated from the client's real
+  apple-touch-icon.png,        recreated logo (Session 28) — a crop of just
+  icon-192.png, icon-512.png   the roof/window icon mark on a solid dark
+                                background (the full wordmark doesn't read
+                                at 16-32px). Originally sourced from the old
+                                site's actual favicon (Session 1); superseded
+                                once the client sent real logo artwork.
   site.webmanifest, robots.txt   sitemap.xml is no longer a static file here
                                 — @astrojs/sitemap generates sitemap-index.xml
                                 and sitemap-0.xml at build time from the
@@ -121,18 +150,22 @@ package.json, package-lock.json   Astro + Tailwind Vite plugin only.
 
 ## Design system
 
-Defined in `css/input.css` under `@theme`:
+Defined in `src/styles/global.css` under `@theme` (Tailwind v4's CSS-first config — there is no `tailwind.config.js`). **Restyled in Session 25** to match a client-supplied reference mockup; these are the current, live values:
 
 | Token | Value | Use |
 |---|---|---|
-| `--color-ink` | `#14171a` | Primary dark / body text |
-| `--color-fog` | `#f5f6f8` | Light section background |
+| `--color-ink` | `#0c1115` | Primary dark bg (header, footer, dark sections) |
+| `--color-ink-soft` | `#161c21` | Dark bg, one step lighter (trust strip, hero gradient mid-stop) |
+| `--color-ink-softer` | `#232b31` | Dark bg, lightest step (hero gradient bottom-stop) |
+| `--color-paper` | `#ffffff` | Card/content backgrounds |
+| `--color-fog` | `#f2f3f5` | Light section background |
 | `--color-mist` | `#e4e7eb` | Borders |
 | `--color-steel` | `#545d68` | Secondary/muted text |
-| `--color-accent` | `#c23a0e` | Brand orange — CTAs, links, accents |
-| `--color-accent-dark` | `#9c2f0a` | Accent hover state |
+| `--color-accent` | `#e56115` | Brand orange — large text, icons, glows (3.47:1 on white; fails AA for body text, see gotcha below) |
+| `--color-accent-dark` | `#b84c0f` | Button backgrounds, small/normal-weight text on light backgrounds (5.15:1 on white — use this, not `--color-accent`, for anything under ~18px) |
+| `--color-accent-light` | `#f0813a` | Text/icons on dark backgrounds (7.14:1 on `--color-ink`) |
 
-Desktop nav breakpoint is `lg` (1024px) — below that, the hamburger drawer takes over. Container max-width is 1200px (`.container`).
+Desktop nav breakpoint is `lg` (1024px) — below that, the hamburger drawer takes over. Container max-width is 1200px (`.container`). The header (`.site-header`) is dark (Session 27), not white — if you add new nav-adjacent elements, style them for a dark bg by default.
 
 ### Hero images
 
@@ -195,7 +228,7 @@ npx lighthouse http://localhost:4321/ --chrome-flags="--headless" --only-categor
 
 Always test against `npm run preview` (the real static build), not `npm run dev` (Astro's dev server does extra work per request and won't give representative Lighthouse numbers).
 
-Current scores (verified Session 10, across homepage, service pages, city pages, Learning Center, and the original 6 pages): every page hits literal 100/100/100/100, except the homepage, which sits at 99 Performance. That's not a bug — Lighthouse's own LCP sub-diagnostics (discovery, breakdown) score it perfectly optimized already; the homepage is legitimately the heaviest page on the site by design (12+ sections), and 99 vs. 100 comes down to sub-second timing noise under Lighthouse's simulated mobile CPU throttle. **A single Lighthouse score under 100 is expected noise, not a regression — always re-run at least once before treating a dip as real**, and expect the real Netlify CDN to score at or above whatever a local `astro preview` run shows.
+Current scores (last verified Session 28, after the Session 25-28 restyle/homepage-rebuild/logo work): most pages hit a literal 100/100/100/100; the homepage sits at 98-99 Performance depending on the run. That's not a bug — Lighthouse's own LCP sub-diagnostics score it as already optimized; the homepage is legitimately the heaviest page on the site by design (16+ sections after Session 26's rebuild), and the score comes down to sub-second timing noise under Lighthouse's simulated mobile CPU throttle. **A single Lighthouse score under 100 is expected noise, not a regression — always re-run at least once before treating a dip as real**, and expect the real Netlify CDN to score at or above whatever a local `astro preview` run shows.
 
 Two useful one-off scripts from Session 10's audit (not committed — recreate from `CHANGELOG.md` if needed): a Python script that parses every page in `dist/` for missing/duplicate titles, meta descriptions, H1 issues, heading-hierarchy skips, and missing image alt/dimensions; and one that crawls every internal `href` in `dist/` against the actual built file set to catch broken links (excluding `/admin/`, which isn't a content page).
 
@@ -207,7 +240,10 @@ For anything beyond a quick sanity check, `puppeteer-core` (installed with `npm 
 - **Avoid scroll-triggered reveal/fade-in animations.** One was added and then removed — it caused a Lighthouse color-contrast failure (audit caught text mid-opacity-transition) and made page content dependent on IntersectionObserver timing/JS succeeding. If you want scroll animations back, make sure there's a hard fallback that guarantees content becomes visible even if JS fails or an observer never fires.
 - **`og:image` tags must point at files that actually exist.** All JPG fallbacks were deleted at one point (site is WebP-only) without updating the `og:image`/JSON-LD `image` meta tags, which broke social-share previews on every page for a while. Each page's `og:image` now points at that page's own hero `-hero.webp` file — keep them in sync if you change a hero photo.
 - **Check that image filenames/alt text match what's actually in the photo.** `attic-insulation-installation.webp` was originally misnamed `roofing-project-gallery.webp` and got used with a "Siding Repair & Replacement" caption on the Services page — wrong content, not just a wrong filename. Look at the actual photo before reusing it somewhere new.
-- **Favicon is the client's real favicon**, pulled directly from `nolimitroofingin.com/favicon.ico` (which redirects to their actual icon file) — not a custom-designed mark. If the client ever rebrands, source a new one from them rather than inventing one.
+- **Favicon and logo are the client's real artwork**, not invented — originally the old site's actual favicon (Session 1), now regenerated from the client's recreated logo file (Session 28) once they sent one. If either the logo or favicon ever needs to change again, get the real asset from the client rather than designing a placeholder — and if you're extracting one from a screenshot/mockup as a stopgap (as Session 25 did before the real file arrived), say so explicitly and flag it as temporary, since it'll be visibly softer than real artwork.
+- **A brand color swap needs a contrast check, not just a screenshot check.** Session 25's new brand orange (`--color-accent`, sampled directly from the client's mockup) looked fine by eye but only measures 3.47:1 against white — Lighthouse caught 6 real failures (every primary button, the mobile call bar) once it was used for body-sized text, where the old orange's 5.38:1 had been passing. Use `--color-accent-dark` for text/button-backgrounds under ~18px on light backgrounds; save the brighter `--color-accent` for large text, icons, and glows. Run Lighthouse's accessibility category after *any* palette change — don't trust visual inspection alone.
+- **The Read/screenshot tool composites transparent PNGs onto a dark backdrop by default.** After chroma-keying a logo's background to transparent, it can look completely unchanged in a preview — that's the tool's rendering, not a failed edit. Verify by sampling the actual alpha channel at a background pixel, or by compositing onto white before trusting the result.
+- **`resize_window` (browser automation) has been unreliable for testing real mobile viewports in this project** — calls report success but `window.innerWidth` doesn't change. Until that's fixed, use Lighthouse (which runs its own mobile-emulated audit) for a real mobile signal, and/or constrain a `.container`'s own width via injected CSS as a rough visual check — but that only tests container-width-driven behavior (like the cert-badge row's flex-shrink), not real viewport-width media queries (`sm:`/`lg:` Tailwind variants), so it can give false confidence on breakpoint-driven layout.
 
 ## Deployment
 
