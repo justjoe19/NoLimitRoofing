@@ -2,6 +2,14 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 32 — Dropdown sub-menu contrast, and a stale-dist build artifact
+
+**Dropdown sub-menu items were hard to read.** User flagged the non-hover color of the Services mega-menu's individual links (Roof Replacement, Hail Damage, etc.) — `.nav-dropdown-panel a` was `text-steel` (#545d68), which technically passes contrast (6.68:1 on white) but reads as washed-out next to the bold orange group headers above it. Changed to `text-ink` + `font-semibold` (was `font-medium`) for real visual prominence, not just a passing contrast number. Hover state (`text-accent-dark`) untouched.
+
+**Found and fixed a stale-`dist/` build artifact while re-verifying.** A routine post-change Lighthouse/SEO check reported 60 pages instead of 48, with a duplicate meta description — 11 of the 15 Learning Center articles had a phantom `<slug> 2.html` twin in `dist/`, each byte-identical to the real file but with different file permissions (owner-only) and an earlier timestamp. Root cause: rebuilding repeatedly (`npm run build`) while the long-running `astro preview` server had the same `dist/` directory open likely raced the two processes on a handful of file writes, and something in that path fell back to a collision-avoidance filename instead of overwriting cleanly. This only affected the local, gitignored build output — not source, not anything committed — but it was actively feeding wrong data into the local SEO audit and could have served stale content from `npm run preview`. Fixed by deleting `dist/` entirely and rebuilding fresh; confirmed the phantom URLs now 404 and the real ones still serve correctly. Worth remembering: if a page/duplicate count ever looks off again, check for a stale `dist/` before assuming it's a real content bug.
+
+Verified: 0 SEO/broken-link issues across the correct 48 pages, 0 console errors, Lighthouse Accessibility 100, confirmed the sub-menu color change visually in the browser.
+
 ## Session 31 — Nav weight, footer credit wording, a couple of quick checks
 
 Four small follow-up requests after Session 30's nav revert:

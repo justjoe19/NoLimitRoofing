@@ -209,7 +209,7 @@
   .nav-dropdown summary .chev { @apply size-3 transition-transform duration-150; }
   .nav-dropdown details[open] > summary .chev { @apply rotate-180; }
   .nav-dropdown-panel { @apply flex flex-col gap-0.5 pb-2 pl-3; }
-  .nav-dropdown-panel a { @apply block rounded-sm px-3 py-2 text-[0.92rem] font-medium text-steel; }
+  .nav-dropdown-panel a { @apply block rounded-sm px-3 py-2 text-[0.92rem] font-semibold text-ink; }
   .nav-dropdown-panel a:hover { @apply text-accent-dark; }
 
   /* Mobile: each service group gets a small bold header above its links,
