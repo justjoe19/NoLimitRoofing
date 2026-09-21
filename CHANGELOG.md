@@ -2,6 +2,22 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 34 — Recompressing the 37 images the Antigravity commit added/bloated
+
+User flagged that images were "bogging down our Lighthouse score." Homepage Performance had regressed to 81 (LCP 5.2s) since Session 30's Antigravity commit brought in a batch of large, minimally-compressed WebP files alongside the new homepage layout. Rather than touch every image in `public/images/`, cross-referenced `git show --stat d58011a` against the current file list to isolate exactly the 37 files that commit introduced or bloated, and left everything else (e.g. `drone-aerial-finished-roof-pool.webp`, pre-existing and untouched by that commit) alone.
+
+**Approach**: decoded each WebP to PNG (`dwebp`) and re-encoded (`cwebp`) with quality tuned per actual display context, not a flat setting:
+- **13 hero backgrounds with heavy dark overlay** (`*-hero.webp`) → q30. The overlay hides most compression artifacts, so this tier could go aggressive.
+- **2 section backgrounds with very heavy overlay** (`why-choose-bg.webp`, `aerial-roofs-cta.webp`) → q22, same reasoning taken further.
+- **Main hero image** (`hero-craftsman-dusk.webp`, lighter overlay, more visible) → q38.
+- **Transparent script-text callout** (`hero-storms-hit-callout.webp`) → resized from its native 1204×984 down to 850px wide (its actual max CSS display size is 420px, so 850px is still ~2x retina headroom) before compressing at q60/alpha_q100 — resizing did more work than quality tuning here since the file was ~3x larger than it ever needed to render at.
+- **6 service-card grid images** → same story: native 1200×896 resized down to 450px wide (actual grid display width is ~188px) before q55 compression.
+- **14 plain, fully-visible content images** (no overlay, directly viewed) → q58, the most conservative tier, to protect visible quality.
+
+**Result**: worst offenders dropped from 200–250KB to 60–140KB. `public/images/` total: 3.7MB. Homepage Lighthouse Performance: 81 → 94, LCP: 5.2s → 3.1s, CLS still 0, TBT still 0ms. Spot-checked several images across tiers (main hero, storm-damage hero, services grid) visually in-browser at full display size — no visible banding, blocking, or softness even in the most aggressively compressed (q22–q30) tier, because the dark overlays these sit under do the real work of hiding artifacts.
+
+Verified: 0 SEO/broken-link issues across all 48 pages (custom check confirmed all 201 `/images/...` references in the built HTML resolve to real files), 0 console errors on homepage/services/storm-damage.
+
 ## Session 33 — The real bug behind the dropdown sub-menu color: CSS specificity, not color choice
 
 User reported the Session 32 "fix" hadn't actually changed anything — sub-menu items still showed as off-white/gray, and disappeared entirely on hover. That symptom (invisible-on-hover) was the tell: this was never a color-choice problem.
