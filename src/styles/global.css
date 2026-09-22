@@ -228,6 +228,7 @@
     }
     .main-nav .nav-dropdown-panel a { @apply text-ink; }
     .main-nav .nav-dropdown-panel a:hover { @apply text-accent-dark; }
+    .main-nav .nav-dropdown-panel a[aria-current="page"] { @apply text-accent-dark; }
     .nav-dropdown-panel--mega {
       @apply flex-row gap-1 p-4;
       min-width: 620px;
@@ -242,6 +243,7 @@
       @apply mb-1 border-b border-mist pb-2 text-accent-dark;
     }
     .nav-dropdown-panel--mega .nav-dropdown-group-title:hover { @apply text-ink; }
+    .nav-dropdown-panel--mega .nav-dropdown-group-title[aria-current="page"] { @apply text-ink; }
   }
 
   .nav-toggle {
