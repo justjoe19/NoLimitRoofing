@@ -3,7 +3,7 @@ title: "TPO vs. EPDM for Commercial Buildings"
 metaDescription: "How TPO and EPDM commercial roofing membranes actually compare — cost, lifespan, energy efficiency, and how to think about which fits your building."
 publishDate: 2026-09-01
 excerpt: "Both are proven flat-roof systems. The right one depends on your building, not a universal 'better' answer."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/article-tpo-vs-epdm-hero.webp"
 faqs:
   - question: "Which system is better for energy efficiency?"
     answer: "TPO's reflective white surface generally reduces cooling load more than traditional black EPDM, which matters most for buildings with significant summer cooling costs. White EPDM exists and closes some of that gap, but standard black EPDM is the more heat-absorbing of the two default options."

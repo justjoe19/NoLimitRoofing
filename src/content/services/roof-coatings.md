@@ -9,7 +9,7 @@ metaDescription: "Silicone and commercial roof coatings that extend the service 
 heroEyebrow: "Commercial"
 heroHeadline: "Extend A Roof's Life Without A Full Replacement"
 heroLede: "When an existing low-slope roof is sound but aging, a coating system can extend its service life at a fraction of full replacement cost."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/commercial-roof-coatings-hero.webp"
 highlights:
   - "Silicone and other coating systems for existing low-slope roofs"
   - "A cost-effective option when the roof is sound but aging"

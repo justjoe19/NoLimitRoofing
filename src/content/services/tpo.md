@@ -9,7 +9,7 @@ metaDescription: "TPO membrane installation and repair for commercial and indust
 heroEyebrow: "Commercial"
 heroHeadline: "TPO: A Durable, Energy-Efficient Flat Roof System"
 heroLede: "TPO is one of the most widely used commercial roofing membranes — reflective, seam-welded, and built for long-term low-slope performance."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/commercial-tpo-roof-hero.webp"
 highlights:
   - "Heat-welded seams for a fully bonded, watertight membrane"
   - "Reflective white surface option that can reduce cooling load"

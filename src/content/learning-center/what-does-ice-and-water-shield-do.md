@@ -3,7 +3,7 @@ title: "What Does Ice & Water Shield Do?"
 metaDescription: "Ice and water shield protects the parts of a roof most vulnerable to ice damming and wind-driven rain — here's how it actually works."
 publishDate: 2026-08-04
 excerpt: "It's the layer doing the most work in exactly the spots where Michiana roofs are most likely to leak."
-heroImage: "/images/attic-insulation-installation-hero.webp"
+heroImage: "/images/article-ice-and-water-shield-hero.webp"
 faqs:
   - question: "Does every roof need ice and water shield?"
     answer: "Building codes and manufacturer specifications typically require it in specific vulnerable areas (eaves, valleys, penetrations) rather than across the entire roof deck, though some roofs with more complex geometry or higher ice-dam risk may warrant more extensive coverage. We'll assess what your specific roof needs."

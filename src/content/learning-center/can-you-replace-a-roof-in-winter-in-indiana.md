@@ -3,7 +3,7 @@ title: "Can You Replace A Roof In Winter In Indiana?"
 metaDescription: "Winter roof replacement is possible in Northern Indiana with the right conditions and technique — here's what's actually different about it."
 publishDate: 2026-07-28
 excerpt: "Yes, with some real caveats — here's what actually changes about a winter installation."
-heroImage: "/images/drone-aerial-finished-roof-manicured-hero.webp"
+heroImage: "/images/article-winter-roof-replacement-hero.webp"
 faqs:
   - question: "Does a winter-installed roof cost more?"
     answer: "Not because of the season itself — pricing is driven by the same factors (size, complexity, material) as any other time of year. Scheduling availability can actually work in your favor during winter's slower season."

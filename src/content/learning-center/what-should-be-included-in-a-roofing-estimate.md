@@ -3,7 +3,7 @@ title: "What Should Be Included In A Roofing Estimate?"
 metaDescription: "What a real, trustworthy roofing estimate should spell out — material, scope, timeline, warranty — and the red flags to watch for."
 publishDate: 2026-08-18
 excerpt: "A real estimate is specific enough that you could hand it to someone else and know exactly what you're getting. Here's what that looks like."
-heroImage: "/images/crew-roofer-chimney-flashing-hero.webp"
+heroImage: "/images/article-roofing-estimate-guide-hero.webp"
 faqs:
   - question: "Should an estimate include payment terms?"
     answer: "Yes — when payment is due (deposit, progress payments, final payment) should be spelled out clearly, not left as a verbal understanding."

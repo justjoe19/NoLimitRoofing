@@ -1,0 +1,350 @@
+[
+  {
+    "id": "service-siding",
+    "imageName": "service_siding",
+    "aspectRatio": "16:9",
+    "prompt": "Professional exterior siding installation on an American Craftsman residential home, crisp clean modern horizontal lap siding in neutral gray, architectural exterior photography",
+    "outputs": [
+      { "path": "public/images/service-siding.webp", "width": 800, "height": 450, "quality": 60 }
+    ],
+    "updates": [
+      { "file": "src/pages/services.astro", "pattern": "/images/completed-roofing-project.webp", "replacement": "/images/service-siding.webp", "lineHint": "siding" }
+    ]
+  },
+  {
+    "id": "service-shingle-options",
+    "imageName": "service_shingle_options",
+    "aspectRatio": "16:9",
+    "prompt": "High-end display of architectural asphalt roof shingle color samples and texture swatches, dimensional shingles arranged neatly in slate gray, weathered wood, charcoal, and warm earth tones, studio lighting",
+    "outputs": [
+      { "path": "public/images/service-shingle-options.webp", "width": 800, "height": 450, "quality": 60 }
+    ],
+    "updates": [
+      { "file": "src/pages/services.astro", "pattern": "/images/completed-roof-shingle-detail.webp", "replacement": "/images/service-shingle-options.webp", "lineHint": "shingle-options" }
+    ]
+  },
+  {
+    "id": "storm-emergency-tarp",
+    "imageName": "storm_emergency_tarp",
+    "aspectRatio": "16:9",
+    "prompt": "Emergency roof tarping service on a residential home after severe storm, heavy-duty blue waterproof tarp secured neatly over damaged roof section by professional roofers with sandbags and wood furring strips, cloudy sky",
+    "outputs": [
+      { "path": "public/images/storm-emergency-tarp.webp", "width": 800, "height": 450, "quality": 60 }
+    ],
+    "updates": [
+      { "file": "src/pages/storm-damage/index.astro", "pattern": "/images/service-emergency-repair.webp", "replacement": "/images/storm-emergency-tarp.webp", "lineHint": "emergency" }
+    ]
+  },
+  {
+    "id": "learning-center-hero",
+    "imageName": "learning_center_hero",
+    "aspectRatio": "16:9",
+    "prompt": "A friendly professional roofing contractor holding a roofing inspection report tablet and showing roofing shingle sample boards to a homeowner standing in front of their home, sunny daylight, educational consultation",
+    "outputs": [
+      { "path": "public/images/learning-center-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/learning-center.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/pages/learning-center/index.astro", "pattern": "/images/crew-shingle-install-hero.webp", "replacement": "/images/learning-center-hero.webp" }
+    ]
+  },
+  {
+    "id": "service-wind-damage",
+    "imageName": "service_wind_damage",
+    "aspectRatio": "16:9",
+    "prompt": "Close-up photograph of severe wind damage on an asphalt shingle roof, shingles creased, lifted, and blown off exposing black asphalt underlayment, storm aftermath on residential home",
+    "outputs": [
+      { "path": "public/images/service-wind-damage-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/service-wind-damage.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/services/wind-damage.md", "pattern": "heroImage: /images/storm-damage-hero.webp", "replacement": "heroImage: /images/service-wind-damage-hero.webp" }
+    ]
+  },
+  {
+    "id": "commercial-tpo-roof",
+    "imageName": "commercial_tpo_roof",
+    "aspectRatio": "16:9",
+    "prompt": "Commercial flat roof featuring bright white TPO single ply membrane, clean robotic welded seams, roof drain detailing and commercial HVAC unit flashings, bright sunny day, industrial roofing photography",
+    "outputs": [
+      { "path": "public/images/commercial-tpo-roof-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/commercial-tpo-roof.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/services/tpo.md", "pattern": "heroImage: /images/commercial-roofing-project-hero.webp", "replacement": "heroImage: /images/commercial-tpo-roof-hero.webp" }
+    ]
+  },
+  {
+    "id": "commercial-roof-coatings",
+    "imageName": "commercial_roof_coatings",
+    "aspectRatio": "16:9",
+    "prompt": "Professional commercial roofing crew applying reflective white silicone elastomeric liquid roof coating with industrial rollers on a weathered commercial flat roof, crisp contrast between coated and uncoated areas",
+    "outputs": [
+      { "path": "public/images/commercial-roof-coatings-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/commercial-roof-coatings.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/services/roof-coatings.md", "pattern": "heroImage: /images/commercial-roofing-project-hero.webp", "replacement": "heroImage: /images/commercial-roof-coatings-hero.webp" }
+    ]
+  },
+  {
+    "id": "commercial-maintenance",
+    "imageName": "commercial_maintenance",
+    "aspectRatio": "16:9",
+    "prompt": "A commercial roofing specialist wearing high visibility vest and hardhat using an infrared thermal inspection device and clipboard on a flat commercial building roof, inspecting parapet flashings and roof drains",
+    "outputs": [
+      { "path": "public/images/commercial-maintenance-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/commercial-maintenance.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/services/commercial-maintenance.md", "pattern": "heroImage: /images/commercial-roofing-project-hero.webp", "replacement": "heroImage: /images/commercial-maintenance-hero.webp" }
+    ]
+  },
+  {
+    "id": "commercial-repair",
+    "imageName": "commercial_repair",
+    "aspectRatio": "16:9",
+    "prompt": "A commercial roofing technician kneeling on a commercial flat roof using a handheld hot-air heat welder and silicone seam roller to patch a waterproof membrane seam near roof flashing",
+    "outputs": [
+      { "path": "public/images/commercial-repair-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/commercial-repair.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/services/commercial-repair.md", "pattern": "heroImage: /images/commercial-roofing-project-hero.webp", "replacement": "heroImage: /images/commercial-repair-hero.webp" }
+    ]
+  },
+  {
+    "id": "commercial-replacement",
+    "imageName": "commercial_replacement",
+    "aspectRatio": "16:9",
+    "prompt": "Commercial flat roof tear off and replacement project in progress on a large building, workers installing thick polyiso insulation boards and mechanical fasteners across a wide commercial roof deck",
+    "outputs": [
+      { "path": "public/images/commercial-replacement-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/commercial-replacement.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/services/commercial-replacement.md", "pattern": "heroImage: /images/commercial-roofing-project-hero.webp", "replacement": "heroImage: /images/commercial-replacement-hero.webp" }
+    ]
+  },
+  {
+    "id": "mishawaka-in",
+    "imageName": "mishawaka_in_hero",
+    "aspectRatio": "16:9",
+    "prompt": "A beautiful residential family home in Mishawaka Indiana, manicured front yard, paved driveway, newly installed charcoal dimensional architectural shingle roof, sunny Midwest summer day",
+    "outputs": [
+      { "path": "public/images/mishawaka-in-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/mishawaka-in.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/locations/mishawaka.md", "pattern": "heroImage: /images/st-joseph-county-hero.webp", "replacement": "heroImage: /images/mishawaka-in-hero.webp" }
+    ]
+  },
+  {
+    "id": "granger-in",
+    "imageName": "granger_in_hero",
+    "aspectRatio": "16:9",
+    "prompt": "Upscale luxury executive suburban brick home in Granger Indiana with prominent multi-gable rooflines, pristine dark architectural shingles, professional landscaping and large front lawn",
+    "outputs": [
+      { "path": "public/images/granger-in-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/granger-in.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/locations/granger.md", "pattern": "heroImage: /images/st-joseph-county-hero.webp", "replacement": "heroImage: /images/granger-in-hero.webp" }
+    ]
+  },
+  {
+    "id": "niles-mi",
+    "imageName": "niles_mi_hero",
+    "aspectRatio": "16:9",
+    "prompt": "Charming historic craftsman style home in Niles Michigan with mature oak trees, wrap-around porch, and newly replaced architectural shingle roof, warm pleasant afternoon sunlight",
+    "outputs": [
+      { "path": "public/images/niles-mi-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/niles-mi.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/locations/niles.md", "pattern": "heroImage: /images/berrien-county-hero.webp", "replacement": "heroImage: /images/niles-mi-hero.webp" }
+    ]
+  },
+  {
+    "id": "buchanan-mi",
+    "imageName": "buchanan_mi_hero",
+    "aspectRatio": "16:9",
+    "prompt": "Idyllic country residential home in Buchanan Michigan surrounded by rolling green hills, wooden fence, with a brand new weathered-wood asphalt shingle roof, blue sky",
+    "outputs": [
+      { "path": "public/images/buchanan-mi-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/buchanan-mi.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/locations/buchanan.md", "pattern": "heroImage: /images/berrien-county-hero.webp", "replacement": "heroImage: /images/buchanan-mi-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-winter-roof-replacement",
+    "imageName": "winter_roof_replace",
+    "aspectRatio": "16:9",
+    "prompt": "Roofing crew installing asphalt shingles on a steep residential roof on a crisp sunny winter day in Indiana, light snow dusting the ground and yard while the roof deck is dry and clear",
+    "outputs": [
+      { "path": "public/images/article-winter-roof-replacement-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-winter-roof-replacement.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/can-you-replace-a-roof-in-winter-in-indiana.md", "pattern": "heroImage: /images/drone-aerial-finished-roof-manicured-hero.webp", "replacement": "heroImage: /images/article-winter-roof-replacement-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-impact-vs-architectural",
+    "imageName": "shingle_impact_test",
+    "aspectRatio": "16:9",
+    "prompt": "Close-up macro comparison of Class 4 impact resistant roof shingles showing reinforced polymer SBS rubberized backing next to standard architectural shingles, testing durability, detailed texture",
+    "outputs": [
+      { "path": "public/images/article-impact-vs-architectural-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-impact-vs-architectural.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/architectural-vs-impact-resistant-shingles.md", "pattern": "heroImage: /images/completed-roof-shingle-detail-hero.webp", "replacement": "heroImage: /images/article-impact-vs-architectural-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-hidden-wind-damage",
+    "imageName": "hidden_wind_damage",
+    "aspectRatio": "16:9",
+    "prompt": "Close-up hand of a roof inspector wearing work gloves gently lifting an unsealed asphalt shingle tab showing broken adhesive sealant line and subtle horizontal crease mark along the shingle top from wind uplift",
+    "outputs": [
+      { "path": "public/images/article-hidden-wind-damage-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-hidden-wind-damage.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/can-wind-damage-shingles-without-blowing-off.md", "pattern": "heroImage: /images/storm-damage-hero.webp", "replacement": "heroImage: /images/article-hidden-wind-damage-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-hail-damage-identification",
+    "imageName": "hail_damage_shingle",
+    "aspectRatio": "16:9",
+    "prompt": "Close-up photograph of hail impact craters on asphalt shingles, inspector with white chalk circling soft black circular bruises where mineral granules were knocked off by hail stones",
+    "outputs": [
+      { "path": "public/images/article-hail-damage-identification-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-hail-damage-identification.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/what-does-hail-damage-look-like.md", "pattern": "heroImage: /images/hail-damage-hero.webp", "replacement": "heroImage: /images/article-hail-damage-identification-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-roof-repair-cost",
+    "imageName": "roof_repair_cost",
+    "aspectRatio": "16:9",
+    "prompt": "Roofing repair estimate in progress, a professional roofer on a residential roof examining a leak area near pipe boot and chimney with inspection tools, transparent pricing and repair concept",
+    "outputs": [
+      { "path": "public/images/article-roof-repair-cost-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-roof-repair-cost.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/roof-repair-cost.md", "pattern": "heroImage: /images/service-emergency-repair-hero.webp", "replacement": "heroImage: /images/article-roof-repair-cost-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-questions-hiring-contractor",
+    "imageName": "hiring_roof_contractor",
+    "aspectRatio": "16:9",
+    "prompt": "Professional trustworthy roofing contractor holding a folder and checklist having an honest, reassuring conversation with a homeowner in their home entryway, friendly customer service",
+    "outputs": [
+      { "path": "public/images/article-questions-hiring-contractor-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-questions-hiring-contractor.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/questions-to-ask-before-hiring-a-roofing-contractor.md", "pattern": "heroImage: /images/service-roof-inspection-hero.webp", "replacement": "heroImage: /images/article-questions-hiring-contractor-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-repair-vs-replace",
+    "imageName": "repair_vs_replace",
+    "aspectRatio": "16:9",
+    "prompt": "Detailed view of a residential roof showing one older weathered section with granule loss and curling next to a pristine new architectural shingle section, illustrating repair versus replacement decision",
+    "outputs": [
+      { "path": "public/images/article-repair-vs-replace-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-repair-vs-replace.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/roof-repair-vs-replacement.md", "pattern": "heroImage: /images/crew-roofer-chimney-flashing-hero.webp", "replacement": "heroImage: /images/article-repair-vs-replace-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-roofing-estimate-guide",
+    "imageName": "roofing_estimate_guide",
+    "aspectRatio": "16:9",
+    "prompt": "Professional clipboard holding an itemized detailed roofing contract estimate and warranty guide, laid on an outdoor table with sample shingle swatches and tape measure in background",
+    "outputs": [
+      { "path": "public/images/article-roofing-estimate-guide-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-roofing-estimate-guide.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/what-should-be-included-in-a-roofing-estimate.md", "pattern": "heroImage: /images/crew-roofer-chimney-flashing-hero.webp", "replacement": "heroImage: /images/article-roofing-estimate-guide-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-tpo-vs-epdm",
+    "imageName": "tpo_vs_epdm",
+    "aspectRatio": "16:9",
+    "prompt": "Commercial flat rooftop showing clear contrast comparison between bright reflective white TPO membrane roofing and smooth black EPDM rubber roofing, industrial HVAC units in background, clear sky",
+    "outputs": [
+      { "path": "public/images/article-tpo-vs-epdm-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-tpo-vs-epdm.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/tpo-vs-epdm-for-commercial-buildings.md", "pattern": "heroImage: /images/commercial-roofing-project-hero.webp", "replacement": "heroImage: /images/article-tpo-vs-epdm-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-coating-vs-replacement",
+    "imageName": "coating_vs_replacement",
+    "aspectRatio": "16:9",
+    "prompt": "Commercial roofing engineer taking core samples and moisture readings on a weathered commercial flat roof to test whether roof coating restoration or total replacement is needed",
+    "outputs": [
+      { "path": "public/images/article-coating-vs-replacement-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-coating-vs-replacement.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.md", "pattern": "heroImage: /images/commercial-roofing-project-hero.webp", "replacement": "heroImage: /images/article-coating-vs-replacement-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-ice-and-water-shield",
+    "imageName": "ice_water_shield",
+    "aspectRatio": "16:9",
+    "prompt": "Roofers rolling out self-adhesive rubberized asphalt ice and water shield leak barrier membrane along the eaves and valley of a bare plywood roof deck before installing shingles",
+    "outputs": [
+      { "path": "public/images/article-ice-and-water-shield-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-ice-and-water-shield.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/what-does-ice-and-water-shield-do.md", "pattern": "heroImage: /images/attic-insulation-installation-hero.webp", "replacement": "heroImage: /images/article-ice-and-water-shield-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-bad-roof-decking",
+    "imageName": "bad_roof_decking",
+    "aspectRatio": "16:9",
+    "prompt": "Roofer removing rotted, water damaged plywood roof decking sheet and installing fresh new structural OSB wood decking on roof rafters during a tear-off roof replacement",
+    "outputs": [
+      { "path": "public/images/article-bad-roof-decking-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-bad-roof-decking.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/what-happens-if-bad-decking-is-found.md", "pattern": "heroImage: /images/service-roof-overlay-hero.webp", "replacement": "heroImage: /images/article-bad-roof-decking-hero.webp" }
+    ]
+  },
+  {
+    "id": "article-new-roof-cost-michiana",
+    "imageName": "new_roof_cost",
+    "aspectRatio": "16:9",
+    "prompt": "High-angle architectural photo of a gorgeous completed new roof on a Midwest suburban home, clean driveway, spotless landscaping, premium architectural shingles shining in the sun",
+    "outputs": [
+      { "path": "public/images/article-new-roof-cost-michiana-hero.webp", "width": 1200, "height": 675, "quality": 45 },
+      { "path": "public/images/article-new-roof-cost-michiana.webp", "width": 800, "height": 450, "quality": 55 }
+    ],
+    "updates": [
+      { "file": "src/content/learning-center/new-roof-cost-michiana.md", "pattern": "heroImage: /images/service-tear-off-replacement-hero.webp", "replacement": "heroImage: /images/article-new-roof-cost-michiana-hero.webp" }
+    ]
+  }
+]

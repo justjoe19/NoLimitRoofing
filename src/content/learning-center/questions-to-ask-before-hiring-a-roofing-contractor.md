@@ -3,7 +3,7 @@ title: "Questions To Ask Before Hiring A Contractor"
 metaDescription: "The questions worth asking any roofing contractor before you hire them — licensing, certification, warranty, and how they handle surprises."
 publishDate: 2026-08-25
 excerpt: "The right questions tell you more about a contractor than any sales pitch will."
-heroImage: "/images/service-roof-inspection-hero.webp"
+heroImage: "/images/article-questions-hiring-contractor-hero.webp"
 faqs:
   - question: "Is it normal to get multiple quotes before choosing a contractor?"
     answer: "Yes, and a confident contractor won't discourage you from doing it. Just make sure you're comparing quotes that cover the same scope and material grade — see our guide on what a roofing estimate should include."

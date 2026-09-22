@@ -54,7 +54,7 @@ const learningCenter = defineCollection({
     updatedDate: z.date().optional(),
     author: z.string().default("No Limit Roofing"),
     excerpt: z.string(),
-    heroImage: z.string().default("/images/drone-aerial-finished-roof-charcoal-hero.webp"),
+    heroImage: z.string(),
     faqs: z.array(faqSchema).default([]),
     draft: z.boolean().default(false),
   }),

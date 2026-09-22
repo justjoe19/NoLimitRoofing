@@ -9,7 +9,7 @@ metaDescription: "Flat and low-slope commercial roof repair — EPDM, TPO, PVC a
 heroEyebrow: "Commercial"
 heroHeadline: "Protect The Building. Protect The Business Underneath It."
 heroLede: "A commercial roof leak doesn't just damage a building — it interrupts a business. We repair flat and low-slope systems with that in mind."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/commercial-repair-hero.webp"
 highlights:
   - "EPDM, TPO, PVC, KEE and modified bitumen repair"
   - "Leak-source diagnosis on low-slope systems, where leaks often travel from the actual damage point"

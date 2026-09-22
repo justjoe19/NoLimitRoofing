@@ -3,7 +3,7 @@ title: "What Happens If Bad Decking Is Found?"
 metaDescription: "What it means when a roof tear-off reveals damaged decking, why it happens, and how it's actually handled — no surprises, no scare tactics."
 publishDate: 2026-07-21
 excerpt: "It's more common than you'd think, and it doesn't have to derail your project if it's handled honestly."
-heroImage: "/images/service-roof-overlay-hero.webp"
+heroImage: "/images/article-bad-roof-decking-hero.webp"
 faqs:
   - question: "How common is it to find bad decking during a tear-off?"
     answer: "It's common enough that a trustworthy contractor addresses it upfront in the estimate as a real possibility, not a rare surprise. Whether it happens on your specific roof depends on its age, history, and ventilation, not chance."

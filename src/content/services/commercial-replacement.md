@@ -9,7 +9,7 @@ metaDescription: "Full commercial roof replacement — EPDM, TPO, PVC and modifi
 heroEyebrow: "Commercial"
 heroHeadline: "A Full Commercial Replacement, Planned Around Your Operation"
 heroLede: "When a repair isn't enough, a full commercial replacement protects the building for the long term — planned to minimize disruption to the business inside."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/commercial-replacement-hero.webp"
 highlights:
   - "Full tear-off and replacement for EPDM, TPO, PVC and modified bitumen systems"
   - "Suited to offices, retail and industrial buildings"

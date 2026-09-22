@@ -3,7 +3,7 @@ title: "Roof Repair vs. Replacement: How To Decide"
 metaDescription: "How to tell whether your roof needs a repair or a full replacement — the factors that actually matter, explained plainly."
 publishDate: 2026-09-15
 excerpt: "Not every roof problem means a new roof. Here's how to actually tell the difference."
-heroImage: "/images/crew-roofer-chimney-flashing-hero.webp"
+heroImage: "/images/article-repair-vs-replace-hero.webp"
 faqs:
   - question: "Can I just keep repairing my roof indefinitely?"
     answer: "Sometimes, if the damage stays isolated and the roof is otherwise sound. But once a roof is past its expected service life or repairs are becoming frequent, each additional repair tends to cost more relative to its benefit — see our related article on what actually determines a roof's lifespan in this climate."

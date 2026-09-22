@@ -9,7 +9,7 @@ metaDescription: "Scheduled commercial roof maintenance catches small problems b
 heroEyebrow: "Commercial"
 heroHeadline: "Small Problems Are Cheap. Deferred Ones Aren't."
 heroLede: "A scheduled maintenance visit catches seam wear, drainage issues and flashing problems while they're still inexpensive to fix."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/commercial-maintenance-hero.webp"
 highlights:
   - "Scheduled inspections for EPDM, TPO, PVC and modified bitumen systems"
   - "Drainage and ponding-water checks — a common cause of premature membrane failure"

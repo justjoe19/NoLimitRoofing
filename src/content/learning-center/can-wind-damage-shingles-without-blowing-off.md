@@ -3,7 +3,7 @@ title: "Can Wind Damage Shingles Without Blowing Off?"
 metaDescription: "Yes — and it's one of the most commonly missed forms of storm damage. Here's what wind actually does to a roof that stays intact."
 publishDate: 2026-07-07
 excerpt: "Yes, and it's one of the easiest kinds of storm damage to miss entirely."
-heroImage: "/images/storm-damage-hero.webp"
+heroImage: "/images/article-hidden-wind-damage-hero.webp"
 faqs:
   - question: "How soon after a windstorm should I get my roof checked?"
     answer: "There's no strict deadline, but sooner is better — a broken seal or crease doesn't cause immediate damage on its own, but it leaves the roof more vulnerable to whatever weather comes next. Scheduling an inspection within a couple of weeks of a known high-wind event is a reasonable window."

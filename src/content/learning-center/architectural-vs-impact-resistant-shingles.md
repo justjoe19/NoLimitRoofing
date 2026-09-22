@@ -3,7 +3,7 @@ title: "Architectural vs. Impact-Resistant Shingles"
 metaDescription: "The real difference between architectural and impact-resistant asphalt shingles, and how to think about which fits your home."
 publishDate: 2026-08-11
 excerpt: "One is mainly about looks and thickness. The other is about what happens when hail hits your roof. Here's the real difference."
-heroImage: "/images/completed-roof-shingle-detail-hero.webp"
+heroImage: "/images/article-impact-vs-architectural-hero.webp"
 faqs:
   - question: "Do impact-resistant shingles cost more than standard architectural shingles?"
     answer: "Generally yes, since Class 4 impact resistance is an added manufacturing spec — but the difference is typically a modest add to the overall project cost, not a separate large expense. We'll show you the real difference for your specific roof and material choice as part of your estimate."

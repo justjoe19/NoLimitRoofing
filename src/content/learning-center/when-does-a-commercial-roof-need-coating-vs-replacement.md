@@ -3,7 +3,7 @@ title: "Commercial Roof: Coating vs. Replacement?"
 metaDescription: "How to tell whether a commercial roof coating is the right call versus a full replacement — the honest factors, not a sales pitch either way."
 publishDate: 2026-09-08
 excerpt: "A coating can be a smart, cost-effective move — or a way to delay a problem that needs real attention. Here's how to tell the difference."
-heroImage: "/images/commercial-roofing-project-hero.webp"
+heroImage: "/images/article-coating-vs-replacement-hero.webp"
 faqs:
   - question: "How long does a commercial roof coating typically extend a roof's life?"
     answer: "It varies significantly based on the coating product, the condition of the underlying roof, and ongoing maintenance — we'll give you an honest, roof-specific expectation rather than a generic industry number that may not apply to your building."

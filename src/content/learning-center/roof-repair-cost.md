@@ -3,7 +3,7 @@ title: "How Much Does Roof Repair Cost?"
 metaDescription: "What determines roof repair cost — the size and cause of the damage, accessibility, and material matching — without invented price figures."
 publishDate: 2026-06-30
 excerpt: "Repair cost swings more than most homeowners expect, and it comes down to a handful of specific factors."
-heroImage: "/images/service-emergency-repair-hero.webp"
+heroImage: "/images/article-roof-repair-cost-hero.webp"
 faqs:
   - question: "Is a small leak always a small repair?"
     answer: "Not necessarily. A small leak on the ceiling can trace back to a small flashing fix or to water that's been traveling along framing from a much larger source. The visible symptom and the size of the underlying repair aren't always proportional, which is exactly why an inspection matters more than a description over the phone."

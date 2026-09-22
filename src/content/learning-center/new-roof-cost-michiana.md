@@ -3,7 +3,7 @@ title: "How Much Does a New Roof Cost in Michiana?"
 metaDescription: "What actually drives roof replacement cost in the Michiana area — the real factors, explained honestly, without made-up numbers."
 publishDate: 2026-06-23
 excerpt: "There's no honest single number — but there are specific, knowable factors that determine what your roof will actually cost."
-heroImage: "/images/service-tear-off-replacement-hero.webp"
+heroImage: "/images/article-new-roof-cost-michiana-hero.webp"
 faqs:
   - question: "Is the cheapest quote automatically the wrong choice?"
     answer: "Not automatically, but it deserves the same scrutiny as any other quote. Compare what's actually included — material brand and grade, decking policy, warranty terms, cleanup — before assuming a lower number means a worse job or a better deal. Sometimes it's neither; it just means less overhead or a different margin."
