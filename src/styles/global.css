@@ -241,6 +241,7 @@
     .nav-dropdown-panel--mega .nav-dropdown-group-title {
       @apply mb-1 border-b border-mist pb-2 text-accent-dark;
     }
+    .nav-dropdown-panel--mega .nav-dropdown-group-title:hover { @apply text-ink; }
   }
 
   .nav-toggle {
