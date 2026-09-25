@@ -2,6 +2,27 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 38 — Rebranded mascot logo, contractor head favicon, and complete removal of 'restoration' mentions
+
+- **Removed all mentions of 'restoration' across the entire site**:
+  - `src/pages/index.astro`: updated JSON-LD schema description ("storm damage restoration" &rarr; "storm damage repair"), hero eyebrow trust strip ("INSURANCE RESTORATION" &rarr; "INSURANCE CLAIMS"), hero lede, and Why Choose section ("insurance restoration" &rarr; "roofing and insurance claim support").
+  - `src/pages/about.astro`: updated story lede ("roofing restoration" &rarr; "roofing").
+  - `src/pages/services.astro`: updated Decking card image alt, title ("Decking — Build & Repair"), and description ("repair of existing decks").
+  - `image_generation_queue.json`: updated prompt.
+  - Verified 0 occurrences of "restoration" remaining across `src/`, `public/`, or generated `dist/`.
+- **Ultra-HD 2048px Master Logo Replacement**:
+  - Replaced low-res 1024px cutout with an ultra-high resolution asset generated from the master 2048×1132 source file (`source_assets/IMG_4104.png`).
+  - Created smooth subpixel anti-aliased alpha transparency and extracted negative space inside hose loops, between legs, and under the nail gun (`public/images/nlr-logo.png` & `nlr-logo.webp`, 2040×1124) for crisp 2x/3x Retina rendering without staircase aliasing.
+- **Contractor Head Favicon Suite**:
+  - Extracted a dedicated square crop of the contractor mascot's head, beard, and collar.
+  - Generates crisp, bold micro-scale rendering in browser tabs (`favicon.ico`, `favicon-16.png`, `favicon-32.png`, `favicon-48.png` with transparent background) and mobile/PWA badges (`apple-touch-icon.png`, `icon-192.png`, `icon-512.png` on brand `#0c1115`).
+- **Site-Wide Logo Sizing & Readability Optimization**:
+  - Top Nav (`Header.astro`, `404.astro`): Increased `.brand img` height from `h-12..h-16` to `h-14 sm:h-16 lg:h-20` (`width="180" height="99"`), making the banner typography and character details prominent and legible.
+  - Footer (`Footer.astro`): Redesigned `.footer-brand` to a clean standalone mark (`h-16 sm:h-20`), removing redundant `<span>No Limit Roofing</span>` text.
+  - Why Choose section (`index.astro`): Increased max width to `max-w-[430px]` (`width="420" height="232"`), giving the illustration heroic weight in the 2-column layout.
+  - Pre-footer CTA (`index.astro`): Increased height to `h-20 sm:h-24 lg:h-28` (`width="300" height="166"`), properly anchoring the callout above the slogan.
+- **Verification**: Clean `npx astro check` (0 errors), 0 broken links across all 48 static pages, 0 missing image references, and clean static build.
+
 ## Session 37 — Desktop mega-menu links went invisible once they were the current page: same specificity gap, a third time
 
 User reported nav sub-menu links disappearing against the white dropdown background specifically *after being clicked on* — i.e. once navigated to. Third instance of the exact same failure shape as Sessions 33 and 36: `.main-nav ul a[aria-current="page"] { text-white }` (line 183) is written for the dark top-level nav bar, where turning the current page's link white makes sense. But the dropdown's individual links are also `.main-nav ul a` elements, so once one of them got `aria-current="page"` (set automatically from the current URL, per Header.astro), that rule's specificity `(0,2,2)` beat the desktop dropdown override `.main-nav .nav-dropdown-panel a { text-ink }` at `(0,2,1)` — white text on the white `bg-paper` popover, 1:1 contrast, confirmed mathematically before touching anything.

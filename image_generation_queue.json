@@ -299,7 +299,7 @@
     "id": "article-coating-vs-replacement",
     "imageName": "coating_vs_replacement",
     "aspectRatio": "16:9",
-    "prompt": "Commercial roofing engineer taking core samples and moisture readings on a weathered commercial flat roof to test whether roof coating restoration or total replacement is needed",
+    "prompt": "Commercial roofing engineer taking core samples and moisture readings on a weathered commercial flat roof to test whether roof coating repair or total replacement is needed",
     "outputs": [
       { "path": "public/images/article-coating-vs-replacement-hero.webp", "width": 1200, "height": 675, "quality": 45 },
       { "path": "public/images/article-coating-vs-replacement.webp", "width": 800, "height": 450, "quality": 55 }
