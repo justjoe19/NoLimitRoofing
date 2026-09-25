@@ -4,13 +4,17 @@ A static marketing + local-SEO site for **No Limit Roofing**, a roofing contract
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
-## Project status (updated Session 36 — read this first if picking the project back up)
+## Project status (updated Session 38 — read this first if picking the project back up)
 
-**Site direction**: restyle is done and stable. Sessions 25-28 rebuilt the visual system (dark/orange palette, bold uppercase type, a real logo, dark nav bar) and homepage structure to match a client-supplied reference mockup, keeping this site's own real content/copy rather than the mockup's insurance-claim-heavy messaging (declined by the client, Session 26). Since then the site has settled into steady-state maintenance: nav contrast fixes, image compression, and a full photography refresh (see Sessions 30-36 in `CHANGELOG.md`).
+**Site direction**: restyle and branding overhaul are complete and stable. Sessions 25-28 rebuilt the visual system (dark/orange palette, bold uppercase type, a real logo, dark nav bar) and homepage structure to match a client-supplied reference mockup. Sessions 30-37 handled steady-state maintenance, photography upgrades, and navigation contrast fixes. **Session 38 completed a major branding and copy refinement**:
+- **Removal of all "restoration" references**: Per explicit client directive, all mentions of "restoration" were removed across the entire site (copy, meta descriptions, image alts, and JSON-LD schemas), reframing the messaging around residential & commercial roofing, repair, and insurance claims/storm damage support.
+- **Ultra-HD mascot logo**: Replaced the previous 1024px logo with a crisp, subpixel anti-aliased 2040×1124 asset (`nlr-logo.png` / `nlr-logo.webp`) generated from the 2048×1132 master source (`source_assets/IMG_4104.png`), complete with clean interior knockouts (hose loops, between legs, beneath nail gun).
+- **Contractor head favicon suite**: Generated a dedicated crop of the contractor mascot's head across all tab favicons (transparent `.ico` and 16/32/48px `.png`) and mobile app icons (180px apple-touch-icon, 192/512px PWA icons on brand `#0c1115`).
+- **Responsive logo sizing**: Sized up the logo in the header (`h-14 sm:h-16 lg:h-20`), footer (`h-16 sm:h-20` standalone, removing redundant text), homepage Why Choose section (`max-w-[430px]`), and pre-footer CTA (`h-20 sm:h-24 lg:h-28`) for visual balance and readability.
 
-**Watch for changes made outside this project's normal workflow.** Session 30 had to review and partially revert a large external commit (made via a different AI tool, "Antigravity") that reintroduced two nav items the client had explicitly declined. It happened again in a smaller, cleaner way in Session 36 (a batch photo-generation script + new Areas page icons, committed directly by the client outside a session) — that one was reviewed and kept, with only a couple of missed `alt`/dimension attributes fixed. **When picking this project back up, always check `git log` for commits you don't recognize before assuming the tree matches what's documented here**, and review them the same way: confirm every change actually applied, check for anything the client previously declined, rebuild and re-run the SEO/broken-link checks before trusting it.
+**Watch for changes made outside this project's normal workflow.** Session 30 had to review and partially revert a large external commit that reintroduced two nav items the client had explicitly declined. It happened again in Session 36 (a batch photo-generation script + new Areas page icons) — that one was reviewed and kept, with only a couple of missed `alt`/dimension attributes fixed. **When picking this project back up, always check `git log` for commits you don't recognize before assuming the tree matches what's documented here**, and review them the same way: confirm every change actually applied, check for anything the client previously declined, rebuild and re-run the SEO/broken-link checks before trusting it.
 
-**Deployed and live**: connected to Netlify — `https://no-limit-roofing.netlify.app` reflects `main` on every push and currently scores Desktop 100/100/100/100, Mobile ~97-98/100/100/100 (Lighthouse, see Testing below). **The real custom domain, `nolimitroofingin.com`, is NOT yet pointed at this Netlify site** — as of Session 36 it still resolves to the client's old WordPress/Divi site. Someone needs to add the custom domain in Netlify's dashboard and repoint the domain's DNS to it before this project is actually the live public site.
+**Deployed and live**: connected to Netlify — `https://no-limit-roofing.netlify.app` reflects `main` on every push and currently scores Desktop 100/100/100/100, Mobile ~97-98/100/100/100 (Lighthouse, see Testing below). **The real custom domain, `nolimitroofingin.com`, is NOT yet pointed at this Netlify site** — as of Session 38 it still resolves to the client's old WordPress/Divi site. Someone needs to add the custom domain in Netlify's dashboard and repoint the domain's DNS to it before this project is actually the live public site.
 
 **Genuinely open items, most blocked on the client, not on more dev work**:
 - **The domain cutover above** — biggest remaining item. Netlify has the correct build; DNS/domain just isn't pointed at it yet.
@@ -114,27 +118,29 @@ public/                  Served as-is, unprocessed — same convention as the
                           through the article editor. Not committed while
                           empty — Decap/git will recreate it the first time
                           someone uploads an image through /admin.
-  images/nlr-logo.{png,webp}  Company logo — the client's real recreated
-                          artwork (Session 28), background removed. png kept
-                          for JSON-LD/og:image use. Aspect ratio is 500:232;
-                          if this file is ever replaced again, check the new
-                          ratio against the hardcoded width/height attrs in
-                          Header.astro, Footer.astro and 404.astro — they
-                          don't derive automatically and will distort the
-                          logo if left stale (this exact mistake happened
-                          twice already, see CHANGELOG Sessions 25 and 28).
+  images/nlr-logo.{png,webp}  Company logo — generated from the master 2048×1132
+                          artwork (source_assets/IMG_4104.png, Session 38)
+                          at 2040×1124 with subpixel alpha anti-aliasing and
+                          negative space cutouts (hose loops, between legs,
+                          beneath nail gun). PNG kept for JSON-LD/og:image use.
+                          Intrinsic aspect ratio is ~180:99 (~1.815:1); if this
+                          file is ever replaced again, check the new ratio
+                          against the hardcoded width/height attrs in
+                          Header.astro (180×99), Footer.astro (180×99),
+                          404.astro (180×99), and index.astro (420×232 and
+                          300×166) — they don't derive automatically.
   js/main.js              Mobile nav, contact/quick-inspection form
                           validation + AJAX submit (generic — handles any
                           data-netlify form on the page, not hardcoded to
                           one form id), nav dropdown close behavior, lite
                           YouTube embed, header scroll shadow. No dependencies.
-  favicon.ico, favicon-*.png,  Favicon set generated from the client's real
-  apple-touch-icon.png,        recreated logo (Session 28) — a crop of just
-  icon-192.png, icon-512.png   the roof/window icon mark on a solid dark
-                                background (the full wordmark doesn't read
-                                at 16-32px). Originally sourced from the old
-                                site's actual favicon (Session 1); superseded
-                                once the client sent real logo artwork.
+  favicon.ico, favicon-*.png,  Favicon set generated from a close crop of the
+  apple-touch-icon.png,        contractor mascot's head with backwards cap
+  icon-192.png, icon-512.png   (Session 38). Generates clean micro-scale
+                                rendering in browser tabs (multi-res .ico and
+                                16/32/48px transparent .png) and mobile/PWA
+                                icons (180px apple-touch-icon, 192/512px
+                                icons on brand #0c1115 tile).
   site.webmanifest, robots.txt   sitemap.xml is no longer a static file here
                                 — @astrojs/sitemap generates sitemap-index.xml
                                 and sitemap-0.xml at build time from the
@@ -243,7 +249,9 @@ For anything beyond a quick sanity check, `puppeteer-core` (installed with `npm 
 - **Avoid scroll-triggered reveal/fade-in animations.** One was added and then removed — it caused a Lighthouse color-contrast failure (audit caught text mid-opacity-transition) and made page content dependent on IntersectionObserver timing/JS succeeding. If you want scroll animations back, make sure there's a hard fallback that guarantees content becomes visible even if JS fails or an observer never fires.
 - **`og:image` tags must point at files that actually exist.** All JPG fallbacks were deleted at one point (site is WebP-only) without updating the `og:image`/JSON-LD `image` meta tags, which broke social-share previews on every page for a while. Each page's `og:image` now points at that page's own hero `-hero.webp` file — keep them in sync if you change a hero photo.
 - **Check that image filenames/alt text match what's actually in the photo.** `attic-insulation-installation.webp` was originally misnamed `roofing-project-gallery.webp` and got used with a "Siding Repair & Replacement" caption on the Services page — wrong content, not just a wrong filename. Look at the actual photo before reusing it somewhere new.
-- **Favicon and logo are the client's real artwork**, not invented — originally the old site's actual favicon (Session 1), now regenerated from the client's recreated logo file (Session 28) once they sent one. If either the logo or favicon ever needs to change again, get the real asset from the client rather than designing a placeholder — and if you're extracting one from a screenshot/mockup as a stopgap (as Session 25 did before the real file arrived), say so explicitly and flag it as temporary, since it'll be visibly softer than real artwork.
+- **Favicon and logo are generated from master artwork**, not placeholders — the logo is generated from the 2048×1132 master source (`source_assets/IMG_4104.png`, Session 38) at 2040×1124 with interior negative space knockouts, and the favicon suite is generated from a high-contrast crop of the contractor mascot's head. If the logo is ever updated or re-exported, keep the intrinsic aspect ratio (~180:99) and update the corresponding `width` and `height` attributes across `Header.astro`, `Footer.astro`, `404.astro`, and `index.astro` to avoid distortion.
+- **Do not use the word "restoration" in site copy**: The client explicitly directed removing all references to "restoration" from the site copy, meta descriptions, image alt tags, and JSON-LD schema (Session 38). Frame services as residential and commercial roofing, roof repair, storm damage repairs, and insurance claims assistance.
+- **Astro telemetry in sandboxed/CLI environments**: Running `npm run build` or `npx astro check` may fail with an `EPERM` error if Astro attempts to write global telemetry state to `~/Library/Preferences/astro/config.json`. Prefix CLI commands with `ASTRO_TELEMETRY_DISABLED=1` (e.g., `ASTRO_TELEMETRY_DISABLED=1 npm run build`) to ensure clean execution.
 - **A brand color swap needs a contrast check, not just a screenshot check.** Session 25's new brand orange (`--color-accent`, sampled directly from the client's mockup) looked fine by eye but only measures 3.47:1 against white — Lighthouse caught 6 real failures (every primary button, the mobile call bar) once it was used for body-sized text, where the old orange's 5.38:1 had been passing. Use `--color-accent-dark` for text/button-backgrounds under ~18px on light backgrounds; save the brighter `--color-accent` for large text, icons, and glows. Run Lighthouse's accessibility category after *any* palette change — don't trust visual inspection alone.
 - **The Read/screenshot tool composites transparent PNGs onto a dark backdrop by default.** After chroma-keying a logo's background to transparent, it can look completely unchanged in a preview — that's the tool's rendering, not a failed edit. Verify by sampling the actual alpha channel at a background pixel, or by compositing onto white before trusting the result.
 - **`resize_window` (browser automation) has been unreliable for testing real mobile viewports in this project** — calls report success but `window.innerWidth` doesn't change. Until that's fixed, use Lighthouse (which runs its own mobile-emulated audit) for a real mobile signal, and/or constrain a `.container`'s own width via injected CSS as a rough visual check — but that only tests container-width-driven behavior (like the cert-badge row's flex-shrink), not real viewport-width media queries (`sm:`/`lg:` Tailwind variants), so it can give false confidence on breakpoint-driven layout.
