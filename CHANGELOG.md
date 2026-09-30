@@ -10,6 +10,7 @@ Not a formal semver changelog — this project has no version releases. It's a r
 - **Rating**: removed the hand-typed `aggregateRating` (5.0 / 6 reviews) from the homepage JSON-LD (Google ignores self-published ratings) and replaced the five-star row above the testimonials with a single star and the text "Highly rated on Google" (deliberately no number, so it never goes stale).
 - **Verification**: 48 pages build; all internal links resolve; no "restoration" anywhere.
 - **Second rating mention**: the "Why Choose" stat row on the homepage still said "5 STAR / CUSTOMER RATING"; now "GOOGLE / HIGHLY RATED" (kept short so the nowrap stat fits its half-width box on phones). No "5 star" wording remains anywhere in `src/`, `public/` or the build.
+- **Star graphic restored**: the five-star graphic above the homepage reviews carousel is back exactly as it was (client preference). It is decorative (`aria-hidden`); the site deliberately never states a written "5-star" rating anywhere.
 - **Mobile fixes**: `/areas` office cards stacked in two columns on phones and clipped the "Call This Office" buttons; now one column below `sm`. `.btn` labels wrap on screens under 480px (fixes the Commercial hero button overflowing). Fixed `astro check` type errors in the city template. Scanned all 48 pages at 375px: no horizontal overflow.
 
 ## Session 38 — Rebranded mascot logo, contractor head favicon, and complete removal of 'restoration' mentions

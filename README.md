@@ -26,6 +26,41 @@ Live repo: https://github.com/justjoe19/NoLimitRoofing
 - **One leftover branded graphic used as a plain thumbnail**: `service-roof-overlay.webp` (Services page, "Roof Overlay" card) is the client's own before/after project-gallery graphic — logo and a "BEFORE" inset baked into the image — being used at small grid-card size. Not wrong, just busy; would benefit from a plain unbranded overlay photo if one ever becomes available (Session 36).
 - **Project Gallery and an "Insurance Claims" nav item were deliberately left out** of the restyle (client confirmed, Session 26) — Project Gallery was removed earlier (Session 14) for lack of real project content to show; revisit either if the client's priorities change.
 
+## Go-live checklist (added Session 39 — everything still needed before/at launch)
+
+The site itself is built and deployed to `https://no-limit-roofing.netlify.app`. What remains is account/DNS/content work, mostly on the client's side. The client-facing explainer is a separate Google Doc ("No Limit Roofing: Website SEO Guide").
+
+**Before launch — content the client must confirm or supply**
+- [ ] Client reads through the 10 city pages and confirms the local facts (kept in an untracked local file, `.city-facts-to-verify.txt`, deliberately not committed). Includes process claims such as cleanup and how active leaks are prioritized.
+- [ ] Client skims the 6 commercial service pages (TPO, EPDM, coatings, repair, replacement, maintenance) — they include a generic "questions to ask any roofer" list and a white-EPDM mention that should match how the company actually works.
+- [ ] Confirm whether the Mishawaka street address (1821 Clover Rd, Unit 2) is public. It is in the homepage JSON-LD, but the README below says offices are city-level only. Decide once, then make the site, Google Business Profile and directories match exactly.
+- [ ] Confirm the "Ohio location opening soon" line on `/areas` is still accurate.
+- [ ] Real job photos labeled with the city (for city pages and the Business Profile); a real commercial-job photo; and the still-missing RoofRunner, branded truck and office photos.
+
+**Before launch — accounts and settings**
+- [ ] Netlify: enable **Identity + Git Gateway** so the client can post at `/admin` (Decap CMS).
+- [ ] Netlify Forms: set up **email/webhook notifications** for the contact form. Right now submissions only land in the dashboard's Forms tab, so leads could sit unseen. Send a real test submission end to end.
+- [ ] Client creates/owns a Google account (business account preferred) for Search Console, GA4 and the Business Profile.
+- [ ] GA4 property created and its measurement ID added to the site (not wired in yet).
+- [ ] Google Business Profile: find or claim the listing, remove duplicates, start verification early (a postcard can take about a week).
+
+**Launch day**
+- [ ] Netlify: add `nolimitroofingin.com` as the primary domain; update DNS (do this with the client on a call); wait for HTTPS. Use the apex domain (no www) with www forwarding to it, since canonicals and the sitemap assume no www. Confirm `no-limit-roofing.netlify.app` forwards to the real domain.
+- [ ] **Redirects (internal only, do not put in client materials):** list the old WordPress site's URLs before cutover and add a 301 in `netlify.toml` for any that differ from the new ones. Only `/home` and `/index` redirect today.
+- [ ] Search Console: add a **Domain** property, verify with the DNS TXT record (same DNS session), submit `sitemap-index.xml` (should show 47 pages), and request indexing for Home, Services, Contact and a few city pages.
+- [ ] Verify live: `/robots.txt` lists the sitemap, padlock on every page, canonicals point at `nolimitroofingin.com`, only the 404 is `noindex`.
+- [ ] Google Business Profile: set the website field to the new domain **after** the switch; name/address/phone must match the site exactly; primary category Roofing contractor; service areas; hours; services; photos; copy the review link.
+- [ ] Link GA4 to Search Console.
+
+**First month**
+- [ ] Watch Search Console Indexing → Pages (new pages take days to weeks; anything "Crawled, currently not indexed" after a month may be too thin), Sitemaps, Performance, Enhancements (FAQ and breadcrumb markup).
+- [ ] Expect ranking movement for a few weeks after a domain switch.
+- [ ] Re-run Lighthouse on the live domain (goal: keep desktop 100 / mobile ~97+).
+
+**Ongoing (client)**
+- [ ] Ask every happy customer for a Google review and take 2–3 job photos with the town noted; monthly Business Profile post; one Learning Center article every month or two; quarterly review of pages with impressions but few clicks.
+- [ ] Keep the homepage's "Highly rated on Google" line honest — it deliberately shows no number. Testimonials on Home/About are verbatim quotes from the original site, not a live Google feed; a live reviews widget still needs API credentials tied to the Business Profile.
+
 ## Tech stack
 
 - **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 48 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
