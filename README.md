@@ -4,7 +4,10 @@ A static marketing + local-SEO site for **No Limit Roofing**, a roofing contract
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
-## Project status (updated Session 38 — read this first if picking the project back up)
+## Project status (updated Session 39 — read this first if picking the project back up)
+
+**Session 39 summary**: SEO content depth and internal linking (unique city pages, expanded service pages, linked Learning Center articles), the Google rating shown as text/graphic only, mobile layout fixes, and a **[Go-live checklist](#go-live-checklist-added-session-39--everything-still-needed-beforeat-launch) below — that is the main list of what is left.** Client decisions worth knowing: never write a "5-star" rating anywhere on the site (the decorative star graphic above the reviews is fine; the homepage says "Highly rated on Google" with no number); keep the old WordPress site out of client-facing material; the client owns the Google accounts and the developer helps with the DNS change. `.city-facts-to-verify.txt` (untracked, local only) lists the city-page facts the client should confirm. Full details in `CHANGELOG.md` (Session 39). The session 38 notes follow.
+
 
 **Site direction**: restyle and branding overhaul are complete and stable. Sessions 25-28 rebuilt the visual system (dark/orange palette, bold uppercase type, a real logo, dark nav bar) and homepage structure to match a client-supplied reference mockup. Sessions 30-37 handled steady-state maintenance, photography upgrades, and navigation contrast fixes. **Session 38 completed a major branding and copy refinement**:
 - **Removal of all "restoration" references**: Per explicit client directive, all mentions of "restoration" were removed across the entire site (copy, meta descriptions, image alts, and JSON-LD schemas), reframing the messaging around residential & commercial roofing, repair, and insurance claims/storm damage support.
