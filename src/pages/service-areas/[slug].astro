@@ -11,13 +11,32 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const allLocations = await getCollection("locations");
 const { Content } = await render(entry);
 const d = entry.data;
 
 const canonical = `https://nolimitroofingin.com/service-areas/${d.slug}.html`;
 const ogImage = `https://nolimitroofingin.com${d.heroImage.replace("-hero.webp", ".webp")}`;
 
+const nearbyCities = d.nearby
+  .map((slug) => allLocations.find((l) => l.data.slug === slug))
+  .filter(Boolean);
+
 const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    name: "No Limit Roofing",
+    url: "https://nolimitroofingin.com/",
+    telephone: "+1-574-360-0525",
+    image: "https://nolimitroofingin.com/images/nlr-logo.png",
+    description: `Residential and commercial roofing, roof repair, replacement and storm damage repair in ${d.city}, ${d.state}.`,
+    areaServed: {
+      "@type": "City",
+      name: d.city,
+      containedInPlace: { "@type": "AdministrativeArea", name: d.county },
+    },
+  },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -71,9 +90,9 @@ const schema = [
 
   <section class="section">
     <div class="container split" style="align-items:start">
-      <div class="max-prose">
+      <div class="max-prose article-body">
+        <p class="lede">{d.localContext}</p>
         <Content />
-        <p class="lede mt-4">{d.localContext}</p>
       </div>
       <div class="card p-8">
         <h2 class="text-[1.25rem]">Services Available In {d.city}</h2>
@@ -102,6 +121,9 @@ const schema = [
         <a class="chip" href="/roofing/roof-repair.html">Roof Repair</a>
         <a class="chip" href="/storm-damage.html">Storm Damage</a>
         <a class="chip" href="/commercial.html">Commercial Roofing</a>
+        {d.guides.map((g) => (
+          <a class="chip" href={g.href}>{g.label}</a>
+        ))}
       </div>
     </div>
   </section>
@@ -120,6 +142,23 @@ const schema = [
               <p>{f.answer}</p>
             </details>
           ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {nearbyCities.length > 0 && (
+    <section class="section section--fog section--tight">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Nearby</p>
+          <h2>Other Areas Near {d.city}</h2>
+        </div>
+        <div class="chip-row" style="justify-content:center">
+          {nearbyCities.map((c) => (
+            <a class="chip" href={`/service-areas/${c.data.slug}.html`}>Roofing in {c.data.city}, {c.data.state}</a>
+          ))}
+          <a class="chip" href="/areas.html">All Service Areas</a>
         </div>
       </div>
     </section>

@@ -42,6 +42,8 @@ const locations = defineCollection({
     localContext: z.string(),
     servicesOffered: z.array(z.string()).default([]),
     faqs: z.array(faqSchema).default([]),
+    nearby: z.array(z.string()).default([]),
+    guides: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
   }),
 });
 
@@ -56,6 +58,7 @@ const learningCenter = defineCollection({
     excerpt: z.string(),
     heroImage: z.string(),
     faqs: z.array(faqSchema).default([]),
+    relatedLinks: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
     draft: z.boolean().default(false),
   }),
 });

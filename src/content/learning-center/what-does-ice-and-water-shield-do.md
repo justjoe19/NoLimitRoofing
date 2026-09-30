@@ -14,6 +14,15 @@ faqs:
   - question: "How can I tell if my current roof has ice and water shield installed?"
     answer: "It's not visible once shingles are installed. If you don't know whether your existing roof has it, we can often get a sense during an inspection based on the roof's age and how it was likely built, though full certainty may require checking during a future tear-off."
 draft: false
+relatedLinks:
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Roof Repair"
+    href: "/roofing/roof-repair.html"
+  - label: "Asphalt Shingle Roofing"
+    href: "/roofing/asphalt-shingle-roofing.html"
+  - label: "What Should A Roofing Estimate Include?"
+    href: "/learning-center/what-should-be-included-in-a-roofing-estimate.html"
 ---
 
 Ice and water shield is a self-adhering waterproof membrane installed directly on the roof deck, underneath the shingles, in the areas of a roof most vulnerable to water intrusion. In a climate like Northern Indiana's — real winter freeze-thaw cycling, occasional lake-effect snow load — it's one of the more important, least visible parts of a roofing system.
@@ -32,7 +41,7 @@ Unlike standard felt or synthetic underlayment, ice and water shield is self-sea
 
 ## How much coverage is enough
 
-Building codes and manufacturer installation guidelines typically specify how far up-roof from the eave ice and water shield needs to extend, based on the roof's pitch and the wall line below — the idea being that it needs to cover past the point where an ice dam is likely to form, not just the first foot or two at the edge. A skipped or under-extended installation can look identical from the ground to a correctly installed one, which is another reason it's worth asking specifically how much coverage your estimate includes.
+Building codes and manufacturer installation guidelines typically specify how far up-roof from the eave ice and water shield needs to extend, based on the roof's pitch and the wall line below — the idea being that it needs to cover past the point where an ice dam is likely to form, not just the first foot or two at the edge. A skipped or under-extended installation can look identical from the ground to a correctly installed one, which is another reason it's worth asking specifically how much coverage your [estimate](/learning-center/what-should-be-included-in-a-roofing-estimate.html) includes.
 
 ## Ice and water shield vs. standard underlayment
 
@@ -40,4 +49,4 @@ Standard synthetic or felt underlayment sheds water that's flowing downhill norm
 
 ## Why it matters when you're getting a roof quote
 
-Ice and water shield isn't visible once a roof is finished — it's entirely underneath the shingles. That makes it an easy thing for a lower-cost installer to skip or under-install without you ever knowing, until the first bad ice storm. It's a standard part of every roofing system we install, in the areas where it actually matters, not an upsell. If you want to know exactly what's going into your roof, ask — we'll walk through it as part of your estimate. Call (574) 360-0525 or request a free inspection.
+Ice and water shield isn't visible once a roof is finished — it's entirely underneath the shingles. That makes it an easy thing for a lower-cost installer to skip or under-install without you ever knowing, until the first bad ice storm. It's a standard part of every roofing system we install, including [roof replacements](/roofing/roof-replacement.html) and [asphalt shingle roofs](/roofing/asphalt-shingle-roofing.html), in the areas where it actually matters, not an upsell. If you want to know exactly what's going into your roof, ask — we'll walk through it as part of your estimate. Call (574) 360-0525 or request a free [inspection](/roofing/roof-inspections.html).

@@ -14,6 +14,15 @@ faqs:
   - question: "Does a lower price always mean a less qualified contractor?"
     answer: "Not necessarily — but if a quote is dramatically lower than others you've received with no clear explanation, it's worth asking directly what accounts for the difference before assuming it's simply a better deal."
 draft: false
+relatedLinks:
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Roof Inspections"
+    href: "/roofing/roof-inspections.html"
+  - label: "Emergency Roof Repair"
+    href: "/roofing/emergency-roof-repair.html"
+  - label: "What Should A Roofing Estimate Include?"
+    href: "/learning-center/what-should-be-included-in-a-roofing-estimate.html"
 ---
 
 A roof is one of the larger investments most homeowners make in their property, and the contractor doing the work matters as much as the material going on the roof. These are the questions worth asking before you sign anything — and a contractor's willingness to answer them clearly is itself useful information.
@@ -32,7 +41,7 @@ Some contractors sell the job and subcontract the actual installation to a crew 
 
 ## What happens if you find bad decking?
 
-A contractor who has a clear, upfront answer to this (how it's priced, whether you'll be shown the damage) is more trustworthy than one who hasn't thought about it or gives a vague "we'll handle it."
+A contractor who has a clear, upfront answer to this (how it's priced, whether you'll be shown the damage) is more trustworthy than one who hasn't thought about it or gives a vague "we'll handle it." Our guide explains [what happens if bad decking is found](/learning-center/what-happens-if-bad-decking-is-found.html).
 
 ## Can I get the estimate in writing, with materials specified by name?
 
@@ -56,12 +65,12 @@ Beyond the questions themselves, a few patterns are worth noticing on their own:
 
 ## Local vs. traveling "storm chaser" crews
 
-After major storms across Michiana, it's common for out-of-town crews to canvas the hardest-hit neighborhoods offering fast, discounted work. Some are legitimate; many disappear before a warranty ever needs to be honored, leaving homeowners with no one to call if something goes wrong later. A locally based, established contractor with a verifiable address and history is easier to hold accountable years down the road, which matters given how long a roof is expected to last.
+After major [storms across Michiana](/storm-damage.html), it's common for out-of-town crews to canvas the hardest-hit neighborhoods offering fast, discounted work. Some are legitimate; many disappear before a warranty ever needs to be honored, leaving homeowners with no one to call if something goes wrong later. A locally based, established contractor with a verifiable address and history is easier to hold accountable years down the road, which matters given how long a roof is expected to last.
 
 ## Why local, long-term presence matters
 
-A contractor who's been serving the same community for years has a real reputation at stake and a practical need to still be reachable if a warranty issue comes up. That's worth weighing alongside price and material specs, especially for a project with a service life measured in decades.
+A contractor who's been serving the same community for years has a real reputation at stake and a practical need to still be reachable if a warranty issue comes up. That's worth weighing alongside price and material specs, especially for a project with a service life measured in decades. See the full range of [places we serve across Michiana](/areas.html), or read about [roof replacement](/roofing/roof-replacement.html) from our own crew.
 
 ## Our answers to these questions
 
-We're glad to answer every one of these directly, because we think a homeowner asking good questions makes for a better outcome on both sides. Call (574) 360-0525 or request a free inspection, and ask us anything on this list.
+We're glad to answer every one of these directly, because we think a homeowner asking good questions makes for a better outcome on both sides. Call (574) 360-0525 or request a free [roof inspection](/roofing/roof-inspections.html), and ask us anything on this list.

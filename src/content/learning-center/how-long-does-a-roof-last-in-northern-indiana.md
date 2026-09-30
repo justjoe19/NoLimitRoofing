@@ -14,6 +14,15 @@ faqs:
   - question: "Does a steeper roof last longer than a low-slope one?"
     answer: "Pitch affects water and snow shedding more than raw material lifespan — a steeper roof sheds water faster, which can reduce certain risks like ponding, but a well-ventilated, well-installed low-slope roof isn't automatically shorter-lived."
 draft: false
+relatedLinks:
+  - label: "Roof Inspections"
+    href: "/roofing/roof-inspections.html"
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Asphalt Shingle Roofing"
+    href: "/roofing/asphalt-shingle-roofing.html"
+  - label: "Roof Repair vs. Replacement"
+    href: "/learning-center/roof-repair-vs-replacement.html"
 ---
 
 There's no single number that answers this honestly, because a roof's lifespan depends on more than just the material it's made from — but the climate here does matter, and it's worth understanding why.
@@ -24,7 +33,7 @@ Northern Indiana sees real winter freeze-thaw cycling: water gets into small cra
 
 ## Material sets a ceiling, not a guarantee
 
-Manufacturer warranty terms give a rough sense of what a shingle is rated for — architectural (dimensional) asphalt shingles commonly carry warranty terms in the 25-30 year range, standard 3-tab shingles somewhat less, metal roofing generally more. But a warranty term is a ceiling, not a promise. A roof rarely fails early because the shingle itself was defective; it's far more often installation quality or ventilation that determines whether a roof reaches anywhere close to its rated lifespan.
+Manufacturer warranty terms give a rough sense of what a shingle is rated for — [architectural (dimensional) asphalt shingles](/roofing/asphalt-shingle-roofing.html) commonly carry warranty terms in the 25-30 year range, standard 3-tab shingles somewhat less, metal roofing generally more. But a warranty term is a ceiling, not a promise. A roof rarely fails early because the shingle itself was defective; it's far more often installation quality or ventilation that determines whether a roof reaches anywhere close to its rated lifespan.
 
 ## Ventilation is the factor most homeowners don't think about
 
@@ -32,11 +41,11 @@ Attic ventilation controls temperature and moisture in the space directly under 
 
 ## Installation quality compounds over decades, not days
 
-Correct underlayment, ice and water shield in vulnerable areas, proper flashing around every penetration, and correct nailing pattern don't show up as a visible difference the week after installation — but they're the difference between a roof that needs attention at year 15 and one that's still solid at year 25. This is also why factory certification matters: it means the installation methods have been verified by the manufacturer, not just the crew's own habits.
+Correct underlayment, [ice and water shield](/learning-center/what-does-ice-and-water-shield-do.html) in vulnerable areas, proper flashing around every penetration, and correct nailing pattern don't show up as a visible difference the week after installation — but they're the difference between a roof that needs attention at year 15 and one that's still solid at year 25. This is also why factory certification matters: it means the installation methods have been verified by the manufacturer, not just the crew's own habits.
 
 ## Signs a roof is approaching the end of its service life
 
-Rather than relying on age alone, a few physical signs matter more directly: shingles that are curling, cupping, or losing granules broadly across the roof (not just in one storm-damaged spot); daylight visible through the roof deck from inside the attic; shingles that feel brittle rather than flexible; and repair calls becoming more frequent over a short period. Any one of these is worth an inspection regardless of the roof's exact age.
+Rather than relying on age alone, a few physical signs matter more directly: shingles that are curling, cupping, or losing granules broadly across the roof (not just in one storm-damaged spot); daylight visible through the roof deck from inside the attic; shingles that feel brittle rather than flexible; and [repair calls](/roofing/roof-repair.html) becoming more frequent over a short period. Any one of these is worth an inspection regardless of the roof's exact age.
 
 ## Maintenance that actually extends lifespan
 
@@ -44,4 +53,4 @@ Keeping gutters clear (so water doesn't back up under the eaves), trimming overh
 
 ## How long should your roof actually last?
 
-If you want a rough planning number: a well-installed architectural shingle roof with proper ventilation, in this climate, commonly reaches 20-25+ years before replacement becomes the clear right call — but that number moves in both directions based on installation quality, ventilation, and how well the roof has been maintained and inspected along the way. A roof inspection can tell you far more about where your specific roof actually stands than any general number can.
+If you want a rough planning number: a well-installed architectural shingle roof with proper ventilation, in this climate, commonly reaches 20-25+ years before [replacement becomes the clear right call](/roofing/roof-replacement.html) — but that number moves in both directions based on installation quality, ventilation, and how well the roof has been maintained and inspected along the way. A [roof inspection](/roofing/roof-inspections.html) can tell you far more about where your specific roof actually stands than any general number can.

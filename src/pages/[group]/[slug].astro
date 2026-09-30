@@ -11,6 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const cities = (await getCollection("locations")).sort((a, b) => a.data.city.localeCompare(b.data.city));
 const { Content } = await render(entry);
 const d = entry.data;
 
@@ -90,7 +91,7 @@ const schema = [
 
   <section class="section">
     <div class="container split" style="align-items:start">
-      <div class="max-prose service-copy">
+      <div class="max-prose article-body">
         <Content />
       </div>
       {d.highlights.length > 0 && (
@@ -144,6 +145,20 @@ const schema = [
       </div>
     </section>
   )}
+
+  <section class="section section--fog section--tight">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Service Areas</p>
+        <h2>Where We Provide {d.title}</h2>
+      </div>
+      <div class="chip-row" style="justify-content:center">
+        {cities.map((c) => (
+          <a class="chip" href={`/service-areas/${c.data.slug}.html`}>{c.data.city}, {c.data.state}</a>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <section class="section section--tight">
     <div class="container">

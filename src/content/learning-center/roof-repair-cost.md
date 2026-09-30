@@ -14,9 +14,20 @@ faqs:
   - question: "How quickly can a repair be scheduled?"
     answer: "Emergency repairs — an active leak or storm damage — are prioritized for same-day or next-day response. Non-emergency repairs are scheduled based on current workload; call (574) 360-0525 for current availability."
 draft: false
+relatedLinks:
+  - label: "Roof Repair"
+    href: "/roofing/roof-repair.html"
+  - label: "Emergency Roof Repair"
+    href: "/roofing/emergency-roof-repair.html"
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Roof Repair vs. Replacement"
+    href: "/learning-center/roof-repair-vs-replacement.html"
+  - label: "How Much Does A New Roof Cost?"
+    href: "/learning-center/new-roof-cost-michiana.html"
 ---
 
-Across Michiana, roof repair cost has a wider range than most homeowners expect, mostly because "repair" covers everything from resealing one piece of flashing to replacing a significant section of decking and shingles after storm damage. The factors below are what actually separate a small repair bill from a large one.
+Across Michiana, [roof repair](/roofing/roof-repair.html) cost has a wider range than most homeowners expect, mostly because "repair" covers everything from resealing one piece of flashing to replacing a significant section of decking and shingles after [storm damage](/storm-damage.html). The factors below are what actually separate a small repair bill from a large one.
 
 ## What type of damage drives roof repair cost
 
@@ -32,7 +43,7 @@ If your roof is more than a few years old, an exact color/style match for the sh
 
 ## Emergency vs. scheduled repairs
 
-An emergency repair — stabilizing an active leak or storm damage same-day or next-day — is prioritized differently than a scheduled repair, but that's about response timing, not a separate pricing category. The actual repair cost is still driven by the scope of the damage itself.
+An [emergency](/roofing/emergency-roof-repair.html) repair — stabilizing an active leak or storm damage same-day or next-day — is prioritized differently than a scheduled repair, but that's about response timing, not a separate pricing category. The actual repair cost is still driven by the scope of the damage itself.
 
 ## Repairing vs. replacing the damaged section
 
@@ -48,4 +59,4 @@ Repairs tied to a specific storm event — wind, hail, a fallen branch — are o
 
 ## Why we don't quote roof repairs over the phone
 
-Nobody can accurately price a roof repair without seeing it — "it's leaking" could mean a five-minute flashing fix or a much larger problem, and there's no way to tell which from a phone call. That's why every job starts with a free, in-person inspection: we look at the actual damage, explain what we find, and give you a written estimate based on your roof, not a phone-call guess. Call (574) 360-0525, or request an inspection online, and we'll give you a real number instead of a range that may not apply to your situation.
+Nobody can accurately price a roof repair without seeing it — "it's leaking" could mean a five-minute flashing fix or a much larger problem, and there's no way to tell which from a phone call. That's why every job starts with a free, in-person [inspection](/roofing/roof-inspections.html): we look at the actual damage, explain what we find, and give you a written estimate based on your roof, not a phone-call guess. Call (574) 360-0525, or request an inspection online, and we'll give you a real number instead of a range that may not apply to your situation.

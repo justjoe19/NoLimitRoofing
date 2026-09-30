@@ -14,6 +14,17 @@ faqs:
   - question: "Is a partial replacement ever the right call?"
     answer: "In some cases, yes — if damage is contained to one clearly separable section (like a detached garage roof or a distinct roof plane) and the rest of the roofing system is sound. We'll tell you honestly if that's a realistic option for your specific roof or if it isn't."
 draft: false
+relatedLinks:
+  - label: "Roof Repair"
+    href: "/roofing/roof-repair.html"
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Roof Inspections"
+    href: "/roofing/roof-inspections.html"
+  - label: "How Much Does Roof Repair Cost?"
+    href: "/learning-center/roof-repair-cost.html"
+  - label: "How Long Does A Roof Last?"
+    href: "/learning-center/how-long-does-a-roof-last-in-northern-indiana.html"
 ---
 
 It's the first question almost every homeowner asks when something goes wrong with their roof: do I need a repair, or a whole new roof? The honest answer is "it depends" — but it depends on a fairly small number of factors, and once you know what they are, the decision usually isn't that hard to make.
@@ -24,15 +35,15 @@ Every roofing material has a rough expected service life in Michiana's climate �
 
 ## Localized vs. widespread roof damage
 
-A single damaged area — a section of missing shingles from wind, a leak traced to one piece of failed flashing — is usually a repair candidate, provided the rest of the roof and the decking underneath are sound. Damage spread across multiple areas of the roof, or multiple separate leaks showing up in different parts of the house, points more toward replacement, since it suggests the roofing system as a whole is wearing out rather than one component failing.
+A single damaged area — a section of missing shingles from wind, a leak traced to one piece of failed flashing — is usually a repair candidate, provided the rest of the roof and the [decking](/learning-center/what-happens-if-bad-decking-is-found.html) underneath are sound. Damage spread across multiple areas of the roof, or multiple separate leaks showing up in different parts of the house, points more toward [replacement](/roofing/roof-replacement.html), since it suggests the roofing system as a whole is wearing out rather than one component failing.
 
 ## Roof decking condition and the repair-vs-replace decision
 
-This is the one that's hard to know without an actual inspection. Soft, rotted, or damaged decking changes the calculation — it needs to be replaced regardless, and once a roof is opened up that far, it often makes more sense to complete a full replacement than to patch a repair on top of new decking in one spot while the rest of the old roof stays in place.
+This is the one that's hard to know without an actual [inspection](/roofing/roof-inspections.html). Soft, rotted, or damaged decking changes the calculation — it needs to be replaced regardless, and once a roof is opened up that far, it often makes more sense to complete a full replacement than to patch a repair on top of new decking in one spot while the rest of the old roof stays in place.
 
 ## Repeated roof repairs: when replacement makes more sense
 
-If you're looking at your third or fourth repair call in a few years, the math usually favors replacement even if any single repair is inexpensive — the cumulative cost, plus the ongoing risk of a leak between service calls, tends to outweigh the upfront cost difference over time.
+If you're looking at your third or fourth repair call in a few years, the math usually favors replacement even if any single repair is inexpensive — the [cumulative cost of repeated repairs](/learning-center/roof-repair-cost.html), plus the ongoing risk of a leak between service calls, tends to outweigh the upfront cost difference over time.
 
 ## Energy and comfort, not just leaks
 

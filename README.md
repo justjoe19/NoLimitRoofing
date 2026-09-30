@@ -221,7 +221,7 @@ So future edits don't have to re-derive these from the old site:
 - **Service area**: St. Joseph County IN, LaPorte County IN, Marshall County IN, Berrien County MI, Cass County MI, Greater South Bend–Elkhart region.
 - **Certifications**: GAF Certified, IKO RoofPro (Select & Preferred), Owens Corning, Malarkey, Atlas, CertainTeed Shingle Master, SRS TopShield PRO.
 - **Social**: Facebook `/NoLimitRoofingIN`, LinkedIn `/company/no-limit-roofing-indiana`, YouTube (playlist linked in footer).
-- **Reviews**: 5.0★ average. The testimonials on Home/About are verbatim quotes pulled from the original site (K. Hall, L. Bauer, D. Beery, S. Wilcox, S. Rosado, S. Zellers) — don't paraphrase or invent new ones without a real source.
+- **Reviews**: 4.9 average on Google (shown as text on the Home page; no aggregateRating schema — Google ignores self-published ratings, so it was removed). The testimonials on Home/About are verbatim quotes pulled from the original site (K. Hall, L. Bauer, D. Beery, S. Wilcox, S. Rosado, S. Zellers) — don't paraphrase or invent new ones without a real source.
 - **Roofs completed**: 1000+ — confirmed real by the client (Session 25), used as a homepage trust stat.
 - **No published business hours** — the site deliberately avoids stating specific hours (none were published on the original site). Copy instead says "call anytime for emergencies" / "we respond same business day."
 

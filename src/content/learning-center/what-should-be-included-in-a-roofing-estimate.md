@@ -14,17 +14,26 @@ faqs:
   - question: "How detailed should the material list actually be?"
     answer: "Specific enough that you could hand the estimate to a different contractor and they'd know exactly what's being installed — brand, product line, and where each component (underlayment, ice and water shield, flashing) is going."
 draft: false
+relatedLinks:
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Roof Inspections"
+    href: "/roofing/roof-inspections.html"
+  - label: "Questions To Ask Before Hiring"
+    href: "/learning-center/questions-to-ask-before-hiring-a-roofing-contractor.html"
+  - label: "How Much Does A New Roof Cost?"
+    href: "/learning-center/new-roof-cost-michiana.html"
 ---
 
-A roofing estimate that's just a single total number with no detail behind it isn't really an estimate — it's a placeholder that leaves too much room for surprises later. Here's what a written estimate should actually spell out before you sign anything.
+A roofing estimate that's just a single total number with no detail behind it isn't really an estimate — it's a placeholder that leaves too much room for surprises later. Here's what a written estimate should actually spell out before you sign anything. If you're still budgeting, our guide to [what a new roof costs in Michiana](/learning-center/new-roof-cost-michiana.html) explains what drives the price.
 
 ## Scope of work
 
-A clear description of exactly what's being done — full tear-off vs. overlay, what's being torn off and down to what layer, what's being installed, and what areas of the roof (or building, for commercial work) are included. Vague language like "roof work as needed" isn't a scope.
+A clear description of exactly what's being done — full tear-off vs. overlay (see [roof replacement](/roofing/roof-replacement.html)), what's being torn off and down to what layer, what's being installed, and what areas of the roof (or building, for commercial work) are included. Vague language like "roof work as needed" isn't a scope.
 
 ## Materials, by name
 
-The specific manufacturer and product line for shingles or roofing membrane, not just "architectural shingles" with no brand — plus underlayment type, ice and water shield placement, flashing material, and ventilation components. If you can't tell what's actually going on your roof from the estimate, ask.
+The specific manufacturer and product line for shingles or roofing membrane, not just "architectural shingles" with no brand — plus underlayment type, [ice and water shield](/learning-center/what-does-ice-and-water-shield-do.html) placement, flashing material, and ventilation components. If you can't tell what's actually going on your roof from the estimate, ask.
 
 ## Decking policy
 
@@ -60,4 +69,4 @@ If a contractor gives you a number over the phone or in a quick conversation wit
 
 ## What a No Limit Roofing estimate includes
 
-Every estimate we provide covers all of the above, in writing, before any work begins — free, with no obligation. If a competing estimate you've received doesn't include most of this, that's worth asking the other contractor about directly. Call (574) 360-0525 or request a free inspection to see what a complete estimate actually looks like.
+Every estimate we provide covers all of the above, in writing, before any work begins — free, with no obligation. If a competing estimate you've received doesn't include most of this, that's worth asking the other contractor about directly. Call (574) 360-0525 or request a free [inspection](/roofing/roof-inspections.html) to see what a complete estimate actually looks like.

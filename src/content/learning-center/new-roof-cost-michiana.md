@@ -14,6 +14,17 @@ faqs:
   - question: "How long does a written estimate stay valid?"
     answer: "Ask us directly when you get yours — material and labor costs can shift, so a specific quote is tied to a specific window of time, not open-ended indefinitely."
 draft: false
+relatedLinks:
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Asphalt Shingle Roofing"
+    href: "/roofing/asphalt-shingle-roofing.html"
+  - label: "Roof Inspections"
+    href: "/roofing/roof-inspections.html"
+  - label: "What Should A Roofing Estimate Include?"
+    href: "/learning-center/what-should-be-included-in-a-roofing-estimate.html"
+  - label: "How Much Does Roof Repair Cost?"
+    href: "/learning-center/roof-repair-cost.html"
 ---
 
 Every homeowner asks this question first, and every honest roofing contractor gives the same real answer: it depends. Not as a dodge — because roof replacement cost genuinely varies based on a specific, knowable set of factors, and a number that doesn't account for your roof isn't a real estimate, it's a guess. Here's what actually drives the cost up or down.

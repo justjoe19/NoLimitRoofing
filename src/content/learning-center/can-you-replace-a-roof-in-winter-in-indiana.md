@@ -14,9 +14,18 @@ faqs:
   - question: "Does winter installation affect my warranty?"
     answer: "Not when it's installed correctly by a certified crew following manufacturer-approved cold-weather procedures. We'll walk through your specific warranty terms as part of the estimate."
 draft: false
+relatedLinks:
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Emergency Roof Repair"
+    href: "/roofing/emergency-roof-repair.html"
+  - label: "How Long Does Roof Replacement Take?"
+    href: "/learning-center/how-long-does-roof-replacement-take.html"
+  - label: "What Does Ice & Water Shield Do?"
+    href: "/learning-center/what-does-ice-and-water-shield-do.html"
 ---
 
-Yes — winter roof replacement happens regularly in Northern Indiana, including on emergency repairs that simply can't wait for spring. It isn't identical to a summer installation, though, and it's worth understanding what's actually different before assuming winter work is a bad idea or that it's business as usual.
+Yes — [winter roof replacement](/roofing/roof-replacement.html) happens regularly in Northern Indiana, including on emergency repairs that simply can't wait for spring. It isn't identical to a summer installation, though, and it's worth understanding what's actually different before assuming winter work is a bad idea or that it's business as usual.
 
 ## Why cold weather affects shingle sealing
 
@@ -24,11 +33,11 @@ Asphalt shingles have an adhesive strip that bonds each shingle to the one below
 
 ## What stays the same in a winter roof replacement
 
-The decking, underlayment, ice and water shield, and flashing all install the same way regardless of season. Structurally, a well-installed winter roof is not inferior to a well-installed summer roof — the difference is entirely in the extra step required for proper shingle sealing.
+The decking, underlayment, [ice and water shield](/learning-center/what-does-ice-and-water-shield-do.html), and flashing all install the same way regardless of season. Structurally, a well-installed winter roof is not inferior to a well-installed summer roof — the difference is entirely in the extra step required for proper shingle sealing.
 
 ## When winter work makes sense
 
-An active leak, storm damage, or a failing roof doesn't pause for the calendar — an emergency repair or replacement in winter is often the right call simply because water intrusion doesn't wait. Winter scheduling can also mean less competition for a crew's time compared to peak spring and fall season.
+An active leak, storm damage, or a failing roof doesn't pause for the calendar — an [emergency repair](/roofing/emergency-roof-repair.html) or replacement in winter is often the right call simply because water intrusion doesn't wait. Winter scheduling can also mean less competition for a crew's time compared to peak spring and fall season.
 
 ## When to delay a winter roof installation
 
@@ -44,4 +53,4 @@ If there's existing snow or ice on the roof, it has to be cleared before tear-of
 
 ## Is winter roof replacement right for your home?
 
-Winter roofing in Michiana is a real, viable option when it's done by a crew that knows how to hand-seal shingles properly for the conditions — it's not something to avoid out of habit, and it's not something to do carelessly either. If you have a roof problem now, don't wait for spring on our account — call (574) 360-0525 or request a free inspection.
+Winter roofing in Michiana is a real, viable option when it's done by a crew that knows how to hand-seal shingles properly for the conditions — it's not something to avoid out of habit, and it's not something to do carelessly either. If you have a roof problem now, don't wait for spring on our account — call (574) 360-0525 or request a [free inspection](/roofing/roof-inspections.html).

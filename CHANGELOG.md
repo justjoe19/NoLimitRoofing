@@ -2,6 +2,14 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 39 — SEO content depth and internal linking; Google rating shown as text
+
+- **City pages (10)**: rewritten with unique local content (4–5 `##` sections each, roughly 725–915 rendered words, up from ~400), 5 city-specific FAQs, `nearby` links to 4 neighbouring cities and `guides` links. New optional `nearby`/`guides` fields in `src/content.config.ts`. `service-areas/[slug].astro` now emits per-city `RoofingContractor` + `areaServed` JSON-LD and a "Other Areas Near X" chip row. Local facts are general/hedged; the client should verify them (kept locally in an untracked `.city-facts-to-verify.txt`).
+- **Service pages (13)**: expanded to ~850–1,235 rendered words with 4–6 FAQs, sibling and Learning Center links; every service page now shows a "Where We Provide X" row linking to all 10 city pages.
+- **Learning Center (15)**: inline links to services and related articles added; new optional `relatedLinks` frontmatter and a "Related Services & Guides" block in `learning-center/[slug].astro`.
+- **Rating**: removed the hand-typed `aggregateRating` (5.0 / 6 reviews) from the homepage JSON-LD (Google ignores self-published ratings) and replaced the five-star row above the testimonials with a single star and "4.9 average rating on Google" text. The number is manual and needs updating if Google's rating changes.
+- **Verification**: 48 pages build; all internal links resolve; no "restoration" anywhere.
+
 ## Session 38 — Rebranded mascot logo, contractor head favicon, and complete removal of 'restoration' mentions
 
 - **Removed all mentions of 'restoration' across the entire site**:

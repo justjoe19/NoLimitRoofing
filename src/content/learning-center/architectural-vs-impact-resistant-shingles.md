@@ -14,6 +14,15 @@ faqs:
   - question: "Can I tell if my current shingles are Class 4 rated just by looking at them?"
     answer: "Not reliably — the rating isn't visually obvious. If you're not sure what's currently on your roof, we can identify the product during an inspection."
 draft: false
+relatedLinks:
+  - label: "Asphalt Shingle Roofing"
+    href: "/roofing/asphalt-shingle-roofing.html"
+  - label: "Hail Damage Repair"
+    href: "/storm-damage/hail-damage.html"
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "What Does Hail Damage Look Like?"
+    href: "/learning-center/what-does-hail-damage-look-like.html"
 ---
 
 These two terms get confused because they're not actually opposites — a shingle can be architectural and impact-resistant at the same time. They describe two different things about a shingle: its shape and construction (architectural) versus its resistance to impact damage (impact-resistant, often rated Class 4). Here's what each actually means.
@@ -24,11 +33,11 @@ Also called dimensional shingles, these are made with multiple layers laminated 
 
 ## Impact-resistant (Class 4) shingles
 
-This is a separate rating, tested by dropping steel balls onto the shingle to simulate hail impact (UL 2218 is the standard test). A shingle that passes the toughest level of this test earns a Class 4 rating, meaning it resists cracking and granule loss from hail impact significantly better than a standard shingle. Class 4 shingles can be manufactured in either 3-tab or architectural styles — the impact rating is a separate spec layered on top of the shingle's basic construction.
+This is a separate rating, tested by dropping steel balls onto the shingle to simulate [hail](/storm-damage/hail-damage.html) impact (UL 2218 is the standard test). A shingle that passes the toughest level of this test earns a Class 4 rating, meaning it resists cracking and granule loss from [hail impact](/learning-center/what-does-hail-damage-look-like.html) significantly better than a standard shingle. Class 4 shingles can be manufactured in either 3-tab or architectural styles — the impact rating is a separate spec layered on top of the shingle's basic construction.
 
 ## Why this distinction matters in Michiana
 
-Hail is a real factor in this region's storm season, and Class 4 impact-resistant shingles are specifically built to hold up better against it — fewer bruises, less granule loss, fewer post-storm repair calls over the life of the roof. Some homeowners' insurance carriers also offer premium discounts for Class 4 roofing, though that varies by carrier and policy — worth checking directly with your insurance company rather than assuming.
+Hail is a real factor in this region's storm season, and Class 4 impact-resistant shingles are specifically built to hold up better against it — fewer bruises, less granule loss, fewer [post-storm repair](/storm-damage.html) calls over the life of the roof. Some homeowners' insurance carriers also offer premium discounts for Class 4 roofing, though that varies by carrier and policy — worth checking directly with your insurance company rather than assuming.
 
 ## How UL 2218 testing rates impact-resistant shingles
 
@@ -44,4 +53,4 @@ Because Class 4 shingles resist granule loss and cracking from hail impact bette
 
 ## Choosing between architectural and impact-resistant shingles
 
-If you're already choosing architectural shingles for their look and durability, asking about a Class 4 impact-resistant option from the same manufacturer line is a reasonable next question — it's often a modest cost difference for a real reduction in storm-damage risk. We'll walk through the specific architectural and impact-resistant options available from our certified manufacturers (GAF, IKO, Owens Corning, Malarkey, Atlas) as part of your estimate. Call (574) 360-0525 or request a free inspection to see real samples and pricing for your roof.
+If you're already choosing architectural shingles for their look and durability, asking about a Class 4 impact-resistant option from the same manufacturer line is a reasonable next question — it's often a modest cost difference for a real reduction in storm-damage risk. We'll walk through the specific architectural and impact-resistant options available from our certified manufacturers (GAF, IKO, Owens Corning, Malarkey, Atlas) as part of your estimate. Call (574) 360-0525 or request a [free inspection](/roofing/roof-inspections.html) to see real samples and pricing for your roof.

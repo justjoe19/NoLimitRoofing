@@ -14,9 +14,20 @@ faqs:
   - question: "Does one system have a longer warranty than the other?"
     answer: "Warranty terms vary by manufacturer and specific product line for both systems rather than one category being universally longer than the other — we'll show you the actual warranty terms for the specific products being proposed for your building."
 draft: false
+relatedLinks:
+  - label: "TPO Roofing"
+    href: "/commercial/tpo.html"
+  - label: "EPDM Roofing"
+    href: "/commercial/epdm.html"
+  - label: "Commercial Roof Replacement"
+    href: "/commercial/replacement.html"
+  - label: "Commercial Roof Coatings"
+    href: "/commercial/roof-coatings.html"
+  - label: "Coating vs. Replacement"
+    href: "/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html"
 ---
 
-Across Northern Indiana and Southwest Michigan, TPO and EPDM are the two most common single-ply membrane systems on flat and low-slope commercial roofs, and property managers comparing them for a new roof or replacement usually want a straight answer about which is "better." The honest answer is that they're different tools suited to somewhat different priorities — here's how they actually compare.
+Across Northern Indiana and Southwest Michigan, [TPO](/commercial/tpo.html) and [EPDM](/commercial/epdm.html) are the two most common single-ply membrane systems on flat and low-slope commercial roofs, and property managers comparing them for a new roof or [replacement](/commercial/replacement.html) usually want a straight answer about which is "better." The honest answer is that they're different tools suited to somewhat different priorities — here's how they actually compare.
 
 ## TPO vs. EPDM seaming: heat-welded vs. adhesive
 
@@ -36,7 +47,7 @@ Material and installation costs for both systems vary based on your specific bui
 
 ## Maintaining a TPO or EPDM roof
 
-Both systems require the same basic ongoing attention: checking seams, flashing, and drainage, and addressing ponding water before it causes problems. Neither system is meaningfully more maintenance-free than the other when installed correctly.
+Both systems require the same basic ongoing attention: checking seams, flashing, and drainage, and addressing ponding water before it causes problems. Neither system is meaningfully more [maintenance](/commercial/maintenance.html)-free than the other when installed correctly.
 
 ## TPO vs. EPDM puncture resistance
 
@@ -44,7 +55,7 @@ Both membranes resist normal foot traffic and weather exposure well, but their p
 
 ## Repairing TPO vs. EPDM roofing membranes
 
-Because TPO seams are heat-welded, repairs typically also use heat-welding to tie into the existing membrane cleanly. EPDM repairs use compatible adhesive or tape systems. Both are well-established, reliable repair methods when done by a contractor experienced with that specific membrane type — mismatched repair techniques (using EPDM-style adhesive on a TPO roof, for instance) are a more common source of premature seam failure than either material's inherent qualities.
+Because TPO seams are heat-welded, repairs typically also use heat-welding to tie into the existing membrane cleanly. EPDM repairs use compatible adhesive or tape systems. Both are well-established, reliable [repair](/commercial/repair.html) methods when done by a contractor experienced with that specific membrane type — mismatched repair techniques (using EPDM-style adhesive on a TPO roof, for instance) are a more common source of premature seam failure than either material's inherent qualities.
 
 ## What building type tends to favor which system
 

@@ -14,6 +14,15 @@ faqs:
   - question: "Does decking replacement affect my roof's warranty?"
     answer: "No, properly replacing damaged decking before installing new roofing is a normal, expected part of a correct installation — it supports the warranty rather than threatening it. Installing over bad decking would be the actual warranty risk."
 draft: false
+relatedLinks:
+  - label: "Roof Replacement"
+    href: "/roofing/roof-replacement.html"
+  - label: "Roof Repair"
+    href: "/roofing/roof-repair.html"
+  - label: "Roof Inspections"
+    href: "/roofing/roof-inspections.html"
+  - label: "What Should A Roofing Estimate Include?"
+    href: "/learning-center/what-should-be-included-in-a-roofing-estimate.html"
 ---
 
 Decking is the wood layer underneath your shingles, underlayment, and ice and water shield — it's the structural surface everything else is attached to. It's also the one part of a roofing system you genuinely can't fully evaluate until the old roofing material comes off, which is why "we found some bad decking" is one of the more common things homeowners hear mid-project. Here's what it actually means.
@@ -24,11 +33,11 @@ Long-term moisture intrusion — from an old leak, ice damming, or age-related w
 
 ## How bad decking is found during tear-off
 
-During tear-off, the crew walks the deck and checks for soft spots, visible rot, delamination (plywood layers separating), or sagging. This is a normal, expected part of any full roof replacement — checking the decking isn't optional, because installing new roofing over bad decking just seals the problem in rather than fixing it.
+During [tear-off](/roofing/roof-replacement.html), the crew walks the deck and checks for soft spots, visible rot, delamination (plywood layers separating), or sagging. This is a normal, expected part of any full roof replacement — checking the decking isn't optional, because installing new roofing over bad decking just seals the problem in rather than fixing it.
 
 ## What happens after bad decking is found
 
-Damaged decking sections get cut out and replaced with new material before the new roofing system goes on. This is priced separately from the base roofing estimate, specifically because it can't be accurately assessed — or priced — until the old roof is actually off. A trustworthy contractor will show you the damage, explain what's being replaced and why, and give you a clear price before doing the work, not just add a surprise line item to the final bill.
+Damaged decking sections get cut out and replaced with new material before the new roofing system goes on. This is priced separately from the base roofing [estimate](/learning-center/what-should-be-included-in-a-roofing-estimate.html), specifically because it can't be accurately assessed — or priced — until the old roof is actually off. A trustworthy contractor will show you the damage, explain what's being replaced and why, and give you a clear price before doing the work, not just add a surprise line item to the final bill.
 
 ## Types of decking damage, and what causes each
 
@@ -40,4 +49,4 @@ Because the extent of damage can't be known until tear-off, decking replacement 
 
 ## How to avoid a surprise
 
-The honest answer is: you can't fully avoid the possibility, since some decking issues genuinely aren't visible until tear-off. What you can do is work with a contractor who tells you upfront that this is a possibility, prices it transparently if it happens, and shows you the actual damage rather than just telling you about it. That's the standard we hold every job to — if decking work is needed on your project, you'll see it and understand why before we do it. Call (574) 360-0525 or request a free inspection to get started.
+The honest answer is: you can't fully avoid the possibility, since some decking issues genuinely aren't visible until tear-off. What you can do is work with a contractor who tells you upfront that this is a possibility, prices it transparently if it happens, and shows you the actual damage rather than just telling you about it. That's the standard we hold every job to — if decking work is needed on your project, you'll see it and understand why before we do it. Call (574) 360-0525 or request a free [inspection](/roofing/roof-inspections.html) to get started.
