@@ -18,9 +18,10 @@ const d = entry.data;
 const canonical = `https://nolimitroofingin.com/service-areas/${d.slug}.html`;
 const ogImage = `https://nolimitroofingin.com${d.heroImage.replace("-hero.webp", ".webp")}`;
 
-const nearbyCities = d.nearby
-  .map((slug) => allLocations.find((l) => l.data.slug === slug))
-  .filter(Boolean);
+const nearbyCities = d.nearby.flatMap((slug) => {
+  const match = allLocations.find((l) => l.data.slug === slug);
+  return match ? [match] : [];
+});
 
 const schema = [
   {
