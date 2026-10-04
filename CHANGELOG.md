@@ -10,6 +10,7 @@ Not a formal semver changelog — this project has no version releases. It's a r
 - **404 page**: now has a tap-to-call button and clearer copy.
 - **Shelved, not deleted**: `public/admin/` (Decap CMS) is untracked like the other extra pages, and a drafted `src/pages/privacy-policy.astro` (written for this site; the old WordPress policy was stock comment/login boilerplate) is gitignored. The full 48-page site is at git tag `full-site-48-pages` and in `../backups/`.
 - **README**: new "Current status: 3-page launch" block and checklist at the top; the full-site checklist is kept below for when pages return.
+- **Header and cards**: every page now uses `LandingHeader.astro` (logo, phone, one CTA; no nav links or hamburger), set in `BaseLayout.astro`; `Header.astro` is unused. A small override in `LandingHeader` keeps phone + button on one row on phones (global.css stacks `.header-cta` for the old drawer). The four "Complete Roofing Solutions" cards on the home page are plain tiles: no links, no arrow circles.
 - **Verification**: clean build of tracked files only gives 4 pages and 0 broken links; all four pages share one stylesheet and were checked at 1280px and 375px.
 
 ## Session 39 — SEO content depth and internal linking; Google rating shown as text

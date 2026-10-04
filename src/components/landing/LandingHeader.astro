@@ -20,6 +20,9 @@ const { ctaLabel } = Astro.props;
 </header>
 
 <style>
+  /* No drawer here: keep phone + button in one row at every width (global.css stacks .header-cta for the old mobile drawer). */
+  .header-cta { margin-top: 0; flex-direction: row; align-items: center; }
+  .header-cta .btn { width: auto; }
   .lp-header-phone { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .95rem; color: var(--color-accent-light); white-space: nowrap; }
   .lp-header-phone:hover { color: #fff; }
   /* Phones: the sticky call bar covers calling, so keep just the icon and a compact button. */

@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import LandingHeader from "../components/landing/LandingHeader.astro";
 import Footer from "../components/Footer.astro";
 import LandingFooter from "../components/landing/LandingFooter.astro";
 import "../styles/global.css";
@@ -76,7 +76,7 @@ const {
 <body class={landing ? "landing" : undefined}>
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<Header />
+<LandingHeader ctaLabel={Astro.url.pathname.includes("roof-replacement") ? "Free Estimate" : "Free Inspection"} />
 
 <main id="main">
   <slot />
