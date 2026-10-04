@@ -1,7 +1,6 @@
 ---
 import LandingHeader from "../components/landing/LandingHeader.astro";
 import Footer from "../components/Footer.astro";
-import LandingFooter from "../components/landing/LandingFooter.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -17,7 +16,7 @@ interface Props {
   schema?: object[];
   /** Set on 404 and other pages that should never be indexed. */
   noindex?: boolean;
-  /** Ad landing pages: swap the nav header/footer for the stripped-down versions. */
+  /** Ad landing pages: adds the "landing" body class (header and footer are the same on every page). */
   landing?: { ctaLabel: string };
 }
 
@@ -82,7 +81,7 @@ const {
   <slot />
 </main>
 
-{landing ? <LandingFooter /> : <Footer />}
+<Footer />
 
 <script is:inline src="/js/main.js" defer fetchpriority="low"></script>
 </body>

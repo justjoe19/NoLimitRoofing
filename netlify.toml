@@ -42,29 +42,6 @@
   to = "/"
   status = 301
 
-# The ad URLs the campaigns were built around serve the live landing pages.
-# status 200 = rewrite, so the visitor keeps the ad URL (no extra hop, and ad
-# platforms don't lose click parameters).
-[[redirects]]
-  from = "/storm-damage-inspection"
-  to = "/storm-damage.html"
-  status = 200
-
-[[redirects]]
-  from = "/storm-damage-inspection.html"
-  to = "/storm-damage.html"
-  status = 200
-
-[[redirects]]
-  from = "/new-roof-estimate"
-  to = "/roof-replacement.html"
-  status = 200
-
-[[redirects]]
-  from = "/new-roof-estimate.html"
-  to = "/roof-replacement.html"
-  status = 200
-
 # --- Old WordPress site (nolimitroofingin.com before the cutover) ---
 # Every address the old site had in Google's index, sent to the home page so
 # old links and search results land somewhere useful instead of on a 404.
