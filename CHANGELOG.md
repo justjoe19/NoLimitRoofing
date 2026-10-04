@@ -2,6 +2,16 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 40 — Launch scope fixes: dead links, ad-URL rewrites, old-WordPress redirects, shelved extras
+
+- **Dead links fixed**: the Storm Damage landing page's three cards linked to shelved pages (hail, wind, emergency repair), which would 404 on Netlify. They are now plain cards, and the orange arrow only renders on cards that link somewhere (`LandingPage.astro`).
+- **Ad URLs**: `/storm-damage-inspection` and `/new-roof-estimate` (with and without `.html`) are now Netlify rewrites (status 200) to `/storm-damage.html` and `/roof-replacement.html`, replacing the 301s, so ad clicks keep their URL and parameters.
+- **Old WordPress URLs**: about 50 addresses from the old site's Yoast sitemaps (pages, posts, author) are 301-redirected to `/`, with splat rules for `/services/*`, `/service-areas/*`, `/roofing-blog/*` and `/author/*`. Not forced, so a real file wins if a shelved page is re-enabled. No catch-all, so unknown URLs get the 404 page.
+- **404 page**: now has a tap-to-call button and clearer copy.
+- **Shelved, not deleted**: `public/admin/` (Decap CMS) is untracked like the other extra pages, and a drafted `src/pages/privacy-policy.astro` (written for this site; the old WordPress policy was stock comment/login boilerplate) is gitignored. The full 48-page site is at git tag `full-site-48-pages` and in `../backups/`.
+- **README**: new "Current status: 3-page launch" block and checklist at the top; the full-site checklist is kept below for when pages return.
+- **Verification**: clean build of tracked files only gives 4 pages and 0 broken links; all four pages share one stylesheet and were checked at 1280px and 375px.
+
 ## Session 39 — SEO content depth and internal linking; Google rating shown as text
 
 - **City pages (10)**: rewritten with unique local content (4–5 `##` sections each, roughly 725–915 rendered words, up from ~400), 5 city-specific FAQs, `nearby` links to 4 neighbouring cities and `guides` links. New optional `nearby`/`guides` fields in `src/content.config.ts`. `service-areas/[slug].astro` now emits per-city `RoofingContractor` + `areaServed` JSON-LD and a "Other Areas Near X" chip row. Local facts are general/hedged; the client should verify them (kept locally in an untracked `.city-facts-to-verify.txt`).

@@ -9,11 +9,14 @@ source_assets/
 src/pages/about.astro
 src/pages/areas.astro
 src/pages/contact.astro
+src/pages/privacy-policy.astro
 src/pages/services.astro
 src/pages/\[group\]/
 src/pages/commercial/
 src/pages/learning-center/
 src/pages/roofing/
 src/pages/service-areas/
+# Decap CMS edits the Learning Center, which isn't live, so it isn't deployed either.
+public/admin/
 shelved_pages/
 .city-facts-to-verify.txt

@@ -42,22 +42,174 @@
   to = "/"
   status = 301
 
-[[redirects]]
-  from = "/storm-damage-inspection.html"
-  to = "/storm-damage.html"
-  status = 301
-
+# The ad URLs the campaigns were built around serve the live landing pages.
+# status 200 = rewrite, so the visitor keeps the ad URL (no extra hop, and ad
+# platforms don't lose click parameters).
 [[redirects]]
   from = "/storm-damage-inspection"
   to = "/storm-damage.html"
-  status = 301
+  status = 200
 
 [[redirects]]
-  from = "/new-roof-estimate.html"
-  to = "/roof-replacement.html"
-  status = 301
+  from = "/storm-damage-inspection.html"
+  to = "/storm-damage.html"
+  status = 200
 
 [[redirects]]
   from = "/new-roof-estimate"
   to = "/roof-replacement.html"
+  status = 200
+
+[[redirects]]
+  from = "/new-roof-estimate.html"
+  to = "/roof-replacement.html"
+  status = 200
+
+# --- Old WordPress site (nolimitroofingin.com before the cutover) ---
+# Every address the old site had in Google's index, sent to the home page so
+# old links and search results land somewhere useful instead of on a 404.
+# The new site has only 3 pages, so everything goes to "/". Splat rules cover
+# the old /services/*, /service-areas/* (counties, cities, "...roof-replacement"
+# pages), /roofing-blog/* and /author/* trees.
+# Not forced (Netlify's default): if a real file exists at one of these paths
+# (e.g. a shelved page is re-enabled later), the file wins over the redirect.
+# Anything not listed here and not a real page gets the custom 404 page.
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-blog"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/remodels"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/about-us"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-experts-south-bend-elkhart-mishawaka"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/trusted-roofer-pymouth-indiana"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roof-shingles"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/emergency-roof-repairs"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/commercial-roofing"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/tear-off-and-replace"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roof-overlay"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-maintenance"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roof-inspections"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/soft-wash-roof-cleaning"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/decking"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/insulation"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/191"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/should-a-roof-be-repaired-or-replaced"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/what-are-the-most-common-causes-of-roof-leaks"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/importance-of-routing-roof-inspections-roofing-system-maintenance"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/services/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/service-areas/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-blog/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/author/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/service-areas"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-blog"
+  to = "/"
   status = 301

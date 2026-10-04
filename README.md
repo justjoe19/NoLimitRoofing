@@ -4,7 +4,30 @@ A static marketing + local-SEO site for **No Limit Roofing**, a roofing contract
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
-## Project status (updated Session 39 — read this first if picking the project back up)
+## Current status: 3-page launch (Oct 2026) — read this first
+
+**Live scope: `/` (home), `/storm-damage.html`, `/roof-replacement.html`, plus the 404.** The two landing pages are ad pages: `noindex`, out of the sitemap, no nav. The ad URLs `/storm-damage-inspection` and `/new-roof-estimate` are Netlify *rewrites* (status 200) to them, so campaigns can use either name. The home page is the only indexable page; the sitemap lists just `/`.
+
+**Everything else is shelved, not deleted.** The other page sources sit in `src/pages/` but are in `.gitignore` and untracked, so Netlify never builds them (`public/admin/` is shelved the same way). The full 48-page site is kept at git tag `full-site-48-pages` (restore with `git checkout full-site-48-pages -- src/pages public/admin`). To bring a page back: remove its line from `.gitignore`, `git add` it, and restore its nav/footer/home links. **A local `npm run build` still builds the shelved pages (about 49), but Netlify only builds tracked files.** To check what will really deploy, build from a clean clone.
+
+**No new client photos are expected.** The Roof landing page's three cards use existing library photos (`completed-roof-shingle-detail`, `crew-shingle-install`, `aerial-completed-roof`); that's final unless photos arrive. Storm cards are plain (unlinked) because the pages they once pointed to are shelved.
+
+### Launch checklist (3-page scope)
+
+- [ ] Netlify Forms: turn on **email notifications** for the `contact` form (Site settings → Forms). Without it, leads only appear in the Forms tab. Send a real test submission from each page; check the `source` value (`storm-damage-lp`, `roof-estimate-lp`, or the home form).
+- [ ] Client confirms the landing-page claims: **"Financing available" / "Ask about financing options"** (Roof page), "24/7 storm response" and "Insurance claim experts" (Storm page), "1000+ roofs completed" (all pages).
+- [ ] Client confirms the final copy of the landing pages (hero copy is final; the rest is placeholder per the design handoff in `../reference/`).
+- [ ] Netlify: add `nolimitroofingin.com` as the primary domain, update DNS with the client on a call, wait for HTTPS. Apex domain, www forwards to it (canonicals assume no www).
+- [x] Internal only: old WordPress URLs (about 50, from the old Yoast sitemaps, listed 2026-10-04) are 301-redirected to `/` in `netlify.toml`; anything else gets the custom `404.html`. Before the DNS switch, re-fetch `https://nolimitroofingin.com/sitemap_index.xml` in case pages were added, and after launch spot-check a few old URLs with `curl -I`.
+- [ ] Search Console: Domain property, verify with DNS TXT, submit `sitemap-index.xml`, request indexing for Home.
+- [ ] Verify live: padlock on every page, `/robots.txt` lists the sitemap, canonicals point at `nolimitroofingin.com`, landing pages show `noindex`, the home page does not.
+- [ ] Google Business Profile: set the website to the new domain after the switch; name/address/phone must match the site.
+- [ ] Optional/client: GA4 or Google Ads conversion tracking. No code is needed first; the form posts a `source` field and phone buttons are plain `tel:` links to hook onto.
+- [ ] Still open from before: Mishawaka street address in the home JSON-LD (public or city-level only?), and the "Ohio location" decision no longer applies (`/areas` is shelved).
+
+The full-site checklist below applies only if the shelved pages are re-enabled.
+
+## Earlier project status (Session 39, full-site era — background only)
 
 **Session 39 summary**: SEO content depth and internal linking (unique city pages, expanded service pages, linked Learning Center articles), the Google rating shown as text/graphic only, mobile layout fixes, and a **[Go-live checklist](#go-live-checklist-added-session-39--everything-still-needed-beforeat-launch) below — that is the main list of what is left.** Client decisions worth knowing: never write a "5-star" rating anywhere on the site (the decorative star graphic above the reviews is fine; the homepage says "Highly rated on Google" with no number); keep the old WordPress site out of client-facing material; the client owns the Google accounts and the developer helps with the DNS change. `.city-facts-to-verify.txt` (untracked, local only) lists the city-page facts the client should confirm. Full details in `CHANGELOG.md` (Session 39). The session 38 notes follow.
 
@@ -29,7 +52,7 @@ Live repo: https://github.com/justjoe19/NoLimitRoofing
 - **One leftover branded graphic used as a plain thumbnail**: `service-roof-overlay.webp` (Services page, "Roof Overlay" card) is the client's own before/after project-gallery graphic — logo and a "BEFORE" inset baked into the image — being used at small grid-card size. Not wrong, just busy; would benefit from a plain unbranded overlay photo if one ever becomes available (Session 36).
 - **Project Gallery and an "Insurance Claims" nav item were deliberately left out** of the restyle (client confirmed, Session 26) — Project Gallery was removed earlier (Session 14) for lack of real project content to show; revisit either if the client's priorities change.
 
-## Go-live checklist (added Session 39 — everything still needed before/at launch)
+## Full-site go-live checklist (Session 39 — applies only if the shelved pages are re-enabled)
 
 The site itself is built and deployed to `https://no-limit-roofing.netlify.app`. What remains is account/DNS/content work, mostly on the client's side. The client-facing explainer is a separate Google Doc ("No Limit Roofing: Website SEO Guide").
 
