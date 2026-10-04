@@ -1,0 +1,270 @@
+---
+/**
+ * Shared body for the two ad landing pages. Each page passes its copy and
+ * images in; layout, styling and the lead form live here so the two stay in sync.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+interface Card { img: string; title: string; body: string; href?: string; imgAlt?: string }
+interface Step { title: string; body: string }
+interface Props {
+  seo: { title: string; description: string; canonical: string };
+  /** Value of the hidden "source" field, so the client can tell ad leads apart. */
+  source: string;
+  ctaLabel: string;
+  heroImage: string;
+  eyebrow: string;
+  h1Lines: string[];
+  /** Colour the last headline line orange, like the homepage ("ROOFS."). */
+  h1Accent?: boolean;
+  subhead: string;
+  body: string;
+  primaryCta: string;
+  callout: { type: "image"; src: string; alt: string; width: number; height: number } | { type: "script"; lines: [string, string, string] };
+  trust: string[];
+  cards: { eyebrow: string; title: string; intro: string; items: Card[] };
+  process: { eyebrow: string; title: string; highlight: string; steps: Step[] };
+  why: { body: string };
+  form: { before: string; highlight: string; after: string; intro: string; notesPlaceholder: string; success: string };
+}
+const p = Astro.props;
+
+const stats = [
+  { big: "1000+", small: "Roofs completed" },
+  { big: "Google", small: "Highly rated" },
+  { big: "Fast", small: "Claim support" },
+  { big: "Locally", small: "Owned & operated" },
+];
+
+const reviews = [
+  { q: "No Limit Roofing made the entire process so easy. They handled everything with the insurance company and our new roof looks amazing!", by: "Happy Homeowner" },
+  { q: "They were prompt, accurate, and professional. I will definitely recommend them for your roofing needs.", by: "K. Hall, South Bend, IN" },
+  { q: "Jon gave us stellar customer service and I didn't have to worry!! Highly recommend!!", by: "L. Bauer, South Bend, IN" },
+  { q: "Jonathan was very professional and his team moved very quickly to get my new roof completed. Thank you!", by: "S. Rosado, Michiana" },
+];
+
+const phonePath = "M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z";
+const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z";
+---
+
+<BaseLayout
+  title={p.seo.title}
+  description={p.seo.description}
+  canonical={p.seo.canonical}
+  ogImage={`https://nolimitroofingin.com${p.heroImage}`}
+  preloadImage={p.heroImage}
+  landing={{ ctaLabel: p.ctaLabel }}
+  noindex
+>
+  {p.callout.type === "script" && (
+    <style slot="head" is:global>{`
+      @font-face { font-family: "Kaushan Script"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/kaushan-script-latin.woff2") format("woff2"); }
+    `}</style>
+  )}
+
+  <!-- Built from the homepage's own classes so the pages stay visually in step. -->
+  <section class="hero-mockup" aria-label="Hero" style={`--hero-image:url("${p.heroImage}")`}>
+    <div class="container hero-mockup-inner">
+      <div>
+        <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-[#d6dbe0] mb-4">{p.eyebrow}</p>
+        <h1 class="hero-title text-white font-black uppercase text-3xl sm:text-4xl lg:text-[3.25rem] tracking-tight leading-[1.08]">
+          {p.h1Lines.map((line, i) => (<Fragment>{i > 0 && <br />}{i === p.h1Lines.length - 1 && p.h1Accent ? <span class="text-accent">{line}</span> : line}</Fragment>))}
+        </h1>
+        <p class="mt-5 max-w-[560px] text-white text-lg sm:text-xl font-extrabold leading-snug">{p.subhead}</p>
+        <p class="lede mt-3 max-w-[560px] text-[#d6dbe0] text-base sm:text-lg leading-relaxed">{p.body}</p>
+        <div class="hero-actions mt-8 flex flex-wrap gap-4 items-center">
+          <a class="btn-hero-primary" href="#inspection">
+            {p.primaryCta.toUpperCase()}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn-hero-outline" href="tel:+15743600525">
+            CALL NOW
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-4.5"><path d={phonePath} /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center lg:justify-end">
+        {p.callout.type === "image" ? (
+          <img src={p.callout.src} alt={p.callout.alt} class="hero-script-callout" width={p.callout.width} height={p.callout.height} />
+        ) : (
+          <div class="lp-callout-script" aria-hidden="true">{p.callout.lines[0]}<br /><span>{p.callout.lines[1]}</span><br />{p.callout.lines[2]}</div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip-stacked" aria-label="Trust highlights">
+    <div class="container trust-strip-stacked-grid">
+      {p.trust.map((t) => (
+        <div class="trust-strip-stacked-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 6-6"/></svg>
+          <span class="label">{t}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="lp-cards-h">
+    <div class="container">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-mist/40">
+        <div>
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-[#12161b]">{p.cards.eyebrow}</span>
+          <h2 id="lp-cards-h" class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#12161b] mt-1">{p.cards.title}</h2>
+          <div class="w-14 h-1 bg-accent mt-2.5"></div>
+        </div>
+        <p class="max-w-[540px] text-sm sm:text-base text-[#4a5568] leading-relaxed">{p.cards.intro}</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-3.5 mt-8">
+        {p.cards.items.map((c) => {
+          const Tag = c.href ? "a" : "div";
+          return (
+            <Tag class="service-card-mockup group" href={c.href}>
+              <div class="service-card-img-wrap">
+                <img src={c.img} alt={c.imgAlt ?? c.title} width="400" height="400" loading="lazy" />
+              </div>
+              <div class="service-card-bottom">
+                <span class="service-card-title">{c.title.toUpperCase()}</span>
+                <span class="service-card-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </span>
+              </div>
+              <p class="px-2.5 pb-4 text-sm leading-relaxed text-[#aab1b8]">{c.body}</p>
+            </Tag>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink" aria-labelledby="lp-process-h">
+    <div class="container">
+      <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-white/80">{p.process.eyebrow}</span>
+      <h2 id="lp-process-h" class="text-white text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight mt-1 max-w-[760px]">{p.process.title} <span class="text-accent">{p.process.highlight}</span></h2>
+      <div class="w-14 h-1 bg-accent mt-2.5"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-10">
+        {p.process.steps.map((st, i) => (
+          <div class="lp-step">
+            <div class="lp-step-n">{String(i + 1).padStart(2, "0")}</div>
+            <h3 class="lp-step-title">{st.title}</h3>
+            <p>{st.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose-mockup" aria-labelledby="why-choose-heading">
+    <div class="container split items-center gap-12 lg:gap-16">
+      <div class="flex flex-col items-center justify-center text-center">
+        <img src="/images/nlr-logo.webp" alt="No Limit Roofing" width="420" height="232" loading="lazy" class="max-w-[340px] sm:max-w-[390px] lg:max-w-[430px] w-full drop-shadow-2xl" />
+        <p class="mt-4 text-xs sm:text-sm font-black uppercase tracking-[0.22em] text-white/90">BUILDING A STRONGER TOMORROW</p>
+      </div>
+      <div>
+        <h2 id="why-choose-heading" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl tracking-tight">WHY CHOOSE NO LIMIT ROOFING?</h2>
+        <div class="w-14 h-1 bg-accent mt-2.5 mb-4"></div>
+        <p class="text-[#c7cdd3] leading-relaxed text-[1.02rem]">{p.why.body}</p>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/15">
+          {stats.map((st) => (
+            <div class="why-choose-stat-box"><strong>{st.big.toUpperCase()}</strong><span>{st.small.toUpperCase()}</span></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="section-head center">
+        <h2 id="reviews-heading" class="font-black uppercase tracking-tight">WHAT OUR CUSTOMERS SAY</h2>
+        <div class="stars stars-lg justify-center mt-3 text-accent" aria-hidden="true">
+          {Array.from({ length: 5 }).map(() => <svg viewBox="0 0 24 24" fill="currentColor"><path d={starPath} /></svg>)}
+        </div>
+      </div>
+      <div class="testimonial-carousel" id="testimonial-carousel">
+        <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="testimonial-slides">
+          {reviews.map((r, i) => (
+            <blockquote class:list={["testimonial-slide", { "is-active": i === 0 }]}>
+              <p>&ldquo;{r.q}&rdquo;</p>
+              <footer>&mdash; {r.by.toUpperCase()}</footer>
+            </blockquote>
+          ))}
+        </div>
+        <button type="button" class="carousel-arrow carousel-next" aria-label="Next review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="inspection" class="pre-footer-cta lp-form-section" aria-labelledby="lp-form-h">
+    <div class="container split" style="align-items:center">
+      <div>
+        <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">READY TO GET STARTED?</p>
+        <h2 id="lp-form-h" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl leading-[1.1] tracking-tight">{p.form.before.toUpperCase()}<br /><span class="text-accent">{p.form.highlight.toUpperCase()}</span> {p.form.after.toUpperCase()}</h2>
+        <p class="mt-4 max-w-[460px] text-[#c7cdd3] leading-relaxed">{p.form.intro}</p>
+        <a href="tel:+15743600525" class="cta-action-row group mt-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={phonePath} /></svg>
+          <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL (574) 360-0525</span>
+        </a>
+      </div>
+
+      <div class="card p-8 text-ink">
+        <div id="lead-sent" class="lp-sent" tabindex="-1" role="status" hidden>
+          <h3>Request received</h3>
+          <p class="mt-2 text-steel">{p.form.success}</p>
+        </div>
+
+        <!-- Same Netlify form + handler as /contact (public/js/main.js); "source" tells ad leads apart. -->
+        <form id="lead-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company-website" data-success-panel="lead-sent">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="source" value={p.source} />
+          <p class="honeypot">
+            <label>Don't fill this out if you're human: <input name="company-website" tabindex="-1" autocomplete="off" /></label>
+          </p>
+          <p class="text-steel">Fields marked <span class="req text-accent-dark">*</span> are required.</p>
+
+          <div class="form-grid mt-3" style="gap:1rem">
+            <div class="field full">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error" />
+              <div class="field-error" id="name-error"></div>
+            </div>
+            <div class="field full">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required aria-describedby="phone-error" />
+              <div class="field-error" id="phone-error"></div>
+            </div>
+            <div class="field full">
+              <label for="address">Property Address</label>
+              <input type="text" id="address" name="address" autocomplete="street-address" />
+            </div>
+            <div class="field full">
+              <label for="message">Notes</label>
+              <textarea id="message" name="message" placeholder={p.form.notesPlaceholder}></textarea>
+            </div>
+          </div>
+
+          <div class="form-status" id="form-status" role="status"></div>
+          <button type="submit" class="btn btn-primary btn-block mt-3">{p.ctaLabel}</button>
+          <p class="mt-2 text-steel text-[0.85rem]">By submitting, you agree to be contacted about your request by phone, text or email.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lp-form-section { scroll-margin-top: 90px; }
+  .lp-callout-script { font-family: "Kaushan Script", cursive; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.08; text-align: center; transform: rotate(-4deg); color: #fff; filter: drop-shadow(0 6px 20px rgba(0,0,0,.7)); }
+  .lp-callout-script span { color: var(--color-accent); }
+  .lp-step { background: var(--color-ink-soft); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: 1.6rem 1.4rem; }
+  .lp-step-n { font-size: 2.5rem; font-weight: 900; line-height: 1; color: var(--color-accent); }
+  .lp-step-title { margin-top: 1rem; font-size: .9rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: #fff; }
+  .lp-step p { margin-top: .5rem; font-size: .92rem; line-height: 1.6; color: #aab1b8; }
+  .lp-sent { padding: 2.5rem 0; text-align: center; outline: none; }
+  .lp-sent[hidden] { display: none; }
+</style>

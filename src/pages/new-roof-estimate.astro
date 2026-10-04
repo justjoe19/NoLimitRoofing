@@ -1,0 +1,51 @@
+---
+import LandingPage from "../components/landing/LandingPage.astro";
+---
+
+<!-- TODO(client photos): the three card images below are stand-ins from the site's existing library. -->
+<LandingPage
+  seo={{
+    title: "Free Roof Replacement Estimate | No Limit Roofing",
+    description: "Need a new roof? Get a free roof replacement estimate from No Limit Roofing. Professional installation, clean job sites. Call (574) 360-0525.",
+    canonical: "https://nolimitroofingin.com/new-roof-estimate.html",
+  }}
+  source="roof-estimate-lp"
+  ctaLabel="Get Free Roof Estimate"
+  heroImage="/images/hero-craftsman-dusk.webp"
+  eyebrow="No Limit Roofing • Installs & Repairs"
+  h1Lines={["Need a", "new roof?"]}
+  h1Accent
+  subhead="Get a free roof replacement estimate from No Limit Roofing."
+  body="A new roof is a big investment. We make the process simple: a professional evaluation, straightforward options, and a detailed estimate — no pressure, no obligation."
+  primaryCta="Get My Free Estimate"
+  callout={{ type: "script", lines: ["No pressure.", "No limits", "on quality."] }}
+  trust={["Free roof estimates", "Financing available", "Professional installation", "Clean & organized job sites"]}
+  cards={{
+    eyebrow: "What you get",
+    title: "A roof done right, start to finish",
+    intro: "Quality systems, professional crews, and a job site we leave cleaner than we found it.",
+    items: [
+      { img: "/images/completed-roof-shingle-detail.webp", title: "Quality roofing systems", body: "Proven, high-quality materials built for Michiana weather." },
+      { img: "/images/crew-shingle-install.webp", title: "Professional installation", body: "Experienced crews who install it right the first time." },
+      { img: "/images/aerial-completed-roof.webp", title: "Clean job sites", body: "We protect your property and clean up when the job is done." },
+    ],
+  }}
+  process={{
+    eyebrow: "How it works",
+    title: "Simple process.",
+    highlight: "Straight answers.",
+    steps: [
+      { title: "Roof evaluation", body: "A professional look at your roof’s condition, at no cost." },
+      { title: "Clear options", body: "Straightforward choices for repair or full replacement." },
+      { title: "Detailed estimate", body: "A written estimate with no pressure and no obligation." },
+      { title: "Installation", body: "Professional install with a clean, organized job site." },
+    ],
+  }}
+  why={{ body: "Locally owned and operated in Michiana since 2010. Licensed, bonded, insured and GAF factory-certified, with professional crews and clean, organized job sites." }}
+  form={{
+    before: "Get your", highlight: "free roof estimate", after: "today.",
+    intro: "No pressure, no obligation. Ask about financing options.",
+    notesPlaceholder: "Replacement or repair? Anything we should know (optional)",
+    success: "We'll call you shortly to schedule your estimate.",
+  }}
+/>

@@ -1,0 +1,50 @@
+---
+import LandingPage from "../components/landing/LandingPage.astro";
+---
+
+<LandingPage
+  seo={{
+    title: "Free Storm Damage Roof Inspection | No Limit Roofing",
+    description: "Think your roof has storm damage? Get a professional roof inspection and photo report from No Limit Roofing. Call (574) 360-0525.",
+    canonical: "https://nolimitroofingin.com/storm-damage-inspection.html",
+  }}
+  source="storm-damage-lp"
+  ctaLabel="Schedule Free Roof Inspection"
+  heroImage="/images/storm-damage-hero.webp"
+  eyebrow="No Limit Roofing • Storm Damage"
+  h1Lines={["Think your roof", "has storm", "damage?"]}
+  h1Accent
+  subhead="Get a professional roof inspection & photo report."
+  body="Hail, wind and storm damage isn't always obvious from the ground. We inspect it, document it, and explain it honestly."
+  primaryCta="Get a Free Inspection"
+  callout={{ type: "image", src: "/images/hero-storms-hit-callout.webp", alt: "When storms hit… we build back stronger", width: 400, height: 327 }}
+  trust={["Free roof inspection", "Photo damage report", "Insurance claim experts", "24/7 storm response"]}
+  cards={{
+    eyebrow: "What we look for",
+    title: "Damage you can't see from the ground",
+    intro: "Most storm damage only shows up up close. Here's what our inspection covers.",
+    items: [
+      { img: "/images/hail-damage.webp", title: "Hail damage", body: "Bruised or cracked shingles, granule loss and dented soft metals.", href: "/storm-damage/hail-damage.html" },
+      { img: "/images/service-wind-damage.webp", title: "Wind damage", body: "Creased, lifted or loosened shingles with broken seals — where leaks start.", href: "/storm-damage/wind-damage.html" },
+      { img: "/images/storm-emergency-tarp.webp", title: "Active leaks", body: "Visible damage or water coming in right now gets priority.", href: "/roofing/emergency-roof-repair.html" },
+    ],
+  }}
+  process={{
+    eyebrow: "The No Limit Roof Check™",
+    title: "We inspect it. We photograph it.",
+    highlight: "You decide.",
+    steps: [
+      { title: "We inspect", body: "Shingles, flashing, vents, ridges, valleys and visible decking." },
+      { title: "We photograph", body: "Clear documentation, useful whether you file a claim or not." },
+      { title: "We explain", body: "A plain-language rundown. No upsell, no pressure." },
+      { title: "You decide", body: "Repair, replace, or do nothing — your call." },
+    ],
+  }}
+  why={{ body: "Locally owned and operated in Michiana since 2010. Licensed, bonded, insured and GAF factory-certified, with fast insurance claim support." }}
+  form={{
+    before: "Schedule your", highlight: "free roof inspection", after: "today.",
+    intro: "No cost, no obligation. You'll get a photo report of exactly what's on your roof.",
+    notesPlaceholder: "What did you notice? (optional)",
+    success: "We'll call you shortly to set a time.",
+  }}
+/>

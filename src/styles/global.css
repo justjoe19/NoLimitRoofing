@@ -721,7 +721,7 @@
       radial-gradient(1100px 480px at 85% -10%, rgba(229,97,21,0.4), transparent 60%),
       linear-gradient(90deg, rgba(12,17,21,0.92) 0%, rgba(12,17,21,0.72) 48%, rgba(12,17,21,0.35) 100%),
       linear-gradient(180deg, rgba(12,17,21,0.4) 0%, transparent 40%, rgba(12,17,21,0.75) 100%),
-      url('/images/hero-craftsman-dusk.webp');
+      var(--hero-image, url('/images/hero-craftsman-dusk.webp'));
     background-size: auto, auto, auto, cover;
     background-position: center, center, center, center;
   }
@@ -787,4 +787,5 @@
   .why-choose-stat-box span {
     @apply text-[0.74rem] sm:text-[0.8rem] font-bold uppercase tracking-wider text-white;
   }
+
 }

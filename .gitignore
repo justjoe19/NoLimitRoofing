@@ -3,3 +3,16 @@ node_modules/
 dist/
 .astro/
 source_assets/
+
+# Pages the client isn't launching with (only home + the two ad landing pages
+# are live). Sources stay on disk, untracked, so they can be re-added later.
+src/pages/about.astro
+src/pages/areas.astro
+src/pages/contact.astro
+src/pages/services.astro
+src/pages/\[group\]/
+src/pages/commercial/
+src/pages/learning-center/
+src/pages/roofing/
+src/pages/service-areas/
+src/pages/storm-damage/

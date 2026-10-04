@@ -139,6 +139,15 @@
         .then(function (res) {
           if (!res.ok) throw new Error("Network response was not ok");
           form.reset();
+          // Ad landing pages swap the whole form for a confirmation panel.
+          var panelId = form.getAttribute("data-success-panel");
+          var panel = panelId && document.getElementById(panelId);
+          if (panel) {
+            form.hidden = true;
+            panel.hidden = false;
+            panel.focus();
+            return;
+          }
           showStatus("success", "Thanks — your message is in! We'll call or email you back shortly.");
         })
         .catch(function () {

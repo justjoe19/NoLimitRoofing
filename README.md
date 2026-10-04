@@ -64,6 +64,14 @@ The site itself is built and deployed to `https://no-limit-roofing.netlify.app`.
 - [ ] Ask every happy customer for a Google review and take 2–3 job photos with the town noted; monthly Business Profile post; one Learning Center article every month or two; quarterly review of pages with impressions but few clicks.
 - [ ] Keep the homepage's "Highly rated on Google" line honest — it deliberately shows no number. Testimonials on Home/About are verbatim quotes from the original site, not a live Google feed; a live reviews widget still needs API credentials tied to the Business Profile.
 
+## Ad landing pages (storm-damage-inspection, new-roof-estimate)
+
+Two ad-traffic pages built from the `design_handoff_service_pages` handoff, sharing `src/components/landing/LandingPage.astro` (layout, styles, form) with copy passed in from `src/pages/storm-damage-inspection.astro` and `src/pages/new-roof-estimate.astro`. They use `BaseLayout`'s `landing` prop (no nav, sticky call bar), are `noindex` and left out of the sitemap (they duplicate `/storm-damage`). The form is the same Netlify form as `/contact` (`name="contact"`, same `main.js` handler) plus a hidden `source` field (`storm-damage-lp` / `roof-estimate-lp`). Open items: the Roof page's three card photos are stand-ins from the existing library; hero copy is final, the rest is placeholder; no conversion tracking exists on the site yet.
+
+## Launch scope: home + two landing pages (decided Oct 2026)
+
+The client launches with only `/`, `/storm-damage-inspection` and `/new-roof-estimate` (plus 404). The other pages' sources (about, areas, contact, services, `[group]`, commercial, learning-center, roofing, service-areas, storm-damage under `src/pages/`) are listed in `.gitignore` and untracked, so they stay on disk but are not in the repo or deployed. To bring one back: remove its line from `.gitignore`, `git add` it, and restore its nav/footer/homepage links. `src/content/` is still tracked. Nav, footer and homepage links were trimmed to the live pages.
+
 ## Tech stack
 
 - **[Astro](https://astro.build)** (static output, no server) — layouts + components replace hand-duplicated HTML. 48 pages built from `src/pages/*.astro` (including 3 dynamic routes driven by content collections) plus a 404 page.
