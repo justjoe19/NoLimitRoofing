@@ -57,9 +57,18 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
   noindex
 >
   {p.callout.type === "script" && (
-    <style slot="head" is:global>{`
-      @font-face { font-family: "Kaushan Script"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/kaushan-script-latin.woff2") format("woff2"); }
-    `}</style>
+    <Fragment slot="head">
+      <link rel="preload" href="/fonts/brush-script.woff2" as="font" type="font/woff2" crossorigin />
+      <style is:global>
+        @font-face {
+          font-family: "Brush Script MT";
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/fonts/brush-script.woff2") format("woff2");
+        }
+      </style>
+    </Fragment>
   )}
 
   <!-- Built from the homepage's own classes so the pages stay visually in step. -->
@@ -239,6 +248,11 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
               <div class="field-error" id="phone-error"></div>
             </div>
             <div class="field full">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error" />
+              <div class="field-error" id="email-error"></div>
+            </div>
+            <div class="field full">
               <label for="address">Property Address</label>
               <input type="text" id="address" name="address" autocomplete="street-address" />
             </div>
@@ -259,7 +273,7 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
 
 <style>
   .lp-form-section { scroll-margin-top: 90px; }
-  .lp-callout-script { font-family: "Kaushan Script", cursive; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.08; text-align: center; transform: rotate(-4deg); color: #fff; filter: drop-shadow(0 6px 20px rgba(0,0,0,.7)); }
+  .lp-callout-script { font-family: "Brush Script MT", "Brush Script", cursive; font-size: clamp(48px, 6.2vw, 76px); line-height: 1.1; text-align: center; transform: rotate(-4deg); color: #fff; filter: drop-shadow(0 6px 20px rgba(0,0,0,.7)); }
   .lp-callout-script span { color: var(--color-accent); }
   .lp-step { background: var(--color-ink-soft); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: 1.6rem 1.4rem; }
   .lp-step-n { font-size: 2.5rem; font-weight: 900; line-height: 1; color: var(--color-accent); }

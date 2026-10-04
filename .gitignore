@@ -15,4 +15,5 @@ src/pages/commercial/
 src/pages/learning-center/
 src/pages/roofing/
 src/pages/service-areas/
-src/pages/storm-damage/
+shelved_pages/
+.city-facts-to-verify.txt

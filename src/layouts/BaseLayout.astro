@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import LandingHeader from "../components/landing/LandingHeader.astro";
 import LandingFooter from "../components/landing/LandingFooter.astro";
 import "../styles/global.css";
 
@@ -77,7 +76,7 @@ const {
 <body class={landing ? "landing" : undefined}>
 <a class="skip-link" href="#main">Skip to main content</a>
 
-{landing ? <LandingHeader ctaLabel={landing.ctaLabel} /> : <Header />}
+<Header />
 
 <main id="main">
   <slot />

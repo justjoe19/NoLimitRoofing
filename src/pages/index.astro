@@ -63,7 +63,7 @@ const schema = [
           At No Limit Roofing, we specialize in storm damage repair, roof replacements, and insurance claim support. We handle the process so you can focus on what matters most.
         </p>
         <div class="hero-actions mt-8 flex flex-wrap gap-4 items-center">
-          <a class="btn-hero-primary" href="/storm-damage-inspection.html#inspection">
+          <a class="btn-hero-primary" href="#inspection">
             GET A FREE INSPECTION
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4.5" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6"/>
@@ -159,7 +159,7 @@ const schema = [
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-3.5 mt-8">
         <!-- CARD 1: HAIL DAMAGE -->
-        <a class="service-card-mockup group" href="/storm-damage-inspection.html">
+        <a class="service-card-mockup group" href="/storm-damage.html">
           <div class="service-card-img-wrap">
             <img
               src="/images/service-card-hail-damage.webp"
@@ -178,7 +178,7 @@ const schema = [
         </a>
 
         <!-- CARD 2: ROOF INSTALLATIONS -->
-        <a class="service-card-mockup group" href="/new-roof-estimate.html">
+        <a class="service-card-mockup group" href="/roof-replacement.html">
           <div class="service-card-img-wrap">
             <img
               src="/images/service-card-roof-installations.webp"
@@ -197,7 +197,7 @@ const schema = [
         </a>
 
         <!-- CARD 3: ROOF REPAIRS -->
-        <a class="service-card-mockup group" href="/new-roof-estimate.html">
+        <a class="service-card-mockup group" href="/roof-replacement.html">
           <div class="service-card-img-wrap">
             <img
               src="/images/service-card-roof-repairs.webp"
@@ -216,7 +216,7 @@ const schema = [
         </a>
 
         <!-- CARD 4: STORM DAMAGE -->
-        <a class="service-card-mockup group" href="/storm-damage-inspection.html">
+        <a class="service-card-mockup group" href="/storm-damage.html">
           <div class="service-card-img-wrap">
             <img
               src="/images/service-card-storm-damage.webp"
@@ -337,57 +337,73 @@ const schema = [
     </div>
   </section>
 
-  <!-- SECTION 7: PRE-FOOTER CTA BANNER -->
-  <section class="pre-footer-cta" aria-label="Schedule an inspection">
-    <div class="container pre-footer-cta-inner">
+  <!-- SECTION 7: PRE-FOOTER CTA / CONTACT FORM -->
+  <section id="inspection" class="pre-footer-cta lp-form-section" aria-labelledby="lp-form-h">
+    <div class="container split" style="align-items:center">
       <div>
         <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">
           READY TO GET STARTED?
         </p>
-        <h2 class="text-white font-black uppercase text-xl sm:text-2xl lg:text-[1.75rem] leading-[1.15] tracking-tight whitespace-nowrap">
+        <h2 id="lp-form-h" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl leading-[1.1] tracking-tight">
           SCHEDULE YOUR<br />
           <span class="text-accent">FREE ROOF INSPECTION</span> TODAY.
         </h2>
-      </div>
-
-      <div class="pre-footer-actions-col flex flex-col justify-center gap-5 border-y lg:border-y-0 lg:border-x border-white/20 py-6 lg:py-0 lg:px-10">
-        <a href="tel:+15743600525" class="cta-action-row group">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <p class="mt-4 max-w-[460px] text-[#c7cdd3] leading-relaxed">
+          No cost, no obligation. We'll inspect your roof, provide clear documentation, and walk you through every option honestly.
+        </p>
+        <a href="tel:+15743600525" class="cta-action-row group mt-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-6">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL NOW</span>
-        </a>
-
-        <a href="/storm-damage-inspection.html#inspection" class="cta-action-row group">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-            <line x1="16" x2="16" y1="2" y2="6"/>
-            <line x1="8" x2="8" y1="2" y2="6"/>
-            <line x1="3" x2="21" y1="10" y2="10"/>
-            <path d="m9 16 2 2 4-4"/>
-          </svg>
-          <span class="font-black uppercase tracking-wider text-[1.05rem]">SCHEDULE ONLINE</span>
-        </a>
-
-        <a href="/new-roof-estimate.html#inspection" class="cta-action-row group">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            <line x1="8" x2="16" y1="9" y2="9"/>
-            <line x1="8" x2="13" y1="13" y2="13"/>
-          </svg>
-          <span class="font-black uppercase tracking-wider text-[1.05rem]">REQUEST A QUOTE</span>
+          <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL (574) 360-0525</span>
         </a>
       </div>
 
-      <div class="pre-footer-brand">
-        <img
-          src="/images/nlr-logo.webp"
-          alt="No Limit Roofing"
-          width="300"
-          height="166"
-          loading="lazy"
-        />
-        <p class="pre-footer-slogan">NO LIMITS. JUST RESULTS.</p>
+      <div class="card p-8 text-ink">
+        <div id="lead-sent" class="lp-sent" tabindex="-1" role="status" hidden>
+          <h3 class="text-xl font-black uppercase">Request received</h3>
+          <p class="mt-2 text-steel">We'll call you shortly to schedule your inspection.</p>
+        </div>
+
+        <!-- Same Netlify form + handler as /contact (public/js/main.js); "source" tells ad leads apart. -->
+        <form id="lead-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company-website" data-success-panel="lead-sent">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="source" value="homepage" />
+          <p class="honeypot">
+            <label>Don't fill this out if you're human: <input name="company-website" tabindex="-1" autocomplete="off" /></label>
+          </p>
+          <p class="text-steel">Fields marked <span class="req text-accent-dark">*</span> are required.</p>
+
+          <div class="form-grid mt-3" style="gap:1rem">
+            <div class="field full">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error" />
+              <div class="field-error" id="name-error"></div>
+            </div>
+            <div class="field full">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required aria-describedby="phone-error" />
+              <div class="field-error" id="phone-error"></div>
+            </div>
+            <div class="field full">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error" />
+              <div class="field-error" id="email-error"></div>
+            </div>
+            <div class="field full">
+              <label for="address">Property Address</label>
+              <input type="text" id="address" name="address" autocomplete="street-address" />
+            </div>
+            <div class="field full">
+              <label for="message">Notes</label>
+              <textarea id="message" name="message" placeholder="What can we help you with? (optional)"></textarea>
+            </div>
+          </div>
+
+          <div class="form-status" id="form-status" role="status"></div>
+          <button type="submit" class="btn btn-primary btn-block mt-3">SCHEDULE FREE ROOF INSPECTION</button>
+          <p class="mt-2 text-steel text-[0.85rem]">By submitting, you agree to be contacted about your request by phone, text or email.</p>
+        </form>
       </div>
     </div>
   </section>

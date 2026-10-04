@@ -251,22 +251,51 @@
   }
 
   .nav-toggle {
-    @apply flex h-[42px] w-[42px] flex-col justify-center gap-[7px] rounded-sm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: var(--radius-sm, 4px);
   }
   .nav-toggle span {
-    @apply block h-[3px] w-[24px] rounded-full bg-white;
+    display: block;
+    width: 24px;
+    height: 3px;
+    border-radius: 9999px;
+    background-color: #ffffff;
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
-  .nav-toggle[aria-expanded="true"] span:nth-child(2) { @apply opacity-0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
   .main-nav {
-    @apply fixed inset-x-0 bottom-0 top-[73px] flex-col items-stretch gap-0 overflow-y-auto bg-ink p-6 opacity-0 pointer-events-none;
+    position: fixed;
+    top: 73px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow-y: auto;
+    background-color: var(--color-ink, #0c1115);
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
     transition: opacity 0.18s ease, transform 0.18s ease;
     transform: translateY(-8px);
   }
-  .main-nav.is-open { @apply pointer-events-auto opacity-100; transform: translateY(0); }
+  .main-nav.is-open { pointer-events: auto; opacity: 1; transform: translateY(0); }
   .main-nav ul { @apply flex-col items-stretch gap-0; }
   .main-nav li { @apply border-b border-white/10; }
   .main-nav ul a { @apply block px-1 py-4 text-[1.05rem]; }
@@ -373,6 +402,7 @@
     transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
   }
   .card:hover { @apply -translate-y-[5px] border-transparent shadow-lg; }
+  .card:has(form):hover { transform: none; }
 
   .service-card { @apply flex flex-col; }
   .service-card .media { @apply aspect-[4/3] overflow-hidden bg-fog; }
@@ -695,6 +725,15 @@
   }
   .pre-footer-slogan {
     @apply text-xs sm:text-sm font-black uppercase tracking-[0.25em] text-white/90;
+  }
+  .lp-form-section {
+    scroll-margin-top: 90px;
+  }
+  .lp-sent {
+    @apply py-10 text-center outline-none;
+  }
+  .lp-sent[hidden] {
+    display: none;
   }
 
   /* Trust Strip Stacked (Mockup section 3) */

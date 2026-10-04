@@ -1,15 +1,31 @@
 ---
-// Only the homepage and the two ad landing pages are live (client decision,
-// Oct 2026). The old services/areas/learning-center nav lives in git history.
+// Navigation header for live launch pages (Home, Storm Damage, Roof Replacement).
+interface Props {
+  ctaLabel?: string;
+}
+
+const { ctaLabel } = Astro.props;
+
 const currentPath = Astro.url.pathname;
-const isActive = (href: string) => currentPath === href;
-const inspectionHref = "/storm-damage-inspection.html";
-const estimateHref = "/new-roof-estimate.html";
+const isHome = currentPath === "/" || currentPath === "" || currentPath === "/index.html";
+const isStormDamage = currentPath.includes("storm-damage");
+const isRoofReplacement = currentPath.includes("roof-replacement");
+
+const homeHref = "/";
+const stormDamageHref = "/storm-damage.html";
+const roofReplacementHref = "/roof-replacement.html";
+
+const defaultButtonLabel = isRoofReplacement ? "Free Estimate" : "Free Inspection";
+const buttonLabel = ctaLabel || defaultButtonLabel;
+
+const buttonHref = (isHome || isStormDamage || isRoofReplacement)
+  ? "#inspection"
+  : "/storm-damage.html#inspection";
 ---
 
 <header class="site-header">
   <div class="container header-bar">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="No Limit Roofing home">
       <img src="/images/nlr-logo.webp" alt="No Limit Roofing logo" width="180" height="99" />
     </a>
 
@@ -19,12 +35,26 @@ const estimateHref = "/new-roof-estimate.html";
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <ul>
-        <li><a href={inspectionHref} aria-current={isActive(inspectionHref) ? "page" : undefined}>Storm Damage</a></li>
-        <li><a href={estimateHref} aria-current={isActive(estimateHref) ? "page" : undefined}>New Roof Estimate</a></li>
+        {isStormDamage ? (
+          <>
+            <li><a href={homeHref}>Home</a></li>
+            <li><a href={roofReplacementHref}>Roof Replacement</a></li>
+          </>
+        ) : isRoofReplacement ? (
+          <>
+            <li><a href={homeHref}>Home</a></li>
+            <li><a href={stormDamageHref}>Storm Damage</a></li>
+          </>
+        ) : (
+          <>
+            <li><a href={stormDamageHref}>Storm Damage</a></li>
+            <li><a href={roofReplacementHref}>Roof Replacement</a></li>
+          </>
+        )}
         <li><a href="tel:+15743600525" class="nav-phone">(574) 360-0525</a></li>
       </ul>
       <div class="header-cta">
-        <a class="btn btn-primary" href="/storm-damage-inspection.html#inspection">Free Inspection</a>
+        <a class="btn btn-primary" href={buttonHref}>{buttonLabel}</a>
       </div>
     </nav>
   </div>
