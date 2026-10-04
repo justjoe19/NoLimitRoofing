@@ -6,11 +6,13 @@ Live repo: https://github.com/justjoe19/NoLimitRoofing
 
 ## Current status: 3-page launch (Oct 2026) — read this first
 
-**Live scope: `/` (home), `/storm-damage.html`, `/roof-replacement.html`, plus the 404.** The two landing pages are ad pages: `noindex`, out of the sitemap, no nav. The ad URLs `/storm-damage-inspection` and `/new-roof-estimate` are Netlify *rewrites* (status 200) to them, so campaigns can use either name. The home page is the only indexable page; the sitemap lists just `/`.
+**Live scope: `/` (home), `/storm-damage.html`, `/roof-replacement.html`, plus the 404.** All three are indexable and in the sitemap (`sitemap-index.xml` lists `/`, `/storm-damage.html`, `/roof-replacement.html`); only the 404 is `noindex`. The two landing pages double as ad pages. The ad URLs `/storm-damage-inspection` and `/new-roof-estimate` are Netlify *rewrites* (status 200) to them, so campaigns can use either name; each landing page's canonical points at its `.html` URL. No page has a nav: every page uses `LandingHeader.astro` (logo, phone, one button).
 
 **Everything else is shelved, not deleted.** The other page sources sit in `src/pages/` but are in `.gitignore` and untracked, so Netlify never builds them (`public/admin/` is shelved the same way). The full 48-page site is kept at git tag `full-site-48-pages` (restore with `git checkout full-site-48-pages -- src/pages public/admin`). To bring a page back: remove its line from `.gitignore`, `git add` it, and restore its nav/footer/home links. **A local `npm run build` still builds the shelved pages (about 49), but Netlify only builds tracked files.** To check what will really deploy, build from a clean clone.
 
 **No new client photos are expected.** The Roof landing page's three cards use existing library photos (`completed-roof-shingle-detail`, `crew-shingle-install`, `aerial-completed-roof`); that's final unless photos arrive. Storm cards are plain (unlinked) because the pages they once pointed to are shelved.
+
+**Header / nav (unused on purpose):** `src/components/Header.astro` is a small 3-link nav (Home, Storm Damage, Roof Replacement, phone, button, hamburger). Nothing imports it right now. To bring a nav back, change `BaseLayout.astro` from `LandingHeader` to `Header` (the one-line swap), or restore the full Services mega-menu from the tag: `git show full-site-48-pages:src/components/Header.astro`. The footer link lists in `Footer.astro` also need updating when pages return.
 
 ### Launch checklist (3-page scope)
 
@@ -19,8 +21,8 @@ Live repo: https://github.com/justjoe19/NoLimitRoofing
 - [ ] Client confirms the final copy of the landing pages (hero copy is final; the rest is placeholder per the design handoff in `../reference/`).
 - [ ] Netlify: add `nolimitroofingin.com` as the primary domain, update DNS with the client on a call, wait for HTTPS. Apex domain, www forwards to it (canonicals assume no www).
 - [x] Internal only: old WordPress URLs (about 50, from the old Yoast sitemaps, listed 2026-10-04) are 301-redirected to `/` in `netlify.toml`; anything else gets the custom `404.html`. Before the DNS switch, re-fetch `https://nolimitroofingin.com/sitemap_index.xml` in case pages were added, and after launch spot-check a few old URLs with `curl -I`.
-- [ ] Search Console: Domain property, verify with DNS TXT, submit `sitemap-index.xml`, request indexing for Home.
-- [ ] Verify live: padlock on every page, `/robots.txt` lists the sitemap, canonicals point at `nolimitroofingin.com`, landing pages show `noindex`, the home page does not.
+- [ ] Search Console: Domain property, verify with DNS TXT, submit `sitemap-index.xml`, request indexing for Home, Storm Damage and Roof Replacement.
+- [ ] Verify live: padlock on every page, `/robots.txt` lists the sitemap, canonicals point at `nolimitroofingin.com`, only the 404 shows `noindex`.
 - [ ] Google Business Profile: set the website to the new domain after the switch; name/address/phone must match the site.
 - [ ] Optional/client: GA4 or Google Ads conversion tracking. No code is needed first; the form posts a `source` field and phone buttons are plain `tel:` links to hook onto.
 - [ ] Still open from before: Mishawaka street address in the home JSON-LD (public or city-level only?), and the "Ohio location" decision no longer applies (`/areas` is shelved).
@@ -89,7 +91,7 @@ The site itself is built and deployed to `https://no-limit-roofing.netlify.app`.
 
 ## Ad landing pages (storm-damage-inspection, new-roof-estimate)
 
-Two ad-traffic pages built from the `design_handoff_service_pages` handoff, sharing `src/components/landing/LandingPage.astro` (layout, styles, form) with copy passed in from `src/pages/storm-damage-inspection.astro` and `src/pages/new-roof-estimate.astro`. They use `BaseLayout`'s `landing` prop (no nav, sticky call bar), are `noindex` and left out of the sitemap (they duplicate `/storm-damage`). The form is the same Netlify form as `/contact` (`name="contact"`, same `main.js` handler) plus a hidden `source` field (`storm-damage-lp` / `roof-estimate-lp`). Open items: the Roof page's three card photos are stand-ins from the existing library; hero copy is final, the rest is placeholder; no conversion tracking exists on the site yet.
+Two ad-traffic pages built from the `design_handoff_service_pages` handoff, sharing `src/components/landing/LandingPage.astro` (layout, styles, form) with copy passed in from `src/pages/storm-damage-inspection.astro` and `src/pages/new-roof-estimate.astro`. They use `BaseLayout`'s `landing` prop (sticky call bar, stripped footer) and are indexable and in the sitemap since Oct 2026 (the client chose to make all three launch pages indexable). The form is the same Netlify form as `/contact` (`name="contact"`, same `main.js` handler) plus a hidden `source` field (`storm-damage-lp` / `roof-estimate-lp`). Open items: the Roof page's three card photos are stand-ins from the existing library; hero copy is final, the rest is placeholder; no conversion tracking exists on the site yet.
 
 ## Launch scope: home + two landing pages (decided Oct 2026)
 

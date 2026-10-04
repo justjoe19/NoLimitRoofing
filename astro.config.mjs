@@ -11,7 +11,7 @@ export default defineConfig({
     // redirects are needed for this migration — see README.
     format: "file",
   },
-  integrations: [sitemap({ filter: (page) => !/\/(storm-damage|roof-replacement)$/.test(page) }), fixSitemapUrls()],
+  integrations: [sitemap(), fixSitemapUrls()],
   vite: {
     plugins: [tailwindcss()],
   },
