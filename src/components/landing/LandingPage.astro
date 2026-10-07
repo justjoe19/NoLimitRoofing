@@ -4,6 +4,8 @@
  * images in; layout, styling and the lead form live here so the two stay in sync.
  */
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import LeadForm from "../LeadForm.astro";
+import InsuranceSection from "../InsuranceSection.astro";
 
 interface Card { img: string; title: string; body: string; href?: string; imgAlt?: string }
 interface Step { title: string; body: string }
@@ -74,8 +76,8 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
 
   <!-- Built from the homepage's own classes so the pages stay visually in step. -->
   <section class="hero-mockup" aria-label="Hero" style={`--hero-image:url("${p.heroImage}")`}>
-    <div class="container hero-mockup-inner">
-      <div>
+    <div class="container hero-mockup-inner hero-lead">
+      <div class="hero-lead-text">
         <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-[#d6dbe0] mb-4">{p.eyebrow}</p>
         <h1 class="hero-title text-white font-black uppercase text-3xl sm:text-4xl lg:text-[3.25rem] tracking-tight leading-[1.08]">
           {p.h1Lines.map((line, i) => (<Fragment>{i > 0 && <br />}{i === p.h1Lines.length - 1 && p.h1Accent ? <span class="text-accent">{line}</span> : line}</Fragment>))}
@@ -93,7 +95,20 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
           </a>
         </div>
       </div>
-      <div class="flex justify-center lg:justify-end">
+      <div id="inspection" class="hero-lead-form">
+        <LeadForm
+          source={p.source}
+          ctaLabel={p.ctaLabel}
+          before={p.form.before}
+          highlight={p.form.highlight}
+          after={p.form.after}
+          intro={p.form.intro}
+          notesPlaceholder={p.form.notesPlaceholder}
+          success={p.form.success}
+        />
+      </div>
+
+      <div class="hero-lead-callout">
         {p.callout.type === "image" ? (
           <img src={p.callout.src} alt={p.callout.alt} class="hero-script-callout" width={p.callout.width} height={p.callout.height} />
         ) : (
@@ -166,10 +181,13 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
     </div>
   </section>
 
+  <!-- Optional extra content for pages that need more than the standard sections. -->
+  <slot />
+
   <section class="why-choose-mockup" aria-labelledby="why-choose-heading">
     <div class="container split items-center gap-12 lg:gap-16">
       <div class="flex flex-col items-center justify-center text-center">
-        <img src="/images/nlr-logo.webp" alt="No Limit Roofing" width="420" height="232" loading="lazy" class="max-w-[340px] sm:max-w-[390px] lg:max-w-[430px] w-full drop-shadow-2xl" />
+        <img src="/images/nlr-logo-860.webp" alt="No Limit Roofing" width="430" height="237" loading="lazy" class="max-w-[340px] sm:max-w-[390px] lg:max-w-[430px] w-full drop-shadow-2xl" />
         <p class="mt-4 text-xs sm:text-sm font-black uppercase tracking-[0.22em] text-white/90">BUILDING A STRONGER TOMORROW</p>
       </div>
       <div>
@@ -184,6 +202,8 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
       </div>
     </div>
   </section>
+
+  <InsuranceSection />
 
   <section class="section section--fog" aria-labelledby="reviews-heading">
     <div class="container">
@@ -212,84 +232,19 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
     </div>
   </section>
 
-  <section id="inspection" class="pre-footer-cta lp-form-section" aria-labelledby="lp-form-h">
+  <section class="pre-footer-cta lp-form-section" aria-labelledby="lp-cta-h">
     <div class="container split" style="align-items:center">
       <div>
         <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">READY TO GET STARTED?</p>
-        <h2 id="lp-form-h" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl leading-[1.1] tracking-tight">{p.form.before.toUpperCase()}<br /><span class="text-accent">{p.form.highlight.toUpperCase()}</span> {p.form.after.toUpperCase()}</h2>
+        <h2 id="lp-cta-h" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl leading-[1.1] tracking-tight">{p.form.before.toUpperCase()}<br /><span class="text-accent">{p.form.highlight.toUpperCase()}</span> {p.form.after.toUpperCase()}</h2>
         <p class="mt-4 max-w-[460px] text-[#c7cdd3] leading-relaxed">{p.form.intro}</p>
         <a href="tel:+15743600525" class="cta-action-row group mt-6">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={phonePath} /></svg>
           <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL (574) 360-0525</span>
         </a>
       </div>
-
-      <div class="card p-8 text-ink">
-        <div id="lead-sent" class="lp-sent" tabindex="-1" role="status" hidden>
-          <div class="inline-flex items-center justify-center size-12 rounded-full bg-accent/15 text-accent mb-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <h3 class="text-xl font-black uppercase text-ink">Request received</h3>
-          <p class="mt-2 text-steel leading-relaxed">{p.form.success}</p>
-        </div>
-
-        <!-- Same Netlify form + handler as /contact (public/js/main.js); "source" tells ad leads apart. -->
-        <form id="lead-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company-website" data-success-panel="lead-sent">
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="hidden" name="source" value={p.source} />
-          <p class="honeypot">
-            <label>Don't fill this out if you're human: <input name="company-website" tabindex="-1" autocomplete="off" /></label>
-          </p>
-          <p class="text-steel text-sm">Fields marked <span class="req text-accent-dark">*</span> are required.</p>
-
-          <div class="form-grid mt-3" style="gap:1rem">
-            <div class="field full">
-              <label for="name">Full Name <span class="req">*</span></label>
-              <input type="text" id="name" name="name" autocomplete="name" required placeholder="First and last name" aria-describedby="name-error" />
-              <div class="field-error" id="name-error"></div>
-            </div>
-            <div class="field full">
-              <label for="phone">Phone <span class="req">*</span></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(574) 555-0123" aria-describedby="phone-error" />
-              <div class="field-error" id="phone-error"></div>
-            </div>
-            <div class="field full">
-              <label for="email">Email Address <span class="req text-accent-dark">*</span> <span class="text-steel text-xs font-normal">(for written estimate &amp; report)</span></label>
-              <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@example.com" aria-describedby="email-error" />
-              <div class="field-error" id="email-error"></div>
-            </div>
-            <div class="field full">
-              <label for="address">Property Address <span class="text-steel text-xs font-normal">(Optional — helps check roof via satellite)</span></label>
-              <input type="text" id="address" name="address" autocomplete="street-address" placeholder="e.g. 123 Main St, Mishawaka, IN" />
-            </div>
-            <div class="field full">
-              <label for="message">Notes</label>
-              <textarea id="message" name="message" placeholder={p.form.notesPlaceholder}></textarea>
-            </div>
-          </div>
-
-          <div class="form-status" id="form-status" role="status"></div>
-          <button type="submit" class="btn btn-primary btn-block mt-3">{p.ctaLabel}</button>
-          
-          <div class="mt-3.5 pt-3 border-t border-slate-200">
-            <div class="flex flex-wrap items-center justify-between gap-y-2 gap-x-3 text-xs text-steel font-medium">
-              <span class="inline-flex items-center gap-1.5">
-                <svg class="size-3.5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                100% Free &amp; No Obligation
-              </span>
-              <span class="inline-flex items-center gap-1.5">
-                <svg class="size-3.5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                Zero Spam &bull; Data Protected
-              </span>
-              <span class="inline-flex items-center gap-1.5">
-                <svg class="size-3.5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Response Within 24 Hours
-              </span>
-            </div>
-          </div>
-
-          <p class="mt-2.5 text-steel/80 text-[0.78rem] text-center sm:text-left">By submitting, you agree to be contacted about your request by phone, text or email.</p>
-        </form>
+      <div class="flex lg:justify-end">
+        <a class="btn-hero-primary" href="#inspection">{p.ctaLabel.toUpperCase()}</a>
       </div>
     </div>
   </section>
@@ -303,6 +258,4 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
   .lp-step-n { font-size: 2.5rem; font-weight: 900; line-height: 1; color: var(--color-accent); }
   .lp-step-title { margin-top: 1rem; font-size: .9rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: #fff; }
   .lp-step p { margin-top: .5rem; font-size: .92rem; line-height: 1.6; color: #aab1b8; }
-  .lp-sent { padding: 2.5rem 0; text-align: center; outline: none; }
-  .lp-sent[hidden] { display: none; }
 </style>

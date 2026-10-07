@@ -1,0 +1,58 @@
+---
+/**
+ * "Insurance claim support" band, shared by the home page and both landing pages
+ * (from the client's mockup). Sits just above the reviews section.
+ */
+const steps = [
+  "Meet with your adjuster",
+  "Provide detailed documentation",
+  "Ensure all storm-related damage is included",
+  "Maximize your claim and minimize your stress",
+];
+const reasons = [
+  "Local & Trusted",
+  "Professional Installation",
+  "Storm Damage Specialists",
+  "Responsive Communication",
+  "Insurance Claim Experts",
+  "Financing Options",
+  "Quality Materials",
+  "Detailed Estimates",
+];
+const check = "M20 6 9 17l-5-5";
+---
+
+<section class="section" aria-labelledby="insurance-heading">
+  <div class="container grid grid-cols-1 lg:grid-cols-[1.45fr_1fr] gap-10 lg:gap-12 items-center">
+    <div class="grid grid-cols-1 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-6 items-stretch">
+      <img src="/images/service-roof-inspection.webp" alt="Inspector documenting roof damage on a tablet" width="480" height="480" loading="lazy" class="w-full h-full min-h-[260px] object-cover rounded-sm" />
+      <div>
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-accent-dark">INSURANCE CLAIM SUPPORT</span>
+        <h2 id="insurance-heading" class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#12161b] mt-1">We Work With Your Insurance Company</h2>
+        <div class="w-14 h-1 bg-accent mt-2.5"></div>
+        <p class="mt-4 text-[#4a5568] leading-relaxed">Navigating an insurance claim can be overwhelming. We'll help you every step of the way, from the inspection to the final approval.</p>
+        <ul class="mt-4 space-y-2">
+          {steps.map((s) => (
+            <li class="flex items-start gap-2.5 text-[#12161b] font-semibold text-[0.95rem]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="size-5 shrink-0 mt-0.5 text-accent" aria-hidden="true"><path d={check} /></svg>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ul>
+        <a class="btn-hero-primary mt-6" href="#inspection">START MY FREE INSPECTION</a>
+      </div>
+    </div>
+
+    <div class="lg:border-l lg:border-mist/60 lg:pl-12">
+      <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#12161b]">Why Homeowners Choose No Limit Roofing</h3>
+      <ul class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+        {reasons.map((r) => (
+          <li class="flex items-center gap-2.5 text-[#12161b] font-semibold text-[0.95rem]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="size-5 shrink-0 text-accent" aria-hidden="true"><path d={check} /></svg>
+            <span>{r}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

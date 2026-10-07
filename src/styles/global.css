@@ -623,6 +623,13 @@
   }
   .site-footer ul { @apply flex flex-col gap-2.5; }
   .site-footer a:hover { @apply text-white; }
+  /* Touch targets: footer links and the credit link are at least ~44px tall on phones. */
+  .site-footer ul a, .site-footer .footer-bottom a { display: inline-block; padding-block: 0.65rem; }
+  @media (max-width: 767px) {
+    .site-footer ul { gap: 0; }
+    .site-footer ul a { padding-block: 0.7rem; }
+  }
+  .cta-action-row { min-height: 44px; }
   .footer-bottom {
     @apply flex flex-wrap items-center justify-between gap-4 border-t border-white/12 py-6 text-[0.85rem] text-[#8b939b];
   }
@@ -770,6 +777,54 @@
   .hero-script-callout {
     @apply w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[420px] h-auto select-none pointer-events-none;
     filter: drop-shadow(0 6px 20px rgba(0,0,0,0.7));
+  }
+  /* Hero with the lead form on the right: text, form, then the script callout on phones;
+     text over callout beside a full-height form on desktop. */
+  .hero-lead {
+    grid-template-areas: "text" "form" "callout";
+    padding-top: 2.25rem;
+    padding-bottom: 2.5rem;
+  }
+  /* compact the form so the hero stays a sensible height */
+  .hero-lead-form .form-grid { gap: 0.45rem 0.75rem !important; }
+  .hero-lead-form .field { gap: 0.2rem; }
+  .hero-lead-form .field label { font-size: 0.8rem; }
+  .hero-lead-form .field-error { min-height: 0; }
+  .hero-lead-form .field input,
+  .hero-lead-form .field textarea { padding: 0.5rem 0.75rem; font-size: 0.9rem; }
+  .hero-lead-form .field textarea { min-height: 52px; }
+  .hero-lead-form .card { padding: 1.1rem 1.25rem; }
+  .hero-lead-form .btn { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+  .hero-lead-form .lead-card-head { margin-bottom: 0.6rem; }
+  .hero-lead-form .lead-card-head h2 { font-size: 1.2rem; }
+  .hero-lead-form .lead-card-head p { font-size: 0.82rem; margin-top: 0.3rem; }
+  .hero-lead-form form > p.text-steel.text-sm { font-size: 0.78rem; }
+  @media (max-width: 639px) {
+    /* 16px or larger keeps iOS Safari from zooming the page when a field is focused */
+    .hero-lead-form .field input,
+    .hero-lead-form .field textarea { font-size: 1rem; padding: 0.6rem 0.75rem; }
+  }
+  @media (min-width: 640px) {
+    /* name | phone and email | address side by side; notes stay full width */
+    .hero-lead-form .field.full { grid-column: span 1; }
+    .hero-lead-form .field.full:has(textarea) { grid-column: 1 / -1; }
+  }
+  .hero-lead-text { grid-area: text; }
+  .hero-lead-form { grid-area: form; scroll-margin-top: 90px; }
+  .hero-lead-callout { grid-area: callout; @apply flex justify-center; }
+  .hero-lead .hero-script-callout { @apply max-w-[220px] sm:max-w-[260px]; }
+  @media (min-width: 1024px) {
+    .hero-lead {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas: "text form" "callout form" ". form";
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+      column-gap: 3rem;
+    }
+    .hero-lead-form { align-self: start; margin-top: 0.3rem; }
+    .hero-lead-callout { justify-content: flex-start; }
+    .hero-lead .hero-script-callout { max-width: 300px; }
   }
   .btn-hero-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-6 py-3.5 text-sm font-black uppercase tracking-wider text-black transition-all hover:bg-[#d4530f] hover:shadow-lg;
