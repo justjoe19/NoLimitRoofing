@@ -28,15 +28,15 @@ const { source, ctaLabel, before, highlight, after, intro, notesPlaceholder, suc
   </div>
 
   <!-- Same Netlify form + handler as /contact (public/js/main.js); "source" tells ad leads apart. -->
-  <form id="lead-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company-website" data-success-panel="lead-sent">
+  <form id="lead-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success-panel="lead-sent">
     <div class="lead-card-head" data-lead-head>
       <h2 id="lp-form-h" class="font-black uppercase text-xl sm:text-2xl leading-[1.1] tracking-tight text-ink">{before.toUpperCase()}<br /><span class="text-accent">{highlight.toUpperCase()}</span> {after.toUpperCase()}</h2>
       <p class="mt-2 text-steel text-sm leading-relaxed">{intro}</p>
     </div>
     <input type="hidden" name="form-name" value="contact" />
     <input type="hidden" name="source" value={source} />
-    <p class="honeypot">
-      <label>Don't fill this out if you're human: <input name="company-website" tabindex="-1" autocomplete="off" /></label>
+    <p class="honeypot" aria-hidden="true">
+      <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
     </p>
     <p class="text-steel text-sm">Fields marked <span class="req text-accent-dark">*</span> are required.</p>
 

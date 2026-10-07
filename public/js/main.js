@@ -110,7 +110,7 @@
 
     form.addEventListener("submit", function (e) {
       // Honeypot check
-      var honey = form.elements["company-website"];
+      var honey = form.elements["bot-field"] || form.elements["company-website"];
       if (honey && honey.value) {
         e.preventDefault();
         return;
@@ -164,7 +164,11 @@
     });
   };
 
-  document.querySelectorAll('form[data-netlify="true"]').forEach(setupNetlifyForm);
+  // Netlify strips the data-netlify attribute from the published HTML once form detection
+  // has processed the form, so also match on the hidden "form-name" field it requires.
+  Array.prototype.slice.call(document.forms).forEach(function (form) {
+    if (form.getAttribute("data-netlify") === "true" || form.elements["form-name"]) setupNetlifyForm(form);
+  });
 
   // Footer year
   var yearEl = document.getElementById("year");
