@@ -1,0 +1,24 @@
+---
+/** Four service icons for the closing banner (from the client's storm-damage mockup). */
+const services = [
+  { label: "Residential Roofing", paths: ["M3 11l9-8 9 8", "M5 10v10h14V10", "M9 20v-6h6v6"] },
+  { label: "Commercial Roofing", paths: ["M4 21V5l8-2v18", "M12 9h8v12", "M7 9h2M7 13h2M7 17h2M15 13h2M15 17h2"] },
+  { label: "Repairs & Maintenance", paths: ["M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"] },
+  { label: "Storm Damage", paths: ["M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973", "m13 12-3 5h4l-3 5"] },
+];
+---
+
+<ul class="svc-row" aria-label="Services">
+  {services.map((sv) => (
+    <li>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{sv.paths.map((d) => <path d={d} />)}</svg>
+      <span>{sv.label}</span>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .svc-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+  .svc-row li { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; font-size: 0.78rem; font-weight: 700; color: #fff; }
+  .svc-row svg { width: 2rem; height: 2rem; color: var(--color-accent-light); }
+</style>

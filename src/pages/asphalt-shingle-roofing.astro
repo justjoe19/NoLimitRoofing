@@ -1,5 +1,32 @@
 ---
 import LandingPage from "../components/landing/LandingPage.astro";
+import AfterSection from "../components/landing/AfterSection.astro";
+import TileStrip from "../components/landing/TileStrip.astro";
+
+const signs = [
+  "Architectural shingles: thicker, textured, longer expected life",
+  "3-tab shingles: flat, uniform, lower cost",
+  "Manufacturer color and style options to choose from",
+  "Decking, underlayment and flashing checked first",
+  "Ventilation sized for Michiana winters",
+  "A free, no-obligation estimate",
+];
+const steps = [
+  { t: "Free Estimate", b: "We look at your current roof, decking and flashing, and explain what we find." },
+  { t: "Choose Your Shingle", b: "We go through color and style options so you can see them before deciding." },
+  { t: "Tear-Off & Deck Check", b: "The old roofing comes off, and any damaged decking is replaced." },
+  { t: "Installation", b: "Underlayment, ice and water protection, flashing and shingles installed correctly." },
+  { t: "Cleanup & Walkthrough", b: "We clean the job site and walk through the finished roof with you." },
+];
+// TODO(client photos): all six tiles are stand-ins from the site's existing image library.
+const tiles = [
+  { label: "Architectural", img: "/images/completed-roof-shingle-detail.webp", alt: "Architectural shingle roof" },
+  { label: "3-Tab", img: "/images/completed-roofing-project.webp", alt: "Home with a finished shingle roof" },
+  { label: "Colors & Styles", img: "/images/service-shingle-options.webp", alt: "Shingle color and style samples" },
+  { label: "Decking", img: "/images/service-decking.webp", alt: "Roof decking" },
+  { label: "Flashing", img: "/images/crew-roofer-chimney-flashing.webp", alt: "Roof flashing at a chimney" },
+  { label: "Tear-Off & Replace", img: "/images/service-tear-off-replacement.webp", alt: "Old roofing being torn off" },
+];
 
 const schema = [
   {
@@ -72,27 +99,7 @@ const faqs = [
   primaryCta="Get My Free Estimate"
   callout={{ type: "image", src: "/images/hero-no-pressure-callout.webp", alt: "No pressure. No limits on quality.", width: 400, height: 327 }}
   trust={["Free roof estimates", "GAF factory-certified", "Architectural & 3-tab options", "Clean & organized job sites"]}
-  cards={{
-    eyebrow: "Your options",
-    title: "Choose the right shingle",
-    intro: "Two styles cover most homes. We'll walk you through both, plus color and style choices, during your estimate.",
-    items: [
-      { img: "/images/completed-roof-shingle-detail.webp", title: "Architectural shingles", body: "Thicker and layered for a textured look, and generally a longer expected lifespan." },
-      { img: "/images/completed-roofing-project.webp", title: "3-tab shingles", body: "Flat, uniform and typically lower in cost. Still a fit for some budgets and buildings." },
-      { img: "/images/service-shingle-options.webp", title: "Colors & styles", body: "See manufacturer color and style options before you commit to a shingle." },
-    ],
-  }}
-  process={{
-    eyebrow: "How it works",
-    title: "Simple installation.",
-    highlight: "No surprises.",
-    steps: [
-      { title: "Free estimate", body: "We look at your current roof, decking and flashing, and explain what we find." },
-      { title: "Choose your shingle", body: "We go through color and style options so you can see them before deciding." },
-      { title: "Tear-off & deck check", body: "The old roofing comes off, and any damaged decking is replaced." },
-      { title: "Install & clean up", body: "Professional installation, then a cleanup and walkthrough of the finished roof." },
-    ],
-  }}
+  bottomServices
   why={{ body: "Locally owned and operated in Michiana since 2010. Licensed, bonded, insured and GAF factory-certified, with professional crews and clean, organized job sites." }}
   form={{
     before: "Get your", highlight: "free shingle roof estimate", after: "today.",
@@ -101,6 +108,29 @@ const faqs = [
     success: "We'll call you shortly to schedule your estimate.",
   }}
 >
+  <Fragment slot="after-trust">
+    <AfterSection
+      eyebrow="Your options"
+      heading="Which Shingle Is Right for Your Home?"
+      intro="Two styles cover most homes. We'll walk you through both, plus color and style choices, during your free estimate."
+      signs={signs}
+      ctaLabel="Get my free estimate"
+      processEyebrow="How it works"
+      processHeading="Simple Installation. No Surprises."
+      processIntro="From the first look to the final walkthrough."
+      steps={steps}
+      beforeLabel={["BEFORE", "OLD ROOF"]}
+      afterLabel={["AFTER", "NEW SHINGLES"]}
+    />
+    <TileStrip
+      eyebrow="Choose the right shingle"
+      heading="Shingles, Done Right"
+      intro="Architectural or 3-tab, in a range of colors and styles, installed over sound decking and proper flashing."
+      ctaLabel="Get my free estimate"
+      tiles={tiles}
+    />
+  </Fragment>
+
   <section class="section" aria-labelledby="under-h">
     <div class="container">
       <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-[#12161b]">Beyond the shingle</span>

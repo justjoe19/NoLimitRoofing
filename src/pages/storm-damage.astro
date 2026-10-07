@@ -1,5 +1,32 @@
 ---
 import LandingPage from "../components/landing/LandingPage.astro";
+import AfterSection from "../components/landing/AfterSection.astro";
+import TileStrip from "../components/landing/TileStrip.astro";
+
+const signs = [
+  "Missing, cracked or lifted shingles",
+  "Hail dents on roof, gutters or siding",
+  "Wind damage",
+  "Leaks or water spots inside",
+  "Damage to flashing, vents or gutters",
+  "A free, no-obligation inspection",
+];
+const steps = [
+  { t: "Free Inspection", b: "We inspect and document all damage." },
+  { t: "Insurance Claim Help", b: "We meet with your adjuster and advocate for you." },
+  { t: "Detailed Estimate", b: "You get a clear, itemized estimate." },
+  { t: "Quality Installation", b: "We install your new roof with expert care." },
+  { t: "Peace of Mind", b: "Your home is protected for what's next." },
+];
+// TODO(client photos): Tree and Gutter are placeholders until the client sends photos.
+const tiles = [
+  { label: "Hail Damage", img: "/images/service-card-hail-damage.webp", alt: "Hail damage on asphalt shingles" },
+  { label: "Wind Damage", img: "/images/service-wind-damage.webp", alt: "Wind-damaged shingles" },
+  { label: "Tree Damage", img: null, alt: "Tree damage on a roof" },
+  { label: "Gutter Damage", img: null, alt: "Storm-damaged gutter" },
+  { label: "Flashing Damage", img: "/images/crew-roofer-chimney-flashing.webp", alt: "Roof flashing at a chimney" },
+  { label: "Roof Leaks", img: "/images/storm-emergency-tarp.webp", alt: "Crew tarping a leaking roof" },
+];
 
 const schema = [
   {
@@ -62,27 +89,7 @@ const schema = [
   primaryCta="Get a Free Inspection"
   callout={{ type: "image", src: "/images/hero-storms-hit-callout.webp", alt: "When storms hit… we build back stronger", width: 400, height: 327 }}
   trust={["Free roof inspection", "Photo damage report", "Insurance claim experts", "24/7 storm response"]}
-  cards={{
-    eyebrow: "What we look for",
-    title: "Damage you can't see from the ground",
-    intro: "Most storm damage only shows up up close. Here's what our inspection covers.",
-    items: [
-      { img: "/images/hail-damage.webp", title: "Hail damage", body: "Bruised or cracked shingles, granule loss and dented soft metals." },
-      { img: "/images/service-wind-damage.webp", title: "Wind damage", body: "Creased, lifted or loosened shingles with broken seals — where leaks start." },
-      { img: "/images/storm-emergency-tarp.webp", title: "Active leaks", body: "Visible damage or water coming in right now gets priority." },
-    ],
-  }}
-  process={{
-    eyebrow: "The No Limit Roof Check™",
-    title: "We inspect it. We photograph it.",
-    highlight: "You decide.",
-    steps: [
-      { title: "We inspect", body: "Shingles, flashing, vents, ridges, valleys and visible decking." },
-      { title: "We photograph", body: "Clear documentation, useful whether you file a claim or not." },
-      { title: "We explain", body: "A plain-language rundown. No upsell, no pressure." },
-      { title: "You decide", body: "Repair, replace, or do nothing — your call." },
-    ],
-  }}
+  bottomServices
   why={{ body: "Locally owned and operated in Michiana since 2010. Licensed, bonded, insured and GAF factory-certified, with fast insurance claim support." }}
   form={{
     before: "Schedule your", highlight: "free roof inspection", after: "today.",
@@ -90,4 +97,27 @@ const schema = [
     notesPlaceholder: "What did you notice? (optional)",
     success: "Thank you! We'll reach out within 24 hours to schedule your free inspection.",
   }}
-/>
+>
+  <Fragment slot="after-trust">
+    <AfterSection
+      eyebrow="After the storm"
+      heading="Has Your Home Been Hit by a Storm?"
+      intro="Even if you don't see damage from the ground, there could be hidden issues. We'll inspect your roof, document everything, and help you with the insurance process, at no cost to you."
+      signs={signs}
+      ctaLabel="Schedule my free inspection"
+      processEyebrow="Our process"
+      processHeading="A Stress-Free Storm Recovery"
+      processIntro="We handle the hard part so you don't have to."
+      steps={steps}
+      beforeLabel={["BEFORE", "STORM DAMAGE"]}
+      afterLabel={["AFTER", "NEW ROOF"]}
+    />
+    <TileStrip
+      eyebrow="Common storm damage"
+      heading="We Fix All Types of Storm Damage"
+      intro="From hail to high winds, we've seen it all. Our team knows what to look for and how to restore your home the right way."
+      ctaLabel="Get my free inspection"
+      tiles={tiles}
+    />
+  </Fragment>
+</LandingPage>

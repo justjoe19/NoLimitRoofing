@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import InsuranceSection from "../components/InsuranceSection.astro";
+import AfterSection from "../components/landing/AfterSection.astro";
+import ServicesRow from "../components/ServicesRow.astro";
+import ServiceArea from "../components/ServiceArea.astro";
 
 const heroImage = "/images/hero-craftsman-dusk.webp";
 
@@ -153,6 +156,33 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <AfterSection
+    eyebrow="Free inspection"
+    heading="Not Sure What Your Roof Needs?"
+    intro="Whether it's storm damage, an aging roof or a leak, a free inspection shows you where you stand, with no pressure and no obligation."
+    signs={[
+      "Hail or wind damage after a storm",
+      "Leaks or water spots inside",
+      "Shingles that are curling, cracked or missing",
+      "Questions about an insurance claim",
+      "Planning a new roof",
+      "A free, no-obligation inspection",
+    ]}
+    ctaLabel="Schedule my free inspection"
+    processEyebrow="Our process"
+    processHeading="A Simple Process, Start to Finish"
+    processIntro="We handle the hard part so you don't have to."
+    steps={[
+      { t: "Free Inspection", b: "We inspect and document your roof." },
+      { t: "Insurance Claim Help", b: "If there's storm damage, we meet with your adjuster and advocate for you." },
+      { t: "Detailed Estimate", b: "You get a clear, itemized estimate." },
+      { t: "Quality Installation", b: "We install your new roof with expert care." },
+      { t: "Peace of Mind", b: "Your home is protected for what's next." },
+    ]}
+    beforeLabel={["BEFORE", "OLD ROOF"]}
+    afterLabel={["AFTER", "NEW ROOF"]}
+  />
 
   <!-- SECTION 4: COMPLETE ROOFING SOLUTIONS -->
   <section class="section" aria-labelledby="complete-solutions-heading">
@@ -356,7 +386,7 @@ const schema = [
 
   <!-- SECTION 7: PRE-FOOTER CTA / CONTACT FORM -->
   <section class="pre-footer-cta lp-form-section" aria-labelledby="lp-cta-h">
-    <div class="container split" style="align-items:center">
+    <div class="container split lp-cta-3" style="align-items:center">
       <div>
         <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">
           READY TO GET STARTED?
@@ -375,8 +405,10 @@ const schema = [
           <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL (574) 360-0525</span>
         </a>
       </div>
-      <div class="flex lg:justify-end">
+      <ServicesRow />
+      <div class="flex flex-col gap-4 lg:items-end">
         <a class="btn-hero-primary" href="#inspection">SCHEDULE FREE ROOF INSPECTION</a>
+        <ServiceArea />
       </div>
     </div>
   </section>

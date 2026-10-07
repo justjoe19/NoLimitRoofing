@@ -6,6 +6,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import LeadForm from "../LeadForm.astro";
 import InsuranceSection from "../InsuranceSection.astro";
+import ServicesRow from "../ServicesRow.astro";
+import ServiceArea from "../ServiceArea.astro";
 
 interface Card { img: string; title: string; body: string; href?: string; imgAlt?: string }
 interface Step { title: string; body: string }
@@ -25,9 +27,12 @@ interface Props {
   primaryCta: string;
   callout: { type: "image"; src: string; alt: string; width: number; height: number } | { type: "script"; lines: [string, string, string] };
   trust: string[];
-  cards: { eyebrow: string; title: string; intro: string; items: Card[] };
-  process: { eyebrow: string; title: string; highlight: string; steps: Step[] };
+  /** Standard cards / process sections; a page can leave them out and fill the "after-trust" slot instead. */
+  cards?: { eyebrow: string; title: string; intro: string; items: Card[] };
+  process?: { eyebrow: string; title: string; highlight: string; steps: Step[] };
   why: { body: string };
+  /** Adds a services row and service-area line to the closing banner. */
+  bottomServices?: boolean;
   form: { before: string; highlight: string; after: string; intro: string; notesPlaceholder: string; success: string };
 }
 const p = Astro.props;
@@ -129,6 +134,9 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
     </div>
   </section>
 
+  <slot name="after-trust" />
+
+  {p.cards && (
   <section class="section" aria-labelledby="lp-cards-h">
     <div class="container">
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-mist/40">
@@ -163,7 +171,9 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
       </div>
     </div>
   </section>
+  )}
 
+  {p.process && (
   <section class="section section--ink" aria-labelledby="lp-process-h">
     <div class="container">
       <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-white/80">{p.process.eyebrow}</span>
@@ -180,6 +190,7 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
       </div>
     </div>
   </section>
+  )}
 
   <!-- Optional extra content for pages that need more than the standard sections. -->
   <slot />
@@ -233,7 +244,7 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
   </section>
 
   <section class="pre-footer-cta lp-form-section" aria-labelledby="lp-cta-h">
-    <div class="container split" style="align-items:center">
+    <div class:list={["container split", { "lp-cta-3": p.bottomServices }]} style="align-items:center">
       <div>
         <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">READY TO GET STARTED?</p>
         <h2 id="lp-cta-h" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl leading-[1.1] tracking-tight">{p.form.before.toUpperCase()}<br /><span class="text-accent">{p.form.highlight.toUpperCase()}</span> {p.form.after.toUpperCase()}</h2>
@@ -243,8 +254,10 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
           <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL (574) 360-0525</span>
         </a>
       </div>
-      <div class="flex lg:justify-end">
+      {p.bottomServices && <ServicesRow />}
+      <div class="flex flex-col gap-4 lg:items-end">
         <a class="btn-hero-primary" href="#inspection">{p.ctaLabel.toUpperCase()}</a>
+        {p.bottomServices && <ServiceArea />}
       </div>
     </div>
   </section>

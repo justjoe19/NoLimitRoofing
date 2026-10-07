@@ -1,0 +1,113 @@
+---
+/**
+ * Two-part band shared by every page: a checklist and a before/after slider on the left,
+ * a numbered process on the right. Layout comes from the client's storm-damage mockup;
+ * each page passes its own copy.
+ *
+ * TODO(client photos): the slider shows placeholders until `beforeImg` / `afterImg` are set
+ * (a matched pair of the same house works best).
+ */
+interface Props {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  signs: string[];
+  ctaLabel: string;
+  processEyebrow: string;
+  processHeading: string;
+  processIntro: string;
+  steps: { t: string; b: string }[];
+  beforeImg?: string;
+  afterImg?: string;
+  beforeLabel?: [string, string];
+  afterLabel?: [string, string];
+}
+const {
+  eyebrow, heading, intro, signs, ctaLabel,
+  processEyebrow, processHeading, processIntro, steps,
+  beforeImg, afterImg,
+  beforeLabel = ["BEFORE", "STORM DAMAGE"],
+  afterLabel = ["AFTER", "NEW ROOF"],
+} = Astro.props;
+const check = "M20 6 9 17l-5-5";
+---
+
+<section class="section" aria-labelledby="after-h">
+  <div class="container grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-10 lg:gap-14 items-start">
+    <div class="grid grid-cols-1 sm:grid-cols-[1fr_1.1fr] gap-6 items-center">
+      <div>
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-accent-dark">{eyebrow}</span>
+        <h2 id="after-h" class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#12161b] mt-1">{heading}</h2>
+        <div class="w-14 h-1 bg-accent mt-2.5"></div>
+        <p class="mt-4 text-[#4a5568] leading-relaxed">{intro}</p>
+        <ul class="mt-4 space-y-2">
+          {signs.map((s) => (
+            <li class="flex items-start gap-2.5 text-[#12161b] font-semibold text-[0.95rem]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="size-5 shrink-0 mt-0.5 text-accent" aria-hidden="true"><path d={check} /></svg>
+              <span>{s}</span>
+            </li>
+          ))}
+        </ul>
+        <a class="btn-hero-primary mt-6" href="#inspection">{ctaLabel.toUpperCase()}</a>
+      </div>
+
+      <div class="ba" style="--pos:50%">
+        <div class="ba-pane ba-after">
+          {afterImg ? <img src={afterImg} alt={afterLabel.join(" ")} loading="lazy" /> : <div class="ba-ph" aria-hidden="true"><span>PHOTO PLACEHOLDER</span></div>}
+          <span class="ba-tag ba-tag-r">{afterLabel[0]}<br />{afterLabel[1]}</span>
+        </div>
+        <div class="ba-pane ba-before">
+          {beforeImg ? <img src={beforeImg} alt={beforeLabel.join(" ")} loading="lazy" /> : <div class="ba-ph ba-ph-dark" aria-hidden="true"><span>PHOTO PLACEHOLDER</span></div>}
+          <span class="ba-tag ba-tag-l">{beforeLabel[0]}<br />{beforeLabel[1]}</span>
+        </div>
+        <div class="ba-line" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6" /></svg></span></div>
+        <input type="range" min="5" max="95" value="50" class="ba-range" aria-label="Drag to compare before and after" />
+      </div>
+    </div>
+
+    <div>
+      <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-accent-dark">{processEyebrow}</span>
+      <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#12161b] mt-1">{processHeading}</h2>
+      <div class="w-14 h-1 bg-accent mt-2.5"></div>
+      <p class="mt-4 text-[#4a5568] leading-relaxed">{processIntro}</p>
+      <ol class="mt-5 space-y-4">
+        {steps.map((st, i) => (
+          <li class="flex items-start gap-4">
+            <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent text-black font-black">{i + 1}</span>
+            <div>
+              <p class="font-black text-[#12161b]">{st.t}</p>
+              <p class="text-sm text-[#4a5568] leading-snug">{st.b}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".ba").forEach((ba) => {
+    const range = ba.querySelector<HTMLInputElement>(".ba-range");
+    if (!range) return;
+    const set = () => ba.style.setProperty("--pos", range.value + "%");
+    range.addEventListener("input", set);
+    set();
+  });
+</script>
+
+<style>
+  .ba { position: relative; aspect-ratio: 3 / 3.7; overflow: hidden; border-radius: 4px; background: #1b2229; user-select: none; }
+  @media (max-width: 639px) { .ba { aspect-ratio: 4 / 3; } }
+  .ba-pane { position: absolute; inset: 0; }
+  .ba-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .ba-pane img { width: 100%; height: 100%; object-fit: cover; }
+  .ba-ph { width: 100%; height: 100%; display: flex; align-items: flex-start; justify-content: center; padding-top: 1.1rem; background: repeating-linear-gradient(135deg, #2b343c 0 14px, #252d34 14px 28px); color: rgba(255,255,255,.45); font-size: .7rem; font-weight: 800; letter-spacing: .18em; }
+  .ba-ph-dark { background: repeating-linear-gradient(135deg, #1b2127 0 14px, #161b20 14px 28px); }
+  .ba-tag { position: absolute; bottom: .75rem; padding: .4rem .6rem; background: rgba(12,17,21,.85); color: #fff; font-size: .68rem; font-weight: 900; line-height: 1.25; letter-spacing: .08em; }
+  .ba-tag-l { left: .75rem; }
+  .ba-tag-r { right: .75rem; text-align: right; }
+  .ba-line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #fff; pointer-events: none; }
+  .ba-knob { position: absolute; top: 50%; left: 50%; width: 2.4rem; height: 2.4rem; transform: translate(-50%, -50%); border-radius: 9999px; background: var(--color-ink, #0c1115); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+  .ba-knob svg { width: 1.1rem; height: 1.1rem; }
+  .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+</style>

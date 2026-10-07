@@ -1,5 +1,32 @@
 ---
 import LandingPage from "../components/landing/LandingPage.astro";
+import AfterSection from "../components/landing/AfterSection.astro";
+import TileStrip from "../components/landing/TileStrip.astro";
+
+const signs = [
+  "Shingles that are curling, cracked or missing",
+  "Leaks or water spots inside",
+  "Granules collecting in the gutters",
+  "A roof that's near the end of its life",
+  "Storm damage that a repair can't fix",
+  "A free, no-obligation estimate",
+];
+const steps = [
+  { t: "Roof Evaluation", b: "A professional look at your roof's condition, at no cost." },
+  { t: "Clear Options", b: "Straightforward choices for repair or full replacement." },
+  { t: "Detailed Estimate", b: "A written estimate with no pressure and no obligation." },
+  { t: "Installation", b: "Professional install with a clean, organized job site." },
+  { t: "Cleanup & Walkthrough", b: "We clean up and walk through the finished roof with you." },
+];
+// TODO(client photos): all six tiles are stand-ins from the site's existing image library.
+const tiles = [
+  { label: "Quality Systems", img: "/images/completed-roof-shingle-detail.webp", alt: "Close-up of a finished shingle roof" },
+  { label: "Professional Install", img: "/images/crew-shingle-install.webp", alt: "Crew installing shingles" },
+  { label: "Clean Job Sites", img: "/images/aerial-completed-roof.webp", alt: "Aerial view of a completed roof" },
+  { label: "Decking Repair", img: "/images/service-decking.webp", alt: "Roof decking" },
+  { label: "Shingle Options", img: "/images/service-shingle-options.webp", alt: "Shingle color and style samples" },
+  { label: "Tear-Off & Replace", img: "/images/service-tear-off-replacement.webp", alt: "Old roofing being torn off" },
+];
 
 const schema = [
   {
@@ -63,27 +90,7 @@ const schema = [
   primaryCta="Get My Free Estimate"
   callout={{ type: "image", src: "/images/hero-no-pressure-callout.webp", alt: "No pressure. No limits on quality.", width: 400, height: 327 }}
   trust={["Free roof estimates", "Financing available", "Professional installation", "Clean & organized job sites"]}
-  cards={{
-    eyebrow: "What you get",
-    title: "A roof done right, start to finish",
-    intro: "Quality systems, professional crews, and a job site we leave cleaner than we found it.",
-    items: [
-      { img: "/images/completed-roof-shingle-detail.webp", title: "Quality roofing systems", body: "Proven, high-quality materials built for Michiana weather." },
-      { img: "/images/crew-shingle-install.webp", title: "Professional installation", body: "Experienced crews who install it right the first time." },
-      { img: "/images/aerial-completed-roof.webp", title: "Clean job sites", body: "We protect your property and clean up when the job is done." },
-    ],
-  }}
-  process={{
-    eyebrow: "How it works",
-    title: "Simple process.",
-    highlight: "Straight answers.",
-    steps: [
-      { title: "Roof evaluation", body: "A professional look at your roof’s condition, at no cost." },
-      { title: "Clear options", body: "Straightforward choices for repair or full replacement." },
-      { title: "Detailed estimate", body: "A written estimate with no pressure and no obligation." },
-      { title: "Installation", body: "Professional install with a clean, organized job site." },
-    ],
-  }}
+  bottomServices
   why={{ body: "Locally owned and operated in Michiana since 2010. Licensed, bonded, insured and GAF factory-certified, with professional crews and clean, organized job sites." }}
   form={{
     before: "Get your", highlight: "free roof estimate", after: "today.",
@@ -91,4 +98,27 @@ const schema = [
     notesPlaceholder: "Replacement or repair? Anything we should know (optional)",
     success: "Thank you! We'll reach out within 24 hours to schedule your free estimate.",
   }}
-/>
+>
+  <Fragment slot="after-trust">
+    <AfterSection
+      eyebrow="Is it time?"
+      heading="Is It Time for a New Roof?"
+      intro="A new roof is a big investment. We'll evaluate your roof, explain your options clearly, and give you a written estimate, with no pressure and no obligation."
+      signs={signs}
+      ctaLabel="Get my free estimate"
+      processEyebrow="How it works"
+      processHeading="Simple Process. Straight Answers."
+      processIntro="No surprises, from the first look to the final cleanup."
+      steps={steps}
+      beforeLabel={["BEFORE", "OLD ROOF"]}
+      afterLabel={["AFTER", "NEW ROOF"]}
+    />
+    <TileStrip
+      eyebrow="What you get"
+      heading="A Roof Done Right, Start to Finish"
+      intro="Quality systems, professional crews, and a job site we leave cleaner than we found it."
+      ctaLabel="Get my free estimate"
+      tiles={tiles}
+    />
+  </Fragment>
+</LandingPage>
