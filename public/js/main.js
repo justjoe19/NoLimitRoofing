@@ -82,16 +82,21 @@
         .join("&");
     };
 
-    // Only validate fields this particular form actually has and marks required.
+    // Validate required fields, plus optional fields only if they have been filled out.
     var fieldNames = Object.keys(commonValidators).filter(function (name) {
       var field = form.elements[name];
-      return field && field.hasAttribute("required");
+      return Boolean(field);
     });
 
     var validateField = function (field) {
       var validator = commonValidators[field.name];
       var errorEl = document.getElementById(field.id + "-error");
       if (!validator || !errorEl) return true;
+      if (!field.hasAttribute("required") && !field.value.trim()) {
+        errorEl.textContent = "";
+        field.setAttribute("aria-invalid", "false");
+        return true;
+      }
       var msg = validator(field.value);
       errorEl.textContent = msg;
       field.setAttribute("aria-invalid", msg ? "true" : "false");

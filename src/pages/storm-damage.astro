@@ -1,5 +1,47 @@
 ---
 import LandingPage from "../components/landing/LandingPage.astro";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Storm Damage Roof Inspection & Repair",
+    serviceType: "Storm Damage Inspection",
+    url: "https://nolimitroofingin.com/storm-damage.html",
+    description: "Professional storm damage roof inspections, hail and wind damage documentation, and insurance claim assistance for homeowners in Michiana.",
+    provider: {
+      "@type": "RoofingContractor",
+      name: "No Limit Roofing",
+      url: "https://nolimitroofingin.com/",
+      telephone: "+1-574-360-0525",
+      priceRange: "$$",
+      image: "https://nolimitroofingin.com/images/hero-craftsman-dusk.webp",
+      logo: "https://nolimitroofingin.com/images/nlr-logo.png",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1911 Clover Rd, Suite 10",
+        addressLocality: "Mishawaka",
+        addressRegion: "IN",
+        postalCode: "46545",
+        addressCountry: "US",
+      },
+    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "St. Joseph County, IN" },
+      { "@type": "AdministrativeArea", name: "LaPorte County, IN" },
+      { "@type": "AdministrativeArea", name: "Marshall County, IN" },
+      { "@type": "AdministrativeArea", name: "Berrien County, MI" },
+      { "@type": "AdministrativeArea", name: "Cass County, MI" },
+    ],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      name: "Free Storm Damage Roof Inspection",
+      description: "Comprehensive multi-point storm damage inspection and photo damage report with zero cost and no obligation.",
+    },
+  },
+];
 ---
 
 <LandingPage
@@ -8,6 +50,7 @@ import LandingPage from "../components/landing/LandingPage.astro";
     description: "Think your roof has storm damage? Get a professional roof inspection and photo report from No Limit Roofing. Call (574) 360-0525.",
     canonical: "https://nolimitroofingin.com/storm-damage.html",
   }}
+  schema={schema}
   source="storm-damage-lp"
   ctaLabel="Schedule Free Roof Inspection"
   heroImage="/images/storm-damage-hero.webp"
@@ -45,6 +88,6 @@ import LandingPage from "../components/landing/LandingPage.astro";
     before: "Schedule your", highlight: "free roof inspection", after: "today.",
     intro: "No cost, no obligation. You'll get a detailed report of exactly what's on your roof.",
     notesPlaceholder: "What did you notice? (optional)",
-    success: "We'll call you shortly to set a time.",
+    success: "Thank you! We'll reach out within 15–30 minutes during business hours (Mon–Fri, 8am–6pm) to schedule your free inspection.",
   }}
 />

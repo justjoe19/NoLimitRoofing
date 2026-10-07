@@ -1,5 +1,47 @@
 ---
 import LandingPage from "../components/landing/LandingPage.astro";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Residential Roof Replacement & Installation",
+    serviceType: "Roof Replacement",
+    url: "https://nolimitroofingin.com/roof-replacement.html",
+    description: "Professional roof replacement and installation services with GAF certified craftsmanship, clean job sites, and financing options in Michiana.",
+    provider: {
+      "@type": "RoofingContractor",
+      name: "No Limit Roofing",
+      url: "https://nolimitroofingin.com/",
+      telephone: "+1-574-360-0525",
+      priceRange: "$$",
+      image: "https://nolimitroofingin.com/images/hero-craftsman-dusk.webp",
+      logo: "https://nolimitroofingin.com/images/nlr-logo.png",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1911 Clover Rd, Suite 10",
+        addressLocality: "Mishawaka",
+        addressRegion: "IN",
+        postalCode: "46545",
+        addressCountry: "US",
+      },
+    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "St. Joseph County, IN" },
+      { "@type": "AdministrativeArea", name: "LaPorte County, IN" },
+      { "@type": "AdministrativeArea", name: "Marshall County, IN" },
+      { "@type": "AdministrativeArea", name: "Berrien County, MI" },
+      { "@type": "AdministrativeArea", name: "Cass County, MI" },
+    ],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      name: "Free Roof Replacement Estimate",
+      description: "Detailed, straightforward written roof replacement evaluation and estimate with zero pressure and zero obligation.",
+    },
+  },
+];
 ---
 
 <!-- TODO(client photos): the three card images below are stand-ins from the site's existing library. -->
@@ -9,6 +51,7 @@ import LandingPage from "../components/landing/LandingPage.astro";
     description: "Need a new roof? Get a free roof replacement estimate from No Limit Roofing. Professional installation, clean job sites. Call (574) 360-0525.",
     canonical: "https://nolimitroofingin.com/roof-replacement.html",
   }}
+  schema={schema}
   source="roof-estimate-lp"
   ctaLabel="Get Free Roof Estimate"
   heroImage="/images/new-roof-estimate-hero.webp"
@@ -46,6 +89,6 @@ import LandingPage from "../components/landing/LandingPage.astro";
     before: "Get your", highlight: "free roof estimate", after: "today.",
     intro: "No pressure, no obligation. Ask about financing options.",
     notesPlaceholder: "Replacement or repair? Anything we should know (optional)",
-    success: "We'll call you shortly to schedule your estimate.",
+    success: "Thank you! We'll reach out within 15–30 minutes during business hours (Mon–Fri, 8am–6pm) to schedule your free estimate.",
   }}
 />
