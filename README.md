@@ -61,7 +61,7 @@ The site itself is built and deployed to `https://no-limit-roofing.netlify.app`.
 **Before launch — content the client must confirm or supply**
 - [ ] Client reads through the 10 city pages and confirms the local facts (kept in an untracked local file, `.city-facts-to-verify.txt`, deliberately not committed). Includes process claims such as cleanup and how active leaks are prioritized.
 - [ ] Client skims the 6 commercial service pages (TPO, EPDM, coatings, repair, replacement, maintenance) — they include a generic "questions to ask any roofer" list and a white-EPDM mention that should match how the company actually works.
-- [ ] Confirm whether the Mishawaka street address (1821 Clover Rd, Unit 2) is public. It is in the homepage JSON-LD, but the README below says offices are city-level only. Decide once, then make the site, Google Business Profile and directories match exactly.
+- [ ] Confirm whether the Mishawaka street address (1911 Clover Rd, Suite 10) is public. It is in the homepage JSON-LD, but the README below says offices are city-level only. Decide once, then make the site, Google Business Profile and directories match exactly.
 - [ ] Confirm the "Ohio location opening soon" line on `/areas` is still accurate.
 - [ ] Real job photos labeled with the city (for city pages and the Business Profile); a real commercial-job photo; and the still-missing RoofRunner, branded truck and office photos.
 

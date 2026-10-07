@@ -31,7 +31,7 @@ guides:
     href: "/commercial/maintenance.html"
 faqs:
   - question: "Is No Limit Roofing actually based in Mishawaka?"
-    answer: "Yes. Our regional office is at 1821 Clover Rd in Mishawaka, and this is where the company has operated since 2010. We also have a regional office in Plymouth, Indiana."
+    answer: "Yes. Our regional office is at 1911 Clover Rd in Mishawaka, and this is where the company has operated since 2010. We also have a regional office in Plymouth, Indiana."
   - question: "Do you work on both older homes near downtown Mishawaka and newer subdivisions?"
     answer: "Yes. Older homes and newer construction call for different approaches, from checking decking condition on an older roof to matching a manufacturer's installation requirements on a newer one. We'll tell you what your particular roof needs at the free inspection."
   - question: "Can you roof a commercial building or shop in Mishawaka?"
