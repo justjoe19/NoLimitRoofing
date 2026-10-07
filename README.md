@@ -12,7 +12,7 @@ Live repo: https://github.com/justjoe19/NoLimitRoofing
 
 **No new client photos are expected.** The Roof landing page's three cards use existing library photos (`completed-roof-shingle-detail`, `crew-shingle-install`, `aerial-completed-roof`); that's final unless photos arrive. Storm cards are plain (unlinked) because the pages they once pointed to are shelved.
 
-**Header / nav (unused on purpose):** `src/components/Header.astro` is a small 3-link nav (Home, Storm Damage, Roof Replacement, phone, button, hamburger). Nothing imports it right now. To bring a nav back, change `BaseLayout.astro` from `LandingHeader` to `Header` (the one-line swap), or restore the full Services mega-menu from the tag: `git show full-site-48-pages:src/components/Header.astro`. The footer link lists in `Footer.astro` also need updating when pages return.
+**Header / nav:** `BaseLayout.astro` renders `src/components/Header.astro` on every page: logo, links to Home, Storm Damage, Roof Replacement and Asphalt Shingles (current page underlined), phone, one button, and a hamburger drawer on phones. To go back to the nav-less bar (logo, phone, button), swap `Header` for `landing/LandingHeader.astro` in `BaseLayout.astro`.
 
 ### Launch checklist (3-page scope)
 

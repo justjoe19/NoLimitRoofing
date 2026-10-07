@@ -1,0 +1,141 @@
+---
+import LandingPage from "../components/landing/LandingPage.astro";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Asphalt Shingle Roofing",
+    serviceType: "Asphalt Shingle Roof Installation",
+    url: "https://nolimitroofingin.com/asphalt-shingle-roofing.html",
+    description: "Architectural and 3-tab asphalt shingle roof installation for homeowners in Michiana, with a free estimate and shingle color and style options.",
+    provider: {
+      "@type": "RoofingContractor",
+      name: "No Limit Roofing",
+      url: "https://nolimitroofingin.com/",
+      telephone: "+1-574-360-0525",
+      priceRange: "$$",
+      image: "https://nolimitroofingin.com/images/hero-craftsman-dusk.webp",
+      logo: "https://nolimitroofingin.com/images/nlr-logo.png",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1911 Clover Rd, Suite 10",
+        addressLocality: "Mishawaka",
+        addressRegion: "IN",
+        postalCode: "46545",
+        addressCountry: "US",
+      },
+    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "St. Joseph County, IN" },
+      { "@type": "AdministrativeArea", name: "LaPorte County, IN" },
+      { "@type": "AdministrativeArea", name: "Marshall County, IN" },
+      { "@type": "AdministrativeArea", name: "Berrien County, MI" },
+      { "@type": "AdministrativeArea", name: "Cass County, MI" },
+    ],
+  },
+];
+
+const under = [
+  { t: "Decking", b: "Solid, dry decking gives shingles something to hold on to. Soft or damaged decking is replaced before new material goes down." },
+  { t: "Ice & water shield", b: "A self-sealing membrane at the eaves and in valleys, where winter meltwater tends to back up." },
+  { t: "Underlayment", b: "A secondary water barrier laid over the entire deck." },
+  { t: "Drip edge & flashing", b: "Metal details that direct water off the roof edge and seal it around chimneys, walls and vents." },
+  { t: "Starter strip & ridge cap", b: "The edges and the peak are where wind tends to get under shingles first." },
+  { t: "Ventilation", b: "A ventilated attic keeps heat and moisture from building up under the roof, which affects shingle wear and winter ice." },
+];
+
+const faqs = [
+  { q: "What's the difference between 3-tab and architectural shingles?", a: "3-tab shingles are flat and uniform in appearance, and typically the lower-cost option. Architectural (dimensional) shingles are thicker and layered for a more textured look, and generally have a longer expected lifespan. We'll go over both during your estimate." },
+  { q: "How long do asphalt shingles last in Northern Indiana?", a: "It depends on the product line and the installation. Correct installation, with proper ventilation, underlayment and flashing, matters as much as the shingle itself in how long a roof lasts. Your estimate will cover the warranty options for the shingle you choose." },
+  { q: "Can I see shingle color and style options before deciding?", a: "Yes. We'll go through manufacturer color and style options as part of your estimate, so you can see what a specific shingle looks like before you commit." },
+  { q: "Do I need a whole new roof if only part of it is worn?", a: "Not necessarily. If the wear is limited to one area and the decking underneath is sound, a repair may be the better value. If wear is widespread, replacement usually makes more sense than repeated repairs. A free inspection will tell you which applies." },
+  { q: "Does the shingle brand matter?", a: "Product lines differ in appearance, thickness and warranty options. In practice, how the roof is installed (decking, underlayment, flashing and ventilation) matters at least as much as the name on the bundle." },
+];
+---
+
+<LandingPage
+  seo={{
+    title: "Asphalt Shingle Roofing in Michiana | No Limit Roofing",
+    description: "Architectural and 3-tab asphalt shingle roofing from a GAF factory-certified local contractor. Free estimate and color options. Call (574) 360-0525.",
+    canonical: "https://nolimitroofingin.com/asphalt-shingle-roofing.html",
+  }}
+  schema={schema}
+  source="shingles-lp"
+  ctaLabel="Get Free Roof Estimate"
+  heroImage="/images/completed-roof-shingle-detail-hero.webp"
+  eyebrow="No Limit Roofing • Asphalt Shingles"
+  h1Lines={["Shingle roofs,", "installed the", "right way."]}
+  h1Accent
+  subhead="Architectural and 3-tab asphalt shingles from a local, GAF factory-certified crew."
+  body="Asphalt shingles are the most common roof in Michiana, and how they're installed matters as much as the shingle itself. Get a free estimate and see color and style options before you decide."
+  primaryCta="Get My Free Estimate"
+  callout={{ type: "image", src: "/images/hero-no-pressure-callout.webp", alt: "No pressure. No limits on quality.", width: 400, height: 327 }}
+  trust={["Free roof estimates", "GAF factory-certified", "Architectural & 3-tab options", "Clean & organized job sites"]}
+  cards={{
+    eyebrow: "Your options",
+    title: "Choose the right shingle",
+    intro: "Two styles cover most homes. We'll walk you through both, plus color and style choices, during your estimate.",
+    items: [
+      { img: "/images/completed-roof-shingle-detail.webp", title: "Architectural shingles", body: "Thicker and layered for a textured look, and generally a longer expected lifespan." },
+      { img: "/images/completed-roofing-project.webp", title: "3-tab shingles", body: "Flat, uniform and typically lower in cost. Still a fit for some budgets and buildings." },
+      { img: "/images/service-shingle-options.webp", title: "Colors & styles", body: "See manufacturer color and style options before you commit to a shingle." },
+    ],
+  }}
+  process={{
+    eyebrow: "How it works",
+    title: "Simple installation.",
+    highlight: "No surprises.",
+    steps: [
+      { title: "Free estimate", body: "We look at your current roof, decking and flashing, and explain what we find." },
+      { title: "Choose your shingle", body: "We go through color and style options so you can see them before deciding." },
+      { title: "Tear-off & deck check", body: "The old roofing comes off, and any damaged decking is replaced." },
+      { title: "Install & clean up", body: "Professional installation, then a cleanup and walkthrough of the finished roof." },
+    ],
+  }}
+  why={{ body: "Locally owned and operated in Michiana since 2010. Licensed, bonded, insured and GAF factory-certified, with professional crews and clean, organized job sites." }}
+  form={{
+    before: "Get your", highlight: "free shingle roof estimate", after: "today.",
+    intro: "No pressure, no obligation. We'll go through shingle options with you.",
+    notesPlaceholder: "Roof size, colors you like, anything we should know (optional)",
+    success: "We'll call you shortly to schedule your estimate.",
+  }}
+>
+  <section class="section" aria-labelledby="under-h">
+    <div class="container">
+      <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-[#12161b]">Beyond the shingle</span>
+      <h2 id="under-h" class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#12161b] mt-1">What goes under the shingles</h2>
+      <div class="w-14 h-1 bg-accent mt-2.5"></div>
+      <p class="mt-4 max-w-[760px] text-[#4a5568] leading-relaxed">Most of the work that protects your home is out of sight. A well-installed mid-range shingle will often outperform a premium shingle installed poorly underneath.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+        {under.map((u, i) => (
+          <div class="rounded-sm border border-mist/60 p-5">
+            <div class="text-accent font-black text-2xl leading-none">{String(i + 1).padStart(2, "0")}</div>
+            <h3 class="mt-3 font-black uppercase tracking-wide text-[0.9rem] text-[#12161b]">{u.t}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#4a5568]">{u.b}</p>
+          </div>
+        ))}
+      </div>
+      <h3 class="mt-12 text-xl sm:text-2xl font-black tracking-tight text-[#12161b]">Why Michiana weather matters</h3>
+      <p class="mt-3 max-w-[760px] text-[#4a5568] leading-relaxed">Northern Indiana and Southwest Michigan put a roof through repeated freeze-thaw cycles, lake-effect snow, summer heat and severe storms. Shingles installed correctly handle that mix well. Shingles installed over weak decking or with poor ventilation tend to wear faster, and a poorly ventilated attic can also cause ice to form at the eaves and push water under the shingles. We check ventilation as part of every estimate.</p>
+    </div>
+  </section>
+
+  <section class="section section--fog" aria-labelledby="faq-h">
+    <div class="container">
+      <h2 id="faq-h" class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#12161b]">Shingle questions</h2>
+      <div class="w-14 h-1 bg-accent mt-2.5"></div>
+      <div class="mt-8 max-w-[860px] divide-y divide-mist/70 border-y border-mist/70">
+        {faqs.map((f) => (
+          <details class="group py-4">
+            <summary class="cursor-pointer list-none flex items-center justify-between gap-4 min-h-[44px] font-bold text-[#12161b]">
+              <span>{f.q}</span>
+              <span class="text-accent text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-[#4a5568] leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</LandingPage>

@@ -1,5 +1,5 @@
 ---
-// Navigation header for live launch pages (Home, Storm Damage, Roof Replacement).
+// Navigation header for the live launch pages (Home, Storm Damage, Roof Replacement, Asphalt Shingle Roofing).
 interface Props {
   ctaLabel?: string;
 }
@@ -10,15 +10,20 @@ const currentPath = Astro.url.pathname;
 const isHome = currentPath === "/" || currentPath === "" || currentPath === "/index.html";
 const isStormDamage = currentPath.includes("storm-damage");
 const isRoofReplacement = currentPath.includes("roof-replacement");
+const isShingles = currentPath.includes("asphalt-shingle-roofing");
 
-const homeHref = "/";
-const stormDamageHref = "/storm-damage.html";
-const roofReplacementHref = "/roof-replacement.html";
+// Every page links to every launch page; the current one is marked.
+const links = [
+  { label: "Home", href: "/", current: isHome },
+  { label: "Storm Damage", href: "/storm-damage.html", current: isStormDamage },
+  { label: "Roof Replacement", href: "/roof-replacement.html", current: isRoofReplacement },
+  { label: "Asphalt Shingles", href: "/asphalt-shingle-roofing.html", current: isShingles },
+];
 
-const defaultButtonLabel = isRoofReplacement ? "Free Estimate" : "Free Inspection";
+const defaultButtonLabel = (isRoofReplacement || isShingles) ? "Free Estimate" : "Free Inspection";
 const buttonLabel = ctaLabel || defaultButtonLabel;
 
-const buttonHref = (isHome || isStormDamage || isRoofReplacement)
+const buttonHref = (isHome || isStormDamage || isRoofReplacement || isShingles)
   ? "#inspection"
   : "/storm-damage.html#inspection";
 ---
@@ -26,7 +31,7 @@ const buttonHref = (isHome || isStormDamage || isRoofReplacement)
 <header class="site-header">
   <div class="container header-bar">
     <a class="brand" href="/" aria-label="No Limit Roofing home">
-      <img src="/images/nlr-logo.webp" alt="No Limit Roofing logo" width="180" height="99" />
+      <img src="/images/nlr-logo-360.webp" alt="No Limit Roofing logo" width="180" height="99" />
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
@@ -35,22 +40,9 @@ const buttonHref = (isHome || isStormDamage || isRoofReplacement)
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <ul>
-        {isStormDamage ? (
-          <>
-            <li><a href={homeHref}>Home</a></li>
-            <li><a href={roofReplacementHref}>Roof Replacement</a></li>
-          </>
-        ) : isRoofReplacement ? (
-          <>
-            <li><a href={homeHref}>Home</a></li>
-            <li><a href={stormDamageHref}>Storm Damage</a></li>
-          </>
-        ) : (
-          <>
-            <li><a href={stormDamageHref}>Storm Damage</a></li>
-            <li><a href={roofReplacementHref}>Roof Replacement</a></li>
-          </>
-        )}
+        {links.map((l) => (
+          <li><a href={l.href} aria-current={l.current ? "page" : undefined}>{l.label}</a></li>
+        ))}
         <li><a href="tel:+15743600525" class="nav-phone">(574) 360-0525</a></li>
       </ul>
       <div class="header-cta">
