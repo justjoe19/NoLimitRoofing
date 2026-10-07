@@ -353,7 +353,7 @@ const schema = [
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h3 class="text-xl font-black uppercase text-ink">Request received</h3>
-          <p class="mt-2 text-steel leading-relaxed">Thank you! We'll reach out within <strong>15–30 minutes</strong> during business hours (Mon–Fri, 8am–6pm) to schedule your free inspection.</p>
+          <p class="mt-2 text-steel leading-relaxed">Thank you! We'll reach out within <strong>24 hours</strong> to schedule your free inspection.</p>
         </div>
 
         <!-- Same Netlify form + handler as /contact (public/js/main.js); "source" tells ad leads apart. -->
@@ -377,8 +377,8 @@ const schema = [
               <div class="field-error" id="phone-error"></div>
             </div>
             <div class="field full">
-              <label for="email">Email Address <span class="text-steel text-xs font-normal">(Optional — for written estimate &amp; report)</span></label>
-              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-error" />
+              <label for="email">Email Address <span class="req text-accent-dark">*</span> <span class="text-steel text-xs font-normal">(for written estimate &amp; report)</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@example.com" aria-describedby="email-error" />
               <div class="field-error" id="email-error"></div>
             </div>
             <div class="field full">
@@ -406,7 +406,7 @@ const schema = [
               </span>
               <span class="inline-flex items-center gap-1.5">
                 <svg class="size-3.5 text-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Fast 15–30 Min Response
+                Response Within 24 Hours
               </span>
             </div>
           </div>
