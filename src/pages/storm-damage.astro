@@ -22,8 +22,8 @@ const steps = [
 const tiles = [
   { label: "Hail Damage", img: "/images/service-card-hail-damage.webp", alt: "Hail damage on asphalt shingles" },
   { label: "Wind Damage", img: "/images/service-wind-damage.webp", alt: "Wind-damaged shingles" },
-  { label: "Tree Damage", img: null, alt: "Tree damage on a roof" },
-  { label: "Gutter Damage", img: null, alt: "Storm-damaged gutter" },
+  { label: "Tree Damage", img: "/images/service-tree-damage.webp", alt: "Tree damage on a roof" },
+  { label: "Gutter Damage", img: "/images/service-gutter-damage.webp", alt: "Storm-damaged gutter" },
   { label: "Flashing Damage", img: "/images/crew-roofer-chimney-flashing.webp", alt: "Roof flashing at a chimney" },
   { label: "Roof Leaks", img: "/images/storm-emergency-tarp.webp", alt: "Crew tarping a leaking roof" },
 ];
@@ -109,6 +109,8 @@ const schema = [
       processHeading="A Stress-Free Storm Recovery"
       processIntro="We handle the hard part so you don't have to."
       steps={steps}
+      beforeImg="/images/storm-damage-before.webp"
+      afterImg="/images/storm-damage-after.webp"
       beforeLabel={["BEFORE", "STORM DAMAGE"]}
       afterLabel={["AFTER", "NEW ROOF"]}
     />
