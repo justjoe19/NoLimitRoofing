@@ -108,6 +108,23 @@
       if (field) field.addEventListener("blur", function () { validateField(field); });
     });
 
+    // "Send another request": swap the confirmation panel back for a blank form.
+    var resetPanelId = form.getAttribute("data-success-panel");
+    var resetPanel = resetPanelId && document.getElementById(resetPanelId);
+    var resetBtn = resetPanel && resetPanel.querySelector("[data-lead-reset]");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        form.reset();
+        form.querySelectorAll(".field-error").forEach(function (el) { el.textContent = ""; });
+        form.querySelectorAll('[aria-invalid="true"]').forEach(function (el) { el.setAttribute("aria-invalid", "false"); });
+        if (status) { status.textContent = ""; status.classList.remove("success", "error", "is-visible"); }
+        resetPanel.hidden = true;
+        form.hidden = false;
+        var first = form.querySelector('input:not([type="hidden"]):not([tabindex="-1"]), textarea');
+        if (first) first.focus();
+      });
+    }
+
     form.addEventListener("submit", function (e) {
       // Honeypot check
       var honey = form.elements["bot-field"] || form.elements["company-website"];
