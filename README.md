@@ -1,31 +1,41 @@
 # No Limit Roofing — Website
 
-A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. Built to replace [nolimitroofingin.com](https://nolimitroofingin.com) with a faster, more modern, lead-capture-focused design, and being expanded per a client-provided Website Design + SEO Build Brief into a full service/location-page SEO architecture. Currently 48 pages: 5 of the original 6 content pages + 404 (the Projects/gallery page was removed — see CHANGELOG Session 14), 3 service-group hubs, 13 service pages, 10 city pages, and a 15-article Learning Center blog the client can write their own posts for (see "Learning Center & CMS" below). Full history in `CHANGELOG.md`.
+A static marketing + local-SEO site for **No Limit Roofing**, a roofing contractor serving the Michiana region (South Bend / Mishawaka / Plymouth, IN) since 2010. **The live site (launched Oct 2026) is four pages plus a 404: Home, Storm Damage, Roof Replacement and Asphalt Shingle Roofing.** The original 48-page SEO build (services, city pages, Learning Center blog) is shelved, not deleted — see "Current status" below. Full history in `CHANGELOG.md`.
 
 Live repo: https://github.com/justjoe19/NoLimitRoofing
 
-## Current status: 3-page launch (Oct 2026) — read this first
+## Current status: LIVE at https://nolimitroofingin.com (launched 2026-10-07) — read this first
 
-**Live scope: `/` (home), `/storm-damage.html`, `/roof-replacement.html`, plus the 404.** All three are indexable and in the sitemap (`sitemap-index.xml` lists `/`, `/storm-damage.html`, `/roof-replacement.html`); only the 404 is `noindex`. The two landing pages double as ad pages and are used at their real URLs; there are no alias URLs (`/storm-damage-inspection` and `/new-roof-estimate` were removed and now 404). No page has a nav: every page uses `LandingHeader.astro` (logo, phone, one button).
+**Live scope: `/` (home), `/storm-damage.html`, `/roof-replacement.html`, `/asphalt-shingle-roofing.html`, plus the 404.** All four content pages are indexable and in the sitemap (`sitemap-index.xml`); only the 404 is `noindex`. The pages are used at their real URLs; there are no alias URLs (`/storm-damage-inspection` and `/new-roof-estimate` were removed and 404). The asphalt shingle page is an addition beyond the original three (see CHANGELOG Session 41); its content is adapted from the shelved `src/content/services/asphalt-shingle-roofing.md`.
 
-**Everything else is shelved, not deleted.** The other page sources sit in `src/pages/` but are in `.gitignore` and untracked, so Netlify never builds them (`public/admin/` is shelved the same way). The full 48-page site is kept at git tag `full-site-48-pages` (restore with `git checkout full-site-48-pages -- src/pages public/admin`). To bring a page back: remove its line from `.gitignore`, `git add` it, and restore its nav/footer/home links. **A local `npm run build` still builds the shelved pages (about 49), but Netlify only builds tracked files.** To check what will really deploy, build from a clean clone.
+**Everything else is shelved, not deleted.** The other page sources sit in `src/pages/` but are in `.gitignore` and untracked, so Netlify never builds them (`public/admin/` is shelved the same way). The full 48-page site is kept at git tag `full-site-48-pages` (restore with `git checkout full-site-48-pages -- src/pages public/admin`). To bring a page back: remove its line from `.gitignore`, `git add` it, and restore its nav/footer/home links. **A local `npm run build` still builds the shelved pages (about 50), but Netlify only builds tracked files.** To check what will really deploy, build from a clean copy of tracked files (`git ls-files -co --exclude-standard`): it gives 5 pages. Note the shelved pages still say "GAF factory-certified" in many places (the live site says CertainTeed; see below).
 
-**No new client photos are expected.** The Roof landing page's three cards use existing library photos (`completed-roof-shingle-detail`, `crew-shingle-install`, `aerial-completed-roof`); that's final unless photos arrive. Storm cards are plain (unlinked) because the pages they once pointed to are shelved.
+### How the live site is put together
 
-**Header / nav:** `BaseLayout.astro` renders `src/components/Header.astro` on every page: logo, links to Home, Storm Damage, Roof Replacement and Asphalt Shingles (current page underlined), phone, one button, and a hamburger drawer on phones. To go back to the nav-less bar (logo, phone, button), swap `Header` for `landing/LandingHeader.astro` in `BaseLayout.astro`.
+- **Hosting:** Netlify project `no-limit-roofing` (repo `justjoe19/NoLimitRoofing`, branch `main` auto-deploys in about 15 seconds). Primary domain `nolimitroofingin.com`; `www` redirects to it; `no-limit-roofing.netlify.app` still works.
+- **Domain and DNS:** registered at GoDaddy (renews every Oct 13; paid through Oct 13, 2027). DNS is hosted by **Netlify DNS** (nameservers `dns1.p02.nsone.net` … `dns4.p02.nsone.net`). Records in the Netlify zone: the two Netlify-managed apex/`www` records; five Google MX records (`aspmx.l.google.com` priority 1, `alt1`/`alt2` priority 5, `alt3`/`alt4` priority 10); TXT `v=spf1 include:_spf.google.com ~all`; the `google-site-verification` TXT; and the Mailgun DKIM TXT `k1._domainkey.mg`. The client says nobody uses email on the domain; the MX records were kept as insurance and can be removed later. The old agency's Cloudflare zone is no longer used.
+- **HTTPS:** Let's Encrypt, issued and renewed automatically by Netlify as long as the domain keeps pointing at Netlify. If a certificate ever fails, check Netlify → Domain management → HTTPS and "Verify DNS configuration".
+- **Forms:** one Netlify form named `contact`, used by all four pages. **Form detection must stay enabled** (Netlify → Forms); it was off until launch day, which meant submissions were not captured. Each submission emails the client's sales address through a Netlify "Email notification" (Forms → Form submission notifications). The hidden `source` field says which page it came from: `homepage`, `storm-damage-lp`, `roof-estimate-lp`, `shingles-lp`. See "Contact form" below.
+- **Old WordPress URLs** (about 50) are 301-redirected to `/` in `netlify.toml`; unknown URLs get the custom `404.html`.
+- **Header / nav:** `BaseLayout.astro` renders `src/components/Header.astro` on every page: logo, links to Home, Storm Damage, Roof Replacement and Asphalt Shingles (current page underlined), phone, one button, and a hamburger drawer on phones. To go back to the nav-less bar (logo, phone, button), swap `Header` for `landing/LandingHeader.astro` in `BaseLayout.astro`.
+- **Certification wording:** the footer and "Why choose" text say **"CertainTeed factory-certified"** at the client's request (they previously said GAF). The client is responsible for the claims on the pages; get changes to claims confirmed in writing.
 
-### Launch checklist (3-page scope)
+### Landing-page layout (shared sections)
 
-- [ ] Netlify Forms: turn on **email notifications** for the `contact` form (Site settings → Forms). Without it, leads only appear in the Forms tab. Send a real test submission from each page; check the `source` value (`storm-damage-lp`, `roof-estimate-lp`, or the home form).
-- [ ] Client confirms the landing-page claims: **"Financing available" / "Ask about financing options"** (Roof page), "24/7 storm response" and "Insurance claim experts" (Storm page), "1000+ roofs completed" (all pages).
-- [ ] Client confirms the final copy of the landing pages (hero copy is final; the rest is placeholder per the design handoff in `../reference/`).
-- [ ] Netlify: add `nolimitroofingin.com` as the primary domain, update DNS with the client on a call, wait for HTTPS. Apex domain, www forwards to it (canonicals assume no www).
-- [x] Internal only: old WordPress URLs (about 50, from the old Yoast sitemaps, listed 2026-10-04) are 301-redirected to `/` in `netlify.toml`; anything else gets the custom `404.html`. Before the DNS switch, re-fetch `https://nolimitroofingin.com/sitemap_index.xml` in case pages were added, and after launch spot-check a few old URLs with `curl -I`.
-- [ ] Search Console: Domain property, verify with DNS TXT, submit `sitemap-index.xml`, request indexing for Home, Storm Damage and Roof Replacement.
-- [ ] Verify live: padlock on every page, `/robots.txt` lists the sitemap, canonicals point at `nolimitroofingin.com`, only the 404 shows `noindex`.
-- [ ] Google Business Profile: set the website to the new domain after the switch; name/address/phone must match the site.
+Every page follows the same layout from the client's storm-damage mockup, with its own copy: hero with the lead form on the right, trust strip, a white "checklist + before/after slider + five-step process" section, a dark six-photo tile strip (Storm, Roof and Shingle pages; the home page keeps its four linked "Complete Roofing Solutions" cards), the insurance section, "Why choose" band, reviews, and a closing banner with the four service icons and the service-area line. Details are in "Landing pages and shared sections" below.
+
+### Photos
+
+All placeholder slots were filled on 2026-10-07. Slider pairs: `storm-damage-before/after.webp` (Storm page) and `roof-replacement-before/after.webp` (Home, Roof and Shingle pages share one pair). Tree and gutter tiles: `service-tree-damage.webp`, `service-gutter-damage.webp`. The tile strips on the Roof and Shingle pages use existing library photos. The photos look computer-generated; if they are not real jobs the client should be told (misleading-advertising risk), or they should be labelled as illustrations or replaced.
+
+### Ongoing checklist
+
+- [x] Domain connected, HTTPS issued, nameservers switched, `www` redirect, forms tested, notification email set (2026-10-07).
+- [x] Search Console Domain property, sitemap submitted, Google Business Profile website updated, client confirmed the claims on the pages.
+- [ ] Calendar: domain renewal at GoDaddy (Oct 13, 2027); glance at the Netlify certificate in early December and again before each expiry (they renew themselves, about every 60 days).
+- [ ] After launch, look at the **Spam** tab in Netlify → Forms after a week or two, in case real leads were filtered.
 - [ ] Optional/client: GA4 or Google Ads conversion tracking. No code is needed first; the form posts a `source` field and phone buttons are plain `tel:` links to hook onto.
-- [ ] Still open from before: Mishawaka street address in the home JSON-LD (public or city-level only?), and the "Ohio location" decision no longer applies (`/areas` is shelved).
+- [ ] Optional: structured data still lists a Plymouth location in the home JSON-LD; add opening hours if the client supplies them.
 
 The full-site checklist below applies only if the shelved pages are re-enabled.
 
@@ -42,7 +52,7 @@ The full-site checklist below applies only if the shelved pages are re-enabled.
 
 **Watch for changes made outside this project's normal workflow.** Session 30 had to review and partially revert a large external commit that reintroduced two nav items the client had explicitly declined. It happened again in Session 36 (a batch photo-generation script + new Areas page icons) — that one was reviewed and kept, with only a couple of missed `alt`/dimension attributes fixed. **When picking this project back up, always check `git log` for commits you don't recognize before assuming the tree matches what's documented here**, and review them the same way: confirm every change actually applied, check for anything the client previously declined, rebuild and re-run the SEO/broken-link checks before trusting it.
 
-**Deployed and live**: connected to Netlify — `https://no-limit-roofing.netlify.app` reflects `main` on every push and currently scores Desktop 100/100/100/100, Mobile ~97-98/100/100/100 (Lighthouse, see Testing below). **The real custom domain, `nolimitroofingin.com`, is NOT yet pointed at this Netlify site** — as of Session 38 it still resolves to the client's old WordPress/Divi site. Someone needs to add the custom domain in Netlify's dashboard and repoint the domain's DNS to it before this project is actually the live public site.
+**Deployed and live**: connected to Netlify — `https://no-limit-roofing.netlify.app` reflects `main` on every push and currently scores Desktop 100/100/100/100, Mobile ~97-98/100/100/100 (Lighthouse, see Testing below). **(Historical, Session 38: the real custom domain `nolimitroofingin.com` was not yet pointed at this Netlify site; it was connected on 2026-10-07, see "Current status".)** [Original text:] **the real custom domain, `nolimitroofingin.com`, was NOT yet pointed at this Netlify site** — as of Session 38 it still resolves to the client's old WordPress/Divi site. Someone needs to add the custom domain in Netlify's dashboard and repoint the domain's DNS to it before this project is actually the live public site.
 
 **Genuinely open items, most blocked on the client, not on more dev work**:
 - **The domain cutover above** — biggest remaining item. Netlify has the correct build; DNS/domain just isn't pointed at it yet.
@@ -89,13 +99,21 @@ The site itself is built and deployed to `https://no-limit-roofing.netlify.app`.
 - [ ] Ask every happy customer for a Google review and take 2–3 job photos with the town noted; monthly Business Profile post; one Learning Center article every month or two; quarterly review of pages with impressions but few clicks.
 - [ ] Keep the homepage's "Highly rated on Google" line honest — it deliberately shows no number. Testimonials on Home/About are verbatim quotes from the original site, not a live Google feed; a live reviews widget still needs API credentials tied to the Business Profile.
 
-## Ad landing pages (storm-damage, roof-replacement)
+## Landing pages and shared sections
 
-Two ad-traffic pages built from the `design_handoff_service_pages` handoff, sharing `src/components/landing/LandingPage.astro` (layout, styles, form) with copy passed in from `src/pages/storm-damage.astro` and `src/pages/roof-replacement.astro`. They use `BaseLayout`'s `landing` prop (sticky call bar, stripped footer) and are indexable and in the sitemap since Oct 2026 (the client chose to make all three launch pages indexable). The form is the same Netlify form as `/contact` (`name="contact"`, same `main.js` handler) plus a hidden `source` field (`storm-damage-lp` / `roof-estimate-lp`). Open items: the Roof page's three card photos are stand-ins from the existing library; hero copy is final, the rest is placeholder; no conversion tracking exists on the site yet.
+The four live content pages are built from shared components. Page files only pass copy and image paths in.
 
-## Launch scope: home + two landing pages (decided Oct 2026)
+- `src/components/landing/LandingPage.astro` — the page shell (`BaseLayout` with the `landing` prop gives the sticky call bar). Props: `seo`, `schema`, `source`, `ctaLabel`, `heroImage`, `eyebrow`, `h1Lines`, `subhead`, `body`, `primaryCta`, `callout`, `trust`, optional `cards` and `process` (the older three-card and four-step sections; omit them when a page fills the slot instead), `why`, `form`, and `bottomServices` (adds the service icons and area line to the closing banner). It has a named slot `after-trust` (rendered after the trust strip) and a default slot (rendered after the process section).
+- `src/components/LeadForm.astro` — the lead form card, shown in the **hero** of the home page and all landing pages (it was moved up from the bottom at the client's request; the closing banner keeps a button back to `#inspection`). One instance per page: its ids (`lead-form`, `lead-sent`, `name`, …) are used by `main.js`.
+- `src/components/landing/AfterSection.astro` — checklist + before/after slider (range input; pass `beforeImg`/`afterImg`, placeholders render when omitted) + numbered process. Used on all four pages.
+- `src/components/landing/TileStrip.astro` — dark band with six photo tiles (a tile with `img: null` renders a placeholder). Used on Storm, Roof and Shingle.
+- `src/components/InsuranceSection.astro` — "We Work With Your Insurance Company" band (stock inspector photo, four bullets, "Why homeowners choose" list). Deliberately has no warranty claim and no star rating.
+- `src/components/ServicesRow.astro`, `ServiceArea.astro` — the four service icons and the "Serving South Bend, Mishawaka, Elkhart…" line in the closing banner.
+- Hero layout: the `.hero-lead*` rules in `global.css` (text and callout on the left, form on the right on desktop; text, form, callout stacked on phones). The closing-banner grid rule is `.split.lp-cta-3` in `global.css`.
 
-The client launches with only `/`, `/storm-damage.html` and `/roof-replacement.html` (plus 404). The other pages' sources (about, areas, contact, services, `[group]`, commercial, learning-center, roofing, service-areas under `src/pages/`) are listed in `.gitignore` and untracked, so they stay on disk but are not in the repo or deployed. To bring one back: remove its line from `.gitignore`, `git add` it, and restore its nav/footer/homepage links. `src/content/` is still tracked. Nav, footer and homepage links were trimmed to the live pages.
+Page files: `src/pages/index.astro` (its own hero and sections, using `LeadForm`, `AfterSection`, `InsuranceSection`), `storm-damage.astro`, `roof-replacement.astro`, `asphalt-shingle-roofing.astro` (also keeps its own "What goes under the shingles" and FAQ sections in the default slot). To add a landing page: copy `roof-replacement.astro`, change the copy, `source`, schema and canonical, and add a link in `Footer.astro` and `Header.astro`.
+
+**Mobile checks that were done:** no sideways scroll at 320–430px, form fields at 16px (stops iOS zooming on focus), footer links and the call link about 44px tall. If you add form fields, keep them at 16px on phones.
 
 ## Tech stack
 
@@ -152,6 +170,13 @@ src/
     CertBadges.astro     Static, evenly-spaced manufacturer-badge row —
                         never wraps, shrinks together as the viewport
                         narrows (used on Home and About).
+    LeadForm.astro       The lead form card (hero of every live page).
+    InsuranceSection.astro, ServicesRow.astro, ServiceArea.astro
+                        Shared bands for the live pages — see "Landing pages
+                        and shared sections" above.
+    landing/            LandingPage.astro (page shell), AfterSection.astro,
+                        TileStrip.astro, LandingHeader/LandingFooter.astro
+                        (the last two are currently unused).
   styles/
     global.css          Tailwind source — design tokens (@theme) + component
                         classes (@layer components), e.g. .btn, .card, .hero.
@@ -259,12 +284,14 @@ To change a page's hero photo: swap that URL, add/update the matching `<link rel
 
 ## Contact form
 
-The form on `src/pages/contact.astro` posts to **Netlify Forms** — no backend code. Relevant bits:
+All four live pages use one component, `src/components/LeadForm.astro`, which posts to **Netlify Forms** (no backend code). Relevant bits:
 
-- `data-netlify="true"` + `name="contact"` on the `<form>` — Netlify's build-time scanner needs this to be present in the *built* static HTML, which it is (Astro renders it at build time, same as before).
-- `netlify-honeypot="company-website"` + a hidden `company-website` field — spam trap.
-- `public/js/main.js` progressively enhances the form: client-side validation, then an AJAX `fetch` POST with a normal-form fallback if JS fails.
-- Submissions land in the Netlify dashboard (Forms tab) once deployed. No email/webhook is wired up yet — set that up in Netlify's UI if you want notifications.
+- `name="contact"` + `data-netlify="true"` on the `<form>`, plus a hidden `form-name` field; Netlify's deploy-time scanner needs these in the built static HTML. **Netlify strips `data-netlify` and `netlify-honeypot` from the published HTML once form detection has processed the form**, so `main.js` also selects forms by the hidden `form-name` field. Do not rely on the `data-netlify` attribute in scripts.
+- **Form detection must be on** (Netlify → Forms → Form detection), and the site must be redeployed after turning it on, or no submissions are captured.
+- Spam: a honeypot field named `bot-field` (hidden off-screen, `tabindex="-1"`, `autocomplete="off"`, `aria-hidden`), plus Netlify's built-in spam filtering (filtered submissions go to the Spam tab, not to email). A name like "website" was avoided because browsers autofill it. No CAPTCHA by design (it costs real leads); add Netlify reCAPTCHA only if spam gets through.
+- `public/js/main.js` progressively enhances the form: client-side validation, an AJAX `fetch` POST (with a normal-form fallback if JS fails), a "Request received" panel that replaces the form, and a **"Send another request"** button on that panel that restores a blank form.
+- The hidden `source` field tags the page (`homepage`, `storm-damage-lp`, `roof-estimate-lp`, `shingles-lp`).
+- Notifications: Forms → Form submission notifications has one email notification for new submissions (the client's sales address, subject "New website lead: No Limit Roofing"). A test submission emails the client, so warn them first.
 
 ## Learning Center & CMS
 
@@ -316,6 +343,12 @@ For anything beyond a quick sanity check, `puppeteer-core` (installed with `npm 
 
 ## Known gotchas / lessons learned
 
+- **Netlify strips `data-netlify` from the published HTML after form detection, and form detection is off by default.** At launch the forms silently captured nothing until detection was enabled, and then the script's `form[data-netlify]` selector stopped matching. `main.js` now keys off the hidden `form-name` field, and detection is on (Netlify → Forms). A deploy is required after enabling detection before the form shows up as active.
+- **Check DNS before and after a nameserver change.** The old DNS lived in the previous agency's Cloudflare account (no access), so records had to be rebuilt from an export file before the nameservers were switched; email (MX) records were kept even though nobody uses them. `host -t NS nolimitroofingin.com 8.8.8.8` shows propagation; Netlify's HTTPS "DNS verification failed" message can lag the public resolvers by an hour or two.
+- **One component, many pages.** The hero form, insurance band, after-section and tile strip are shared. A change there changes every page, so check all four (and phone width) after touching `LeadForm`, `AfterSection`, `TileStrip` or `LandingPage`. Scoped `<style>` rules inside Astro components lost to `.split`'s Tailwind rule in one case; the closing-banner grid rule therefore lives in `global.css`.
+- **Photos can look finished but still need a human check.** The before/after and damage photos appear computer-generated; confirm with the client that they may be shown as real jobs.
+- **A Claude Code auto-mode permission check blocks entering DNS records and similar domain changes from the browser tool.** DNS records were entered by hand in Netlify; nameserver and form settings were changed through the dashboard with the user present.
+
 - **`.main-nav ul a` must stay scoped to `ul`.** A bare `.main-nav a` selector will also match any other link nested inside `.main-nav` (e.g. the phone link or the "Free Estimate" button), and its specificity can silently override that element's own color/display styles. This caused two real, hard-to-spot bugs this project (a nav CTA button rendering with dark text on an orange background, and a phone number failing to hide at the wrong breakpoint). If you add a new element inside `.main-nav` that isn't a plain nav-list link, double check it isn't accidentally styled by `.main-nav ul a`.
 - **Avoid scroll-triggered reveal/fade-in animations.** One was added and then removed — it caused a Lighthouse color-contrast failure (audit caught text mid-opacity-transition) and made page content dependent on IntersectionObserver timing/JS succeeding. If you want scroll animations back, make sure there's a hard fallback that guarantees content becomes visible even if JS fails or an observer never fires.
 - **`og:image` tags must point at files that actually exist.** All JPG fallbacks were deleted at one point (site is WebP-only) without updating the `og:image`/JSON-LD `image` meta tags, which broke social-share previews on every page for a while. Each page's `og:image` now points at that page's own hero `-hero.webp` file — keep them in sync if you change a hero photo.
@@ -339,6 +372,6 @@ Connected to Netlify — `main` auto-deploys to `https://no-limit-roofing.netlif
 
 No environment variables or secrets are required.
 
-**The custom domain `nolimitroofingin.com` is not yet connected** — it still resolves to the client's old WordPress site. To cut over: add the custom domain in Netlify's dashboard (Site settings → Domain management), then point the domain's DNS at what Netlify provides.
+**The custom domain `nolimitroofingin.com` is connected** (primary domain, `www` redirects to it) and DNS is hosted by Netlify DNS; see "Current status" above for the records, HTTPS and renewals. No secrets or environment variables are needed.
 
 **`/images/*`'s immutable cache-control has a real gotcha**: if you ever replace an image's *content* while keeping the same filename (as opposed to adding a new file), browsers that already cached the old one under that URL will keep serving it for up to a year — `immutable` tells them not to even revalidate. A normal refresh won't fix it; only a hard reload (Cmd+Shift+R) or clearing site data will. This bit us in Session 36 right after a logo swap. If a client reports "I don't see the update" right after a deploy, check this before assuming it's a build or deploy problem.
