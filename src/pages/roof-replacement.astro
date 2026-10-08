@@ -69,10 +69,14 @@ const schema = [
     },
   },
 ];
+
+// OpenAI Ads pixel (client's ad account), loaded on this page only. "debug" is left off for production.
+const openAiPixel = `<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"XFjEZpPAE79D9pLYVByrXr"});</script>`;
 ---
 
-<!-- TODO(client photos): the three card images below are stand-ins from the site's existing library. -->
+<!-- TODO(client photos): the tile images on this page are stand-ins from the site's existing library. -->
 <LandingPage
+  headHtml={openAiPixel}
   seo={{
     title: "Free Roof Replacement Estimate | No Limit Roofing",
     description: "Need a new roof? Get a free roof replacement estimate from No Limit Roofing. Professional installation, clean job sites. Call (574) 360-0525.",

@@ -2,6 +2,11 @@
 
 Not a formal semver changelog — this project has no version releases. It's a running log of major work sessions and *why* decisions were made, so future work (by me or anyone else) doesn't have to reconstruct context from scratch. Newest entries first.
 
+## Session 42 — OpenAI Ads pixel on the roof page (2026-10-08)
+
+- **Tracking pixel:** added the client's OpenAI Ads pixel to `/roof-replacement.html` only (new optional `headHtml` prop on `LandingPage.astro`; the snippet lives in `roof-replacement.astro`). The client's own snippet had `debug:true`; it was removed for production. Other pages are unchanged (verified in a clean build). The client first sent this as a "Google ads" code; it is an OpenAI pixel (loads `bzrcdn.openai.com/sdk/oaiq.min.js`, reports to `bzr.openai.com`), and the client confirmed that is what they want.
+- **Not done:** conversion events (the form success is not reported to the pixel), a privacy policy page, and a cookie notice. The agreement's scope excludes analytics and conversion tracking; the developer chose not to bill the pixel itself (a quick paste), but conversion events would be additional work.
+
 ## Session 41 — Launch day: layout from the new mockup, shingle page, nav, forms, DNS cutover (2026-10-07)
 
 - **Layout (from the client's storm-damage mockup):** the lead form moved from the bottom of every page into the hero (new `LeadForm.astro`; compact, two columns on desktop, 16px fields on phones); the closing banner keeps the heading and call link plus a button back to the form. New shared bands: `InsuranceSection` (all pages), `AfterSection` (checklist + before/after slider + five-step process; all pages) and `TileStrip` (six photo tiles; Storm, Roof, Shingle). The home page keeps its four linked "Complete Roofing Solutions" cards (arrow circles and links restored). The closing banner got the four service icons and the service-area line (`ServicesRow`, `ServiceArea`). `LandingPage.astro`: `cards`/`process` optional, new `after-trust` slot, `bottomServices` prop.

@@ -31,6 +31,8 @@ interface Props {
   cards?: { eyebrow: string; title: string; intro: string; items: Card[] };
   process?: { eyebrow: string; title: string; highlight: string; steps: Step[] };
   why: { body: string };
+  /** Raw HTML added to this page's <head> only (e.g. an ad-platform tracking snippet). */
+  headHtml?: string;
   /** Adds a services row and service-area line to the closing banner. */
   bottomServices?: boolean;
   form: { before: string; highlight: string; after: string; intro: string; notesPlaceholder: string; success: string };
@@ -64,6 +66,12 @@ const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L
   schema={p.schema}
   landing={{ ctaLabel: p.ctaLabel }}
 >
+  {p.headHtml && (
+    <Fragment slot="head">
+      <Fragment set:html={p.headHtml} />
+    </Fragment>
+  )}
+
   {p.callout.type === "script" && (
     <Fragment slot="head">
       <link rel="preload" href="/fonts/brush-script.woff2" as="font" type="font/woff2" crossorigin />
