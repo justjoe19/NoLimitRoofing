@@ -26,7 +26,9 @@ Every page follows the same layout from the client's storm-damage mockup, with i
 
 ### Photos
 
-All placeholder slots were filled on 2026-10-07. Slider pairs: `storm-damage-before/after.webp` (Storm page) and `roof-replacement-before/after.webp` (Home, Roof and Shingle pages share one pair). Tree and gutter tiles: `service-tree-damage.webp`, `service-gutter-damage.webp`. The tile strips on the Roof and Shingle pages use existing library photos. The photos look computer-generated; if they are not real jobs the client should be told (misleading-advertising risk), or they should be labelled as illustrations or replaced.
+The slider, tile and hero-callout images are stored pre-sized (`-640`, `-520`, `-560` in the filename) for speed; when replacing one, resize it to about 2x its displayed width and use a **new filename** (`/images/*` is cached immutably for a year).
+
+All placeholder slots were filled on 2026-10-07. Slider pairs: `storm-damage-before-640.webp` / `storm-damage-after-640.webp` (Storm page) and `roof-replacement-before-640.webp` / `roof-replacement-after-640.webp` (Home, Roof and Shingle pages share one pair). Tree and gutter tiles: `service-tree-damage-520.webp`, `service-gutter-damage-520.webp`. The tile strips on the Roof and Shingle pages use existing library photos. The photos look computer-generated; if they are not real jobs the client should be told (misleading-advertising risk), or they should be labelled as illustrations or replaced.
 
 ### Ongoing checklist
 
