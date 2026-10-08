@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# ChatGPT search crawler: explicitly allowed (recommended by OpenAI for inclusion in ChatGPT search)
+User-agent: OAI-SearchBot
+Allow: /
+
 Sitemap: https://nolimitroofingin.com/sitemap-index.xml

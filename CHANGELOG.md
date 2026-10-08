@@ -6,6 +6,7 @@ Not a formal semver changelog — this project has no version releases. It's a r
 
 - **Tracking pixel:** added the client's OpenAI Ads pixel to `/roof-replacement.html` only (new optional `headHtml` prop on `LandingPage.astro`; the snippet lives in `roof-replacement.astro`). The client's own snippet had `debug:true`; it was removed for production. Other pages are unchanged (verified in a clean build). The client first sent this as a "Google ads" code; it is an OpenAI pixel (loads `bzrcdn.openai.com/sdk/oaiq.min.js`, reports to `bzr.openai.com`), and the client confirmed that is what they want.
 - **Not done:** conversion events (the form success is not reported to the pixel), a privacy policy page, and a cookie notice. The agreement's scope excludes analytics and conversion tracking; the developer chose not to bill the pixel itself (a quick paste), but conversion events would be additional work.
+- **robots.txt:** added an explicit `OAI-SearchBot` / `Allow: /` entry (client asked to confirm ChatGPT search can crawl the site). Verified beforehand that the live site already returned 200 to OAI-SearchBot and GPTBot user agents, with no `X-Robots-Tag` or noindex.
 
 ## Session 41 — Launch day: layout from the new mockup, shingle page, nav, forms, DNS cutover (2026-10-07)
 
