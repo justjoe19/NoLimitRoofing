@@ -39,7 +39,7 @@ When a roof fails suddenly — a wind-torn section of shingles, a tree limb thro
 
 Emergency response usually means stabilizing the roof first — tarping exposed areas, securing loose material, addressing the immediate source of water intrusion — and then giving you a clear, honest explanation of what actually happened and what it will take to fix it properly. That might be a repair, or it might mean a larger conversation about replacement if the damage is extensive; either way, you get a free written estimate before any repair work beyond the emergency stabilization begins.
 
-No Limit Roofing has served St. Joseph, LaPorte and Marshall Counties in Indiana and Berrien and Cass Counties in Michigan. For anything urgent, the fastest way to reach us is by phone: (574) 360-0525.
+No Limit Roofing has served St. Joseph, LaPorte and Marshall Counties in Indiana and Berrien and Cass Counties in Michigan since 2010. For anything urgent, the fastest way to reach us is by phone: (574) 360-0525.
 
 ## What Counts As A Roofing Emergency
 
