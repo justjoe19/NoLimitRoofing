@@ -24,11 +24,11 @@ nearby:
   - "south-bend"
 guides:
   - label: "Can Wind Damage Shingles Without Blowing Off?"
-    href: "/learning-center/can-wind-damage-shingles-without-blowing-off.html"
+    href: "/guides/wind-damaged-shingles.html"
   - label: "Architectural vs. Impact-Resistant Shingles"
-    href: "/learning-center/architectural-vs-impact-resistant-shingles.html"
+    href: "/guides/shingle-comparison.html"
   - label: "What Does Ice & Water Shield Do?"
-    href: "/learning-center/what-does-ice-and-water-shield-do.html"
+    href: "/guides/roof-system-protection.html"
 faqs:
   - question: "Does No Limit Roofing serve St. Joseph, Michigan?"
     answer: "Yes. St. Joseph, MI is in Berrien County, part of our cross-border service area alongside Niles and Buchanan."
@@ -44,28 +44,28 @@ faqs:
 
 ## On The Lake
 
-St. Joseph, Michigan, is the county seat of Berrien County and sits right on the eastern shore of Lake Michigan. Its beaches and lakefront are a big part of its identity, and it neighbors Benton Harbor, its twin city. We've served Berrien County since 2010, and St. Joseph is part of that regular cross-border coverage.
+St. Joseph, Michigan, is the county seat of Berrien County and sits right on the eastern shore of Lake Michigan. Its beaches and lakefront are a big part of its identity, and it neighbors Benton Harbor, its twin city. Berrien County is part of our regular service area, and St. Joseph is part of that cross-border coverage.
 
 ## What Lakefront Weather Means For Roofs
 
 Communities directly on the lake tend to see more pronounced weather than those inland. For roofs, that adds up in several ways:
 
-- **Wind.** Open exposure to the lake means wind hits harder. It often shows up as creased, lifted or unsealed shingles instead of shingles that visibly blow away. Our guide on [wind damage without blown-off shingles](/learning-center/can-wind-damage-shingles-without-blowing-off.html) explains the signs, and our [wind damage](/storm-damage/wind-damage.html) page describes how we inspect.
-- **Lake-effect snow.** Heavy snow followed by freeze-thaw cycles raises the risk of ice dams. [Ice and water shield](/learning-center/what-does-ice-and-water-shield-do.html) installed at the eaves is a common protection.
-- **Summer storms.** Hail and thunderstorm winds can strike here too. See [hail damage](/storm-damage/hail-damage.html).
+- **Wind.** Open exposure to the lake means wind hits harder. It often shows up as creased, lifted or unsealed shingles instead of shingles that visibly blow away. Our guide on [wind damage without blown-off shingles](/guides/wind-damaged-shingles.html) explains the signs, and our [wind damage](/wind-damage.html) page describes how we inspect.
+- **Lake-effect snow.** Heavy snow followed by freeze-thaw cycles raises the risk of ice dams. [Ice and water shield](/guides/roof-system-protection.html) installed at the eaves is a common protection.
+- **Summer storms.** Hail and thunderstorm winds can strike here too. See [hail damage](/hail-damage.html).
 
 ## Choosing Materials For An Exposed Location
 
-If your roof is due for replacement, the shingle you choose is worth a little thought. Our [asphalt shingle roofing](/roofing/asphalt-shingle-roofing.html) page covers what we install, and our comparison of [architectural and impact-resistant shingles](/learning-center/architectural-vs-impact-resistant-shingles.html) explains the tradeoffs between cost and durability. Proper installation matters as much as the product, including fastening and flashing.
+If your roof is due for replacement, the shingle you choose is worth a little thought. Our [asphalt shingle roofing](/asphalt-shingle-roofing.html) page covers what we install, and our comparison of [architectural and impact-resistant shingles](/guides/shingle-comparison.html) explains the tradeoffs between cost and durability. Proper installation matters as much as the product, including fastening and flashing.
 
-When you're weighing a big project, [roof repair versus replacement](/learning-center/roof-repair-vs-replacement.html) is a helpful place to start, and [roof replacement](/roofing/roof-replacement.html) describes the process.
+When you're weighing a big project, [roof repair versus replacement](/guides/repair-vs-replacement.html) is a helpful place to start, and [roof replacement](/roof-replacement.html) describes the process.
 
 ## Inspections And Emergency Repairs
 
-For homes near the water, an annual or post-storm [roof inspection](/roofing/roof-inspections.html) is a reasonable habit. It can catch a lifted edge or worn flashing before it becomes a leak. If water is already coming in, [emergency roof repair](/roofing/emergency-roof-repair.html) is available, and you can call (574) 360-0525.
+For homes near the water, an annual or post-storm [roof inspection](/roof-inspections.html) is a reasonable habit. It can catch a lifted edge or worn flashing before it becomes a leak. If water is already coming in, [emergency roof repair](/emergency-roof-repair.html) is available, and you can call (574) 360-0525.
 
 If a storm caused the damage, we can document it with photos and provide a written estimate you can share with your insurer. The claim decision is theirs.
 
 ## What To Expect
 
-A free inspection, a written estimate before any work begins, and an owner-supervised, GAF factory-certified crew. Contact us to schedule a visit in St. Joseph.
+A free inspection, a written estimate before any work begins, and a CertainTeed factory-certified crew. Contact us to schedule a visit in St. Joseph.

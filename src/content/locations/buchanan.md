@@ -23,11 +23,11 @@ nearby:
   - "south-bend"
 guides:
   - label: "How Much Does A New Roof Cost In Michiana?"
-    href: "/learning-center/new-roof-cost-michiana.html"
+    href: "/guides/roof-replacement-cost.html"
   - label: "How Long Does Roof Replacement Take?"
-    href: "/learning-center/how-long-does-roof-replacement-take.html"
+    href: "/guides/roof-replacement-timeline.html"
   - label: "Asphalt Shingle Roofing"
-    href: "/roofing/asphalt-shingle-roofing.html"
+    href: "/asphalt-shingle-roofing.html"
 faqs:
   - question: "Does No Limit Roofing serve Buchanan, Michigan?"
     answer: "Yes. Buchanan is in Berrien County, part of our cross-border service area alongside Niles and St. Joseph, MI."
@@ -43,35 +43,35 @@ faqs:
 
 ## Serving Buchanan From Across The Line
 
-Buchanan sits on the St. Joseph River in Berrien County, Michigan, just north of the Indiana border. It's a smaller community than nearby Niles or South Bend, with quieter neighborhoods and rural country around it. No Limit Roofing has covered Berrien County since 2010, and Buchanan is part of that regular service area, not an afterthought.
+Buchanan sits on the St. Joseph River in Berrien County, Michigan, just north of the Indiana border. It's a smaller community than nearby Niles or South Bend, with quieter neighborhoods and rural country around it. Buchanan is part of our regular service area in Berrien County, not an afterthought.
 
 ## Planning A Roof Project
 
 Many Buchanan homeowners come to us with practical questions before they ever ask about products: how much it will cost, how long it will take, and whether the job can wait. Our guides answer these directly:
 
-- [What a new roof costs in Michiana](/learning-center/new-roof-cost-michiana.html)
-- [How long roof replacement takes](/learning-center/how-long-does-roof-replacement-take.html)
-- [How to tell if repair or replacement makes sense](/learning-center/roof-repair-vs-replacement.html)
+- [What a new roof costs in Michiana](/guides/roof-replacement-cost.html)
+- [How long roof replacement takes](/guides/roof-replacement-timeline.html)
+- [How to tell if repair or replacement makes sense](/guides/repair-vs-replacement.html)
 
-The most common material in this part of the country is asphalt shingle, and our page on [asphalt shingle roofing](/roofing/asphalt-shingle-roofing.html) explains the options, including upgrades that add durability.
+The most common material in this part of the country is asphalt shingle, and our page on [asphalt shingle roofing](/asphalt-shingle-roofing.html) explains the options, including upgrades that add durability.
 
 ## Common Problems We're Called For
 
 Roofs in Buchanan face the same conditions as the rest of southwest Michigan and northern Indiana: snow, freezing and thawing through winter, and thunderstorms in summer. The problems that follow are familiar:
 
 - Missing, curled or cracked shingles.
-- Leaks around chimneys, vents and valleys, which often call for a focused [roof repair](/roofing/roof-repair.html).
-- Storm damage, from [hail](/storm-damage/hail-damage.html) or [wind](/storm-damage/wind-damage.html).
-- Aging roofs that have reached the point where [replacement](/roofing/roof-replacement.html) is the more economical choice.
+- Leaks around chimneys, vents and valleys, which often call for a focused [roof repair](/roof-repair.html).
+- Storm damage, from [hail](/hail-damage.html) or [wind](/wind-damage.html).
+- Aging roofs that have reached the point where [replacement](/roof-replacement.html) is the more economical choice.
 
 Tree cover and rural surroundings can also mean debris on the roof and more moisture in shaded areas, which is worth checking during an inspection.
 
 ## An Honest Assessment
 
-In a small community, reputation counts. We keep the process simple: a free inspection, a written estimate before any work begins, and an owner-supervised, GAF factory-certified crew. If your roof can be repaired, we'll say so. If it needs replacing, we'll explain why and show you what we found.
+In a small community, reputation counts. We keep the process simple: a free inspection, a written estimate before any work begins, and a CertainTeed factory-certified crew. If your roof can be repaired, we'll say so. If it needs replacing, we'll explain why and show you what we found.
 
-Before you commit to anyone, including us, use our checklist of [questions to ask a roofing contractor](/learning-center/questions-to-ask-before-hiring-a-roofing-contractor.html).
+Before you commit to anyone, including us, use our checklist of [questions to ask a roofing contractor](/guides/compare-roofing-estimates.html).
 
 ## Ready To Talk?
 
-Call (574) 360-0525 or use our contact page to set up a free inspection in Buchanan. For a roof that's leaking now, ask about [emergency roof repair](/roofing/emergency-roof-repair.html).
+Call (574) 360-0525 or use our contact page to set up a free inspection in Buchanan. For a roof that's leaking now, ask about [emergency roof repair](/emergency-roof-repair.html).

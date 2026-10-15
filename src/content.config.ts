@@ -43,6 +43,16 @@ const locations = defineCollection({
     servicesOffered: z.array(z.string()).default([]),
     faqs: z.array(faqSchema).default([]),
     nearby: z.array(z.string()).default([]),
+    /** Real, client-approved jobs in or near this city (local proof). The "Recent work" section only shows when this is filled in. */
+    projects: z
+      .array(z.object({
+        title: z.string(),
+        summary: z.string(),
+        year: z.string().optional(),
+        material: z.string().optional(),
+        photos: z.array(z.object({ src: z.string(), alt: z.string() })).default([]),
+      }))
+      .default([]),
     guides: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
   }),
 });

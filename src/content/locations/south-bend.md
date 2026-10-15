@@ -4,11 +4,11 @@ state: "IN"
 county: "St. Joseph County, IN"
 slug: "south-bend"
 metaTitle: "Roofing Contractor South Bend, IN | No Limit Roofing"
-metaDescription: "Roof repair, replacement, storm damage and commercial roofing in South Bend, Indiana. Locally owned, GAF-certified, serving South Bend since 2010."
+metaDescription: "Roof repair, replacement, storm damage and commercial roofing in South Bend, Indiana. Locally owned, CertainTeed factory-certified, serving South Bend and St. Joseph County."
 heroImage: "/images/st-joseph-county-hero.webp"
 heroEyebrow: "South Bend, Indiana"
 heroHeadline: "Roofing Contractor In South Bend, IN"
-heroLede: "No Limit Roofing has served South Bend homeowners and businesses since 2010, from our regional office just across the county in Mishawaka."
+heroLede: "No Limit Roofing serves South Bend homeowners and businesses from our office just across the county in Mishawaka."
 localContext: "South Bend is the seat of St. Joseph County and the largest city in Michiana, sitting in the lake-effect snowbelt of Lake Michigan. With both older housing and a wide range of commercial and institutional buildings, it's a city where no two roofs have quite the same needs."
 servicesOffered:
   - "Residential roof repair and replacement"
@@ -24,14 +24,14 @@ nearby:
   - "edwardsburg"
 guides:
   - label: "How Long Does A Roof Last In Northern Indiana?"
-    href: "/learning-center/how-long-does-a-roof-last-in-northern-indiana.html"
+    href: "/guides/roof-lifespan.html"
   - label: "Architectural vs. Impact-Resistant Shingles"
-    href: "/learning-center/architectural-vs-impact-resistant-shingles.html"
+    href: "/guides/shingle-comparison.html"
   - label: "Commercial Roof Coatings"
-    href: "/commercial/roof-coatings.html"
+    href: "/roof-coatings.html"
 faqs:
   - question: "Do you serve all of South Bend?"
-    answer: "Yes. South Bend is in St. Joseph County, part of our core service area, and it's a short drive from our Mishawaka regional office."
+    answer: "Yes. South Bend is in St. Joseph County, part of our core service area, and it's a short drive from our Mishawaka office."
   - question: "My South Bend house is decades old. How do I know if the roof needs replacing?"
     answer: "Age is one clue, but condition matters more. During a free inspection we look for curling or missing shingles, granule loss, failing flashing and soft decking, and then tell you whether a repair will do or a replacement makes sense."
   - question: "Do you work on large commercial and institutional buildings in South Bend?"
@@ -39,7 +39,7 @@ faqs:
   - question: "Is a replacement worth it if my South Bend roof is only leaking in one spot?"
     answer: "Not always. A single leak can come from a failed flashing or a small area of damage, and a targeted repair may solve it. If the rest of the roof is near the end of its life, we'll say so and let you decide."
   - question: "Are you licensed and insured to work in South Bend?"
-    answer: "Yes. No Limit Roofing is licensed, bonded and insured, and is a GAF factory-certified contractor."
+    answer: "Yes. No Limit Roofing is licensed, bonded and insured, and is a CertainTeed factory-certified contractor."
 ---
 
 ## A City With A Lot Of Different Roofs
@@ -52,22 +52,22 @@ For a roofing contractor, that variety is the point. A steep shingle roof on an 
 
 South Bend sits in the snowbelt influence of Lake Michigan. In practical terms that means:
 
-- **Heavy, wet snow and repeated freeze-thaw cycles.** Water works into small gaps, freezes, and widens them. Eaves and valleys are the usual trouble spots, and proper underlayment helps a lot. See what [ice and water shield](/learning-center/what-does-ice-and-water-shield-do.html) does.
-- **Summer thunderstorms.** Hail and high winds can loosen shingles or bruise them without any obvious sign from the ground. We cover both [hail damage](/storm-damage/hail-damage.html) and [wind damage](/storm-damage/wind-damage.html) inspections.
-- **A long service life question.** Homeowners often ask how long a roof should last here. Our guide on [how long a roof lasts in Northern Indiana](/learning-center/how-long-does-a-roof-last-in-northern-indiana.html) walks through the factors.
+- **Heavy, wet snow and repeated freeze-thaw cycles.** Water works into small gaps, freezes, and widens them. Eaves and valleys are the usual trouble spots, and proper underlayment helps a lot. See what [ice and water shield](/guides/roof-system-protection.html) does.
+- **Summer thunderstorms.** Hail and high winds can loosen shingles or bruise them without any obvious sign from the ground. We cover both [hail damage](/hail-damage.html) and [wind damage](/wind-damage.html) inspections.
+- **A long service life question.** Homeowners often ask how long a roof should last here. Our guide on [how long a roof lasts in Northern Indiana](/guides/roof-lifespan.html) walks through the factors.
 
 ## Residential Work In South Bend
 
-Older South Bend homes can hide surprises under the shingles, such as worn decking or multiple layers of roofing from earlier jobs. We tell you what we find, show you photos, and put any extra work in writing before doing it. For homes at the end of their roof's life, [roof replacement](/roofing/roof-replacement.html) is usually the honest answer, and if there's only a localized problem, [roof repair](/roofing/roof-repair.html) may be all you need.
+Older South Bend homes can hide surprises under the shingles, such as worn decking or multiple layers of roofing from earlier jobs. We tell you what we find, show you photos, and put any extra work in writing before doing it. For homes at the end of their roof's life, [roof replacement](/roof-replacement.html) is usually the honest answer, and if there's only a localized problem, [roof repair](/roof-repair.html) may be all you need.
 
-If you're choosing a shingle, our comparison of [architectural and impact-resistant shingles](/learning-center/architectural-vs-impact-resistant-shingles.html) is a good place to begin, along with our page on [asphalt shingle roofing](/roofing/asphalt-shingle-roofing.html).
+If you're choosing a shingle, our comparison of [architectural and impact-resistant shingles](/guides/shingle-comparison.html) is a good place to begin, along with our page on [asphalt shingle roofing](/asphalt-shingle-roofing.html).
 
 ## Commercial And Low-Slope Roofs
 
-Many of South Bend's commercial roofs are flat or low-slope. Depending on the building and budget, the options include [TPO](/commercial/tpo.html), [EPDM](/commercial/epdm.html), and [roof coatings](/commercial/roof-coatings.html) that can extend the life of a roof that is still fundamentally sound. Our guide on [coating versus replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) explains how that decision usually gets made. We also handle [commercial repair](/commercial/repair.html) and [scheduled maintenance](/commercial/maintenance.html).
+Many of South Bend's commercial roofs are flat or low-slope. Depending on the building and budget, the options include [TPO](/tpo-roofing.html), [EPDM](/epdm-roofing.html), and [roof coatings](/roof-coatings.html) that can extend the life of a roof that is still fundamentally sound. Our guide on [coating versus replacement](/guides/coating-vs-replacement.html) explains how that decision usually gets made. We also handle [commercial repair](/commercial-roof-repair.html) and [scheduled maintenance](/commercial-roof-maintenance.html).
 
 ## What Working With Us Looks Like
 
-Every job begins with a free inspection and a written estimate, and the work is done by an owner-supervised, GAF factory-certified crew. If the damage came from a storm, we can document it with photos and give you a written estimate you can share with your insurance company. You can also book an [inspection](/roofing/roof-inspections.html) before a problem develops.
+Every job begins with a free inspection and a written estimate, and the work is done by a CertainTeed factory-certified crew. If the damage came from a storm, we can document it with photos and give you a written estimate you can share with your insurance company. You can also book an [inspection](/roof-inspections.html) before a problem develops.
 
 Call (574) 360-0525 or send a request through our contact page to get started.

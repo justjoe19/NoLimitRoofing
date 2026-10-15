@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CertBadges from "../components/CertBadges.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCta from "../components/PageCta.astro";
+import SectionHead from "../components/SectionHead.astro";
+
+const heroImage = "/images/aerial-completed-roof-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "About", item: "https://nolimitroofingin.com/about.html" },
+    ],
+  },
+];
+
+const values = [
+  { t: "Craftsmanship", b: "Factory-certified installation methods on every roof, every time — no cut corners.", path: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M9 15l2 2 4-4" },
+  { t: "Integrity", b: "Honest, written estimates and no-pressure recommendations — we tell you what your roof actually needs.", path: "M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z" },
+  { t: "Communication", b: "You'll always know your timeline, your options and your costs — before work begins.", path: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
+  { t: "Safety", b: "Fully licensed, bonded and insured crews who follow strict jobsite safety practices.", path: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
+];
+
+const reviews = [
+  { q: "They were prompt, accurate, and professional. I will definitely recommend them for your roofing needs.", by: "K. Hall, South Bend, IN" },
+  { q: "Jon gave us stellar customer service and I didn't have to worry!! Highly recommend!!", by: "L. Bauer, South Bend, IN" },
+  { q: "I am very happy with the work that was done and will definitely be recommending him to my friends and family!", by: "S. Wilcox, South Bend, IN" },
+  { q: "Jonathan was very professional and his team moved very quickly to get my new roof completed. Thank you!", by: "S. Rosado, Michiana" },
+  { q: "They worked real hard and got the job done. We love the look of the roof and received several compliments from the neighbors.", by: "D. Beery, South Bend, IN" },
+  { q: "They were quick to respond. Repairs were done with thoughtfulness to avoid future similar problems!", by: "S. Zellers, Greater South Bend" },
+];
+const starPath = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z";
+---
+
+<BaseLayout
+  title="About No Limit Roofing | Locally Owned Since 2010"
+  description="Meet No Limit Roofing — a locally owned, licensed, bonded and insured roofing contractor led by owner Jonathan Smith, serving Michiana since 2010."
+  canonical="https://nolimitroofingin.com/about.html"
+  ogImage="https://nolimitroofingin.com/images/aerial-completed-roof-hero.webp"
+  ogTitle="About No Limit Roofing | Locally Owned Since 2010"
+  ogDescription="Locally owned, licensed, bonded and insured roofing contractor serving Michiana since 2010."
+  preloadImage={heroImage}
+  schema={schema}
+>
+
+  <PageHero
+    image={heroImage}
+    eyebrow="About Us"
+    title="Built On Craftsmanship, Not Shortcuts"
+    lede="No Limit Roofing is a locally owned and operated, fully licensed, bonded and insured roofing contractor serving the Michiana region since 2010."
+    crumbs={[{ label: "About" }]}
+  />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-[#12161b]">Our Story</span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#12161b] mt-1">25+ Years Of Experience, One Name You Can Trust</h2>
+        <div class="w-14 h-1 bg-accent mt-2.5"></div>
+        <p class="mt-5 text-[#4a5568] leading-relaxed">Founded in 2010, No Limit Roofing was built on a simple idea: give homeowners and business owners a roofing contractor who shows up, does the job right, and stands behind the work. Owner Jonathan Smith brings more than 25 years of roofing experience to every project and personally supervises each crew — from the first inspection to the final walkthrough.</p>
+        <p class="mt-4 text-[#4a5568] leading-relaxed">Today, No Limit Roofing is based in Mishawaka, Indiana, and works across the greater South Bend–Elkhart region and into Southwest Michigan, handling residential and commercial roofing.</p>
+        <div class="chip-row mt-6">
+          <span class="chip">Licensed</span>
+          <span class="chip">Bonded</span>
+          <span class="chip">Insured</span>
+          <span class="chip">CertainTeed Factory-Certified</span>
+          <span class="chip">Established 2010</span>
+        </div>
+      </div>
+      <div class="media-frame"><img src="/images/completed-roofing-project.webp" alt="Completed No Limit Roofing residential project" width="1200" height="675" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <section class="section section--ink" aria-labelledby="values-heading">
+    <div class="container">
+      <SectionHead dark eyebrow="Our Values" title="What You Can Expect From Our Crew" id="values-heading" />
+      <div class="grid grid-4" style="gap:.875rem">
+        {values.map((v) => (
+          <div class="tile-dark">
+            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={v.path} /></svg></div>
+            <h3>{v.t}</h3>
+            <p>{v.b}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="certs-heading">
+    <div class="container">
+      <SectionHead center eyebrow="Certification" title="CertainTeed Factory-Certified" id="certs-heading" intro="Our CertainTeed certification means installation methods verified by the manufacturer." />
+      <CertBadges />
+    </div>
+  </section>
+
+  <section class="section section--fog" id="reviews" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="section-head center">
+        <h2 id="reviews-heading" class="font-black uppercase tracking-tight">WHAT OUR CUSTOMERS SAY</h2>
+        <div class="stars stars-lg justify-center mt-3 text-accent" aria-hidden="true">
+          {Array.from({ length: 5 }).map(() => <svg viewBox="0 0 24 24" fill="currentColor"><path d={starPath} /></svg>)}
+        </div>
+      </div>
+      <div class="testimonial-carousel" id="testimonial-carousel">
+        <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="testimonial-slides">
+          {reviews.map((r, i) => (
+            <blockquote class:list={["testimonial-slide", { "is-active": i === 0 }]}>
+              <p>&ldquo;{r.q}&rdquo;</p>
+              <footer>&mdash; {r.by.toUpperCase()}</footer>
+            </blockquote>
+          ))}
+        </div>
+        <button type="button" class="carousel-arrow carousel-next" aria-label="Next review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <PageCta before="Let's talk about" highlight="your roof" after="today." intro="Free, no-pressure estimates from an owner-supervised crew." />
+
+</BaseLayout>

@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHead from "../components/SectionHead.astro";
+import LeadForm from "../components/LeadForm.astro";
+
+const heroImage = "/images/contact-hero.webp";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://nolimitroofingin.com/contact.html" },
+    ],
+  },
+];
+
+// Services offered; the office confirms this list before the page goes live.
+const services = [
+  "Free roof inspection",
+  "Roof replacement",
+  "Roof repair",
+  "Emergency roof repair",
+  "Storm, hail or wind damage",
+  "Commercial roofing",
+  "Not sure yet",
+];
+---
+
+<BaseLayout
+  title="Contact Us | Free Roofing Estimate | No Limit Roofing"
+  description="Request a free roof inspection or estimate from No Limit Roofing. Call (574) 360-0525 or send your project details and we'll get back to you quickly."
+  canonical="https://nolimitroofingin.com/contact.html"
+  ogImage="https://nolimitroofingin.com/images/contact-hero.webp"
+  ogTitle="Contact Us | No Limit Roofing"
+  ogDescription="Request a free roof inspection or estimate. Call (574) 360-0525 or send your project details online."
+  preloadImage={heroImage}
+  schema={schema}
+>
+  <PageHero
+    image={heroImage}
+    eyebrow="Get In Touch"
+    title="Request Your Free Roof Inspection"
+    lede="Call us directly or send your project details below. We'll follow up quickly with next steps."
+    crumbs={[{ label: "Contact" }]}
+    ctas={[{ label: "Call Now", href: "tel:+15743600525", variant: "outline" }]}
+    trust={false}
+  />
+
+  <section class="section">
+    <div class="container split" style="align-items:start">
+      <div id="inspection" class="scroll-mt-24">
+        <LeadForm
+          source="contact-page"
+          ctaLabel="Send My Request"
+          before="Tell us about"
+          highlight="your project"
+          after=""
+          intro="No cost, no obligation. Tell us what's going on and we'll follow up with next steps."
+          notesPlaceholder="Tell us about your roof, the issue you're seeing, and your timeline (optional)"
+          success="Thank you! We'll reach out within <strong>24 hours</strong> about your request."
+          services={services}
+        />
+      </div>
+
+      <div class="contact-panel">
+        <h2 style="color:#fff" class="text-xl sm:text-2xl font-black uppercase tracking-tight">Contact Details</h2>
+        <div class="w-14 h-1 bg-accent -mt-3"></div>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><h3>Call or Text</h3><a href="tel:+15743600525">(574) 360-0525</a></div>
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 17.4 12 22l-8.9-4.6A2 2 0 0 1 2 15.6V8.4a2 2 0 0 1 1.1-1.8L12 2l8.9 4.6A2 2 0 0 1 22 8.4v7.2a2 2 0 0 1-1.1 1.8Z"/></svg>
+          <div><h3>Office</h3><address style="font-style:normal"><p>1911 Clover Rd, Suite 10<br />Mishawaka, IN 46545</p></address></div>
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div><h3>Emergency Repairs</h3><p>Call anytime for storm damage or active leaks.</p></div>
+        </div>
+        <hr />
+        <div>
+          <h3 style="color:#fff">Follow Us</h3>
+          <div class="social-row mt-2">
+            <a href="https://www.facebook.com/NoLimitRoofingIN" aria-label="No Limit Roofing on Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8.5H16l.5-3.5h-3V7.7c0-1 .3-1.7 1.7-1.7H16.6V2.8C16.3 2.8 15.3 2.7 14.2 2.7c-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3.5H10V22h3.5z"/></svg></a>
+            <a href="https://www.linkedin.com/company/no-limit-roofing-indiana" aria-label="No Limit Roofing on LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3.25a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92zM20.44 20h-3.37v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96V20H9.68V8.5h3.24v1.57h.05c.45-.85 1.55-1.75 3.19-1.75 3.42 0 4.05 2.25 4.05 5.17V20z"/></svg></a>
+            <a href="https://www.youtube.com/playlist?list=PLDUZrNECz2Z4Ksgya690qh1jjwAwEqeDd" aria-label="No Limit Roofing on YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C17.9 5 12 5 12 5s-5.9 0-7.6.3a2.9 2.9 0 0 0-2 2C2 8.8 2 12 2 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2C6.1 19 12 19 12 19s5.9 0 7.6-.3a2.9 2.9 0 0 0 2-2C22 15.2 22 12 22 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog">
+    <div class="container">
+      <SectionHead center eyebrow="Service Area" title="Serving The Greater Michiana Region" />
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=1911+Clover+Rd+Suite+10,+Mishawaka,+IN+46545&output=embed" title="Map of the No Limit Roofing office in Mishawaka" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

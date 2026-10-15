@@ -4,19 +4,7 @@ dist/
 .astro/
 source_assets/
 
-# Pages the client isn't launching with (only home + the two ad landing pages
-# are live). Sources stay on disk, untracked, so they can be re-added later.
-src/pages/about.astro
-src/pages/areas.astro
-src/pages/contact.astro
-src/pages/privacy-policy.astro
-src/pages/services.astro
-src/pages/\[group\]/
-src/pages/commercial/
-src/pages/learning-center/
-src/pages/roofing/
-src/pages/service-areas/
-# Decap CMS edits the Learning Center, which isn't live, so it isn't deployed either.
+# Decap CMS is not used (dropped); keep its config out of the deploy.
 public/admin/
 shelved_pages/
 .city-facts-to-verify.txt

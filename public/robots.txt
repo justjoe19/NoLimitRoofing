@@ -5,4 +5,11 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Other AI search crawlers: explicitly allowed (search discovery, separate from model-training bots)
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 Sitemap: https://nolimitroofingin.com/sitemap-index.xml

@@ -1,0 +1,76 @@
+---
+/**
+ * Service areas (a free listing page, not one of the 65): every published city page, by state, with a map.
+ * Keeps the Areas menu short. Cities that are not published yet are left out.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCta from "../components/PageCta.astro";
+import SectionHead from "../components/SectionHead.astro";
+import { isLive, pages } from "../data/site-pages.mjs";
+
+const heroImage = "/images/drone-aerial-finished-roof-pool-hero.webp";
+const cities = pages.filter((p) => p.kind === "city" && isLive(p));
+const states = [
+  { title: "Indiana", suffix: ", IN" },
+  { title: "Michigan", suffix: ", MI" },
+]
+  .map((s) => ({
+    title: s.title,
+    cities: cities
+      .filter((c) => c.title.endsWith(s.suffix))
+      .map((c) => ({ href: c.path, label: c.title.slice(0, -s.suffix.length) }))
+      .sort((a, b) => a.label.localeCompare(b.label)),
+  }))
+  .filter((s) => s.cities.length > 0);
+
+const canonical = "https://nolimitroofingin.com/service-areas.html";
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Service Areas", item: canonical },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Roofing Service Areas | Northern Indiana and Southwest Michigan | No Limit Roofing"
+  description="No Limit Roofing serves South Bend, Mishawaka, Elkhart and communities across Northern Indiana and Southwest Michigan. Find your town."
+  canonical={canonical}
+  ogImage="https://nolimitroofingin.com/images/drone-aerial-finished-roof-pool.webp"
+  preloadImage={heroImage}
+  schema={schema}
+>
+  <PageHero
+    image={heroImage}
+    eyebrow="Where We Work"
+    title="Serving Northern Indiana And Southwest Michigan"
+    lede="Based in Mishawaka, Indiana. Find your town below for the roofing services we offer there."
+    crumbs={[{ label: "Service Areas" }]}
+  />
+
+  <section class="section" aria-labelledby="areas-heading">
+    <div class="container split">
+      <div>
+        <SectionHead eyebrow="Find your town" title="Roofing By Location" id="areas-heading" intro="Each town page lists the services available there. Don't see yours? Call us and we'll tell you if we can help." />
+        {states.map((s) => (
+          <div class="mt-6">
+            <h3 class="font-black uppercase tracking-wide text-[#12161b]">{s.title}</h3>
+            <div class="chip-row mt-3">
+              {s.cities.map((c) => <a class="chip" href={c.href}>{c.label}</a>)}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Mishawaka,+IN&output=embed" title="Map of the No Limit Roofing service area around Mishawaka" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <PageCta before="Don't see your" highlight="town listed?" intro="Give us a call. We may still be able to help." />
+</BaseLayout>

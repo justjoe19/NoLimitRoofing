@@ -16,13 +16,13 @@ faqs:
 draft: false
 relatedLinks:
   - label: "Wind Damage Repair"
-    href: "/storm-damage/wind-damage.html"
+    href: "/wind-damage.html"
   - label: "Roof Repair"
-    href: "/roofing/roof-repair.html"
+    href: "/roof-repair.html"
   - label: "Free Roof Inspection"
-    href: "/roofing/roof-inspections.html"
+    href: "/roof-inspections.html"
   - label: "What Does Hail Damage Look Like?"
-    href: "/learning-center/what-does-hail-damage-look-like.html"
+    href: "/guides/hail-damage-signs.html"
 ---
 
 Yes — and it's genuinely one of the more commonly missed forms of roof damage, because the assumption that "no missing shingles means no damage" is wrong. Wind can compromise a roof's protection without removing a single shingle.
@@ -41,16 +41,16 @@ A shingle with a broken seal or a crease no longer sheds water the way it's desi
 
 ## Signs of wind damage on a roof
 
-Across Northern Indiana and Southwest Michigan, creased or lifted shingles, disturbed flashing, and loosened vents or pipe boots are the signs — and all of them are far easier to spot from on the roof than from the ground or a ladder at the eave. If you know your area had a high-[wind event](/storm-damage/wind-damage.html) (thunderstorms, straight-line winds, anything with sustained gusts), it's worth a [free inspection](/roofing/roof-inspections.html) even if nothing looks wrong from the driveway.
+Across Northern Indiana and Southwest Michigan, creased or lifted shingles, disturbed flashing, and loosened vents or pipe boots are the signs — and all of them are far easier to spot from on the roof than from the ground or a ladder at the eave. If you know your area had a high-[wind event](/wind-damage.html) (thunderstorms, straight-line winds, anything with sustained gusts), it's worth a [free inspection](/roof-inspections.html) even if nothing looks wrong from the driveway.
 
 ## Why wind and hail often show up together
 
-Michiana's storm season regularly brings wind and hail in the same weather system, and a roof can end up with both kinds of damage from a single event — lifted or creased shingles from wind, granule loss or bruising from hail. That combination is part of why a full inspection after a significant storm makes more sense than checking for just one type of damage. See our related article on [what hail damage actually looks like](/learning-center/what-does-hail-damage-look-like.html) for the visual signs of the other half of that picture.
+Michiana's storm season regularly brings wind and hail in the same weather system, and a roof can end up with both kinds of damage from a single event — lifted or creased shingles from wind, granule loss or bruising from hail. That combination is part of why a full inspection after a significant storm makes more sense than checking for just one type of damage. See our related article on [what hail damage actually looks like](/guides/hail-damage-signs.html) for the visual signs of the other half of that picture.
 
 ## How roof age affects wind damage risk
 
-[Older shingles](/learning-center/how-long-does-a-roof-last-in-northern-indiana.html) with weakened or degraded sealant strips are more prone to wind lift than newer ones, even at wind speeds that wouldn't affect a recently installed roof. This is one more reason a roof nearing the end of its expected service life is worth a closer look after any significant wind event, even if a newer roof on the same street shows no signs of trouble.
+[Older shingles](/guides/roof-lifespan.html) with weakened or degraded sealant strips are more prone to wind lift than newer ones, even at wind speeds that wouldn't affect a recently installed roof. This is one more reason a roof nearing the end of its expected service life is worth a closer look after any significant wind event, even if a newer roof on the same street shows no signs of trouble.
 
 ## Wind damage repair: what to expect
 
-In most cases, a [targeted repair](/roofing/roof-repair.html) of the affected shingles is enough — wind damage doesn't automatically mean replacement. We'll inspect, document what we find with photos, and explain it honestly before recommending anything. Call (574) 360-0525 or request a free inspection if your area has had recent storms.
+In most cases, a [targeted repair](/roof-repair.html) of the affected shingles is enough — wind damage doesn't automatically mean replacement. We'll inspect, document what we find with photos, and explain it honestly before recommending anything. Call (574) 360-0525 or request a free inspection if your area has had recent storms.

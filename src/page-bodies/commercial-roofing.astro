@@ -1,0 +1,63 @@
+---
+/**
+ * Commercial roofing hub (page 11 of the 65-page plan): links to the commercial service pages.
+ * Cards for pages that are not published yet are left out.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCta from "../components/PageCta.astro";
+import PageCard from "../components/PageCard.astro";
+import SectionHead from "../components/SectionHead.astro";
+import { findEntry, isPublishedPath, contactHref } from "../data/site-pages.mjs";
+
+const heroImage = "/images/commercial-roofing-project-hero.webp";
+const services = (await getCollection("services")).filter((s) => s.data.group === "commercial");
+const cards = services
+  .map((s) => ({ page: findEntry("service", s.id), s }))
+  .filter(({ page }) => page && isPublishedPath(page.path))
+  .map(({ page, s }) => ({ path: page!.path, img: s.data.heroImage.replace("-hero.webp", ".webp"), title: s.data.title, body: s.data.heroLede }));
+
+const canonical = "https://nolimitroofingin.com/commercial-roofing.html";
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Commercial Roofing", item: canonical },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Commercial Roofing in Michiana | No Limit Roofing"
+  description="Commercial roof inspections, repair, replacement, TPO, EPDM, coatings and maintenance across Northern Indiana and Southwest Michigan."
+  canonical={canonical}
+  ogImage="https://nolimitroofingin.com/images/commercial-roofing-project.webp"
+  preloadImage={heroImage}
+  schema={schema}
+>
+  <PageHero
+    image={heroImage}
+    eyebrow="No Limit Commercial"
+    title="Protect The Building. Protect The Business Underneath It."
+    lede="Commercial roof inspections, repair, replacement, TPO, EPDM, roof coatings and scheduled maintenance across Northern Indiana and Southwest Michigan."
+    crumbs={[{ label: "Commercial Roofing" }]}
+    ctas={[{ label: "Request a Commercial Roof Assessment", href: contactHref(), variant: "primary" }, { label: "Call Now", href: "tel:+15743600525", variant: "outline" }]}
+  />
+
+  <section class="section" aria-labelledby="commercial-services-heading">
+    <div class="container">
+      <SectionHead eyebrow="Our services" title="Commercial Roofing Services" id="commercial-services-heading" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        {cards.map((c) => (
+          <PageCard img={c.img} alt={c.title} title={c.title} body={c.body} href={c.path} width={843} height={317} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <PageCta before="Ready for a commercial" highlight="roof assessment?" intro="Free inspection and written estimate, planned around your business, not the other way around." buttonLabel="Request an Assessment" />
+</BaseLayout>

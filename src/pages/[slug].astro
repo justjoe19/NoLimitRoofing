@@ -1,0 +1,37 @@
+---
+/**
+ * Flat routes for the service pages and city pages (e.g. /roof-repair.html, /roofing-south-bend-in.html).
+ * Which pages exist, and their URLs, come from src/data/site-pages.mjs. Unpublished pages
+ * (live: false) are only built in dev, so they can be previewed but never reach the production site.
+ */
+import { getCollection } from "astro:content";
+import ServicePage from "../components/pages/ServicePage.astro";
+import CityPage from "../components/pages/CityPage.astro";
+import { pages, findEntry, isLive } from "../data/site-pages.mjs";
+
+
+export async function getStaticPaths() {
+  // Hand-written pages (About, Contact, ...) live in src/page-bodies so they obey the same live/draft switch.
+  const bodies = import.meta.glob("../page-bodies/*.astro", { eager: true }) as Record<string, { default: any }>;
+  const show = (p: any) => isLive(p) || import.meta.env.DEV;
+  const slugOf = (path: string) => path.replace(/^\//, "").replace(/\.html$/, "");
+  const out: any[] = [];
+  for (const entry of await getCollection("services")) {
+    const page = findEntry("service", entry.id);
+    if (page && show(page)) out.push({ params: { slug: slugOf(page.path) }, props: { kind: "service", entry, path: page.path } });
+  }
+  for (const entry of await getCollection("locations")) {
+    const page = findEntry("city", entry.id);
+    if (page && show(page)) out.push({ params: { slug: slugOf(page.path) }, props: { kind: "city", entry, path: page.path } });
+  }
+  for (const page of pages) {
+    const body = bodies[`../page-bodies/${page.path.replace(/^\//, "").replace(/\.html$/, "")}.astro`];
+    if (page.kind === "page" && body && show(page)) out.push({ params: { slug: page.path.replace(/^\//, "").replace(/\.html$/, "") }, props: { kind: "page", Body: body.default, path: page.path } });
+  }
+  return out;
+}
+
+const { kind, entry, path, Body } = Astro.props;
+---
+
+{kind === "page" ? <Body /> : kind === "service" ? <ServicePage entry={entry} path={path} /> : <CityPage entry={entry} path={path} />}

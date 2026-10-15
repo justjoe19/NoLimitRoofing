@@ -1,0 +1,40 @@
+---
+/**
+ * Photo card in the home page's style (dark card, square photo, uppercase title, orange arrow).
+ * Used for service, article and area listings. Without `href` it renders a plain card.
+ */
+interface Props {
+  img: string;
+  alt: string;
+  title: string;
+  body?: string;
+  href?: string;
+  /** Small line above the title (e.g. an article date). */
+  kicker?: string;
+  width?: number;
+  height?: number;
+  lazy?: boolean;
+}
+const { img, alt, title, body, href, kicker, width = 400, height = 400, lazy = true } = Astro.props;
+const Tag = href ? "a" : "div";
+---
+
+<Tag class="service-card-mockup group" href={href}>
+  <div class="service-card-img-wrap">
+    <img src={img} alt={alt} width={width} height={height} loading={lazy ? "lazy" : undefined} />
+  </div>
+  <div class="service-card-bottom">
+    <span class="service-card-title">{title.toUpperCase()}</span>
+    {href && (
+      <span class="service-card-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    )}
+  </div>
+  {(kicker || body) && (
+    <div class="px-2.5 pb-4">
+      {kicker && <p class="text-[0.75rem] font-bold uppercase tracking-wider text-accent-light mb-1">{kicker}</p>}
+      {body && <p class="text-sm leading-relaxed text-[#aab1b8]">{body}</p>}
+    </div>
+  )}
+</Tag>

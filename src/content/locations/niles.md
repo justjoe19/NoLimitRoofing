@@ -24,11 +24,11 @@ nearby:
   - "st-joseph"
 guides:
   - label: "What Does Ice & Water Shield Do?"
-    href: "/learning-center/what-does-ice-and-water-shield-do.html"
+    href: "/guides/roof-system-protection.html"
   - label: "What Happens If Bad Decking Is Found?"
-    href: "/learning-center/what-happens-if-bad-decking-is-found.html"
+    href: "/guides/roof-decking-damage.html"
   - label: "Roof Inspections"
-    href: "/roofing/roof-inspections.html"
+    href: "/roof-inspections.html"
 faqs:
   - question: "Does No Limit Roofing serve Niles, Michigan?"
     answer: "Yes. Niles is in Berrien County, part of our cross-border service area alongside Buchanan and St. Joseph, MI."
@@ -44,7 +44,7 @@ faqs:
 
 ## Just Across The State Line
 
-Niles sits on the St. Joseph River in Berrien County, Michigan, a short trip north from South Bend. It has a long history and is often called the City of Four Flags. Cross-border work isn't unusual for us. We've served Berrien County since 2010, and Niles is part of our regular coverage.
+Niles sits on the St. Joseph River in Berrien County, Michigan, a short trip north from South Bend. It has a long history and is often called the City of Four Flags. Cross-border work isn't unusual for us. Berrien County is part of our regular service area, and Niles is part of our regular coverage.
 
 ## Older Neighborhoods, Older Roofs
 
@@ -54,19 +54,19 @@ Here's what we typically check on an older Niles home:
 
 - **The shingles**, for curling, cracking, and granule loss.
 - **Flashing** around chimneys, vents and valleys, where old roofs usually start leaking.
-- **The decking beneath**, which can be soft or damaged if leaks have gone unnoticed. Our guide to [what happens if bad decking is found](/learning-center/what-happens-if-bad-decking-is-found.html) explains how we handle it.
+- **The decking beneath**, which can be soft or damaged if leaks have gone unnoticed. Our guide to [what happens if bad decking is found](/guides/roof-decking-damage.html) explains how we handle it.
 - **Attic ventilation**, which affects how long the roof lasts.
 
-Depending on what we find, the recommendation will be a [roof repair](/roofing/roof-repair.html) or a full [roof replacement](/roofing/roof-replacement.html). If you're unsure which applies, see [repair versus replacement](/learning-center/roof-repair-vs-replacement.html).
+Depending on what we find, the recommendation will be a [roof repair](/roof-repair.html) or a full [roof replacement](/roof-replacement.html). If you're unsure which applies, see [repair versus replacement](/guides/repair-vs-replacement.html).
 
 ## Winter Protection
 
-Niles is within the lake-effect snow influence of Lake Michigan, so winters combine snow with repeated freezing and thawing. Ice dams, where melting snow refreezes at the eaves and backs water up under shingles, are a real risk on roofs without adequate ventilation or underlayment. Ice and water shield is a self-adhering membrane installed along the eaves and in valleys to help block that water. Read [what ice and water shield does](/learning-center/what-does-ice-and-water-shield-do.html) for the details.
+Niles is within the lake-effect snow influence of Lake Michigan, so winters combine snow with repeated freezing and thawing. Ice dams, where melting snow refreezes at the eaves and backs water up under shingles, are a real risk on roofs without adequate ventilation or underlayment. Ice and water shield is a self-adhering membrane installed along the eaves and in valleys to help block that water. Read [what ice and water shield does](/guides/roof-system-protection.html) for the details.
 
 ## Storm Damage
 
-Summer storms bring hail and wind to the region. Damage isn't always obvious from the ground, so we offer [hail damage](/storm-damage/hail-damage.html) and [wind damage](/storm-damage/wind-damage.html) inspections with photos. If a leak can't wait, [emergency roof repair](/roofing/emergency-roof-repair.html) is the place to start. We can provide a written estimate to support an insurance claim, though the decision is your insurer's.
+Summer storms bring hail and wind to the region. Damage isn't always obvious from the ground, so we offer [hail damage](/hail-damage.html) and [wind damage](/wind-damage.html) inspections with photos. If a leak can't wait, [emergency roof repair](/emergency-roof-repair.html) is the place to start. We can provide a written estimate to support an insurance claim, though the decision is your insurer's.
 
 ## What To Expect
 
-We start with a free inspection, and you receive a written estimate before any work begins. Our crew is GAF factory-certified and the owner supervises the work. Call (574) 360-0525 or reach out through our contact page to schedule an inspection in Niles.
+We start with a free inspection, and you receive a written estimate before any work begins. Our crew is CertainTeed factory-certified and the work is done by a professional crew. Call (574) 360-0525 or reach out through our contact page to schedule an inspection in Niles.

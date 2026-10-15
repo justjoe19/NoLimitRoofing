@@ -27,12 +27,12 @@ faqs:
   - question: "Is wind damage covered by insurance?"
     answer: "Coverage depends on your policy and your carrier's decision, not us. We can document the damage we find so you have accurate information when you talk to your insurance company."
 relatedLinks:
-  - { label: "Hail Damage", href: "/storm-damage/hail-damage.html" }
-  - { label: "Roof Repair", href: "/roofing/roof-repair.html" }
-  - { label: "Emergency Roof Repair", href: "/roofing/emergency-roof-repair.html" }
-  - { label: "Roof Inspections", href: "/roofing/roof-inspections.html" }
-  - { label: "Wind Damage Guide", href: "/learning-center/can-wind-damage-shingles-without-blowing-off.html" }
-  - { label: "Repair vs. Replacement", href: "/learning-center/roof-repair-vs-replacement.html" }
+  - { label: "Hail Damage", href: "/hail-damage.html" }
+  - { label: "Roof Repair", href: "/roof-repair.html" }
+  - { label: "Emergency Roof Repair", href: "/emergency-roof-repair.html" }
+  - { label: "Roof Inspections", href: "/roof-inspections.html" }
+  - { label: "Wind Damage Guide", href: "/guides/wind-damaged-shingles.html" }
+  - { label: "Repair vs. Replacement", href: "/guides/repair-vs-replacement.html" }
 ---
 
 High wind is one of the more deceptive causes of roof damage, because it doesn't always leave obvious evidence. A strong gust can crease a shingle, lift its edge and break its adhesive seal, or work flashing loose around a vent or chimney — all without a single shingle actually blowing off the roof. From the ground, everything can look completely normal, while the roof's ability to shed water has already been compromised.
@@ -50,7 +50,7 @@ Asphalt shingles are held down by an adhesive strip that seals each shingle to t
 - **Tearing and missing shingles.** The most visible kind of damage, often along ridges, rakes and eaves.
 - **Loosened flashing and vents.** Wind can work metal and rubber components loose, opening a path for water.
 
-Unsealed shingles are more likely to lift or blow off in the next storm, and water can get underneath them. Our guide on [how wind damages shingles without blowing them off](/learning-center/can-wind-damage-shingles-without-blowing-off.html) goes into more detail.
+Unsealed shingles are more likely to lift or blow off in the next storm, and water can get underneath them. Our guide on [how wind damages shingles without blowing them off](/guides/wind-damaged-shingles.html) goes into more detail.
 
 ## Where Wind Damage Shows Up First
 
@@ -72,7 +72,7 @@ Wind hits a roof unevenly. The most exposed areas usually go first:
 
 ## Repair Or Replacement
 
-Most wind damage is localized, so a targeted repair usually makes sense when the decking and the rest of the roof are sound. That could mean replacing damaged shingles, resealing or replacing flashing, or securing vents. Replacement enters the picture when damage is widespread or the roof was already near the end of its life. Our [repair vs. replacement guide](/learning-center/roof-repair-vs-replacement.html) explains the reasoning. See our [roof repair](/roofing/roof-repair.html) and [roof replacement](/roofing/roof-replacement.html) pages for how we handle each.
+Most wind damage is localized, so a targeted repair usually makes sense when the decking and the rest of the roof are sound. That could mean replacing damaged shingles, resealing or replacing flashing, or securing vents. Replacement enters the picture when damage is widespread or the roof was already near the end of its life. Our [repair vs. replacement guide](/guides/repair-vs-replacement.html) explains the reasoning. See our [roof repair](/roof-repair.html) and [roof replacement](/roof-replacement.html) pages for how we handle each.
 
 ## Documentation And Insurance
 
@@ -80,7 +80,7 @@ If you're considering an insurance claim for wind damage, we can photograph and 
 
 ## Wind And Michiana Weather
 
-Thunderstorms and straight-line winds are part of summer in Northern Indiana and Southwest Michigan. Communities near Lake Michigan, like [St. Joseph, MI](/service-areas/st-joseph.html), can see strong winds off the lake, and inland areas such as [Plymouth](/service-areas/plymouth.html) and [Goshen](/service-areas/goshen.html) get their own storms. Wind often arrives with hail, so if your roof took a beating, also read about [hail damage](/storm-damage/hail-damage.html).
+Thunderstorms and straight-line winds are part of summer in Northern Indiana and Southwest Michigan. Communities near Lake Michigan, like [St. Joseph, MI](/roofing-st-joseph-mi.html), can see strong winds off the lake, and inland areas such as [Plymouth](/roofing-plymouth-in.html) and [Goshen](/roofing-goshen-in.html) get their own storms. Wind often arrives with hail, so if your roof took a beating, also read about [hail damage](/hail-damage.html).
 
 ## What To Do After A Windstorm
 
@@ -94,8 +94,8 @@ We would rather look at a roof that turns out to be fine than have you find a le
 
 ## What To Expect From Us
 
-A free inspection, photos of what we find, a plain explanation and a written estimate. We'll tell you if the roof is fine, needs a small repair or needs more. The work is done by an owner-supervised, GAF factory-certified crew.
+A free inspection, photos of what we find, a plain explanation and a written estimate. We'll tell you if the roof is fine, needs a small repair or needs more. The work is done by an owner-supervised, CertainTeed factory-certified crew.
 
 ## If Water Is Already Getting In
 
-A missing section of shingles or exposed decking after a storm is an emergency. Call (574) 360-0525 and see our [emergency roof repair](/roofing/emergency-roof-repair.html) page. If it isn't urgent, a free [roof inspection](/roofing/roof-inspections.html) is the way to find out what your roof needs.
+A missing section of shingles or exposed decking after a storm is an emergency. Call (574) 360-0525 and see our [emergency roof repair](/emergency-roof-repair.html) page. If it isn't urgent, a free [roof inspection](/roof-inspections.html) is the way to find out what your roof needs.

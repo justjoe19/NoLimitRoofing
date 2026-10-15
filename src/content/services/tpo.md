@@ -25,17 +25,17 @@ faqs:
   - question: "Can an existing TPO roof be repaired instead of replaced?"
     answer: "Often, yes. Localized seam problems, punctures and flashing issues are usually repairable. If wear is widespread across the membrane, replacement may be the better value, and we'll tell you which applies after an inspection."
 relatedLinks:
-  - { label: "EPDM Roofing", href: "/commercial/epdm.html" }
-  - { label: "Commercial Roof Replacement", href: "/commercial/replacement.html" }
-  - { label: "Commercial Roof Repair", href: "/commercial/repair.html" }
-  - { label: "Roof Coatings", href: "/commercial/roof-coatings.html" }
-  - { label: "TPO vs. EPDM Guide", href: "/learning-center/tpo-vs-epdm-for-commercial-buildings.html" }
-  - { label: "Coating vs. Replacement", href: "/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html" }
+  - { label: "EPDM Roofing", href: "/epdm-roofing.html" }
+  - { label: "Commercial Roof Replacement", href: "/commercial-roof-replacement.html" }
+  - { label: "Commercial Roof Repair", href: "/commercial-roof-repair.html" }
+  - { label: "Roof Coatings", href: "/roof-coatings.html" }
+  - { label: "TPO vs. EPDM Guide", href: "/guides/tpo-vs-epdm.html" }
+  - { label: "Coating vs. Replacement", href: "/guides/coating-vs-replacement.html" }
 ---
 
 TPO (thermoplastic polyolefin) has become one of the most common membrane systems on commercial and industrial roofs, and for practical reasons: heat-welded seams create a continuous, fully bonded surface rather than a series of adhered or taped joints, and its reflective white finish can help reduce cooling costs on buildings with significant HVAC load. No Limit Roofing installs and repairs TPO systems across Northern Indiana and Southwest Michigan.
 
-Whether you're replacing an aging low-slope roof or deciding on a system for new construction, we'll walk through how TPO compares to EPDM and other options for your specific building — there's no single right answer for every roof, and we'd rather explain the tradeoffs than push one system regardless of fit. See our Learning Center guide on [TPO vs. EPDM for commercial buildings](/learning-center/tpo-vs-epdm-for-commercial-buildings.html) for the full comparison.
+Whether you're replacing an aging low-slope roof or deciding on a system for new construction, we'll walk through how TPO compares to EPDM and other options for your specific building — there's no single right answer for every roof, and we'd rather explain the tradeoffs than push one system regardless of fit. See our Learning Center guide on [TPO vs. EPDM for commercial buildings](/guides/tpo-vs-epdm.html) for the full comparison.
 
 ## What TPO Is
 
@@ -53,13 +53,13 @@ TPO is a single-ply membrane made from thermoplastic polyolefin. It's manufactur
 - **Installation quality matters.** A membrane is only as good as its seams and flashing details. Correct installation by a trained crew makes the biggest difference.
 - **Building use.** Rooftop exhaust, chemicals and heavy foot traffic can affect what's appropriate for a roof.
 - **Cold-climate performance.** Michiana's freeze-thaw winters and snow load make drainage and insulation details worth planning carefully.
-- **Cost and priorities.** TPO isn't automatically better or cheaper than [EPDM](/commercial/epdm.html). The right choice depends on the building.
+- **Cost and priorities.** TPO isn't automatically better or cheaper than [EPDM](/epdm-roofing.html). The right choice depends on the building.
 
 ## How A TPO Project Works
 
 1. **Free inspection and written estimate.** We look at the existing roof, deck, insulation, drainage and penetrations.
 2. **System selection.** We explain whether TPO fits your building, and how it compares to the alternatives.
-3. **Tear-off or preparation.** For a [full replacement](/commercial/replacement.html), we remove the existing system and check the deck and insulation underneath.
+3. **Tear-off or preparation.** For a [full replacement](/commercial-roof-replacement.html), we remove the existing system and check the deck and insulation underneath.
 4. **Membrane installation.** Sheets are installed and seams are heat-welded, with flashing details at edges, curbs and penetrations.
 5. **Inspection and walkthrough.** We review the finished roof with you.
 
@@ -74,15 +74,15 @@ Not every TPO roof needs replacing. Common repairs include:
 - Flashing at parapet walls, curbs and pipes
 - Areas where water is ponding and stressing the membrane
 
-See our [commercial roof repair](/commercial/repair.html) page for how we diagnose leaks on low-slope roofs, where the water often shows up far from where it entered.
+See our [commercial roof repair](/commercial-roof-repair.html) page for how we diagnose leaks on low-slope roofs, where the water often shows up far from where it entered.
 
 ## Maintenance Extends Roof Life
 
-Regular inspections help a commercial roof reach its full service life. A [maintenance program](/commercial/maintenance.html) that checks seams, flashing, drainage and ponding water, with a written report after each visit, is one of the more cost-effective ways to protect the investment.
+Regular inspections help a commercial roof reach its full service life. A [maintenance program](/commercial-roof-maintenance.html) that checks seams, flashing, drainage and ponding water, with a written report after each visit, is one of the more cost-effective ways to protect the investment.
 
 ## If The Roof Is Aging But Sound
 
-When an existing roof is still sound but showing its age, a [roof coating](/commercial/roof-coatings.html) might extend its life. Our guide on [coating vs. replacement for commercial roofs](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) explains how to decide.
+When an existing roof is still sound but showing its age, a [roof coating](/roof-coatings.html) might extend its life. Our guide on [coating vs. replacement for commercial roofs](/guides/coating-vs-replacement.html) explains how to decide.
 
 ## What Affects TPO Cost
 
@@ -101,8 +101,8 @@ We're glad to answer these, and we'll answer them in writing.
 
 ## What To Expect From Us
 
-A free inspection, an honest recommendation about whether TPO suits your building, a written scope and price, and a crew supervised by the owner. If a different system fits better, we'll tell you why.
+A free inspection, an honest recommendation about whether TPO suits your building, a written scope and price, and a professional crew. If a different system fits better, we'll tell you why.
 
 ## Serving Commercial Buildings Across The Region
 
-We work on commercial and industrial buildings across Northern Indiana and Southwest Michigan, including in [Elkhart](/service-areas/elkhart.html), [South Bend](/service-areas/south-bend.html) and [Mishawaka](/service-areas/mishawaka.html). Call (574) 360-0525 or [request a free estimate](/contact.html).
+We work on commercial and industrial buildings across Northern Indiana and Southwest Michigan, including in [Elkhart](/roofing-elkhart-in.html), [South Bend](/roofing-south-bend-in.html) and [Mishawaka](/roofing-mishawaka-in.html). Call (574) 360-0525 or [request a free estimate](/contact.html).

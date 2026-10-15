@@ -25,19 +25,19 @@ faqs:
   - question: "Do I have to choose between TPO and EPDM?"
     answer: "Not necessarily. Depending on the building, other systems may also fit. We'll go through the options for your roof, and explain why we'd recommend one over another."
 relatedLinks:
-  - { label: "Commercial Roof Repair", href: "/commercial/repair.html" }
-  - { label: "Commercial Maintenance", href: "/commercial/maintenance.html" }
-  - { label: "TPO Roofing", href: "/commercial/tpo.html" }
-  - { label: "EPDM Roofing", href: "/commercial/epdm.html" }
-  - { label: "Roof Coatings", href: "/commercial/roof-coatings.html" }
-  - { label: "Coating vs. Replacement Guide", href: "/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html" }
+  - { label: "Commercial Roof Repair", href: "/commercial-roof-repair.html" }
+  - { label: "Commercial Maintenance", href: "/commercial-roof-maintenance.html" }
+  - { label: "TPO Roofing", href: "/tpo-roofing.html" }
+  - { label: "EPDM Roofing", href: "/epdm-roofing.html" }
+  - { label: "Roof Coatings", href: "/roof-coatings.html" }
+  - { label: "Coating vs. Replacement Guide", href: "/guides/coating-vs-replacement.html" }
 ---
 
 A commercial roof replacement is a significant investment, and it deserves the same transparency we bring to residential work: a full tear-off, an honest look at the deck and insulation underneath, and a written scope of work before anything starts. No Limit Roofing replaces EPDM, TPO, PVC, KEE and modified bitumen systems for offices, retail and industrial buildings across Northern Indiana and Southwest Michigan.
 
 Because a commercial replacement is a larger project than a repair, scheduling and sequencing matter even more — we'll plan the work around your operation where possible and give you a clear timeline as part of the estimate, not a vague window.
 
-Not sure a full replacement is what your roof actually needs? See our Learning Center guide on [commercial roof coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html).
+Not sure a full replacement is what your roof actually needs? See our Learning Center guide on [commercial roof coating vs. replacement](/guides/coating-vs-replacement.html).
 
 ## Signs A Commercial Roof May Need Replacement
 
@@ -48,7 +48,7 @@ Not sure a full replacement is what your roof actually needs? See our Learning C
 - A roof well past its expected service life
 - Ponding water that keeps recurring and has damaged the membrane
 
-If problems are limited, [repair](/commercial/repair.html) or a [coating](/commercial/roof-coatings.html) may be the better fit. We'll tell you honestly which one your building needs.
+If problems are limited, [repair](/commercial-roof-repair.html) or a [coating](/roof-coatings.html) may be the better fit. We'll tell you honestly which one your building needs.
 
 ## How A Commercial Replacement Works
 
@@ -64,11 +64,11 @@ If problems are limited, [repair](/commercial/repair.html) or a [coating](/comme
 
 Several membranes are used on commercial and industrial roofs:
 
-- **[TPO](/commercial/tpo.html)** is a reflective, heat-welded membrane commonly used on offices, retail and industrial buildings.
-- **[EPDM](/commercial/epdm.html)** is a rubber membrane with a long track record on flat and low-slope roofs.
+- **[TPO](/tpo-roofing.html)** is a reflective, heat-welded membrane commonly used on offices, retail and industrial buildings.
+- **[EPDM](/epdm-roofing.html)** is a rubber membrane with a long track record on flat and low-slope roofs.
 - **PVC, KEE and modified bitumen** are other systems that suit particular buildings and uses.
 
-The right system depends on the building, its use, the roof deck and your priorities. Our guide on [TPO vs. EPDM](/learning-center/tpo-vs-epdm-for-commercial-buildings.html) covers the two most common choices.
+The right system depends on the building, its use, the roof deck and your priorities. Our guide on [TPO vs. EPDM](/guides/tpo-vs-epdm.html) covers the two most common choices.
 
 ## What Affects Cost And Timeline
 
@@ -76,7 +76,7 @@ Commercial roof replacement varies with the size of the roof, the system chosen,
 
 ## Protecting Your Investment After Installation
 
-A new roof lasts longest when it's looked after. A [maintenance program](/commercial/maintenance.html) with regular inspections and written reports catches small issues early and gives you a record of the roof's condition.
+A new roof lasts longest when it's looked after. A [maintenance program](/commercial-roof-maintenance.html) with regular inspections and written reports catches small issues early and gives you a record of the roof's condition.
 
 ## Insurance And Documentation
 
@@ -95,11 +95,11 @@ We'll answer these in writing before work starts, so nothing is a surprise.
 
 ## What To Expect From Us
 
-You'll get a free inspection, a written scope and specification, a clear timeline and a crew supervised by the owner. We explain what we find as we go, especially if the deck or insulation turns up something unexpected, and we'll tell you before it affects the scope or price. When the work is done, we walk through the finished roof with you.
+You'll get a free inspection, a written scope and specification, a clear timeline and a professional crew. We explain what we find as we go, especially if the deck or insulation turns up something unexpected, and we'll tell you before it affects the scope or price. When the work is done, we walk through the finished roof with you.
 
 ## Planning Ahead
 
-If your roof is getting older but hasn't failed yet, the best time to plan is before there's an emergency. A planned replacement can be scheduled around your busy season, budgeted in advance and specified carefully, while an emergency one is usually rushed. A free inspection is a good first step, and a [maintenance program](/commercial/maintenance.html) can help you keep track of how the roof is aging.
+If your roof is getting older but hasn't failed yet, the best time to plan is before there's an emergency. A planned replacement can be scheduled around your busy season, budgeted in advance and specified carefully, while an emergency one is usually rushed. A free inspection is a good first step, and a [maintenance program](/commercial-roof-maintenance.html) can help you keep track of how the roof is aging.
 
 ## Tell Us About Your Building
 
@@ -107,4 +107,4 @@ It helps to know the roof's approximate age, its current system, any past repair
 
 ## Michiana Weather And Commercial Roofs
 
-Snow load, meltwater, freezing and thawing, and summer storms all test a low-slope roof. Drainage and insulation details are worth planning carefully for a Northern Indiana building. We replace commercial roofs across the region, including in [Elkhart](/service-areas/elkhart.html), [South Bend](/service-areas/south-bend.html) and [Mishawaka](/service-areas/mishawaka.html). Call (574) 360-0525 or [request a free estimate](/contact.html).
+Snow load, meltwater, freezing and thawing, and summer storms all test a low-slope roof. Drainage and insulation details are worth planning carefully for a Northern Indiana building. We replace commercial roofs across the region, including in [Elkhart](/roofing-elkhart-in.html), [South Bend](/roofing-south-bend-in.html) and [Mishawaka](/roofing-mishawaka-in.html). Call (574) 360-0525 or [request a free estimate](/contact.html).

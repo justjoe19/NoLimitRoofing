@@ -16,16 +16,16 @@ faqs:
 draft: false
 relatedLinks:
   - label: "Roof Replacement"
-    href: "/roofing/roof-replacement.html"
+    href: "/roof-replacement.html"
   - label: "Asphalt Shingle Roofing"
-    href: "/roofing/asphalt-shingle-roofing.html"
+    href: "/asphalt-shingle-roofing.html"
   - label: "Winter Roof Replacement"
-    href: "/learning-center/can-you-replace-a-roof-in-winter-in-indiana.html"
+    href: "/guides/roof-replacement-timeline.html"
   - label: "What Happens If Bad Decking Is Found?"
-    href: "/learning-center/what-happens-if-bad-decking-is-found.html"
+    href: "/guides/roof-decking-damage.html"
 ---
 
-Most residential [roof replacements](/roofing/roof-replacement.html) are completed in one to three days once work actually begins, weather permitting. That range covers the majority of homes, but a few specific factors can push a job toward the longer end — or occasionally beyond it.
+Most residential [roof replacements](/roof-replacement.html) are completed in one to three days once work actually begins, weather permitting. That range covers the majority of homes, but a few specific factors can push a job toward the longer end — or occasionally beyond it.
 
 ## Roof size and complexity
 
@@ -33,15 +33,15 @@ A straightforward, simply-shaped roof on a single-story home moves faster than a
 
 ## What's found once the old roof comes off
 
-A tear-off that reveals [damaged or soft decking](/learning-center/what-happens-if-bad-decking-is-found.html) adds time, since that decking has to be replaced before new roofing can go on — this is also one of the reasons a firm timeline can't be promised until the crew is actually on the roof.
+A tear-off that reveals [damaged or soft decking](/guides/roof-decking-damage.html) adds time, since that decking has to be replaced before new roofing can go on — this is also one of the reasons a firm timeline can't be promised until the crew is actually on the roof.
 
 ## How Michiana weather affects roof replacement timelines
 
-Roofing work depends on dry conditions and reasonable temperatures for proper shingle sealing. Rain can pause work mid-job, and very cold weather (see our related article on [winter roof replacement](/learning-center/can-you-replace-a-roof-in-winter-in-indiana.html)) can affect how shingles seal, though it doesn't rule out winter work entirely.
+Roofing work depends on dry conditions and reasonable temperatures for proper shingle sealing. Rain can pause work mid-job, and very cold weather (see our related article on [winter roof replacement](/guides/roof-replacement-timeline.html)) can affect how shingles seal, though it doesn't rule out winter work entirely.
 
 ## Material choice
 
-[Asphalt shingle](/roofing/asphalt-shingle-roofing.html) replacement is generally the fastest. Metal roofing, tile, and slate typically take longer per square foot to install correctly, since the installation methods are more involved.
+[Asphalt shingle](/asphalt-shingle-roofing.html) replacement is generally the fastest. Metal roofing, tile, and slate typically take longer per square foot to install correctly, since the installation methods are more involved.
 
 ## Permitting and material availability
 
@@ -49,7 +49,7 @@ Depending on the municipality, permit processing time can add to the overall pro
 
 ## What a typical day looks like on-site
 
-Most residential jobs start early to make full use of daylight and good working temperatures. Tear-off happens first, then the crew inspects the exposed decking, replaces any damaged sections, installs underlayment and [ice and water shield](/learning-center/what-does-ice-and-water-shield-do.html) in the vulnerable areas, then installs the new roofing material itself, followed by flashing, ventilation components, and a final cleanup pass. On a straightforward single-story roof, this entire sequence can happen in one day; larger or more complex roofs spread the same sequence across two or three.
+Most residential jobs start early to make full use of daylight and good working temperatures. Tear-off happens first, then the crew inspects the exposed decking, replaces any damaged sections, installs underlayment and [ice and water shield](/guides/roof-system-protection.html) in the vulnerable areas, then installs the new roofing material itself, followed by flashing, ventilation components, and a final cleanup pass. On a straightforward single-story roof, this entire sequence can happen in one day; larger or more complex roofs spread the same sequence across two or three.
 
 ## Cleanup and what "done" actually means
 

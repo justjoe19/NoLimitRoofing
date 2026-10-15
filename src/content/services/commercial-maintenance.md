@@ -25,19 +25,19 @@ faqs:
   - question: "Can maintenance help me decide when to replace the roof?"
     answer: "Yes. A record of inspections shows how the roof is aging, which helps you plan for a repair, coating or replacement instead of reacting to an emergency."
 relatedLinks:
-  - { label: "Roof Coatings", href: "/commercial/roof-coatings.html" }
-  - { label: "Commercial Roof Repair", href: "/commercial/repair.html" }
-  - { label: "Commercial Roof Replacement", href: "/commercial/replacement.html" }
-  - { label: "TPO Roofing", href: "/commercial/tpo.html" }
-  - { label: "EPDM Roofing", href: "/commercial/epdm.html" }
-  - { label: "Coating vs. Replacement Guide", href: "/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html" }
+  - { label: "Roof Coatings", href: "/roof-coatings.html" }
+  - { label: "Commercial Roof Repair", href: "/commercial-roof-repair.html" }
+  - { label: "Commercial Roof Replacement", href: "/commercial-roof-replacement.html" }
+  - { label: "TPO Roofing", href: "/tpo-roofing.html" }
+  - { label: "EPDM Roofing", href: "/epdm-roofing.html" }
+  - { label: "Coating vs. Replacement Guide", href: "/guides/coating-vs-replacement.html" }
 ---
 
 Flat and low-slope commercial roofs fail gradually, most often through slow drainage problems, seam wear, or flashing that's come loose — all of which are inexpensive to catch early and expensive to ignore. A scheduled maintenance program from No Limit Roofing means a documented visit that checks drainage and ponding water, seams, flashing and penetrations, with a written report after every visit rather than a verbal "looks fine."
 
 Ponding water in particular is one of the more common causes of premature membrane failure on flat roofs, and it's often addressable before it becomes a leak. We serve commercial and industrial buildings across Northern Indiana and Southwest Michigan, and we can set up a maintenance schedule that fits your building and budget.
 
-If regular maintenance is turning up more wear than it used to, our Learning Center guide on [commercial roof coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) explains how to think about the next step.
+If regular maintenance is turning up more wear than it used to, our Learning Center guide on [commercial roof coating vs. replacement](/guides/coating-vs-replacement.html) explains how to think about the next step.
 
 ## What A Maintenance Visit Covers
 
@@ -59,20 +59,20 @@ A reasonable baseline is twice a year, plus after any major storm. Many owners p
 
 ## Systems We Maintain
 
-We maintain EPDM, TPO, PVC and modified bitumen roofs. See our pages on [TPO](/commercial/tpo.html) and [EPDM](/commercial/epdm.html) for how each system ages and what typically needs attention.
+We maintain EPDM, TPO, PVC and modified bitumen roofs. See our pages on [TPO](/tpo-roofing.html) and [EPDM](/epdm-roofing.html) for how each system ages and what typically needs attention.
 
 ## Maintenance, Repair, Coating Or Replacement
 
 Maintenance is the base of a good roof plan, and it helps you choose the next step at the right time:
 
 1. **Maintenance** keeps a sound roof sound.
-2. **[Repair](/commercial/repair.html)** fixes problems the visits turn up.
-3. **[Coating](/commercial/roof-coatings.html)** can extend the life of a sound but aging roof.
-4. **[Replacement](/commercial/replacement.html)** is the right call when the roof is past its useful life.
+2. **[Repair](/commercial-roof-repair.html)** fixes problems the visits turn up.
+3. **[Coating](/roof-coatings.html)** can extend the life of a sound but aging roof.
+4. **[Replacement](/commercial-roof-replacement.html)** is the right call when the roof is past its useful life.
 
 ## Michiana Weather And Flat Roofs
 
-Snow, meltwater, freeze-thaw cycles and summer storms all affect drainage and seams. Debris from fall leaves and storms can block drains, and ice can stress flashing over winter. A visit in spring can find what winter left behind. We maintain commercial and industrial roofs across our region, including in [Elkhart](/service-areas/elkhart.html), [Goshen](/service-areas/goshen.html), [South Bend](/service-areas/south-bend.html) and [Mishawaka](/service-areas/mishawaka.html).
+Snow, meltwater, freeze-thaw cycles and summer storms all affect drainage and seams. Debris from fall leaves and storms can block drains, and ice can stress flashing over winter. A visit in spring can find what winter left behind. We maintain commercial and industrial roofs across our region, including in [Elkhart](/roofing-elkhart-in.html), [Goshen](/roofing-goshen-in.html), [South Bend](/roofing-south-bend-in.html) and [Mishawaka](/roofing-mishawaka-in.html).
 
 ## What Affects The Cost Of Maintenance
 

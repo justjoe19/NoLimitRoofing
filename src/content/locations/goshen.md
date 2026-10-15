@@ -8,7 +8,7 @@ metaDescription: "Roof repair, replacement, storm damage and commercial roofing 
 heroImage: "/images/crew-lakeside-install-hero.webp"
 heroEyebrow: "Goshen, Indiana"
 heroHeadline: "Roofing Contractor In Goshen, IN"
-heroLede: "Goshen is part of No Limit Roofing's Greater South Bend–Elkhart service area, with the same free-estimate, GAF-certified approach we use throughout Michiana."
+heroLede: "Goshen is part of No Limit Roofing's Greater South Bend–Elkhart service area, with the same free-estimate, CertainTeed factory-certified approach we use throughout Michiana."
 localContext: "Goshen is the county seat of Elkhart County, with a traditional downtown centered on the courthouse square and a mix of town and surrounding farm country. Older downtown buildings, rural properties and newer homes all show up on the roofing calls we take here."
 servicesOffered:
   - "Residential roof repair and replacement"
@@ -24,14 +24,14 @@ nearby:
   - "plymouth"
 guides:
   - label: "How Much Does Roof Repair Cost?"
-    href: "/learning-center/roof-repair-cost.html"
+    href: "/guides/roof-repair-cost.html"
   - label: "Can You Replace A Roof In Winter?"
-    href: "/learning-center/can-you-replace-a-roof-in-winter-in-indiana.html"
+    href: "/guides/roof-replacement-timeline.html"
   - label: "Commercial Roof Maintenance"
-    href: "/commercial/maintenance.html"
+    href: "/commercial-roof-maintenance.html"
 faqs:
   - question: "Does No Limit Roofing work in Goshen?"
-    answer: "Yes. Goshen is in Elkhart County, within our service area, and we reach it from our Mishawaka and Plymouth regional offices."
+    answer: "Yes. Goshen is in Elkhart County, within our service area. Call (574) 360-0525 to schedule a free inspection."
   - question: "Can you roof an older building in downtown Goshen?"
     answer: "Yes. Older buildings can have unusual rooflines, aging flashing and decking that needs a closer look, so we inspect first and explain what the building needs before giving a written estimate."
   - question: "I live outside town. Do you roof rural homes and outbuildings around Goshen?"
@@ -52,20 +52,20 @@ For a roofer, that mix means an unusual variety. The roofs on a downtown storefr
 
 Older downtown buildings often have low-slope or flat roofs, parapet walls, and flashing details that have been patched over the years. Leaks in these buildings frequently start at those details rather than in the middle of the roof.
 
-What we recommend depends on the building. A leak at a parapet or seam may need only a [commercial repair](/commercial/repair.html). A roof that is aging but still sound might be stretched with a [coating](/commercial/roof-coatings.html), and one that is finished calls for [replacement](/commercial/replacement.html) with a system such as [TPO](/commercial/tpo.html) or [EPDM](/commercial/epdm.html). Owners who want fewer surprises can put the building on a [maintenance plan](/commercial/maintenance.html).
+What we recommend depends on the building. A leak at a parapet or seam may need only a [commercial repair](/commercial-roof-repair.html). A roof that is aging but still sound might be stretched with a [coating](/roof-coatings.html), and one that is finished calls for [replacement](/commercial-roof-replacement.html) with a system such as [TPO](/tpo-roofing.html) or [EPDM](/epdm-roofing.html). Owners who want fewer surprises can put the building on a [maintenance plan](/commercial-roof-maintenance.html).
 
 ## Homes In And Around Goshen
 
 Residential roofs in and around Goshen run from older in-town homes to newer houses on the edge of town and rural properties. Common issues include worn shingles, failed flashing, and attic ventilation problems that shorten a roof's life.
 
-Homeowners often ask first about money. Our guide to [what roof repair costs](/learning-center/roof-repair-cost.html) explains the pricing factors, and our guide to [repair versus replacement](/learning-center/roof-repair-vs-replacement.html) helps you decide. For work that goes beyond a patch, see our [roof replacement](/roofing/roof-replacement.html) and [roof repair](/roofing/roof-repair.html) pages.
+Homeowners often ask first about money. Our guide to [what roof repair costs](/guides/roof-repair-cost.html) explains the pricing factors, and our guide to [repair versus replacement](/guides/repair-vs-replacement.html) helps you decide. For work that goes beyond a patch, see our [roof replacement](/roof-replacement.html) and [roof repair](/roof-repair.html) pages.
 
-If your project timeline is tight or the season is turning, read our guide on [replacing a roof in winter in Indiana](/learning-center/can-you-replace-a-roof-in-winter-in-indiana.html).
+If your project timeline is tight or the season is turning, read our guide on [replacing a roof in winter in Indiana](/guides/roof-replacement-timeline.html).
 
 ## Weather, Storms And Leaks
 
-Goshen has the freeze-thaw winters and summer storm season common to the region. Open country can mean more exposure to wind, and hail can damage shingles and membranes alike. We inspect for [wind damage](/storm-damage/wind-damage.html) and [hail damage](/storm-damage/hail-damage.html), and we can handle [emergency repairs](/roofing/emergency-roof-repair.html) for active leaks. We document damage with photos and provide written estimates that can support an insurance claim. The insurance decision stays with your insurer.
+Goshen has the freeze-thaw winters and summer storm season common to the region. Open country can mean more exposure to wind, and hail can damage shingles and membranes alike. We inspect for [wind damage](/wind-damage.html) and [hail damage](/hail-damage.html), and we can handle [emergency repairs](/emergency-roof-repair.html) for active leaks. We document damage with photos and provide written estimates that can support an insurance claim. The insurance decision stays with your insurer.
 
 ## How We Work
 
-Every Goshen project starts with a free inspection, followed by a written estimate before work begins. Our crew is GAF factory-certified, and the owner supervises the work. To set up an inspection, call (574) 360-0525 or use our contact page.
+Every Goshen project starts with a free inspection, followed by a written estimate before work begins. Our crew is CertainTeed factory-certified, and the work is done by a professional crew. To set up an inspection, call (574) 360-0525 or use our contact page.

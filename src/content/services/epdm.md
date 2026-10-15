@@ -25,17 +25,17 @@ faqs:
   - question: "Can an old EPDM roof be repaired, or does it need replacement?"
     answer: "Many aging EPDM roofs can be repaired, especially when the issues are at seams, flashing or penetrations. If the membrane itself is worn across much of the roof, replacement may be the better long-term value. An inspection will show which applies."
 relatedLinks:
-  - { label: "TPO Roofing", href: "/commercial/tpo.html" }
-  - { label: "Commercial Maintenance", href: "/commercial/maintenance.html" }
-  - { label: "Roof Coatings", href: "/commercial/roof-coatings.html" }
-  - { label: "Commercial Roof Repair", href: "/commercial/repair.html" }
-  - { label: "TPO vs. EPDM Guide", href: "/learning-center/tpo-vs-epdm-for-commercial-buildings.html" }
-  - { label: "Coating vs. Replacement", href: "/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html" }
+  - { label: "TPO Roofing", href: "/tpo-roofing.html" }
+  - { label: "Commercial Maintenance", href: "/commercial-roof-maintenance.html" }
+  - { label: "Roof Coatings", href: "/roof-coatings.html" }
+  - { label: "Commercial Roof Repair", href: "/commercial-roof-repair.html" }
+  - { label: "TPO vs. EPDM Guide", href: "/guides/tpo-vs-epdm.html" }
+  - { label: "Coating vs. Replacement", href: "/guides/coating-vs-replacement.html" }
 ---
 
 EPDM rubber membrane roofing has one of the longest track records of any commercial low-slope system, and it remains a straightforward, durable choice for flat and low-slope buildings across Northern Indiana and Southwest Michigan. No Limit Roofing installs new EPDM systems and repairs existing ones — seams and flashing are the most common points needing attention on an aging EPDM roof, and they're usually addressable without a full replacement.
 
-If you're weighing EPDM against TPO or another membrane system for a new roof or replacement, we'll go through the practical differences for your specific building as part of a free estimate. See our Learning Center guide on [TPO vs. EPDM for commercial buildings](/learning-center/tpo-vs-epdm-for-commercial-buildings.html) for the full comparison.
+If you're weighing EPDM against TPO or another membrane system for a new roof or replacement, we'll go through the practical differences for your specific building as part of a free estimate. See our Learning Center guide on [TPO vs. EPDM for commercial buildings](/guides/tpo-vs-epdm.html) for the full comparison.
 
 ## What EPDM Is
 
@@ -52,14 +52,14 @@ EPDM stands for ethylene propylene diene monomer, a synthetic rubber. It's suppl
 
 - **Seams and flashing need attention over time.** They're the places EPDM roofs most often need work as they age.
 - **Punctures.** Foot traffic, tools and debris can damage a rubber membrane, so rooftop equipment access matters.
-- **Color and heat.** Black EPDM absorbs heat, while reflective options such as [TPO](/commercial/tpo.html) may make sense for buildings with heavy cooling loads.
+- **Color and heat.** Black EPDM absorbs heat, while reflective options such as [TPO](/tpo-roofing.html) may make sense for buildings with heavy cooling loads.
 - **Installation.** Details at edges, curbs and penetrations determine how well the roof performs.
 
 ## How An EPDM Project Works
 
 1. **Free inspection and written estimate.** We look at the roof, deck, insulation and drainage.
 2. **System recommendation.** We explain whether EPDM fits, and how it compares with other options.
-3. **Preparation or tear-off.** On a [replacement](/commercial/replacement.html), we remove the old system and check what's underneath.
+3. **Preparation or tear-off.** On a [replacement](/commercial-roof-replacement.html), we remove the old system and check what's underneath.
 4. **Membrane installation and flashing.** Sheets go down with seams, edges and penetrations detailed to manufacturer requirements.
 5. **Walkthrough.** We review the finished work with you.
 
@@ -74,15 +74,15 @@ Most repairs on an aging EPDM roof involve:
 - **Punctures or tears** from debris or traffic
 - **Ponding water areas** where the membrane is under stress
 
-Because low-slope leaks can travel, the visible drip inside may be far from the actual entry point. See our [commercial roof repair](/commercial/repair.html) page for how we track it down.
+Because low-slope leaks can travel, the visible drip inside may be far from the actual entry point. See our [commercial roof repair](/commercial-roof-repair.html) page for how we track it down.
 
 ## Maintenance Makes A Difference
 
-An EPDM roof that's inspected regularly will usually outlast one that isn't. A [maintenance program](/commercial/maintenance.html) checks seams, flashing, drainage and ponding water and gives you a written record. It's especially useful after winter, when ice, snow and thaw cycles have had their turn.
+An EPDM roof that's inspected regularly will usually outlast one that isn't. A [maintenance program](/commercial-roof-maintenance.html) checks seams, flashing, drainage and ponding water and gives you a written record. It's especially useful after winter, when ice, snow and thaw cycles have had their turn.
 
 ## When An Aging Roof Needs Something More
 
-If an EPDM roof is showing widespread wear, you have options. A [roof coating](/commercial/roof-coatings.html) may extend life if the roof is still sound, and a [full replacement](/commercial/replacement.html) is the right call when it's not. Our guide on [coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) explains how to choose.
+If an EPDM roof is showing widespread wear, you have options. A [roof coating](/roof-coatings.html) may extend life if the roof is still sound, and a [full replacement](/commercial-roof-replacement.html) is the right call when it's not. Our guide on [coating vs. replacement](/guides/coating-vs-replacement.html) explains how to choose.
 
 ## What Affects EPDM Cost
 
@@ -104,8 +104,8 @@ Many commercial roofs carry HVAC units, vents, exhaust fans and other equipment.
 
 ## What To Expect From Us
 
-A free inspection, an explanation of what we find, a written estimate and a crew supervised by the owner. If EPDM isn't the best fit for your building, we'll say so.
+A free inspection, an explanation of what we find, a written estimate and a professional crew. If EPDM isn't the best fit for your building, we'll say so.
 
 ## EPDM For Michiana Buildings
 
-Flat roofs in Northern Indiana carry snow load, meltwater and repeated freezing, so drainage and seam condition matter. We work on commercial and industrial buildings throughout the region, including [Elkhart](/service-areas/elkhart.html), [Goshen](/service-areas/goshen.html) and [South Bend](/service-areas/south-bend.html). Call (574) 360-0525 or [request a free estimate](/contact.html).
+Flat roofs in Northern Indiana carry snow load, meltwater and repeated freezing, so drainage and seam condition matter. We work on commercial and industrial buildings throughout the region, including [Elkhart](/roofing-elkhart-in.html), [Goshen](/roofing-goshen-in.html) and [South Bend](/roofing-south-bend-in.html). Call (574) 360-0525 or [request a free estimate](/contact.html).

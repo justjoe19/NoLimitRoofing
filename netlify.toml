@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+# Client preview: every branch deploy and deploy preview (never the production domain) builds with
+# phases 1 and 2 switched on and noindex added to every page. See PREVIEW_PHASES in src/data/site-pages.mjs.
+[context.branch-deploy.environment]
+  PREVIEW_PHASES = "2"
+
+[context.deploy-preview.environment]
+  PREVIEW_PHASES = "2"
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -42,8 +50,8 @@
   to = "/"
   status = 301
 
-# --- Old WordPress site (nolimitroofingin.com before the cutover) ---
-# Every address the old site had in Google's index, sent to the home page so
+# --- Legacy URLs ---
+# Older addresses still in Google's index, sent to the home page so
 # old links and search results land somewhere useful instead of on a 404.
 # The new site has only 3 pages, so everything goes to "/". Splat rules cover
 # the old /services/*, /service-areas/* (counties, cities, "...roof-replacement"

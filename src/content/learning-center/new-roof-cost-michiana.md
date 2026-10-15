@@ -16,15 +16,15 @@ faqs:
 draft: false
 relatedLinks:
   - label: "Roof Replacement"
-    href: "/roofing/roof-replacement.html"
+    href: "/roof-replacement.html"
   - label: "Asphalt Shingle Roofing"
-    href: "/roofing/asphalt-shingle-roofing.html"
+    href: "/asphalt-shingle-roofing.html"
   - label: "Roof Inspections"
-    href: "/roofing/roof-inspections.html"
+    href: "/roof-inspections.html"
   - label: "What Should A Roofing Estimate Include?"
-    href: "/learning-center/what-should-be-included-in-a-roofing-estimate.html"
+    href: "/guides/compare-roofing-estimates.html"
   - label: "How Much Does Roof Repair Cost?"
-    href: "/learning-center/roof-repair-cost.html"
+    href: "/guides/roof-repair-cost.html"
 ---
 
 Every homeowner asks this question first, and every honest roofing contractor gives the same real answer: it depends. Not as a dodge — because roof replacement cost genuinely varies based on a specific, knowable set of factors, and a number that doesn't account for your roof isn't a real estimate, it's a guess. Here's what actually drives the cost up or down.
@@ -43,7 +43,7 @@ If the decking is in good shape, replacement is more straightforward. If a tear-
 
 ## Repair vs. replacement
 
-Sometimes the real cost question isn't "what will a new roof cost" but "do I actually need one" — see our [repair vs. replacement guide](/learning-center/roof-repair-vs-replacement.html) if you're not sure which situation you're in yet.
+Sometimes the real cost question isn't "what will a new roof cost" but "do I actually need one" — see our [repair vs. replacement guide](/guides/repair-vs-replacement.html) if you're not sure which situation you're in yet.
 
 ## Tear-off vs. overlay
 
@@ -55,15 +55,15 @@ Local permitting requirements, the cost of hauling away old roofing material, an
 
 ## How a written estimate actually breaks down
 
-A real estimate isn't a single number — it's the sum of a few distinct categories, and understanding them makes any quote easier to evaluate. Material cost covers the shingles or roofing system itself, underlayment, ice and water shield, flashing, and ventilation components. Labor covers the crew's time, which scales with roof size, pitch, and complexity. Disposal covers hauling away the old roofing material, which varies by how much material is coming off and local disposal fees. Permitting, where required, is a separate line item tied to your municipality, not the contractor's pricing. A quote that only shows one combined total makes it harder to tell what you're actually paying for — see our [guide to what a roofing estimate should include](/learning-center/what-should-be-included-in-a-roofing-estimate.html) for the full breakdown to expect in writing.
+A real estimate isn't a single number — it's the sum of a few distinct categories, and understanding them makes any quote easier to evaluate. Material cost covers the shingles or roofing system itself, underlayment, ice and water shield, flashing, and ventilation components. Labor covers the crew's time, which scales with roof size, pitch, and complexity. Disposal covers hauling away the old roofing material, which varies by how much material is coming off and local disposal fees. Permitting, where required, is a separate line item tied to your municipality, not the contractor's pricing. A quote that only shows one combined total makes it harder to tell what you're actually paying for — see our [guide to what a roofing estimate should include](/guides/compare-roofing-estimates.html) for the full breakdown to expect in writing.
 
 ## Insurance and storm-related replacement
 
-If the reason you need a new roof is storm damage — hail, wind, a fallen tree limb — homeowners insurance may cover some or all of the replacement, depending on your specific policy and your carrier's assessment of the cause. That's a separate question from normal cost planning, since age-related wear and gradual deterioration typically aren't covered the way sudden storm damage is. We can document damage thoroughly with photos and a written inspection report to support an insurance claim, but the coverage decision itself comes from your insurance company, not from us — see our [hail damage](/storm-damage/hail-damage.html) and [wind damage](/storm-damage/wind-damage.html) pages for more on how storm damage gets documented.
+If the reason you need a new roof is storm damage — hail, wind, a fallen tree limb — homeowners insurance may cover some or all of the replacement, depending on your specific policy and your carrier's assessment of the cause. That's a separate question from normal cost planning, since age-related wear and gradual deterioration typically aren't covered the way sudden storm damage is. We can document damage thoroughly with photos and a written inspection report to support an insurance claim, but the coverage decision itself comes from your insurance company, not from us — see our [hail damage](/hail-damage.html) and [wind damage](/wind-damage.html) pages for more on how storm damage gets documented.
 
 ## Common ways homeowners end up overpaying
 
-A few patterns show up again and again: accepting a bid from a contractor who never actually got on the roof (which means the estimate is a guess, not a real assessment); comparing quotes by total price alone without checking whether they cover the same scope and material grade; and choosing based on the lowest number without verifying licensing, insurance, or manufacturer certification — a callback for shoddy work later usually costs more than the difference in the original quotes. See our [questions to ask before hiring a contractor](/learning-center/questions-to-ask-before-hiring-a-roofing-contractor.html) for the specific things worth checking before you sign anything.
+A few patterns show up again and again: accepting a bid from a contractor who never actually got on the roof (which means the estimate is a guess, not a real assessment); comparing quotes by total price alone without checking whether they cover the same scope and material grade; and choosing based on the lowest number without verifying licensing, insurance, or manufacturer certification — a callback for shoddy work later usually costs more than the difference in the original quotes. See our [questions to ask before hiring a contractor](/guides/compare-roofing-estimates.html) for the specific things worth checking before you sign anything.
 
 ## Comparing quotes apples-to-apples
 

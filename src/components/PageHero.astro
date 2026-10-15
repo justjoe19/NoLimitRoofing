@@ -1,0 +1,101 @@
+---
+/**
+ * Hero for the inner pages (everything except the home page and the two ad landing pages).
+ * Same look as the home hero (dark wash over a photo, orange glow, uppercase headline with the
+ * last word in orange) but text only: no lead form, so the page's own closing CTA does that job.
+ */
+import { contactHref } from "../data/site-pages.mjs";
+
+interface Crumb { label: string; href?: string }
+interface Cta { label: string; href: string; variant?: "primary" | "outline" }
+interface Props {
+  image: string;
+  eyebrow: string;
+  title: string;
+  lede?: string;
+  crumbs?: Crumb[];
+  /** Buttons under the intro. Pass [] for none. */
+  ctas?: Cta[];
+  /** Small line under the buttons (e.g. an article's date and author). */
+  meta?: string;
+  /** Show the trust strip under the hero. */
+  trust?: boolean;
+}
+const {
+  image,
+  eyebrow,
+  title,
+  lede,
+  crumbs = [],
+  ctas = [
+    { label: "Get a Free Estimate", href: contactHref(), variant: "primary" },
+    { label: "Call Now", href: "tel:+15743600525", variant: "outline" },
+  ],
+  meta,
+  trust = true,
+} = Astro.props;
+
+// Last word of the headline is orange, like "ROOFS." on the home page.
+// A short last word ("IT") takes the word before it along, so the orange part reads as a phrase.
+const words = title.trim().split(/\s+/);
+const accentCount = words.length > 2 && words[words.length - 1].replace(/\W/g, "").length <= 3 ? 2 : 1;
+const lead = words.slice(0, -accentCount).join(" ");
+const accent = words.slice(-accentCount).join(" ");
+
+const trustItems = ["Free estimates", "Licensed, bonded & insured", "CertainTeed factory-certified", "Locally owned since 2010"];
+const phonePath = "M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z";
+---
+
+<section class="hero-mockup" aria-label="Page header" style={`--hero-image:url("${image}")`}>
+  <div class="container page-hero-inner">
+    {crumbs.length > 0 && (
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        {crumbs.map((c) => (
+          <Fragment>
+            <span aria-hidden="true">/</span>
+            {c.href ? <a href={c.href}>{c.label}</a> : <span class="current">{c.label}</span>}
+          </Fragment>
+        ))}
+      </nav>
+    )}
+    <p class="mt-4 mb-4 text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-[#d6dbe0]">{eyebrow}</p>
+    <h1 class="hero-title max-w-[860px] text-white font-black uppercase text-3xl sm:text-4xl lg:text-[3.25rem] tracking-tight leading-[1.08]">
+      {lead && <Fragment>{lead}{" "}</Fragment>}<span class="text-accent">{accent}</span>
+    </h1>
+    {lede && <p class="lede mt-5 max-w-[640px] text-[#d6dbe0] text-base sm:text-lg leading-relaxed">{lede}</p>}
+    {ctas.length > 0 && (
+      <div class="mt-8 flex flex-wrap gap-4 items-center">
+        {ctas.map((c) => (
+          c.variant === "outline" ? (
+            <a class="btn-hero-outline" href={c.href}>
+              {c.label.toUpperCase()}
+              {c.href.startsWith("tel:") && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-4.5"><path d={phonePath} /></svg>
+              )}
+            </a>
+          ) : (
+            <a class="btn-hero-primary" href={c.href}>
+              {c.label.toUpperCase()}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          )
+        ))}
+      </div>
+    )}
+    {meta && <p class="mt-6 text-[0.85rem] text-[#b7bec6]">{meta}</p>}
+  </div>
+</section>
+
+{trust && (
+  <section class="trust-strip-stacked" aria-label="Trust highlights">
+    <div class="container trust-strip-stacked-grid page-trust-grid">
+      {trustItems.map((t) => (
+        <div class="trust-strip-stacked-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 6-6"/></svg>
+          <span class="label">{t}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

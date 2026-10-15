@@ -1,0 +1,73 @@
+---
+/**
+ * Residential roofing hub (page 2 of the 65-page plan): links to every residential service page.
+ * Cards for pages that are not published yet are left out.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCta from "../components/PageCta.astro";
+import PageCard from "../components/PageCard.astro";
+import SectionHead from "../components/SectionHead.astro";
+import { findEntry, isLive, isPublishedPath } from "../data/site-pages.mjs";
+
+const heroImage = "/images/drone-aerial-finished-roof-pool-hero.webp";
+const services = await getCollection("services");
+const fromContent = (id: string) => {
+  const s = services.find((x) => x.id === id)!;
+  return { img: s.data.heroImage.replace("-hero.webp", ".webp"), title: s.data.title, body: s.data.heroLede };
+};
+
+// Published pages only, in this order. The first two are the ad landing pages that are already live.
+const cards = [
+  { path: "/roof-replacement.html", img: "/images/service-card-roof-installations.webp", title: "Roof Replacement", body: "A new roof is a big investment. A professional evaluation, straightforward options and a detailed written estimate, with no pressure and no obligation." },
+  { path: "/asphalt-shingle-roofing.html", img: "/images/service-card-roof-installations.webp", title: "Asphalt Shingle Roofing", body: "Architectural and 3-tab asphalt shingles from a local, CertainTeed factory-certified crew." },
+  { path: "/roof-repair.html", ...fromContent("roof-repair") },
+  { path: "/emergency-roof-repair.html", ...fromContent("emergency-roof-repair") },
+  { path: "/roof-inspections.html", ...fromContent("roof-inspections") },
+  { path: "/hail-damage.html", ...fromContent("hail-damage") },
+  { path: "/wind-damage.html", ...fromContent("wind-damage") },
+].filter((c) => isPublishedPath(c.path));
+
+const canonical = "https://nolimitroofingin.com/residential-roofing.html";
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Residential Roofing", item: canonical },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Residential Roofing Contractor in Michiana | No Limit Roofing"
+  description="Residential roofing across Northern Indiana and Southwest Michigan: replacement, repair, inspections and storm damage. Free inspection and written estimate."
+  canonical={canonical}
+  ogImage="https://nolimitroofingin.com/images/drone-aerial-finished-roof-pool.webp"
+  preloadImage={heroImage}
+  schema={schema}
+>
+  <PageHero
+    image={heroImage}
+    eyebrow="Residential Roofing"
+    title="Roofing Built To Protect What's Underneath It"
+    lede="Replacement, repair, inspections and storm damage work for Michiana homeowners, with a free inspection and a written estimate before any work begins."
+    crumbs={[{ label: "Residential Roofing" }]}
+  />
+
+  <section class="section" aria-labelledby="residential-services-heading">
+    <div class="container">
+      <SectionHead eyebrow="Our services" title="Residential Roofing Services" id="residential-services-heading" intro="Not sure what your roof needs? Start with a free inspection and we'll tell you honestly." />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        {cards.map((c) => (
+          <PageCard img={c.img} alt={c.title} title={c.title} body={c.body} href={c.path} width={600} height={440} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <PageCta before="Not sure which" highlight="service you need?" intro="Tell us what's going on and we'll take a look and recommend the right fix." />
+</BaseLayout>

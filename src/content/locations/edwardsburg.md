@@ -4,7 +4,7 @@ state: "MI"
 county: "Cass County, MI"
 slug: "edwardsburg"
 metaTitle: "Roofing Contractor Edwardsburg, MI | No Limit Roofing"
-metaDescription: "Roof repair, replacement, storm damage and commercial roofing in Edwardsburg, Michigan. Serving Cass County from No Limit Roofing since 2010."
+metaDescription: "Roof repair, replacement, storm damage and commercial roofing in Edwardsburg, Michigan. Serving Cass County with free inspections and written estimates."
 heroImage: "/images/cass-county-hero.webp"
 heroEyebrow: "Edwardsburg, Michigan"
 heroHeadline: "Roofing Contractor In Edwardsburg, MI"
@@ -23,14 +23,14 @@ nearby:
   - "south-bend"
 guides:
   - label: "Roof Repair vs. Replacement"
-    href: "/learning-center/roof-repair-vs-replacement.html"
+    href: "/guides/repair-vs-replacement.html"
   - label: "Can You Replace A Roof In Winter?"
-    href: "/learning-center/can-you-replace-a-roof-in-winter-in-indiana.html"
+    href: "/guides/roof-replacement-timeline.html"
   - label: "Roof Inspections"
-    href: "/roofing/roof-inspections.html"
+    href: "/roof-inspections.html"
 faqs:
   - question: "Does No Limit Roofing serve Edwardsburg?"
-    answer: "Yes. Edwardsburg is in Cass County, Michigan, part of our core service area, and it is close to our Mishawaka regional office just across the state line."
+    answer: "Yes. Edwardsburg is in Cass County, Michigan, part of our core service area, and it is close to our Mishawaka office just across the state line."
   - question: "Do trees around my house affect my roof?"
     answer: "They can. Shade keeps roofs damp longer, leaves collect in valleys and gutters, and branches can scrape or fall on shingles. An inspection will show whether moisture, moss or debris are shortening your roof's life."
   - question: "I live near a lake. Is that a concern for my roof?"
@@ -43,7 +43,7 @@ faqs:
 
 ## Cass County, Just Over The State Line
 
-Edwardsburg sits in Cass County, Michigan, north of the Indiana border and near Eagle Lake. It's a short trip from our Mishawaka regional office, and we've served Cass County since 2010. Compared with communities right on Lake Michigan, it gets somewhat less direct lake influence, but it shares the same freeze-thaw winters and summer thunderstorms.
+Edwardsburg sits in Cass County, Michigan, north of the Indiana border and near Eagle Lake. It's a short trip from our Mishawaka office, and Cass County is part of our regular service area. Compared with communities right on Lake Michigan, it gets somewhat less direct lake influence, but it shares the same freeze-thaw winters and summer thunderstorms.
 
 ## Trees, Water And Shade
 
@@ -53,18 +53,18 @@ Many properties in and around Edwardsburg are wooded or close to water. That's p
 - **Debris.** Leaves and needles pile up in valleys and gutters, hold water against the roof and can lead to leaks.
 - **Falling limbs.** Storms can drop branches that crack or puncture shingles.
 
-During an [inspection](/roofing/roof-inspections.html), we look at these areas along with flashing, vents and attic ventilation, then tell you whether the fix is a modest [repair](/roofing/roof-repair.html) or something larger.
+During an [inspection](/roof-inspections.html), we look at these areas along with flashing, vents and attic ventilation, then tell you whether the fix is a modest [repair](/roof-repair.html) or something larger.
 
 ## When It's Time To Replace
 
-If the roof has reached the end of its useful life, a [full replacement](/roofing/roof-replacement.html) is usually the more economical answer than continued patching. Our guide on [repair versus replacement](/learning-center/roof-repair-vs-replacement.html) walks through how we think about that, and the page on [asphalt shingle roofing](/roofing/asphalt-shingle-roofing.html) covers the most common materials.
+If the roof has reached the end of its useful life, a [full replacement](/roof-replacement.html) is usually the more economical answer than continued patching. Our guide on [repair versus replacement](/guides/repair-vs-replacement.html) walks through how we think about that, and the page on [asphalt shingle roofing](/asphalt-shingle-roofing.html) covers the most common materials.
 
-If timing is a concern, our guide on [replacing a roof in winter in Indiana](/learning-center/can-you-replace-a-roof-in-winter-in-indiana.html) covers what applies in colder months, and the climate just across the line in Michigan is similar.
+If timing is a concern, our guide on [replacing a roof in winter in Indiana](/guides/roof-replacement-timeline.html) covers what applies in colder months, and the climate just across the line in Michigan is similar.
 
 ## After Storms
 
-Summer storms can damage roofs without leaving obvious signs from the ground. We inspect for [hail damage](/storm-damage/hail-damage.html) and [wind damage](/storm-damage/wind-damage.html), photograph what we find and provide a written estimate you can share with your insurance company. Your insurer makes the coverage decision. For a leak that can't wait, see [emergency roof repair](/roofing/emergency-roof-repair.html).
+Summer storms can damage roofs without leaving obvious signs from the ground. We inspect for [hail damage](/hail-damage.html) and [wind damage](/wind-damage.html), photograph what we find and provide a written estimate you can share with your insurance company. Your insurer makes the coverage decision. For a leak that can't wait, see [emergency roof repair](/emergency-roof-repair.html).
 
 ## How We Work
 
-A free inspection, a written estimate before work starts, and an owner-supervised, GAF factory-certified crew. That's the same way we work everywhere in Michiana. To schedule a visit to your Edwardsburg property, call (574) 360-0525 or use our contact page.
+A free inspection, a written estimate before work starts, and a CertainTeed factory-certified crew. That's the same way we work everywhere in Michiana. To schedule a visit to your Edwardsburg property, call (574) 360-0525 or use our contact page.

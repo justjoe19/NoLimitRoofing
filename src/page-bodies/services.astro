@@ -1,0 +1,113 @@
+---
+/**
+ * All services (a free listing page, not one of the 65): every published service page, grouped.
+ * Keeps the Services menu short. Cards for pages that are not published yet are left out.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import PageCta from "../components/PageCta.astro";
+import PageCard from "../components/PageCard.astro";
+import SectionHead from "../components/SectionHead.astro";
+import { findEntry, isPublishedPath } from "../data/site-pages.mjs";
+
+const heroImage = "/images/drone-aerial-finished-roof-pool-hero.webp";
+const services = await getCollection("services");
+const fromContent = (id: string) => {
+  const s = services.find((x) => x.id === id)!;
+  return { path: findEntry("service", id)!.path, img: s.data.heroImage.replace("-hero.webp", ".webp"), title: s.data.title, body: s.data.heroLede };
+};
+
+const groups = [
+  {
+    id: "residential",
+    title: "Residential Roofing",
+    cards: [
+      { path: "/residential-roofing.html", img: "/images/service-card-roof-installations.webp", title: "Residential Roofing", body: "Replacement, repair, inspections and storm work for homeowners, all in one place." },
+      { path: "/roof-replacement.html", img: "/images/service-card-roof-installations.webp", title: "Roof Replacement", body: "A professional evaluation, straightforward options and a detailed written estimate, with no pressure." },
+      { path: "/asphalt-shingle-roofing.html", img: "/images/service-card-roof-installations.webp", title: "Asphalt Shingle Roofing", body: "Architectural and 3-tab asphalt shingles from a local, CertainTeed factory-certified crew." },
+      fromContent("roof-repair"),
+      fromContent("emergency-roof-repair"),
+      fromContent("roof-inspections"),
+    ],
+  },
+  {
+    id: "storm",
+    title: "Storm Damage",
+    cards: [
+      { path: "/storm-damage.html", img: "/images/service-card-storm-damage.webp", title: "Storm Damage Roofing", body: "Hail, wind, missing shingles and leaks: an inspection, documentation and clear next steps." },
+      fromContent("hail-damage"),
+      fromContent("wind-damage"),
+    ],
+  },
+  {
+    id: "commercial",
+    title: "Commercial Roofing",
+    cards: [
+      { path: "/commercial-roofing.html", img: "/images/service-card-commercial-roofing.webp", title: "Commercial Roofing", body: "Assessments, repair, replacement and maintenance for commercial buildings." },
+      fromContent("repair"),
+      fromContent("replacement"),
+      fromContent("maintenance"),
+      fromContent("tpo"),
+      fromContent("epdm"),
+      fromContent("roof-coatings"),
+    ],
+  },
+  {
+    id: "exterior",
+    title: "Siding, Gutters And More",
+    cards: [
+      { path: "/siding-soffit-fascia.html", img: "/images/service-card-roof-repairs.webp", title: "Siding, Soffit And Fascia", body: "Siding, soffit and fascia repair and replacement." },
+      { path: "/gutters.html", img: "/images/service-card-roof-repairs.webp", title: "Gutters", body: "Seamless gutter installation." },
+      { path: "/gutter-protection.html", img: "/images/service-card-roof-repairs.webp", title: "Gutter Protection", body: "Gutter guards that keep debris out." },
+      { path: "/skylights.html", img: "/images/service-card-roof-repairs.webp", title: "Skylights", body: "Skylight repair and replacement." },
+    ],
+  },
+]
+  .map((g) => ({ ...g, cards: g.cards.filter((c) => isPublishedPath(c.path)) }))
+  .filter((g) => g.cards.length > 0);
+
+const canonical = "https://nolimitroofingin.com/services.html";
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nolimitroofingin.com/" },
+      { "@type": "ListItem", position: 2, name: "Services", item: canonical },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Roofing Services in Michiana | No Limit Roofing"
+  description="Every No Limit Roofing service in one place: residential roofing, storm damage, commercial roofing and exterior work across Northern Indiana and Southwest Michigan."
+  canonical={canonical}
+  ogImage="https://nolimitroofingin.com/images/drone-aerial-finished-roof-pool.webp"
+  preloadImage={heroImage}
+  schema={schema}
+>
+  <PageHero
+    image={heroImage}
+    eyebrow="Our Services"
+    title="Every Roofing Service In One Place"
+    lede="Residential, storm damage and commercial roofing across Northern Indiana and Southwest Michigan, with a free inspection and a written estimate before any work begins."
+    crumbs={[{ label: "Services" }]}
+  />
+
+  {groups.map((g, i) => (
+    <section class:list={["section", { "section--fog": i % 2 === 1 }]} aria-labelledby={`${g.id}-heading`}>
+      <div class="container">
+        <SectionHead title={g.title} id={`${g.id}-heading`} />
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          {g.cards.map((c) => (
+            <PageCard img={c.img} alt={c.title} title={c.title} body={c.body} href={c.path} width={600} height={440} />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <PageCta before="Not sure which" highlight="service you need?" intro="Tell us what's going on and we'll take a look and recommend the right fix." />
+</BaseLayout>

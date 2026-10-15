@@ -16,10 +16,19 @@ Live repo: https://github.com/justjoe19/NoLimitRoofing
 - **Domain and DNS:** registered at GoDaddy (renews every Oct 13; paid through Oct 13, 2027). DNS is hosted by **Netlify DNS** (nameservers `dns1.p02.nsone.net` … `dns4.p02.nsone.net`). Records in the Netlify zone: the two Netlify-managed apex/`www` records; five Google MX records (`aspmx.l.google.com` priority 1, `alt1`/`alt2` priority 5, `alt3`/`alt4` priority 10); TXT `v=spf1 include:_spf.google.com ~all`; the `google-site-verification` TXT; and the Mailgun DKIM TXT `k1._domainkey.mg`. The client says nobody uses email on the domain; the MX records were kept as insurance and can be removed later. The old agency's Cloudflare zone is no longer used.
 - **HTTPS:** Let's Encrypt, issued and renewed automatically by Netlify as long as the domain keeps pointing at Netlify. If a certificate ever fails, check Netlify → Domain management → HTTPS and "Verify DNS configuration".
 - **Forms:** one Netlify form named `contact`, used by all four pages. **Form detection must stay enabled** (Netlify → Forms); it was off until launch day, which meant submissions were not captured. Each submission emails the client's sales address through a Netlify "Email notification" (Forms → Form submission notifications). The hidden `source` field says which page it came from: `homepage`, `storm-damage-lp`, `roof-estimate-lp`, `shingles-lp`. See "Contact form" below.
-- **Old WordPress URLs** (about 50) are 301-redirected to `/` in `netlify.toml`; unknown URLs get the custom `404.html`.
+- **Legacy URLs** (about 50) are 301-redirected to `/` in `netlify.toml`; unknown URLs get the custom `404.html`.
 - **Header / nav:** `BaseLayout.astro` renders `src/components/Header.astro` on every page: logo, links to Home, Storm Damage, Roof Replacement and Asphalt Shingles (current page underlined), phone, one button, and a hamburger drawer on phones. To go back to the nav-less bar (logo, phone, button), swap `Header` for `landing/LandingHeader.astro` in `BaseLayout.astro`.
 - **Ad tracking:** the roof replacement page (only) loads the client's **OpenAI Ads pixel** (`oaiq`, pixel id in `roof-replacement.astro`, passed to `LandingPage` through its `headHtml` prop so it lands in this page's `<head>`). It is the production form: `debug` is off. No conversion event is sent yet; when the form succeeds, `main.js` shows the "Request received" panel, which is the place to call `oaiq(...)` once OpenAI's event name is known. The site has no privacy policy page now; the client should publish one that mentions advertising trackers.
 - **Certification wording:** the footer and "Why choose" text say **"CertainTeed factory-certified"** at the client's request (they previously said GAF). The client is responsible for the claims on the pages; get changes to claims confirmed in writing.
+
+### The 65-page plan and how to publish a phase (Session 43)
+
+The site is growing from 4 pages to the client's 65-page plan in phases. Every page is listed in `src/data/site-pages.mjs` with a `phase` and a `live` flag. **Only `live: true` pages are built for production**; everything else can be previewed locally and links to it are stripped from the published pages automatically.
+
+- Preview everything locally, fully linked: `PREVIEW_ALL=1 npm run dev`.
+- Publish a phase: confirm the client's items for that phase, set `live: true` on its pages in `site-pages.mjs`, run `npm run build` and check there are no broken links, then commit and push. Menu, footer, sitemap and internal links update themselves.
+- Page sources: markdown service pages in `src/content/services`, city pages in `src/content/locations`, guides in `src/content/learning-center` (URLs come from the registry, not from the file names); hand-written pages in `src/page-bodies`.
+- Not live by design: no page ships with claims the client has not confirmed (see the "unverified claims" list in CHANGELOG Session 43).
 
 ### Landing-page layout (shared sections)
 
@@ -44,7 +53,7 @@ The full-site checklist below applies only if the shelved pages are re-enabled.
 
 ## Earlier project status (Session 39, full-site era — background only)
 
-**Session 39 summary**: SEO content depth and internal linking (unique city pages, expanded service pages, linked Learning Center articles), the Google rating shown as text/graphic only, mobile layout fixes, and a **[Go-live checklist](#go-live-checklist-added-session-39--everything-still-needed-beforeat-launch) below — that is the main list of what is left.** Client decisions worth knowing: never write a "5-star" rating anywhere on the site (the decorative star graphic above the reviews is fine; the homepage says "Highly rated on Google" with no number); keep the old WordPress site out of client-facing material; the client owns the Google accounts and the developer helps with the DNS change. `.city-facts-to-verify.txt` (untracked, local only) lists the city-page facts the client should confirm. Full details in `CHANGELOG.md` (Session 39). The session 38 notes follow.
+**Session 39 summary**: SEO content depth and internal linking (unique city pages, expanded service pages, linked Learning Center articles), the Google rating shown as text/graphic only, mobile layout fixes, and a **[Go-live checklist](#go-live-checklist-added-session-39--everything-still-needed-beforeat-launch) below — that is the main list of what is left.** Client decisions worth knowing: never write a "5-star" rating anywhere on the site (the decorative star graphic above the reviews is fine; the homepage says "Highly rated on Google" with no number); keep the legacy URL set out of client-facing material; the client owns the Google accounts and the developer helps with the DNS change. `.city-facts-to-verify.txt` (untracked, local only) lists the city-page facts the client should confirm. Full details in `CHANGELOG.md` (Session 39). The session 38 notes follow.
 
 
 **Site direction**: restyle and branding overhaul are complete and stable. Sessions 25-28 rebuilt the visual system (dark/orange palette, bold uppercase type, a real logo, dark nav bar) and homepage structure to match a client-supplied reference mockup. Sessions 30-37 handled steady-state maintenance, photography upgrades, and navigation contrast fixes. **Session 38 completed a major branding and copy refinement**:
@@ -55,7 +64,7 @@ The full-site checklist below applies only if the shelved pages are re-enabled.
 
 **Watch for changes made outside this project's normal workflow.** Session 30 had to review and partially revert a large external commit that reintroduced two nav items the client had explicitly declined. It happened again in Session 36 (a batch photo-generation script + new Areas page icons) — that one was reviewed and kept, with only a couple of missed `alt`/dimension attributes fixed. **When picking this project back up, always check `git log` for commits you don't recognize before assuming the tree matches what's documented here**, and review them the same way: confirm every change actually applied, check for anything the client previously declined, rebuild and re-run the SEO/broken-link checks before trusting it.
 
-**Deployed and live**: connected to Netlify — `https://no-limit-roofing.netlify.app` reflects `main` on every push and currently scores Desktop 100/100/100/100, Mobile ~97-98/100/100/100 (Lighthouse, see Testing below). **(Historical, Session 38: the real custom domain `nolimitroofingin.com` was not yet pointed at this Netlify site; it was connected on 2026-10-07, see "Current status".)** [Original text:] **the real custom domain, `nolimitroofingin.com`, was NOT yet pointed at this Netlify site** — as of Session 38 it still resolves to the client's old WordPress/Divi site. Someone needs to add the custom domain in Netlify's dashboard and repoint the domain's DNS to it before this project is actually the live public site.
+**Deployed and live**: connected to Netlify — `https://no-limit-roofing.netlify.app` reflects `main` on every push and currently scores Desktop 100/100/100/100, Mobile ~97-98/100/100/100 (Lighthouse, see Testing below). **(Historical, Session 38: the real custom domain `nolimitroofingin.com` was not yet pointed at this Netlify site; it was connected on 2026-10-07, see "Current status".)** [Original text:] **the real custom domain, `nolimitroofingin.com`, was NOT yet pointed at this Netlify site** — as of Session 38 it still resolves to the client's legacy/Divi site. Someone needs to add the custom domain in Netlify's dashboard and repoint the domain's DNS to it before this project is actually the live public site.
 
 **Genuinely open items, most blocked on the client, not on more dev work**:
 - **The domain cutover above** — biggest remaining item. Netlify has the correct build; DNS/domain just isn't pointed at it yet.
@@ -87,7 +96,7 @@ The site itself is built and deployed to `https://no-limit-roofing.netlify.app`.
 
 **Launch day**
 - [ ] Netlify: add `nolimitroofingin.com` as the primary domain; update DNS (do this with the client on a call); wait for HTTPS. Use the apex domain (no www) with www forwarding to it, since canonicals and the sitemap assume no www. Confirm `no-limit-roofing.netlify.app` forwards to the real domain.
-- [ ] **Redirects (internal only, do not put in client materials):** list the old WordPress site's URLs before cutover and add a 301 in `netlify.toml` for any that differ from the new ones. Only `/home` and `/index` redirect today.
+- [ ] **Redirects (internal only, do not put in client materials):** list the legacy URLs before cutover and add a 301 in `netlify.toml` for any that differ from the new ones. Only `/home` and `/index` redirect today.
 - [ ] Search Console: add a **Domain** property, verify with the DNS TXT record (same DNS session), submit `sitemap-index.xml` (should show 47 pages), and request indexing for Home, Services, Contact and a few city pages.
 - [ ] Verify live: `/robots.txt` lists the sitemap, padlock on every page, canonicals point at `nolimitroofingin.com`, only the 404 is `noindex`.
 - [ ] Google Business Profile: set the website field to the new domain **after** the switch; name/address/phone must match the site exactly; primary category Roofing contractor; service areas; hours; services; photos; copy the review link.
@@ -314,7 +323,7 @@ Until that's done, `/admin` will load (it's just a static page) but the login fo
 
 ## Business facts reference
 
-So future edits don't have to re-derive these from the old site:
+So future edits don't have to re-derive these from earlier work:
 
 - **Phone**: (574) 360-0525
 - **Founded**: 2010. **Owner**: Jonathan Smith, 25+ years experience.

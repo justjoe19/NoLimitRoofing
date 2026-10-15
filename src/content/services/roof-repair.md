@@ -28,19 +28,19 @@ faqs:
   - question: "How do I know a repair will hold?"
     answer: "A repair holds when it fixes the actual source of the problem and the surrounding materials are sound. That's why we look at the whole roof before quoting a repair, and why we'll tell you when a patch isn't the right call."
 relatedLinks:
-  - { label: "Emergency Roof Repair", href: "/roofing/emergency-roof-repair.html" }
-  - { label: "Roof Inspections", href: "/roofing/roof-inspections.html" }
-  - { label: "Roof Replacement", href: "/roofing/roof-replacement.html" }
-  - { label: "Wind Damage", href: "/storm-damage/wind-damage.html" }
-  - { label: "Roof Repair Cost", href: "/learning-center/roof-repair-cost.html" }
-  - { label: "Repair vs. Replacement", href: "/learning-center/roof-repair-vs-replacement.html" }
+  - { label: "Emergency Roof Repair", href: "/emergency-roof-repair.html" }
+  - { label: "Roof Inspections", href: "/roof-inspections.html" }
+  - { label: "Roof Replacement", href: "/roof-replacement.html" }
+  - { label: "Wind Damage", href: "/wind-damage.html" }
+  - { label: "Roof Repair Cost", href: "/guides/roof-repair-cost.html" }
+  - { label: "Repair vs. Replacement", href: "/guides/repair-vs-replacement.html" }
 ---
 
 A leaking roof doesn't always mean a full replacement — most of the repair calls No Limit Roofing runs across South Bend, Mishawaka and the surrounding Michiana region turn out to be a specific, findable problem: flashing that's pulled away from a chimney, a cracked vent boot, a valley that's failing, or a small run of damaged shingles from wind or age. Finding that source, rather than guessing, is the difference between a repair that actually holds and one that doesn't.
 
 Every repair starts with a free inspection. We look at accessible shingles, flashing, penetrations, vents, ridges and valleys, and visible decking condition, and we explain what we find before recommending anything — not after. If the fix is a targeted repair, that's what we'll quote. If we think the roof is past the point repairs make sense, we'll tell you that honestly instead of patching something that won't last.
 
-We handle gutter repair alongside roof repairs when the two are related, since water management around the roofline is often part of the same underlying problem. All repair work comes from an owner-supervised, GAF factory-certified crew, with the same free-estimate, no-pressure approach we use on every job.
+We handle gutter repair alongside roof repairs when the two are related, since water management around the roofline is often part of the same underlying problem. All repair work comes from an owner-supervised, CertainTeed factory-certified crew, with the same free-estimate, no-pressure approach we use on every job.
 
 ## Common Causes Of Roof Leaks
 
@@ -48,7 +48,7 @@ We handle gutter repair alongside roof repairs when the two are related, since w
 - **Cracked or worn vent boots.** The rubber collars around pipes tend to wear out before the shingles do.
 - **Valleys.** Water and debris concentrate in valleys, which makes them a frequent trouble spot.
 - **Damaged or missing shingles.** From wind, hail, falling limbs or plain age.
-- **Ice damming.** In winter, ice at the eaves can push meltwater under shingles. Our guide on [what ice and water shield does](/learning-center/what-does-ice-and-water-shield-do.html) explains how the roof is protected against it.
+- **Ice damming.** In winter, ice at the eaves can push meltwater under shingles. Our guide on [what ice and water shield does](/guides/roof-system-protection.html) explains how the roof is protected against it.
 - **Clogged gutters.** Backed-up water at the roof edge can find its way under the first row of shingles.
 
 ## Why The Leak Isn't Always Where The Stain Is
@@ -65,23 +65,23 @@ Water can run along rafters, decking and insulation before it shows up on a ceil
 
 ## Repair Or Replacement?
 
-Repair usually makes sense when damage is localized and the decking underneath is sound. Replacement becomes the better long-term value when wear is widespread, decking is soft, or repairs keep recurring in different places. If we find [bad decking](/learning-center/what-happens-if-bad-decking-is-found.html) during a repair, we'll show you and explain the options. Our [repair vs. replacement guide](/learning-center/roof-repair-vs-replacement.html) walks through the factors, and if replacement is where this ends up, our [roof replacement](/roofing/roof-replacement.html) page explains our process.
+Repair usually makes sense when damage is localized and the decking underneath is sound. Replacement becomes the better long-term value when wear is widespread, decking is soft, or repairs keep recurring in different places. If we find [bad decking](/guides/roof-decking-damage.html) during a repair, we'll show you and explain the options. Our [repair vs. replacement guide](/guides/repair-vs-replacement.html) walks through the factors, and if replacement is where this ends up, our [roof replacement](/roof-replacement.html) page explains our process.
 
 ## What Affects The Cost Of A Repair
 
-The price of a repair depends on the source of the leak, how much roof is affected, how difficult the area is to reach, whether the decking is involved and how much matching material is needed. Our guide to [what roof repair costs](/learning-center/roof-repair-cost.html) breaks these factors down. Your estimate from us is written, and free.
+The price of a repair depends on the source of the leak, how much roof is affected, how difficult the area is to reach, whether the decking is involved and how much matching material is needed. Our guide to [what roof repair costs](/guides/roof-repair-cost.html) breaks these factors down. Your estimate from us is written, and free.
 
 ## Storm-Related Repairs
 
-Wind and hail can damage a roof without leaving obvious signs from the ground. If a recent storm is the reason for your leak, see our pages on [wind damage](/storm-damage/wind-damage.html) and [hail damage](/storm-damage/hail-damage.html). If the leak is active and getting worse, call us about [emergency roof repair](/roofing/emergency-roof-repair.html) at (574) 360-0525.
+Wind and hail can damage a roof without leaving obvious signs from the ground. If a recent storm is the reason for your leak, see our pages on [wind damage](/wind-damage.html) and [hail damage](/hail-damage.html). If the leak is active and getting worse, call us about [emergency roof repair](/emergency-roof-repair.html) at (574) 360-0525.
 
 ## Repairing Roofs In Michiana
 
-Freeze-thaw cycles and heavy winter snow put stress on flashing and shingles, and summer storms add wind and hail. We repair roofs throughout our service area, including [Mishawaka](/service-areas/mishawaka.html), [Elkhart](/service-areas/elkhart.html) and [Plymouth](/service-areas/plymouth.html). If you're not sure what's wrong, a free [roof inspection](/roofing/roof-inspections.html) is a good place to start.
+Freeze-thaw cycles and heavy winter snow put stress on flashing and shingles, and summer storms add wind and hail. We repair roofs throughout our service area, including [Mishawaka](/roofing-mishawaka-in.html), [Elkhart](/roofing-elkhart-in.html) and [Plymouth](/roofing-plymouth-in.html). If you're not sure what's wrong, a free [roof inspection](/roof-inspections.html) is a good place to start.
 
 ## Keeping A Repair From Coming Back
 
-A repair holds when the cause is fixed, not just the symptom. That may mean replacing the flashing instead of caulking over it, resealing or replacing a vent boot, or improving drainage at the roof edge. After a repair, a couple of habits help: keep gutters clear so water can drain, trim branches that rub or drop debris on the roof, and schedule a [roof inspection](/roofing/roof-inspections.html) after big storms. We'll point out anything we notice that could cause the same problem again.
+A repair holds when the cause is fixed, not just the symptom. That may mean replacing the flashing instead of caulking over it, resealing or replacing a vent boot, or improving drainage at the roof edge. After a repair, a couple of habits help: keep gutters clear so water can drain, trim branches that rub or drop debris on the roof, and schedule a [roof inspection](/roof-inspections.html) after big storms. We'll point out anything we notice that could cause the same problem again.
 
 ## What To Expect From Us
 

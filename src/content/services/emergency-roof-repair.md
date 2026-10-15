@@ -27,12 +27,12 @@ faqs:
   - question: "Can you help document damage for insurance during an emergency?"
     answer: "Yes. We can photograph the damage and explain what we found, which may help when you talk to your carrier. The claim decision is your insurance company's, not ours."
 relatedLinks:
-  - { label: "Roof Repair", href: "/roofing/roof-repair.html" }
+  - { label: "Roof Repair", href: "/roof-repair.html" }
   - { label: "Storm Damage", href: "/storm-damage.html" }
-  - { label: "Hail Damage", href: "/storm-damage/hail-damage.html" }
-  - { label: "Wind Damage", href: "/storm-damage/wind-damage.html" }
-  - { label: "Roof Repair Cost Guide", href: "/learning-center/roof-repair-cost.html" }
-  - { label: "Repair vs. Replacement", href: "/learning-center/roof-repair-vs-replacement.html" }
+  - { label: "Hail Damage", href: "/hail-damage.html" }
+  - { label: "Wind Damage", href: "/wind-damage.html" }
+  - { label: "Roof Repair Cost Guide", href: "/guides/roof-repair-cost.html" }
+  - { label: "Repair vs. Replacement", href: "/guides/repair-vs-replacement.html" }
 ---
 
 When a roof fails suddenly — a wind-torn section of shingles, a tree limb through a valley, a leak that shows up mid-storm — the priority is stopping water from getting further into the home, fast. No Limit Roofing treats these calls as emergencies: active leaks and storm damage get moved to the front of the schedule, because every hour of delay is an hour more water can find its way into decking, insulation and drywall.
@@ -51,7 +51,7 @@ Call right away if you see any of these:
 - A section of roof that looks sagging, lifted or visibly out of shape
 - Water pooling in an attic or dripping onto insulation
 
-A slow stain on a ceiling or a few curled shingles are worth attention, but they're usually a scheduled [roof repair](/roofing/roof-repair.html) rather than an emergency. If you're not sure which category you're in, call us and describe what you see.
+A slow stain on a ceiling or a few curled shingles are worth attention, but they're usually a scheduled [roof repair](/roof-repair.html) rather than an emergency. If you're not sure which category you're in, call us and describe what you see.
 
 ## What To Do Before A Crew Arrives
 
@@ -73,15 +73,15 @@ A tarp is a short-term measure. Leaving a temporary fix in place through more Mi
 
 ## Storm Damage And Insurance
 
-Many emergency calls come after a storm. If your roof has hail or wind damage, our [storm damage](/storm-damage.html) pages explain what we look for, and our guides on [wind damage that doesn't blow shingles off](/learning-center/can-wind-damage-shingles-without-blowing-off.html) and [what hail damage looks like](/learning-center/what-does-hail-damage-look-like.html) cover the signs that are easy to miss. We can document what we find with photos to support a claim you choose to file, but we're a roofing contractor, not an insurance company, and we can't promise how a claim will turn out.
+Many emergency calls come after a storm. If your roof has hail or wind damage, our [storm damage](/storm-damage.html) pages explain what we look for, and our guides on [wind damage that doesn't blow shingles off](/guides/wind-damaged-shingles.html) and [what hail damage looks like](/guides/hail-damage-signs.html) cover the signs that are easy to miss. We can document what we find with photos to support a claim you choose to file, but we're a roofing contractor, not an insurance company, and we can't promise how a claim will turn out.
 
 ## Cost And What To Expect
 
-The cost of an emergency repair depends on what failed, how much roof is affected and whether the damage reaches the decking. You get a free written estimate before any repair work beyond the emergency stabilization begins, and our guide to [what roof repair costs](/learning-center/roof-repair-cost.html) explains the factors that usually drive the number.
+The cost of an emergency repair depends on what failed, how much roof is affected and whether the damage reaches the decking. You get a free written estimate before any repair work beyond the emergency stabilization begins, and our guide to [what roof repair costs](/guides/roof-repair-cost.html) explains the factors that usually drive the number.
 
 ## Repair Or Replacement?
 
-Most emergency damage can be repaired without replacing the roof, provided the decking and the rest of the system are sound. If the damage is widespread, or the roof was already near the end of its life, replacement may be the better long-term value. Our [repair vs. replacement](/learning-center/roof-repair-vs-replacement.html) guide covers how that decision gets made. Whichever applies, we'll explain it plainly.
+Most emergency damage can be repaired without replacing the roof, provided the decking and the rest of the system are sound. If the damage is widespread, or the roof was already near the end of its life, replacement may be the better long-term value. Our [repair vs. replacement](/guides/repair-vs-replacement.html) guide covers how that decision gets made. Whichever applies, we'll explain it plainly.
 
 ## After The Emergency Is Over
 
@@ -89,4 +89,4 @@ Once the roof is stabilized, keep a few things in mind. Save your photos and any
 
 ## Emergency Roofing Across Michiana
 
-We respond across our service area, including [South Bend](/service-areas/south-bend.html), [Mishawaka](/service-areas/mishawaka.html) and [Plymouth](/service-areas/plymouth.html) in Indiana, and [Niles](/service-areas/niles.html) and the rest of Berrien and Cass Counties in Michigan. Call (574) 360-0525 and tell us where you are and what you're seeing.
+We respond across our service area, including [South Bend](/roofing-south-bend-in.html), [Mishawaka](/roofing-mishawaka-in.html) and [Plymouth](/roofing-plymouth-in.html) in Indiana, and [Niles](/roofing-niles-mi.html) and the rest of Berrien and Cass Counties in Michigan. Call (574) 360-0525 and tell us where you are and what you're seeing.

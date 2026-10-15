@@ -1,5 +1,17 @@
+---
+// Footer links come from src/data/site-pages.mjs: only published pages are listed.
+import { isLive, byPath } from "../data/site-pages.mjs";
+
+const live = (path: string) => isLive(byPath.get(path));
+const links = (paths: string[]) => paths.filter(live).map((href) => ({ href, label: byPath.get(href)?.title ?? href }));
+
+// Once more pages are live the middle column becomes three links; the hub pages carry everything else.
+const exploreLinks = links(["/services.html", "/about.html", "/contact.html"]).map((l) => ({ ...l, label: l.href === "/services.html" ? "Services" : l.label }));
+const contactHref = live("/contact.html") ? "/contact.html" : "/roof-replacement.html#inspection";
+---
+
 <footer class="site-footer">
-  <div class="container footer-top">
+  <div class:list={["container footer-top", { "footer-top--compact": exploreLinks.length > 0 }]}>
     <div class="footer-about">
       <div class="footer-brand">
         <img src="/images/nlr-logo-360.webp" alt="No Limit Roofing" width="180" height="99" loading="lazy" />
@@ -13,20 +25,30 @@
         </div>
       </div>
     </div>
-    <div>
-      <p class="footer-h">Get Started</p>
-      <ul>
-        <li><a href="/storm-damage.html">Storm Damage</a></li>
-        <li><a href="/roof-replacement.html">Roof Replacement</a></li>
-        <li><a href="/asphalt-shingle-roofing.html">Asphalt Shingles</a></li>
-      </ul>
-    </div>
+    {exploreLinks.length === 0 && (
+      <div>
+        <p class="footer-h">Get Started</p>
+        <ul>
+          <li><a href="/storm-damage.html">Storm Damage</a></li>
+          <li><a href="/roof-replacement.html">Roof Replacement</a></li>
+          <li><a href="/asphalt-shingle-roofing.html">Asphalt Shingles</a></li>
+        </ul>
+      </div>
+    )}
+    {exploreLinks.length > 0 && (
+      <div>
+        <p class="footer-h">Explore</p>
+        <ul>
+          {exploreLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    )}
     <div>
       <p class="footer-h">Contact</p>
       <ul>
         <li><a href="tel:+15743600525">(574) 360-0525</a></li>
         <li><address style="font-style:normal">1911 Clover Rd, Suite 10<br />Mishawaka, IN 46545</address></li>
-        <li><a href="/roof-replacement.html#inspection">Request a Free Estimate</a></li>
+        <li><a href={contactHref}>Request a Free Estimate</a></li>
       </ul>
     </div>
   </div>

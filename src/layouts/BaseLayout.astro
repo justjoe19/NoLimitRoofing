@@ -33,6 +33,7 @@ const {
   noindex = false,
   landing,
 } = Astro.props;
+import { previewMode } from "../data/site-pages.mjs";
 ---
 
 <!doctype html>
@@ -41,6 +42,7 @@ const {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
+{previewMode && !noindex && <meta name="robots" content="noindex, nofollow" />}
 {noindex ? (
   <meta name="robots" content="noindex" />
 ) : (

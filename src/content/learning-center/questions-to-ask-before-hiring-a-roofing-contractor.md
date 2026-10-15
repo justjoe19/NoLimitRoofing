@@ -16,13 +16,13 @@ faqs:
 draft: false
 relatedLinks:
   - label: "Roof Replacement"
-    href: "/roofing/roof-replacement.html"
+    href: "/roof-replacement.html"
   - label: "Roof Inspections"
-    href: "/roofing/roof-inspections.html"
+    href: "/roof-inspections.html"
   - label: "Emergency Roof Repair"
-    href: "/roofing/emergency-roof-repair.html"
+    href: "/emergency-roof-repair.html"
   - label: "What Should A Roofing Estimate Include?"
-    href: "/learning-center/what-should-be-included-in-a-roofing-estimate.html"
+    href: "/guides/compare-roofing-estimates.html"
 ---
 
 A roof is one of the larger investments most homeowners make in their property, and the contractor doing the work matters as much as the material going on the roof. These are the questions worth asking before you sign anything — and a contractor's willingness to answer them clearly is itself useful information.
@@ -41,11 +41,11 @@ Some contractors sell the job and subcontract the actual installation to a crew 
 
 ## What happens if you find bad decking?
 
-A contractor who has a clear, upfront answer to this (how it's priced, whether you'll be shown the damage) is more trustworthy than one who hasn't thought about it or gives a vague "we'll handle it." Our guide explains [what happens if bad decking is found](/learning-center/what-happens-if-bad-decking-is-found.html).
+A contractor who has a clear, upfront answer to this (how it's priced, whether you'll be shown the damage) is more trustworthy than one who hasn't thought about it or gives a vague "we'll handle it." Our guide explains [what happens if bad decking is found](/guides/roof-decking-damage.html).
 
 ## Can I get the estimate in writing, with materials specified by name?
 
-A verbal quote or a one-line total isn't a real estimate. See our related article on [what a roofing estimate should include](/learning-center/what-should-be-included-in-a-roofing-estimate.html) for the full list of what to expect in writing.
+A verbal quote or a one-line total isn't a real estimate. See our related article on [what a roofing estimate should include](/guides/compare-roofing-estimates.html) for the full list of what to expect in writing.
 
 ## What's your warranty, and what voids it?
 
@@ -69,8 +69,8 @@ After major [storms across Michiana](/storm-damage.html), it's common for out-of
 
 ## Why local, long-term presence matters
 
-A contractor who's been serving the same community for years has a real reputation at stake and a practical need to still be reachable if a warranty issue comes up. That's worth weighing alongside price and material specs, especially for a project with a service life measured in decades. See the full range of [places we serve across Michiana](/areas.html), or read about [roof replacement](/roofing/roof-replacement.html) from our own crew.
+A contractor who's been serving the same community for years has a real reputation at stake and a practical need to still be reachable if a warranty issue comes up. That's worth weighing alongside price and material specs, especially for a project with a service life measured in decades. See the full range of [places we serve across Michiana](/areas.html), or read about [roof replacement](/roof-replacement.html) from our own crew.
 
 ## Our answers to these questions
 
-We're glad to answer every one of these directly, because we think a homeowner asking good questions makes for a better outcome on both sides. Call (574) 360-0525 or request a free [roof inspection](/roofing/roof-inspections.html), and ask us anything on this list.
+We're glad to answer every one of these directly, because we think a homeowner asking good questions makes for a better outcome on both sides. Call (574) 360-0525 or request a free [roof inspection](/roof-inspections.html), and ask us anything on this list.

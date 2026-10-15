@@ -1,31 +1,84 @@
 ---
-// Navigation header for the live launch pages (Home, Storm Damage, Roof Replacement, Asphalt Shingle Roofing).
+// Navigation header. The links come from src/data/site-pages.mjs: while only the four launch pages
+// are published it shows exactly those; as more pages go live (live: true) the menu grows with them.
+import { pages, isLive, byPath } from "../data/site-pages.mjs";
+
 interface Props {
   ctaLabel?: string;
 }
 
 const { ctaLabel } = Astro.props;
 
-const currentPath = Astro.url.pathname;
-const isHome = currentPath === "/" || currentPath === "" || currentPath === "/index.html";
-const isStormDamage = currentPath.includes("storm-damage");
-const isRoofReplacement = currentPath.includes("roof-replacement");
-const isShingles = currentPath.includes("asphalt-shingle-roofing");
+// build.format "file" resolves the homepage's build-time URL to "/index.html".
+// Dev serves "/storm-damage", the built site "/storm-damage.html": compare without the extension.
+const norm = (p: string) => (p.replace(/\.html$/, "").replace(/\/index$/, "") || "/");
+const currentPath = norm(Astro.url.pathname);
+const isCur = (href: string) => norm(href) === currentPath;
 
-// Every page links to every launch page; the current one is marked.
-const links = [
-  { label: "Home", href: "/", current: isHome },
-  { label: "Storm Damage", href: "/storm-damage.html", current: isStormDamage },
-  { label: "Roof Replacement", href: "/roof-replacement.html", current: isRoofReplacement },
-  { label: "Asphalt Shingles", href: "/asphalt-shingle-roofing.html", current: isShingles },
+const live = (path: string) => isLive(byPath.get(path));
+const launchPaths = ["/", "/storm-damage.html", "/roof-replacement.html", "/asphalt-shingle-roofing.html"];
+const hasMore = pages.some((p) => isLive(p) && !launchPaths.includes(p.path));
+
+// Shorter menu labels where the group heading already gives the context.
+const menuLabels: Record<string, string> = {
+  "/emergency-roof-repair.html": "Emergency Repair",
+  "/roof-inspections.html": "Inspections",
+  "/asphalt-shingle-roofing.html": "Asphalt Shingles",
+  "/commercial-roof-repair.html": "Repair",
+  "/commercial-roof-replacement.html": "Replacement",
+  "/commercial-roof-maintenance.html": "Maintenance",
+  "/siding-soffit-fascia.html": "Siding & Soffit",
+};
+const label = (path: string) => menuLabels[path] ?? byPath.get(path)?.title ?? path;
+const pick = (paths: string[]) => paths.filter(live).map((href) => ({ href, label: label(href) }));
+
+// Three launch links, as before (labels as the client approved them).
+const launchLinks = [
+  { label: "Home", href: "/" },
+  { label: "Storm Damage", href: "/storm-damage.html" },
+  { label: "Roof Replacement", href: "/roof-replacement.html" },
+  { label: "Asphalt Shingles", href: "/asphalt-shingle-roofing.html" },
 ];
 
-const defaultButtonLabel = (isRoofReplacement || isShingles) ? "Free Estimate" : "Free Inspection";
-const buttonLabel = ctaLabel || defaultButtonLabel;
+// Once more pages are live: one Services dropdown with labelled groups, plus Areas, Guides, About.
+const serviceGroups = [
+  { title: "Residential", href: "/residential-roofing.html", links: pick(["/roof-replacement.html", "/roof-repair.html", "/emergency-roof-repair.html", "/roof-inspections.html", "/asphalt-shingle-roofing.html"]) },
+  { title: "Storm Damage", href: "/storm-damage.html", links: pick(["/hail-damage.html", "/wind-damage.html"]) },
+  { title: "Commercial", href: "/commercial-roofing.html", links: pick(["/commercial-roof-repair.html", "/commercial-roof-replacement.html", "/commercial-roof-maintenance.html"]) },
+  { title: "Exterior", href: "", links: pick(["/siding-soffit-fascia.html", "/gutters.html", "/gutter-protection.html", "/skylights.html"]) },
+].filter((g) => g.links.length > 0 || (g.href && live(g.href)));
+const cityLinks = pages.filter((p) => p.kind === "city" && isLive(p)).map((p) => ({ href: p.path, label: p.title }));
+// Areas dropdown: just the priority cities (phase 2), by state; every city is on /service-areas.html.
+const cityGroups = [
+  { title: "Indiana", suffix: ", IN" },
+  { title: "Michigan", suffix: ", MI" },
+]
+  .map((g) => ({
+    title: g.title,
+    links: pages
+      .filter((p) => p.kind === "city" && p.phase <= 2 && isLive(p) && p.title.endsWith(g.suffix))
+      .map((p) => ({ href: p.path, label: p.title.slice(0, -g.suffix.length) })),
+  }))
+  .filter((g) => g.links.length > 0);
+const guideLinks = pages.filter((p) => p.kind === "guide" && isLive(p)).map((p) => ({ href: p.path, label: p.title }));
+// Guides dropdown: a few featured guides; every guide is on /guides.html.
+const featuredGuides = ["roof-replacement-cost", "roof-repair-cost", "repair-vs-replacement", "hail-damage-signs", "compare-roofing-estimates", "roof-lifespan"]
+  .map((slug) => guideLinks.find((l) => l.href === `/guides/${slug}.html`))
+  .filter((l): l is { href: string; label: string } => Boolean(l));
+const plain = pick(["/about.html"]);
 
-const buttonHref = (isHome || isStormDamage || isRoofReplacement || isShingles)
-  ? "#inspection"
-  : "/storm-damage.html#inspection";
+const allServiceHrefs = serviceGroups.flatMap((g) => [g.href, ...g.links.map((l) => l.href)]);
+const servicesActive = allServiceHrefs.some((h) => h && isCur(h)) || isCur("/services.html");
+const citiesActive = cityLinks.some((l) => isCur(l.href)) || isCur("/service-areas.html");
+const guidesActive = currentPath.startsWith("/guides");
+
+// Pages that carry the lead form scroll to it; everywhere else the button goes to the contact page.
+const formPages = ["/", "/storm-damage.html", "/roof-replacement.html", "/asphalt-shingle-roofing.html", "/contact.html"];
+const onFormPage = formPages.some(isCur);
+const defaultButtonLabel = currentPath.includes("roof-replacement") || currentPath.includes("asphalt-shingle-roofing") ? "Free Estimate" : "Free Inspection";
+const buttonLabel = ctaLabel || defaultButtonLabel;
+const buttonHref = onFormPage ? "#inspection" : live("/contact.html") ? "/contact.html" : "/storm-damage.html#inspection";
+const chevron = "m6 9 6 6 6-6";
 ---
 
 <header class="site-header">
@@ -40,9 +93,79 @@ const buttonHref = (isHome || isStormDamage || isRoofReplacement || isShingles)
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <ul>
-        {links.map((l) => (
-          <li><a href={l.href} aria-current={l.current ? "page" : undefined}>{l.label}</a></li>
+        {!hasMore && launchLinks.map((l) => (
+          <li><a href={l.href} aria-current={isCur(l.href) ? "page" : undefined}>{l.label}</a></li>
         ))}
+        {hasMore && (
+          <Fragment>
+            <li><a href="/" aria-current={isCur("/") ? "page" : undefined}>Home</a></li>
+            {live("/services.html") ? (
+              <li><a href="/services.html" aria-current={servicesActive ? "page" : undefined}>Services</a></li>
+            ) : (
+              <li class="nav-dropdown">
+              <details>
+                <summary aria-current={servicesActive ? "page" : undefined}>
+                  Services
+                  <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={chevron} /></svg>
+                </summary>
+                <div class="nav-dropdown-panel nav-dropdown-panel--mega">
+                  {serviceGroups.map((group) => (
+                    <div class="nav-dropdown-group">
+                      {group.href && live(group.href) ? (
+                        <a href={group.href} class="nav-dropdown-group-title" aria-current={isCur(group.href) ? "page" : undefined}>{group.title}</a>
+                      ) : (
+                        <span class="nav-dropdown-group-title">{group.title}</span>
+                      )}
+                      {group.links.map((l) => <a href={l.href} aria-current={isCur(l.href) ? "page" : undefined}>{l.label}</a>)}
+                    </div>
+                  ))}
+                  {live("/services.html") && <a href="/services.html" class="nav-dropdown-all" aria-current={isCur("/services.html") ? "page" : undefined}>All services &rarr;</a>}
+                </div>
+              </details>
+            </li>
+            )}
+            {live("/service-areas.html") ? (
+              <li><a href="/service-areas.html" aria-current={citiesActive ? "page" : undefined}>Areas</a></li>
+            ) : cityLinks.length > 0 && (
+              <li class="nav-dropdown">
+                <details>
+                  <summary aria-current={citiesActive ? "page" : undefined}>
+                    Areas
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={chevron} /></svg>
+                  </summary>
+                  <div class="nav-dropdown-panel nav-dropdown-panel--mega nav-dropdown-panel--areas">
+                    {cityGroups.map((group) => (
+                      <div class="nav-dropdown-group">
+                        <span class="nav-dropdown-group-title">{group.title}</span>
+                        {group.links.map((l) => <a href={l.href} aria-current={isCur(l.href) ? "page" : undefined}>{l.label}</a>)}
+                      </div>
+                    ))}
+                    {live("/service-areas.html") && <a href="/service-areas.html" class="nav-dropdown-all" aria-current={isCur("/service-areas.html") ? "page" : undefined}>All service areas &rarr;</a>}
+                  </div>
+                </details>
+              </li>
+            )}
+            {live("/guides.html") ? (
+              <li><a href="/guides.html" aria-current={guidesActive ? "page" : undefined}>Guides</a></li>
+            ) : guideLinks.length > 0 && (
+              <li class="nav-dropdown">
+                <details>
+                  <summary aria-current={guidesActive ? "page" : undefined}>
+                    Guides
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={chevron} /></svg>
+                  </summary>
+                  <div class="nav-dropdown-panel">
+                    {featuredGuides.map((l) => <a href={l.href} aria-current={isCur(l.href) ? "page" : undefined}>{l.label}</a>)}
+                    {live("/guides.html") && <a href="/guides.html" class="nav-dropdown-all" aria-current={isCur("/guides.html") ? "page" : undefined}>All guides &rarr;</a>}
+                  </div>
+                </details>
+              </li>
+            )}
+            {plain.map((l) => (
+              <li><a href={l.href} aria-current={isCur(l.href) ? "page" : undefined}>{l.label}</a></li>
+            ))}
+          </Fragment>
+        )}
         <li><a href="tel:+15743600525" class="nav-phone">(574) 360-0525</a></li>
       </ul>
       <div class="header-cta">

@@ -27,12 +27,12 @@ faqs:
   - question: "Do I have to file an insurance claim if you find hail damage?"
     answer: "No. Whether to file is your decision. We'll document what we find and explain your options, including repair without a claim if the damage is limited."
 relatedLinks:
-  - { label: "Wind Damage", href: "/storm-damage/wind-damage.html" }
-  - { label: "Emergency Roof Repair", href: "/roofing/emergency-roof-repair.html" }
-  - { label: "Roof Inspections", href: "/roofing/roof-inspections.html" }
-  - { label: "Roof Replacement", href: "/roofing/roof-replacement.html" }
-  - { label: "What Hail Damage Looks Like", href: "/learning-center/what-does-hail-damage-look-like.html" }
-  - { label: "Impact-Resistant Shingles", href: "/learning-center/architectural-vs-impact-resistant-shingles.html" }
+  - { label: "Wind Damage", href: "/wind-damage.html" }
+  - { label: "Emergency Roof Repair", href: "/emergency-roof-repair.html" }
+  - { label: "Roof Inspections", href: "/roof-inspections.html" }
+  - { label: "Roof Replacement", href: "/roof-replacement.html" }
+  - { label: "What Hail Damage Looks Like", href: "/guides/hail-damage-signs.html" }
+  - { label: "Impact-Resistant Shingles", href: "/guides/shingle-comparison.html" }
 ---
 
 Hail is one of the least obvious forms of roof damage — a storm can pass through South Bend, Mishawaka or the surrounding Michiana region without a single shingle visibly out of place from the driveway, while the roof itself has sustained real damage: bruised or cracked shingles, knocked-loose granules, and dented soft metals like vents and flashing. Left unaddressed, that kind of damage shortens the life of the roof and can turn into leaks well before the shingles were expected to wear out.
@@ -51,7 +51,7 @@ Hail damage tends to show up as:
 - **Dents in soft metals.** Vents, flashing, ridge vents and gutters often show impact marks that tell us hail was heavy enough to matter.
 - **Collateral signs.** Dents in gutters, downspouts, garage doors or siding can suggest the roof took hits too.
 
-Our guide on [what hail damage looks like on a roof](/learning-center/what-does-hail-damage-look-like.html) shows what to watch for.
+Our guide on [what hail damage looks like on a roof](/guides/hail-damage-signs.html) shows what to watch for.
 
 ## What A Hail Inspection Involves
 
@@ -68,8 +68,8 @@ The inspection is free, and it comes with a free written estimate if repair or r
 Not every hailstorm calls for a new roof. Depending on what we find, the honest answer may be:
 
 - **No action needed.** The roof is fine.
-- **A targeted [roof repair](/roofing/roof-repair.html).** Damage is limited and the rest of the roof is sound.
-- **[Replacement](/roofing/roof-replacement.html).** Damage is widespread across the roof, or the roof was already near the end of its life.
+- **A targeted [roof repair](/roof-repair.html).** Damage is limited and the rest of the roof is sound.
+- **[Replacement](/roof-replacement.html).** Damage is widespread across the roof, or the roof was already near the end of its life.
 
 We'll tell you which one it is, and why.
 
@@ -85,11 +85,11 @@ Most policies have a window for filing after a storm, so it's worth having the r
 
 ## If You're Thinking About Impact-Resistant Shingles
 
-If hail is a recurring worry, you might wonder whether impact-resistant shingles are worth it. Our guide to [architectural vs. impact-resistant shingles](/learning-center/architectural-vs-impact-resistant-shingles.html) explains the difference, and we can go through options during your estimate if you're replacing the roof.
+If hail is a recurring worry, you might wonder whether impact-resistant shingles are worth it. Our guide to [architectural vs. impact-resistant shingles](/guides/shingle-comparison.html) explains the difference, and we can go through options during your estimate if you're replacing the roof.
 
 ## Hail Season In Michiana
 
-Summer storms bring most of the hail and wind damage calls we see in Northern Indiana and Southwest Michigan. Hail can hit one neighborhood hard and skip the next one over. If you know a storm passed through [South Bend](/service-areas/south-bend.html), [Elkhart](/service-areas/elkhart.html) or your own town, a free inspection is worth scheduling even if nothing looks wrong. Wind often comes with hail, so we check for that too. See our [wind damage](/storm-damage/wind-damage.html) page.
+Summer storms bring most of the hail and wind damage calls we see in Northern Indiana and Southwest Michigan. Hail can hit one neighborhood hard and skip the next one over. If you know a storm passed through [South Bend](/roofing-south-bend-in.html), [Elkhart](/roofing-elkhart-in.html) or your own town, a free inspection is worth scheduling even if nothing looks wrong. Wind often comes with hail, so we check for that too. See our [wind damage](/wind-damage.html) page.
 
 ## What To Do After A Hailstorm
 
@@ -105,4 +105,4 @@ A free inspection, photo documentation, honest advice and a written estimate if 
 
 ## When Water Is Already Coming In
 
-If hail damage has already led to a leak, call us at (574) 360-0525 about [emergency roof repair](/roofing/emergency-roof-repair.html). Otherwise, you can also schedule a general [roof inspection](/roofing/roof-inspections.html) or [request a free estimate](/contact.html).
+If hail damage has already led to a leak, call us at (574) 360-0525 about [emergency roof repair](/emergency-roof-repair.html). Otherwise, you can also schedule a general [roof inspection](/roof-inspections.html) or [request a free estimate](/contact.html).

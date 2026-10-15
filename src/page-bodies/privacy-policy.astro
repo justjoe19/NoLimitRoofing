@@ -1,0 +1,57 @@
+---
+/**
+ * SHELVED — not part of the 3-page launch. This file is in .gitignore, so it is
+ * not committed or deployed. It is a plain-language DRAFT written for this site.
+ * Have the client review it, and update it if analytics, ad
+ * conversion tracking or a reviews widget is ever added.
+ * To publish: remove it from .gitignore, `git add` it, and link it from Footer.astro.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+---
+
+<BaseLayout
+  title="Privacy Policy | No Limit Roofing"
+  description="How No Limit Roofing collects and uses the information you send through our website."
+  canonical="https://nolimitroofingin.com/privacy-policy.html"
+  ogImage="https://nolimitroofingin.com/images/nlr-logo.webp"
+>
+  <PageHero
+    image="/images/hero-craftsman-dusk.webp"
+    eyebrow="Legal"
+    title="Privacy Policy"
+    lede="Last updated: October 2026"
+    crumbs={[{ label: "Privacy Policy" }]}
+    ctas={[]}
+    trust={false}
+  />
+
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <div class="article-body">
+        <p>No Limit Roofing ("we", "us") is a roofing contractor serving Michiana. This page explains what information we collect through this website and what we do with it.</p>
+
+        <h2>Information you send us</h2>
+        <p>When you fill out a form on this site, we collect what you type into it: your name, phone number, email address, property address and any notes you add. We also record which page the form was sent from, so we know which service you were asking about.</p>
+
+        <h2>How we use it</h2>
+        <p>We use this information only to respond to your request, such as scheduling a roof inspection or preparing an estimate, and to follow up about that request. We do not sell your information.</p>
+
+        <h2>Who handles it</h2>
+        <p>This website is hosted by Netlify, which processes form submissions on our behalf and delivers them to us. Your information is visible to us and to that service provider, and we may share it with others only when needed to carry out your request or when the law requires it.</p>
+
+        <h2>Cookies and tracking</h2>
+        <p>This site does not use advertising or analytics cookies at this time. If that changes, we will update this page.</p>
+
+        <h2>Phone calls</h2>
+        <p>If you call or text us, we keep your number and the details of your request so we can serve you.</p>
+
+        <h2>Your choices</h2>
+        <p>You can ask us to tell you what information we have about you, correct it, or delete it. Call us at <a href="tel:+15743600525">(574) 360-0525</a> and we will take care of it.</p>
+
+        <h2>Changes</h2>
+        <p>We may update this policy from time to time. The date at the top shows when it was last changed.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

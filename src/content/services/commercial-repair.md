@@ -25,19 +25,19 @@ faqs:
   - question: "Should I repair or replace my commercial roof?"
     answer: "If problems are localized and the rest of the roof is sound, repair is usually the better value. If leaks keep appearing in different areas or the membrane is widely worn, replacement may make more sense. We'll give you an honest recommendation either way."
 relatedLinks:
-  - { label: "Commercial Roof Replacement", href: "/commercial/replacement.html" }
-  - { label: "Commercial Maintenance", href: "/commercial/maintenance.html" }
-  - { label: "Roof Coatings", href: "/commercial/roof-coatings.html" }
-  - { label: "TPO Roofing", href: "/commercial/tpo.html" }
-  - { label: "EPDM Roofing", href: "/commercial/epdm.html" }
-  - { label: "TPO vs. EPDM Guide", href: "/learning-center/tpo-vs-epdm-for-commercial-buildings.html" }
+  - { label: "Commercial Roof Replacement", href: "/commercial-roof-replacement.html" }
+  - { label: "Commercial Maintenance", href: "/commercial-roof-maintenance.html" }
+  - { label: "Roof Coatings", href: "/roof-coatings.html" }
+  - { label: "TPO Roofing", href: "/tpo-roofing.html" }
+  - { label: "EPDM Roofing", href: "/epdm-roofing.html" }
+  - { label: "TPO vs. EPDM Guide", href: "/guides/tpo-vs-epdm.html" }
 ---
 
 Flat and low-slope commercial roofs fail differently than residential shingle roofs, and finding the actual source of a leak often means tracing it — water on a low-slope membrane can travel well away from the point where it actually entered. No Limit Roofing repairs EPDM, TPO, PVC, KEE and modified bitumen systems across Northern Indiana and Southwest Michigan, with the same free-inspection, honest-assessment approach we use on residential work.
 
 A commercial roof leak is also a business interruption, not just a maintenance issue, so scheduling matters. We'll work with your operating hours and constraints where the repair allows, and give you a clear written estimate and timeline before work begins — no surprises mid-job.
 
-If you're comparing membrane systems for the repair or a future replacement, our Learning Center guide on [TPO vs. EPDM for commercial buildings](/learning-center/tpo-vs-epdm-for-commercial-buildings.html) breaks down the real tradeoffs.
+If you're comparing membrane systems for the repair or a future replacement, our Learning Center guide on [TPO vs. EPDM for commercial buildings](/guides/tpo-vs-epdm.html) breaks down the real tradeoffs.
 
 ## Common Commercial Roof Problems
 
@@ -59,15 +59,15 @@ On a low-slope roof, water doesn't just run downhill and drip. It can move along
 3. **Diagnosis.** We identify the source and explain what caused it.
 4. **Written estimate and timeline.** The scope is clear before any work starts.
 5. **Repair.** We repair the membrane, seams, flashing or drainage issue using methods suited to your roof system.
-6. **Follow-up.** We walk through what was done, and recommend next steps like [maintenance](/commercial/maintenance.html) if needed.
+6. **Follow-up.** We walk through what was done, and recommend next steps like [maintenance](/commercial-roof-maintenance.html) if needed.
 
 ## Repair, Coat Or Replace?
 
 - **Repair** fits localized problems on an otherwise sound roof.
-- **[Coating](/commercial/roof-coatings.html)** may fit a sound but aging roof that needs extra protection.
-- **[Replacement](/commercial/replacement.html)** is the better value when leaks are widespread or the roof is past its service life.
+- **[Coating](/roof-coatings.html)** may fit a sound but aging roof that needs extra protection.
+- **[Replacement](/commercial-roof-replacement.html)** is the better value when leaks are widespread or the roof is past its service life.
 
-Our guide on [coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) explains the decision in more depth.
+Our guide on [coating vs. replacement](/guides/coating-vs-replacement.html) explains the decision in more depth.
 
 ## Working Around Your Business
 
@@ -75,7 +75,7 @@ We know that a roof project can affect customers, staff and operations. We'll ta
 
 ## Prevention
 
-Regular inspections catch small issues while they're inexpensive. A [maintenance program](/commercial/maintenance.html) checks drainage, seams and flashing on a schedule, with a written report after each visit.
+Regular inspections catch small issues while they're inexpensive. A [maintenance program](/commercial-roof-maintenance.html) checks drainage, seams and flashing on a schedule, with a written report after each visit.
 
 ## Emergency Leaks On A Commercial Roof
 
@@ -91,11 +91,11 @@ We provide written estimates and can document findings with photos. That gives y
 
 ## What To Expect From Us
 
-You'll get a prompt response, an inspection that looks for the actual source, a plain explanation and a written estimate. The work is done by an owner-supervised, GAF factory-certified crew, and we clean up when we're finished. If we think the roof is heading toward [replacement](/commercial/replacement.html), we'll say so, so you can plan and budget instead of being surprised.
+You'll get a prompt response, an inspection that looks for the actual source, a plain explanation and a written estimate. The work is done by a professional crew, and we clean up when we're finished. If we think the roof is heading toward [replacement](/commercial-roof-replacement.html), we'll say so, so you can plan and budget instead of being surprised.
 
 ## Protecting The Building Between Repairs
 
-After a repair, small habits help: keep drains and scuppers clear, limit foot traffic on the membrane, and ask anyone servicing rooftop equipment to report and avoid damage to the roof. A [maintenance program](/commercial/maintenance.html) makes this routine.
+After a repair, small habits help: keep drains and scuppers clear, limit foot traffic on the membrane, and ask anyone servicing rooftop equipment to report and avoid damage to the roof. A [maintenance program](/commercial-roof-maintenance.html) makes this routine.
 
 ## Tell Us About Your Building
 
@@ -103,4 +103,4 @@ When you call, it helps to know roughly how old the roof is, what system it is, 
 
 ## Commercial Roof Repair In Michiana
 
-We repair commercial and industrial roofs across our service area, including in [Elkhart](/service-areas/elkhart.html), [Goshen](/service-areas/goshen.html) and [South Bend](/service-areas/south-bend.html). For system-specific information, see our pages on [TPO](/commercial/tpo.html) and [EPDM](/commercial/epdm.html). Call (574) 360-0525 or [request a free estimate](/contact.html).
+We repair commercial and industrial roofs across our service area, including in [Elkhart](/roofing-elkhart-in.html), [Goshen](/roofing-goshen-in.html) and [South Bend](/roofing-south-bend-in.html). For system-specific information, see our pages on [TPO](/tpo-roofing.html) and [EPDM](/epdm-roofing.html). Call (574) 360-0525 or [request a free estimate](/contact.html).

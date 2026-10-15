@@ -16,13 +16,13 @@ faqs:
 draft: false
 relatedLinks:
   - label: "Asphalt Shingle Roofing"
-    href: "/roofing/asphalt-shingle-roofing.html"
+    href: "/asphalt-shingle-roofing.html"
   - label: "Hail Damage Repair"
-    href: "/storm-damage/hail-damage.html"
+    href: "/hail-damage.html"
   - label: "Roof Replacement"
-    href: "/roofing/roof-replacement.html"
+    href: "/roof-replacement.html"
   - label: "What Does Hail Damage Look Like?"
-    href: "/learning-center/what-does-hail-damage-look-like.html"
+    href: "/guides/hail-damage-signs.html"
 ---
 
 These two terms get confused because they're not actually opposites — a shingle can be architectural and impact-resistant at the same time. They describe two different things about a shingle: its shape and construction (architectural) versus its resistance to impact damage (impact-resistant, often rated Class 4). Here's what each actually means.
@@ -33,7 +33,7 @@ Also called dimensional shingles, these are made with multiple layers laminated 
 
 ## Impact-resistant (Class 4) shingles
 
-This is a separate rating, tested by dropping steel balls onto the shingle to simulate [hail](/storm-damage/hail-damage.html) impact (UL 2218 is the standard test). A shingle that passes the toughest level of this test earns a Class 4 rating, meaning it resists cracking and granule loss from [hail impact](/learning-center/what-does-hail-damage-look-like.html) significantly better than a standard shingle. Class 4 shingles can be manufactured in either 3-tab or architectural styles — the impact rating is a separate spec layered on top of the shingle's basic construction.
+This is a separate rating, tested by dropping steel balls onto the shingle to simulate [hail](/hail-damage.html) impact (UL 2218 is the standard test). A shingle that passes the toughest level of this test earns a Class 4 rating, meaning it resists cracking and granule loss from [hail impact](/guides/hail-damage-signs.html) significantly better than a standard shingle. Class 4 shingles can be manufactured in either 3-tab or architectural styles — the impact rating is a separate spec layered on top of the shingle's basic construction.
 
 ## Why this distinction matters in Michiana
 
@@ -53,4 +53,4 @@ Because Class 4 shingles resist granule loss and cracking from hail impact bette
 
 ## Choosing between architectural and impact-resistant shingles
 
-If you're already choosing architectural shingles for their look and durability, asking about a Class 4 impact-resistant option from the same manufacturer line is a reasonable next question — it's often a modest cost difference for a real reduction in storm-damage risk. We'll walk through the specific architectural and impact-resistant options available from our certified manufacturers (GAF, IKO, Owens Corning, Malarkey, Atlas) as part of your estimate. Call (574) 360-0525 or request a [free inspection](/roofing/roof-inspections.html) to see real samples and pricing for your roof.
+If you're already choosing architectural shingles for their look and durability, asking about a Class 4 impact-resistant option from the same manufacturer line is a reasonable next question — it's often a modest cost difference for a real reduction in storm-damage risk. We'll walk through the specific architectural and impact-resistant options available from our certified manufacturers (GAF, IKO, Owens Corning, Malarkey, Atlas) as part of your estimate. Call (574) 360-0525 or request a [free inspection](/roof-inspections.html) to see real samples and pricing for your roof.

@@ -16,18 +16,18 @@ faqs:
 draft: false
 relatedLinks:
   - label: "Roof Repair"
-    href: "/roofing/roof-repair.html"
+    href: "/roof-repair.html"
   - label: "Emergency Roof Repair"
-    href: "/roofing/emergency-roof-repair.html"
+    href: "/emergency-roof-repair.html"
   - label: "Roof Replacement"
-    href: "/roofing/roof-replacement.html"
+    href: "/roof-replacement.html"
   - label: "Roof Repair vs. Replacement"
-    href: "/learning-center/roof-repair-vs-replacement.html"
+    href: "/guides/repair-vs-replacement.html"
   - label: "How Much Does A New Roof Cost?"
-    href: "/learning-center/new-roof-cost-michiana.html"
+    href: "/guides/roof-replacement-cost.html"
 ---
 
-Across Michiana, [roof repair](/roofing/roof-repair.html) cost has a wider range than most homeowners expect, mostly because "repair" covers everything from resealing one piece of flashing to replacing a significant section of decking and shingles after [storm damage](/storm-damage.html). The factors below are what actually separate a small repair bill from a large one.
+Across Michiana, [roof repair](/roof-repair.html) cost has a wider range than most homeowners expect, mostly because "repair" covers everything from resealing one piece of flashing to replacing a significant section of decking and shingles after [storm damage](/storm-damage.html). The factors below are what actually separate a small repair bill from a large one.
 
 ## What type of damage drives roof repair cost
 
@@ -43,7 +43,7 @@ If your roof is more than a few years old, an exact color/style match for the sh
 
 ## Emergency vs. scheduled repairs
 
-An [emergency](/roofing/emergency-roof-repair.html) repair — stabilizing an active leak or storm damage same-day or next-day — is prioritized differently than a scheduled repair, but that's about response timing, not a separate pricing category. The actual repair cost is still driven by the scope of the damage itself.
+An [emergency](/emergency-roof-repair.html) repair — stabilizing an active leak or storm damage same-day or next-day — is prioritized differently than a scheduled repair, but that's about response timing, not a separate pricing category. The actual repair cost is still driven by the scope of the damage itself.
 
 ## Repairing vs. replacing the damaged section
 
@@ -51,7 +51,7 @@ Not every repair is a like-for-like patch. Sometimes the more cost-effective and
 
 ## Signs you need roof replacement, not another repair
 
-If you've had more than one repair call in the past couple of years, it's worth stepping back and asking whether the roof is nearing the point where repeated repairs cost more over time than a single replacement would. See our [repair vs. replacement guide](/learning-center/roof-repair-vs-replacement.html) for the specific factors that tip that decision one way or the other.
+If you've had more than one repair call in the past couple of years, it's worth stepping back and asking whether the roof is nearing the point where repeated repairs cost more over time than a single replacement would. See our [repair vs. replacement guide](/guides/repair-vs-replacement.html) for the specific factors that tip that decision one way or the other.
 
 ## Does homeowners insurance cover roof repair?
 
@@ -59,4 +59,4 @@ Repairs tied to a specific storm event — wind, hail, a fallen branch — are o
 
 ## Why we don't quote roof repairs over the phone
 
-Nobody can accurately price a roof repair without seeing it — "it's leaking" could mean a five-minute flashing fix or a much larger problem, and there's no way to tell which from a phone call. That's why every job starts with a free, in-person [inspection](/roofing/roof-inspections.html): we look at the actual damage, explain what we find, and give you a written estimate based on your roof, not a phone-call guess. Call (574) 360-0525, or request an inspection online, and we'll give you a real number instead of a range that may not apply to your situation.
+Nobody can accurately price a roof repair without seeing it — "it's leaking" could mean a five-minute flashing fix or a much larger problem, and there's no way to tell which from a phone call. That's why every job starts with a free, in-person [inspection](/roof-inspections.html): we look at the actual damage, explain what we find, and give you a written estimate based on your roof, not a phone-call guess. Call (574) 360-0525, or request an inspection online, and we'll give you a real number instead of a range that may not apply to your situation.

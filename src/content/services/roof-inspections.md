@@ -5,7 +5,7 @@ group: "roofing"
 slug: "roof-inspections"
 searchIntent: "Roof inspection"
 metaTitle: "Roof Inspections in Michiana | No Limit Roofing"
-metaDescription: "Free roof inspections from a GAF-certified crew — shingles, flashing, vents, ridges and decking, explained in plain language. Serving Michiana since 2010."
+metaDescription: "Free roof inspections from a CertainTeed factory-certified crew — shingles, flashing, vents, ridges and decking, explained in plain language. Serving Michiana since 2010."
 heroEyebrow: "Roof Inspections"
 heroHeadline: "We Inspect It. We Explain It. You Decide."
 heroLede: "A thorough, honest inspection catches small problems while they're still small — and gives you a clear answer instead of a sales pitch."
@@ -28,12 +28,12 @@ faqs:
   - question: "Will an inspection tell me how much life my roof has left?"
     answer: "It gives you an informed picture based on the roof's current condition, but nobody can predict an exact number of years. We'll explain the wear we see and what it means for planning a repair or replacement."
 relatedLinks:
-  - { label: "Roof Repair", href: "/roofing/roof-repair.html" }
-  - { label: "Roof Replacement", href: "/roofing/roof-replacement.html" }
+  - { label: "Roof Repair", href: "/roof-repair.html" }
+  - { label: "Roof Replacement", href: "/roof-replacement.html" }
   - { label: "Storm Damage", href: "/storm-damage.html" }
-  - { label: "Hail Damage", href: "/storm-damage/hail-damage.html" }
-  - { label: "Questions To Ask A Contractor", href: "/learning-center/questions-to-ask-before-hiring-a-roofing-contractor.html" }
-  - { label: "How Long Does A Roof Last Here?", href: "/learning-center/how-long-does-a-roof-last-in-northern-indiana.html" }
+  - { label: "Hail Damage", href: "/hail-damage.html" }
+  - { label: "Questions To Ask A Contractor", href: "/guides/compare-roofing-estimates.html" }
+  - { label: "How Long Does A Roof Last Here?", href: "/guides/roof-lifespan.html" }
 ---
 
 Not every roof problem is visible from the ground, and not every homeowner needs to become an expert in shingle wear to know whether their roof is in good shape — that's what an inspection is for. No Limit Roofing's approach is simple: we inspect it, we explain it, and you decide what to do next. There's no pressure to book work you don't need, and no vague answers when you do.
@@ -54,20 +54,20 @@ Inspections are useful on a regular schedule (catching wear before it becomes a 
 
 ## When To Schedule One
 
-1. **After a hailstorm or high-wind event**, even if the roof looks fine. Damage from [hail](/storm-damage/hail-damage.html) and [wind](/storm-damage/wind-damage.html) is easy to miss from the yard.
+1. **After a hailstorm or high-wind event**, even if the roof looks fine. Damage from [hail](/hail-damage.html) and [wind](/wind-damage.html) is easy to miss from the yard.
 2. **Once a year** as a baseline, ideally before winter.
 3. **When you notice a stain, a drip or a change in energy bills**, which may point to moisture or ventilation trouble.
 4. **When buying or selling a home**, so you know the roof's condition going in.
-5. **When the roof is getting older.** Our guide on [how long a roof lasts in Northern Indiana](/learning-center/how-long-does-a-roof-last-in-northern-indiana.html) gives context for what to expect.
+5. **When the roof is getting older.** Our guide on [how long a roof lasts in Northern Indiana](/guides/roof-lifespan.html) gives context for what to expect.
 
 ## How Michiana Weather Fits In
 
-Freeze-thaw cycles, lake-effect snow, ice at the eaves and summer thunderstorms all age a roof faster than mild climates do. A spring or fall check helps catch what winter or a storm season left behind, before it turns into a leak. Whether you're in [South Bend](/service-areas/south-bend.html), [Goshen](/service-areas/goshen.html) or across the state line in Michigan, the same seasonal wear applies.
+Freeze-thaw cycles, lake-effect snow, ice at the eaves and summer thunderstorms all age a roof faster than mild climates do. A spring or fall check helps catch what winter or a storm season left behind, before it turns into a leak. Whether you're in [South Bend](/roofing-south-bend-in.html), [Goshen](/roofing-goshen-in.html) or across the state line in Michigan, the same seasonal wear applies.
 
 ## What Happens After The Inspection
 
 1. **We explain what we found.** In plain language, in person, with photos where they help.
-2. **We give you options.** That could be no action at all, a targeted [repair](/roofing/roof-repair.html), or, if the roof is past the point repairs make sense, a [replacement](/roofing/roof-replacement.html).
+2. **We give you options.** That could be no action at all, a targeted [repair](/roof-repair.html), or, if the roof is past the point repairs make sense, a [replacement](/roof-replacement.html).
 3. **You get a free written estimate** if work is recommended, so you can compare it, think it over and ask questions.
 4. **You decide.** There's no obligation and no pressure.
 
@@ -77,7 +77,7 @@ If you think a storm damaged your roof, an inspection is the right first step be
 
 ## Choosing A Roofer With Confidence
 
-An inspection is also a good way to get to know a contractor before committing to a bigger job. Pay attention to whether they explain what they see, put things in writing and pressure you. Our guides on [questions to ask before hiring a roofing contractor](/learning-center/questions-to-ask-before-hiring-a-roofing-contractor.html) and [what should be included in a roofing estimate](/learning-center/what-should-be-included-in-a-roofing-estimate.html) can help you compare.
+An inspection is also a good way to get to know a contractor before committing to a bigger job. Pay attention to whether they explain what they see, put things in writing and pressure you. Our guides on [questions to ask before hiring a roofing contractor](/guides/compare-roofing-estimates.html) and [what should be included in a roofing estimate](/guides/compare-roofing-estimates.html) can help you compare.
 
 ## Inspection Doesn't Mean Selling
 

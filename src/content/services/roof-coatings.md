@@ -25,19 +25,19 @@ faqs:
   - question: "How is a coating different from a repair or replacement?"
     answer: "A repair fixes a specific problem, a replacement installs a new roof system, and a coating adds a protective, seamless layer over an existing sound roof. Each fits a different situation, and we'll tell you which one your roof needs."
 relatedLinks:
-  - { label: "Commercial Maintenance", href: "/commercial/maintenance.html" }
-  - { label: "Commercial Roof Repair", href: "/commercial/repair.html" }
-  - { label: "Commercial Roof Replacement", href: "/commercial/replacement.html" }
-  - { label: "TPO Roofing", href: "/commercial/tpo.html" }
-  - { label: "Coating vs. Replacement Guide", href: "/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html" }
-  - { label: "TPO vs. EPDM Guide", href: "/learning-center/tpo-vs-epdm-for-commercial-buildings.html" }
+  - { label: "Commercial Maintenance", href: "/commercial-roof-maintenance.html" }
+  - { label: "Commercial Roof Repair", href: "/commercial-roof-repair.html" }
+  - { label: "Commercial Roof Replacement", href: "/commercial-roof-replacement.html" }
+  - { label: "TPO Roofing", href: "/tpo-roofing.html" }
+  - { label: "Coating vs. Replacement Guide", href: "/guides/coating-vs-replacement.html" }
+  - { label: "TPO vs. EPDM Guide", href: "/guides/tpo-vs-epdm.html" }
 ---
 
 Not every aging commercial roof needs a full replacement. When the underlying membrane and structure are still sound, a coating system — including silicone coatings — can seal minor wear, add a reflective layer that can help with cooling costs, and meaningfully extend the roof's service life at a fraction of full replacement cost.
 
 The key is an honest assessment before recommending a coating. No Limit Roofing will tell you directly if a roof is a good candidate for coating versus needing repair or replacement instead — a coating applied to a roof with real structural or membrane damage just delays a bigger problem rather than solving it. We serve commercial and industrial buildings across Northern Indiana and Southwest Michigan.
 
-See our Learning Center guide on [commercial roof coating vs. replacement](/learning-center/when-does-a-commercial-roof-need-coating-vs-replacement.html) for the full breakdown of when each option actually makes sense.
+See our Learning Center guide on [commercial roof coating vs. replacement](/guides/coating-vs-replacement.html) for the full breakdown of when each option actually makes sense.
 
 ## What A Roof Coating Does
 
@@ -59,7 +59,7 @@ A coating makes the most sense when:
 3. **Leaks are minor and can be repaired first.** Existing problems need to be fixed before coating.
 4. **The building owner wants to extend roof life** rather than replace right now.
 
-A coating is not the right answer when the roof has widespread wet insulation, structural damage or a failing membrane. In that case, [repair](/commercial/repair.html) or [replacement](/commercial/replacement.html) is the better value, and we'll say so.
+A coating is not the right answer when the roof has widespread wet insulation, structural damage or a failing membrane. In that case, [repair](/commercial-roof-repair.html) or [replacement](/commercial-roof-replacement.html) is the better value, and we'll say so.
 
 ## How A Coating Project Works
 
@@ -74,14 +74,14 @@ We schedule the work around your business operations where we can.
 ## Weighing The Options
 
 - **Coating** extends the life of a sound roof, usually costing less than replacement.
-- **[Repair](/commercial/repair.html)** fixes a specific problem and suits a roof that's mostly in good shape.
-- **[Replacement](/commercial/replacement.html)** is the right call when the roof is past its useful life.
+- **[Repair](/commercial-roof-repair.html)** fixes a specific problem and suits a roof that's mostly in good shape.
+- **[Replacement](/commercial-roof-replacement.html)** is the right call when the roof is past its useful life.
 
-Your estimate will explain which of these applies, and why. It's also worth understanding how your current system, whether [TPO](/commercial/tpo.html), [EPDM](/commercial/epdm.html) or another, affects the choice.
+Your estimate will explain which of these applies, and why. It's also worth understanding how your current system, whether [TPO](/tpo-roofing.html), [EPDM](/epdm-roofing.html) or another, affects the choice.
 
 ## Coatings And Maintenance
 
-A coating isn't a set-it-and-forget-it product. Roofs still need regular checks for ponding water, seams, flashing and physical damage. A [maintenance program](/commercial/maintenance.html) with written reports after each visit keeps the roof in good shape, and shows you when it's time to think about the next step.
+A coating isn't a set-it-and-forget-it product. Roofs still need regular checks for ponding water, seams, flashing and physical damage. A [maintenance program](/commercial-roof-maintenance.html) with written reports after each visit keeps the roof in good shape, and shows you when it's time to think about the next step.
 
 ## What Affects Coating Cost
 
@@ -103,7 +103,7 @@ Coating work is generally less disruptive than a tear-off, since it goes over th
 
 ## What To Expect From Us
 
-A free inspection, an honest recommendation, a written estimate and a crew supervised by the owner. If your roof isn't a good candidate for coating, you'll hear it from us before you spend a dollar.
+A free inspection, an honest recommendation, a written estimate and a professional crew. If your roof isn't a good candidate for coating, you'll hear it from us before you spend a dollar.
 
 ## Tell Us About Your Roof
 
@@ -111,4 +111,4 @@ It helps to know the roof's type and age, any past leaks or repairs, and whether
 
 ## Michiana Conditions
 
-Sun, heat, heavy snow, meltwater and repeated freeze-thaw cycles all take a toll on a low-slope roof. Coating can help protect a sound roof from that wear, but drainage and seam condition still matter. We work with commercial and industrial buildings throughout the region, including in [Elkhart](/service-areas/elkhart.html), [Mishawaka](/service-areas/mishawaka.html) and [South Bend](/service-areas/south-bend.html). Call (574) 360-0525 or [request a free estimate](/contact.html).
+Sun, heat, heavy snow, meltwater and repeated freeze-thaw cycles all take a toll on a low-slope roof. Coating can help protect a sound roof from that wear, but drainage and seam condition still matter. We work with commercial and industrial buildings throughout the region, including in [Elkhart](/roofing-elkhart-in.html), [Mishawaka](/roofing-mishawaka-in.html) and [South Bend](/roofing-south-bend-in.html). Call (574) 360-0525 or [request a free estimate](/contact.html).

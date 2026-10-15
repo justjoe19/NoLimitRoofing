@@ -14,8 +14,10 @@ interface Props {
   notesPlaceholder: string;
   /** HTML shown after a successful submit. */
   success: string;
+  /** Optional "Service needed" dropdown (the contact page uses it). */
+  services?: string[];
 }
-const { source, ctaLabel, before, highlight, after, intro, notesPlaceholder, success } = Astro.props;
+const { source, ctaLabel, before, highlight, after, intro, notesPlaceholder, success, services } = Astro.props;
 ---
 
 <div class="card p-6 sm:p-7 text-ink">
@@ -61,6 +63,14 @@ const { source, ctaLabel, before, highlight, after, intro, notesPlaceholder, suc
         <label for="address">Property Address <span class="text-steel text-xs font-normal">(Optional — helps check roof via satellite)</span></label>
         <input type="text" id="address" name="address" autocomplete="street-address" placeholder="e.g. 123 Main St, Mishawaka, IN" />
       </div>
+      {services && services.length > 0 && (
+        <div class="field full">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            {services.map((sv) => <option value={sv}>{sv}</option>)}
+          </select>
+        </div>
+      )}
       <div class="field full">
         <label for="message">Notes</label>
         <textarea id="message" name="message" placeholder={notesPlaceholder}></textarea>

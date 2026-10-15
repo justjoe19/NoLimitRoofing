@@ -1,0 +1,34 @@
+---
+/**
+ * Section heading in the home page's style: small eyebrow, uppercase heading, orange bar,
+ * optional intro text on the right. `center` stacks them for narrow sections; `dark` is for
+ * sections on a dark background.
+ */
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro?: string;
+  id?: string;
+  center?: boolean;
+  dark?: boolean;
+}
+const { eyebrow, title, intro, id, center = false, dark = false } = Astro.props;
+---
+
+{center ? (
+  <div class="text-center max-w-[720px] mx-auto mb-10">
+    <span class:list={["text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em]", dark ? "text-white/80" : "text-[#12161b]"]}>{eyebrow}</span>
+    <h2 id={id} class:list={["text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight mt-1", dark ? "text-white" : "text-[#12161b]"]}>{title}</h2>
+    <div class="w-14 h-1 bg-accent mt-2.5 mx-auto"></div>
+    {intro && <p class:list={["mt-4 leading-relaxed", dark ? "text-[#c7cdd3]" : "text-[#4a5568]"]}>{intro}</p>}
+  </div>
+) : (
+  <div class:list={["flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 mb-8 border-b", dark ? "border-white/15" : "border-mist/40"]}>
+    <div>
+      <span class:list={["text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em]", dark ? "text-white/80" : "text-[#12161b]"]}>{eyebrow}</span>
+      <h2 id={id} class:list={["text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight mt-1", dark ? "text-white" : "text-[#12161b]"]}>{title}</h2>
+      <div class="w-14 h-1 bg-accent mt-2.5"></div>
+    </div>
+    {intro && <p class:list={["max-w-[540px] text-sm sm:text-base leading-relaxed", dark ? "text-[#c7cdd3]" : "text-[#4a5568]"]}>{intro}</p>}
+  </div>
+)}

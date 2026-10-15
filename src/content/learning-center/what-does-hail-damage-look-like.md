@@ -16,16 +16,16 @@ faqs:
 draft: false
 relatedLinks:
   - label: "Hail Damage Repair"
-    href: "/storm-damage/hail-damage.html"
+    href: "/hail-damage.html"
   - label: "Wind Damage Repair"
-    href: "/storm-damage/wind-damage.html"
+    href: "/wind-damage.html"
   - label: "Roof Inspections"
-    href: "/roofing/roof-inspections.html"
+    href: "/roof-inspections.html"
   - label: "Architectural vs. Impact-Resistant Shingles"
-    href: "/learning-center/architectural-vs-impact-resistant-shingles.html"
+    href: "/guides/shingle-comparison.html"
 ---
 
-Across Michiana, most people picture [hail damage](/storm-damage/hail-damage.html) as something obvious — a hole punched through the roof, shingles visibly torn up. In reality, hail damage on an asphalt shingle roof is usually much subtler than that, which is exactly why so much of it goes unnoticed until it turns into a leak.
+Across Michiana, most people picture [hail damage](/hail-damage.html) as something obvious — a hole punched through the roof, shingles visibly torn up. In reality, hail damage on an asphalt shingle roof is usually much subtler than that, which is exactly why so much of it goes unnoticed until it turns into a leak.
 
 ## Hail damage: granule loss on shingles
 
@@ -45,11 +45,11 @@ Hail doesn't just affect shingles. Vents, flashing, gutters, and other soft meta
 
 ## How an inspection documents hail damage
 
-A thorough [inspection](/roofing/roof-inspections.html) involves physically walking the roof, examining shingles up close for granule loss, bruising, and cracking, and photographing what's found — not just a visual scan from a ladder. That documentation matters for two reasons: it tells you honestly what condition your roof is actually in, and if you're pursuing an insurance claim, clear photo documentation of specific, located damage is far more useful than a general description.
+A thorough [inspection](/roof-inspections.html) involves physically walking the roof, examining shingles up close for granule loss, bruising, and cracking, and photographing what's found — not just a visual scan from a ladder. That documentation matters for two reasons: it tells you honestly what condition your roof is actually in, and if you're pursuing an insurance claim, clear photo documentation of specific, located damage is far more useful than a general description.
 
 ## How hail damage interacts with age and wear
 
-A newer roof generally shows hail impact more distinctly against otherwise-undamaged shingles, which can make it easier to assess. An older roof already showing general wear can make it harder to separate new hail damage from pre-existing aging — which is exactly why a professional inspection, not a homeowner's visual guess, is the more reliable way to sort out what's actually storm-related. If hail is a concern for your roof, it's also worth reading about [architectural vs. impact-resistant shingles](/learning-center/architectural-vs-impact-resistant-shingles.html), and how [wind can damage shingles without blowing them off](/learning-center/can-wind-damage-shingles-without-blowing-off.html). If the damage is widespread, [roof replacement](/roofing/roof-replacement.html) may come up.
+A newer roof generally shows hail impact more distinctly against otherwise-undamaged shingles, which can make it easier to assess. An older roof already showing general wear can make it harder to separate new hail damage from pre-existing aging — which is exactly why a professional inspection, not a homeowner's visual guess, is the more reliable way to sort out what's actually storm-related. If hail is a concern for your roof, it's also worth reading about [architectural vs. impact-resistant shingles](/guides/shingle-comparison.html), and how [wind can damage shingles without blowing them off](/guides/wind-damaged-shingles.html). If the damage is widespread, [roof replacement](/roof-replacement.html) may come up.
 
 ## Why "I didn't see anything from the yard" isn't the same as "there's no damage"
 
