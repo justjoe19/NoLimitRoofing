@@ -8,16 +8,19 @@
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
+
+const heroImage = "/images/privacy-policy-hero.webp";
 ---
 
 <BaseLayout
   title="Privacy Policy | No Limit Roofing"
   description="How No Limit Roofing collects and uses the information you send through our website."
   canonical="https://nolimitroofingin.com/privacy-policy.html"
-  ogImage="https://nolimitroofingin.com/images/nlr-logo.webp"
+  ogImage="https://nolimitroofingin.com/images/privacy-policy.webp"
+  preloadImage={heroImage}
 >
   <PageHero
-    image="/images/hero-craftsman-dusk.webp"
+    image={heroImage}
     eyebrow="Legal"
     title="Privacy Policy"
     lede="Last updated: October 2026"

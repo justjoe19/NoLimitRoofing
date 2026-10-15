@@ -11,7 +11,7 @@ import PageCard from "../components/PageCard.astro";
 import SectionHead from "../components/SectionHead.astro";
 import { findEntry, guideGroups, isLive, pages } from "../data/site-pages.mjs";
 
-const heroImage = "/images/article-roof-repair-cost-hero.webp";
+const heroImage = "/images/guides-hub-hero.webp";
 const articles = await getCollection("learningCenter", ({ data }) => !data.draft);
 
 const groups = guideGroups
@@ -46,7 +46,7 @@ const schema = [
   title="Roofing Guides for Michiana Homeowners | No Limit Roofing"
   description="Plain-language roofing guides: what a roof costs, repair or replace, storm damage, estimates and roof systems, for homeowners and building owners in Michiana."
   canonical={canonical}
-  ogImage="https://nolimitroofingin.com/images/article-roof-repair-cost.webp"
+  ogImage="https://nolimitroofingin.com/images/guides-hub.webp"
   preloadImage={heroImage}
   schema={schema}
 >

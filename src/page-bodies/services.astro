@@ -11,7 +11,7 @@ import PageCard from "../components/PageCard.astro";
 import SectionHead from "../components/SectionHead.astro";
 import { findEntry, isPublishedPath } from "../data/site-pages.mjs";
 
-const heroImage = "/images/drone-aerial-finished-roof-pool-hero.webp";
+const heroImage = "/images/services-hero.webp";
 const services = await getCollection("services");
 const fromContent = (id: string) => {
   const s = services.find((x) => x.id === id)!;
@@ -84,7 +84,7 @@ const schema = [
   title="Roofing Services in Michiana | No Limit Roofing"
   description="Every No Limit Roofing service in one place: residential roofing, storm damage, commercial roofing and exterior work across Northern Indiana and Southwest Michigan."
   canonical={canonical}
-  ogImage="https://nolimitroofingin.com/images/drone-aerial-finished-roof-pool.webp"
+  ogImage="https://nolimitroofingin.com/images/services.webp"
   preloadImage={heroImage}
   schema={schema}
 >
