@@ -9,7 +9,7 @@ metaDescription: "Leaking or damaged roof? No Limit Roofing repairs flashing, ve
 heroEyebrow: "Roof Repair"
 heroHeadline: "Find The Source. Fix It Right. Stop The Leak."
 heroLede: "Most roof leaks trace back to flashing, vents or a small area of damaged shingles — not the whole roof. We find the actual source before we recommend anything."
-heroImage: "/images/crew-roofer-chimney-flashing-hero.webp"
+heroImage: "/images/service-roof-repair-hero.webp"
 highlights:
   - "Flashing repair around chimneys, vents and valleys — the most common leak source"
   - "Shingle and vent repair or replacement, matched to your existing roof where possible"
@@ -40,7 +40,7 @@ A leaking roof doesn't always mean a full replacement — most of the repair cal
 
 Every repair starts with a free inspection. We look at accessible shingles, flashing, penetrations, vents, ridges and valleys, and visible decking condition, and we explain what we find before recommending anything — not after. If the fix is a targeted repair, that's what we'll quote. If we think the roof is past the point repairs make sense, we'll tell you that honestly instead of patching something that won't last.
 
-We handle gutter repair alongside roof repairs when the two are related, since water management around the roofline is often part of the same underlying problem. All repair work comes from an owner-supervised, CertainTeed factory-certified crew, with the same free-estimate, no-pressure approach we use on every job.
+We handle gutter repair alongside roof repairs when the two are related, since water management around the roofline is often part of the same underlying problem. All repair work comes from a CertainTeed factory-certified crew, with the same free-estimate, no-pressure approach we use on every job.
 
 ## Common Causes Of Roof Leaks
 
@@ -85,7 +85,7 @@ A repair holds when the cause is fixed, not just the symptom. That may mean repl
 
 ## What To Expect From Us
 
-A free inspection, a plain explanation, a written estimate and an owner-supervised crew. We'll only recommend the work your roof needs.
+A free inspection, a plain explanation, a written estimate and a factory-certified crew. We'll only recommend the work your roof needs.
 
 ## A Straight Answer
 

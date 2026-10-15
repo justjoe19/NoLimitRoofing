@@ -1,12 +1,89 @@
 ---
+/**
+ * Home page, following section 7 of the client's brief (2026-10-13): hero, trust strip,
+ * "What brought you here?", Roof Check, roof system, Storm Center, commercial, reviews and
+ * local proof, service area + FAQ, and the short inspection form.
+ * Links to pages that are not published yet fall back to a page that is (pick() below), so this
+ * file is safe to deploy before the other pages go live. Anything the client has not supplied
+ * (approved project photos) is left out instead of invented.
+ */
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LeadForm from "../components/LeadForm.astro";
-import InsuranceSection from "../components/InsuranceSection.astro";
 import AfterSection from "../components/landing/AfterSection.astro";
-import ServicesRow from "../components/ServicesRow.astro";
-import ServiceArea from "../components/ServiceArea.astro";
+import PageCard from "../components/PageCard.astro";
+import SectionHead from "../components/SectionHead.astro";
+import { isPublishedPath, pages, isLive } from "../data/site-pages.mjs";
 
 const heroImage = "/images/hero-craftsman-dusk.webp";
+const pick = (path: string, fallback: string) => (isPublishedPath(path) ? path : fallback);
+const live = (path: string) => isPublishedPath(path);
+
+const reasons = [
+  { href: pick("/roof-repair.html", "/storm-damage.html"), img: "/images/service-roof-repair.webp", alt: "Roofer flashing a valley on an asphalt shingle roof", title: "Leaking Roof", body: "Find the source and fix it, not just the stain." },
+  { href: "/storm-damage.html", img: "/images/service-card-storm-damage.webp", alt: "Storm clouds over suburban homes", title: "Storm Damage", body: "Hail, wind and missing shingles, inspected and documented." },
+  { href: "/roof-replacement.html", img: "/images/service-tear-off-replacement.webp", alt: "Roof tear-off and replacement", title: "New Roof", body: "A full replacement with a written estimate and clear options." },
+  { href: pick("/commercial-roofing.html", "#commercial"), img: "/images/service-card-commercial-roofing.webp", alt: "Flat commercial roof", title: "Commercial Property", body: "Assessments, repair, replacement and maintenance." },
+];
+
+const roofCheck = [
+  { t: "Inspect it", b: "We look at the shingles, flashing, vents, ridges and visible decking condition." },
+  { t: "Photograph it", b: "We document what we find with clear photos you can keep." },
+  { t: "Explain it", b: "We walk you through it in plain language, including what does not need work." },
+  { t: "You decide", b: "You get a written estimate and your options, with no pressure." },
+];
+
+const system = [
+  { t: "Decking", b: "The wood base everything attaches to. We check it and replace what is damaged." },
+  { t: "Ice and water protection", b: "A self-adhering membrane at eaves and valleys that helps stop leaks from ice dams and wind-driven rain." },
+  { t: "Underlayment", b: "A water-resistant layer under the shingles, a second line of defense." },
+  { t: "Starter", b: "The first course at the eaves that helps seal the edge shingles." },
+  { t: "Shingles", b: "The visible layer, designed to shed water and take the weather." },
+  { t: "Flashing", b: "Metal at chimneys, walls and valleys, where water most often finds a way in." },
+  { t: "Penetrations", b: "Vents, pipes and chimneys sealed so they do not become leak points." },
+  { t: "Ventilation", b: "Airflow through the attic that helps manage heat and moisture." },
+  { t: "Ridge protection", b: "Ridge caps and vents that finish the highest line of the roof." },
+  { t: "Drip edge", b: "Metal at the roof edge that guides water into the gutters and protects the fascia." },
+];
+
+const storm = [
+  { t: "Hail", href: pick("/hail-damage.html", "/storm-damage.html"), b: "Bruising, cracks and granule loss that are hard to see from the ground." },
+  { t: "Wind", href: pick("/wind-damage.html", "/storm-damage.html"), b: "Creased, lifted or unsealed shingles, often without anything blowing off." },
+  { t: "Missing shingles", href: pick("/roof-repair.html", "/storm-damage.html"), b: "Replaced and matched where possible, with the area around them checked." },
+  { t: "Leaks", href: pick("/roof-repair.html", "/storm-damage.html"), b: "We trace the source before recommending a fix." },
+  { t: "Temporary protection", href: pick("/emergency-roof-repair.html", "/storm-damage.html"), b: "When a roof is open to the weather, we talk through ways to protect it until it is repaired." },
+];
+
+const commercial = [
+  { t: "Roof assessments", href: pick("/commercial-roofing.html", "#commercial") },
+  { t: "Commercial roof repair", href: pick("/commercial-roof-repair.html", "#commercial") },
+  { t: "Commercial roof replacement", href: pick("/commercial-roof-replacement.html", "#commercial") },
+  { t: "Commercial roof maintenance", href: pick("/commercial-roof-maintenance.html", "#commercial") },
+  { t: "TPO roofing", href: pick("/tpo-roofing.html", "#commercial") },
+  { t: "EPDM roofing", href: pick("/epdm-roofing.html", "#commercial") },
+  { t: "Silicone roof coatings", href: pick("/roof-coatings.html", "#commercial") },
+];
+
+// Real, client-approved projects (city, material, scope, photos). TODO(client): replace the placeholder
+// cards below with real entries; once `projects` has entries the placeholders disappear by themselves.
+const projects: { title: string; city: string; material: string; scope: string; img: string; alt: string; href?: string }[] = [];
+const projectPlaceholders = [1, 2, 3].map(() => ({
+  kicker: "City, State \u00b7 Roofing material",
+  title: "Project name",
+  body: "Scope of work, before, during and after photos, and a link to the full project, added once the client approves the job and its photos.",
+}));
+
+const cities = pages
+  .filter((p) => p.kind === "city" && p.priority && isLive(p))
+  .map((p) => ({ href: p.path, label: p.title }));
+
+const faqs = [
+  { q: "Is the roof inspection really free?", a: "Yes. We inspect the roof, photograph what we find, explain it in plain language and give you a written estimate, with no cost and no obligation." },
+  { q: "What areas do you serve?", a: "We serve Northern Indiana and Southwest Michigan from our office in Mishawaka, including South Bend, Mishawaka, Elkhart, Granger, Goshen and Niles. If your town is not listed, call (574) 360-0525 and we will tell you if we can help." },
+  { q: "Do I need a repair or a full replacement?", a: "It depends on how widespread the damage is and what condition the decking is in. We will tell you honestly which one your roof needs, and if a repair will do, that is what we will quote." },
+  { q: "Will you help with an insurance claim?", a: "We can document storm damage clearly to support a claim you choose to file. Coverage decisions belong to your insurance company, and we cannot guarantee a claim outcome." },
+  { q: "Do you work on commercial buildings?", a: "Yes. Commercial roofs start with a separate assessment, because flat and low-slope systems are different from shingle roofs. Request a commercial assessment and we will follow up." },
+  { q: "How do I get started?", a: "Fill out the short form below or call (574) 360-0525. We will schedule a free inspection at a time that works for you." },
+];
 
 const schema = [
   {
@@ -39,124 +116,90 @@ const schema = [
     ],
   },
 ];
+
+schema.push({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+});
 ---
 
 <BaseLayout
   title="No Limit Roofing | Michiana Roofing Contractor"
-  description="More than roofs. We restore peace of mind. Residential, commercial, and storm damage roofing across Northern Indiana and Southwest Michigan. Free inspections."
+  description="Your roof has one job. So do we. Residential, commercial and storm restoration roofing across Northern Indiana and Southwest Michigan. Free roof inspections."
   canonical="https://nolimitroofingin.com/"
   ogImage="https://nolimitroofingin.com/images/hero-craftsman-dusk.webp"
-  ogTitle="No Limit Roofing | More Than Roofs. We Restore Peace of Mind."
-  ogDescription="Locally owned and trusted roofing experts serving Michiana. Free roof inspections, storm damage repair, full roof replacements, and commercial roofing."
+  ogTitle="No Limit Roofing | Your Roof Has One Job. So Do We."
+  ogDescription="Residential roofing, commercial roofing and storm restoration across Northern Indiana and Southwest Michigan. Free roof inspections."
   preloadImage={heroImage}
   schema={schema}
 >
 
-  <!-- SECTION 2: HERO -->
-  <section class="hero-mockup" aria-label="Hero">
-    <div class="container hero-mockup-inner hero-lead">
-      <div class="hero-lead-text">
-        <p class="hero-eyebrow text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-[#d6dbe0] mb-4">
-          STORM DAMAGE &bull; INSURANCE CLAIMS &bull; RESIDENTIAL &amp; COMMERCIAL
-        </p>
-        <h1 class="hero-title text-white font-black uppercase text-3xl sm:text-4xl lg:text-[3.25rem] tracking-tight leading-[1.08]">
-          MORE THAN<br />
-          <span class="text-accent">ROOFS.</span> WE RESTORE<br />
-          PEACE OF MIND.
-        </h1>
-        <p class="lede mt-5 max-w-[560px] text-[#d6dbe0] text-base sm:text-lg leading-relaxed">
-          At No Limit Roofing, we specialize in storm damage repair, roof replacements, and insurance claim support. We handle the process so you can focus on what matters most.
-        </p>
-        <div class="hero-actions mt-8 flex flex-wrap gap-4 items-center">
-          <a class="btn-hero-primary" href="#inspection">
-            GET A FREE INSPECTION
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4.5" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6"/>
-            </svg>
-          </a>
-          <a class="btn-hero-outline" href="tel:+15743600525">
-            CALL NOW
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-4.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div id="inspection" class="hero-lead-form">
-        <LeadForm
-          source="homepage"
-          ctaLabel="SCHEDULE FREE ROOF INSPECTION"
-          before="Schedule your"
-          highlight="free roof inspection"
-          after="today."
-          intro="No cost, no obligation. We'll inspect your roof, provide clear documentation, and walk you through every option honestly."
-          notesPlaceholder="What can we help you with? (optional)"
-          success="Thank you! We'll reach out within <strong>24 hours</strong> to schedule your free inspection."
-        />
-      </div>
-
-      <div class="hero-lead-callout">
-        <img
-          src="/images/hero-storms-hit-callout-560.webp"
-          alt="When Storms Hit... We Build Back Stronger"
-          class="hero-script-callout"
-          width="400"
-          height="327"
-          fetchpriority="high"
-        />
+  <!-- HERO -->
+  <section class="hero-mockup" aria-label="Hero" style={`--hero-image:url("${heroImage}")`}>
+    <div class="container page-hero-inner">
+      <p class="mb-4 text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-[#d6dbe0]">
+        Residential Roofing &bull; Commercial Roofing &bull; Storm Restoration
+      </p>
+      <h1 class="hero-title max-w-[860px] text-white font-black uppercase text-3xl sm:text-4xl lg:text-[3.25rem] tracking-tight leading-[1.08]">
+        Your roof has one job.<br /><span class="text-accent">So do we.</span>
+      </h1>
+      <p class="mt-4 text-white font-extrabold text-xl sm:text-2xl">Protect what is underneath it.</p>
+      <p class="lede mt-4 max-w-[640px] text-[#d6dbe0] text-base sm:text-lg leading-relaxed">
+        Northern Indiana + Southwest Michigan. Residential, commercial and storm damage roofing from a locally owned crew based in Mishawaka, Indiana.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4 items-center">
+        <a class="btn-hero-primary" href="#inspection">GET MY FREE ROOF INSPECTION <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn-hero-outline" href="tel:+15743600525">CALL 574-360-0525 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-4.5"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: TRUST STRIP -->
+  <!-- TRUST STRIP: only credentials we can stand behind; anything unverified is left out -->
   <section class="trust-strip-stacked" aria-label="Trust highlights">
-    <div class="container trust-strip-stacked-grid">
-      <div class="trust-strip-stacked-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-8 shrink-0 text-white" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          <path d="M12 2v20"/>
-          <path d="M4 10h16"/>
-          <path d="M4 5.5l8-2.5v7H4z" fill="currentColor" opacity="0.9"/>
-          <path d="M12 10h8c0 4.5-3.5 9-8 11.5V10z" fill="currentColor" opacity="0.9"/>
-        </svg>
-        <span class="label">INSURANCE CLAIM<br />EXPERTS</span>
-      </div>
+    <div class="container trust-strip-stacked-grid page-trust-grid">
+      {["Free estimates", "Licensed, bonded & insured", "CertainTeed factory-certified", "Locally owned & operated"].map((t) => (
+        <div class="trust-strip-stacked-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 6-6"/></svg>
+          <span class="label">{t}</span>
+        </div>
+      ))}
+    </div>
+  </section>
 
-      <div class="trust-strip-stacked-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="m8 12 3 3 6-6"/>
-        </svg>
-        <span class="label">HIGH QUALITY<br />MATERIALS</span>
-      </div>
-
-      <div class="trust-strip-stacked-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-          <circle cx="9" cy="7" r="4"/>
-          <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-        </svg>
-        <span class="label">EXPERIENCED<br />&amp; TRUSTED</span>
-      </div>
-
-      <div class="trust-strip-stacked-item">
-        <svg viewBox="0 0 24 24" fill="currentColor" class="size-8 shrink-0 text-white" aria-hidden="true">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-          <path d="M17 4h2v3.5l-2-1.8z" />
-        </svg>
-        <span class="label">RESIDENTIAL &amp;<br />COMMERCIAL</span>
-      </div>
-
-      <div class="trust-strip-stacked-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-8 shrink-0 text-white" aria-hidden="true">
-          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-          <path d="m11 13-3 6h4l-1 5 5-7h-4l2-4"/>
-        </svg>
-        <span class="label">24/7 STORM<br />RESPONSE</span>
+  <!-- WHAT BROUGHT YOU HERE? -->
+  <section class="section" aria-labelledby="reasons-heading">
+    <div class="container">
+      <SectionHead eyebrow="What brought you here?" title="Start With What You're Seeing" id="reasons-heading" intro="Pick the one that sounds like your roof. Each leads to the page that covers it." />
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-3.5">
+        {reasons.map((r) => <PageCard img={r.img} alt={r.alt} title={r.title} body={r.body} href={r.href} width={400} height={400} />)}
       </div>
     </div>
   </section>
 
+  <!-- REAL PROJECTS (placeholders until the client approves real jobs and photos) -->
+  <section class="section section--fog" aria-labelledby="projects-heading">
+    <div class="container">
+      <SectionHead eyebrow="Real projects" title="Do Not Believe The Sales Pitch. Look At The Roofs." id="projects-heading" intro="Before, during and after photos from approved projects, with the city, material and scope of each job." />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        {projects.length > 0
+          ? projects.map((p) => <PageCard img={p.img} alt={p.alt} title={p.title} kicker={`${p.city} \u00b7 ${p.material}`} body={p.scope} href={p.href} width={600} height={440} />)
+          : projectPlaceholders.map((p) => (
+              <div class="service-card-mockup">
+                <div class="project-ph" aria-hidden="true"><span>PHOTO PLACEHOLDER</span></div>
+                <div class="service-card-bottom"><span class="service-card-title">{p.title.toUpperCase()}</span></div>
+                <div class="px-2.5 pb-4">
+                  <p class="text-[0.75rem] font-bold uppercase tracking-wider text-accent-light mb-1">{p.kicker}</p>
+                  <p class="text-sm leading-relaxed text-[#aab1b8]">{p.body}</p>
+                </div>
+              </div>
+            ))}
+      </div>
+      {live("/projects.html") && <p class="mt-8"><a class="btn-hero-primary" href="/projects.html">SEE ALL PROJECTS</a></p>}
+    </div>
+  </section>
+
+  <!-- NO LIMIT ROOF CHECK (proposed branded process; the client confirms the deliverables) -->
   <AfterSection
     eyebrow="Free inspection"
     heading="Not Sure What Your Roof Needs?"
@@ -167,185 +210,82 @@ const schema = [
       "Shingles that are curling, cracked or missing",
       "Questions about an insurance claim",
       "Planning a new roof",
-      "A free, no-obligation inspection",
     ]}
     ctaLabel="Schedule my free inspection"
-    processEyebrow="Our process"
-    processHeading="A Simple Process, Start to Finish"
-    processIntro="We handle the hard part so you don't have to."
-    steps={[
-      { t: "Free Inspection", b: "We inspect and document your roof." },
-      { t: "Insurance Claim Help", b: "If there's storm damage, we meet with your adjuster and advocate for you." },
-      { t: "Detailed Estimate", b: "You get a clear, itemized estimate." },
-      { t: "Quality Installation", b: "We install your new roof with expert care." },
-      { t: "Peace of Mind", b: "Your home is protected for what's next." },
-    ]}
+    processEyebrow="No Limit Roof Check"
+    processHeading="We Inspect It. We Photograph It."
+    processIntro="We explain it. You decide. Our free roof check, in four steps."
+    steps={roofCheck}
     beforeImg="/images/roof-replacement-before-640.webp"
     afterImg="/images/roof-replacement-after-640.webp"
-    beforeLabel={["BEFORE", "OLD ROOF"]}
-    afterLabel={["AFTER", "NEW ROOF"]}
+    beforeLabel={["AGED ROOF", "ILLUSTRATION"]}
+    afterLabel={["NEW ROOF", "ILLUSTRATION"]}
   />
 
-  <!-- SECTION 4: COMPLETE ROOFING SOLUTIONS -->
-  <section class="section" aria-labelledby="complete-solutions-heading">
+  <!-- ROOF SYSTEM -->
+  <section class="section section--fog" aria-labelledby="system-heading">
     <div class="container">
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-mist/40">
-        <div>
-          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-[#12161b]">
-            OUR SERVICES
-          </span>
-          <h2 id="complete-solutions-heading" class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#12161b] mt-1">
-            COMPLETE ROOFING SOLUTIONS
-          </h2>
-          <div class="w-14 h-1 bg-accent mt-2.5"></div>
-        </div>
-        <p class="max-w-[540px] text-sm sm:text-base text-[#4a5568] leading-relaxed">
-          From storm damage to full roof replacements, No Limit Roofing delivers reliable, high-quality craftsmanship for residential and commercial properties.
-        </p>
+      <SectionHead eyebrow="The roof system" title="A Roof Is More Than Shingles" id="system-heading" intro="A roof works as a system. Every layer has a job, and a weak one can undo the rest." />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+        {system.map((s, i) => (
+          <div class="panel-dark">
+            <span class="text-accent font-black text-sm">{String(i + 1).padStart(2, "0")}</span>
+            <h3 class="mt-1 text-white font-black uppercase tracking-wide text-[0.95rem]">{s.t}</h3>
+            <p class="mt-2 text-sm leading-relaxed">{s.b}</p>
+          </div>
+        ))}
       </div>
-
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-3.5 mt-8">
-        <!-- CARD 1: HAIL DAMAGE -->
-        <a class="service-card-mockup group" href="/storm-damage.html">
-          <div class="service-card-img-wrap">
-            <img
-              src="/images/service-card-hail-damage.webp"
-              alt="Hail damage on asphalt shingles"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-card-bottom">
-            <span class="service-card-title whitespace-nowrap">HAIL DAMAGE</span>
-            <span class="service-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- CARD 2: ROOF INSTALLATIONS -->
-        <a class="service-card-mockup group" href="/roof-replacement.html">
-          <div class="service-card-img-wrap">
-            <img
-              src="/images/service-card-roof-installations.webp"
-              alt="New architectural shingle roof installation"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-card-bottom">
-            <span class="service-card-title">ROOF<br />INSTALLATIONS</span>
-            <span class="service-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- CARD 3: ROOF REPAIRS -->
-        <a class="service-card-mockup group" href="/roof-replacement.html">
-          <div class="service-card-img-wrap">
-            <img
-              src="/images/service-card-roof-repairs.webp"
-              alt="Professional roofer performing precise roof repair"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-card-bottom">
-            <span class="service-card-title whitespace-nowrap">ROOF REPAIRS</span>
-            <span class="service-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- CARD 4: STORM DAMAGE -->
-        <a class="service-card-mockup group" href="/storm-damage.html">
-          <div class="service-card-img-wrap">
-            <img
-              src="/images/service-card-storm-damage.webp"
-              alt="Storm clouds and lightning over suburban homes"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-card-bottom">
-            <span class="service-card-title whitespace-nowrap">STORM DAMAGE</span>
-            <span class="service-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
-        </a>
-
-      </div>
+      <p class="mt-8 text-[#4a5568]">
+        See how the layers work together in our guide to <a class="underline font-semibold" href={pick("/guides/roof-system-protection.html", "/roof-replacement.html")}>{live("/guides/roof-system-protection.html") ? "ice and water shield and ventilation" : "a full roof replacement"}</a>.
+      </p>
     </div>
   </section>
 
-  <!-- SECTION 5: WHY CHOOSE NO LIMIT ROOFING -->
-  <section class="why-choose-mockup" aria-labelledby="why-choose-heading">
-    <div class="container split items-center gap-12 lg:gap-16">
-      <div class="flex flex-col items-center justify-center text-center">
-        <img
-          src="/images/nlr-logo-860.webp"
-          alt="No Limit Roofing"
-          width="420"
-          height="232"
-          loading="lazy"
-          class="max-w-[340px] sm:max-w-[390px] lg:max-w-[430px] w-full drop-shadow-2xl"
-        />
-        <p class="mt-4 text-xs sm:text-sm font-black uppercase tracking-[0.22em] text-white/90">
-          BUILDING A STRONGER TOMORROW
-        </p>
+  <!-- STORM CENTER -->
+  <section class="why-choose-mockup" aria-labelledby="storm-heading">
+    <div class="container">
+      <SectionHead dark eyebrow="Storm Center" title="After The Storm, Start Here" id="storm-heading" intro="We inspect the roof, document what we find and explain your options. We are a roofing contractor, not your insurance company, so we do not promise a claim outcome." />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+        {storm.map((s) => (
+          <a class="panel-dark block hover:border-accent/60 transition-colors" href={s.href}>
+            <h3 class="text-white font-black uppercase tracking-wide text-[0.95rem]">{s.t}</h3>
+            <p class="mt-2 text-sm leading-relaxed">{s.b}</p>
+          </a>
+        ))}
       </div>
+      <a class="btn-hero-primary mt-8" href="#inspection">GET A FREE STORM INSPECTION</a>
+    </div>
+  </section>
 
+  <!-- COMMERCIAL -->
+  <section class="section" id="commercial" aria-labelledby="commercial-heading">
+    <div class="container split items-center gap-10 lg:gap-14">
+      <img class="w-full rounded-lg" src="/images/commercial-roofing-project.webp" alt="Crew working on a flat commercial roof" width="800" height="450" loading="lazy" />
       <div>
-        <h2 id="why-choose-heading" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl tracking-tight">
-          WHY CHOOSE NO LIMIT ROOFING?
-        </h2>
-        <div class="w-14 h-1 bg-accent mt-2.5 mb-4"></div>
-        <p class="text-[#c7cdd3] leading-relaxed text-[1.02rem]">
-          We're more than a roofing company — we're a team committed to protecting what matters most. With extensive experience in roofing and insurance claim support and a reputation for integrity, we go above and beyond to deliver exceptional results.
-        </p>
-
-        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/15">
-          <div class="why-choose-stat-box">
-            <strong>1000+</strong>
-            <span>ROOFS COMPLETED</span>
-          </div>
-          <div class="why-choose-stat-box">
-            <strong>GOOGLE</strong>
-            <span>HIGHLY RATED</span>
-          </div>
-          <div class="why-choose-stat-box">
-            <strong>FAST</strong>
-            <span>CLAIM SUPPORT</span>
-          </div>
-          <div class="why-choose-stat-box">
-            <strong>LOCALLY</strong>
-            <span>OWNED &amp; OPERATED</span>
-          </div>
-        </div>
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-[#12161b]">Commercial roofing</span>
+        <h2 id="commercial-heading" class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#12161b] mt-1">A Separate Process For Commercial Roofs</h2>
+        <div class="w-14 h-1 bg-accent mt-2.5"></div>
+        <p class="mt-4 text-[#4a5568] leading-relaxed">Flat and low-slope commercial roofs fail differently from shingle roofs, so commercial work starts with its own assessment instead of the residential inspection.</p>
+        <ul class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+          {commercial.map((c) => (
+            <li class="flex items-start gap-2.5 font-semibold text-[#12161b] text-[0.95rem]">
+              <span class="size-5 shrink-0 mt-0.5 text-accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <a href={c.href} class="hover:underline">{c.t}</a>
+            </li>
+          ))}
+        </ul>
+        <a class="btn-hero-primary mt-7" href="#inspection">REQUEST A COMMERCIAL ROOF ASSESSMENT</a>
       </div>
     </div>
   </section>
 
-  <InsuranceSection />
-
-  <!-- SECTION 6: WHAT OUR CUSTOMERS SAY -->
+  <!-- REVIEWS AND LOCAL PROOF -->
   <section class="section section--fog" aria-labelledby="reviews-heading">
     <div class="container">
       <div class="section-head center">
         <h2 id="reviews-heading" class="font-black uppercase tracking-tight">WHAT OUR CUSTOMERS SAY</h2>
         <div class="stars stars-lg justify-center mt-3 text-accent" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
         </div>
       </div>
 
@@ -384,35 +324,79 @@ const schema = [
         </button>
       </div>
     </div>
+    <div class="container mt-10 text-center">
+      <p class="max-w-[720px] mx-auto text-[#4a5568] leading-relaxed">
+        No Limit Roofing is a locally owned and operated roofing contractor. You can find us at 1911 Clover Rd, Suite 10 in Mishawaka, Indiana.
+        {live("/about.html") && (<Fragment> Read <a class="underline font-semibold" href="/about.html">about the company</a>.</Fragment>)}
+      </p>
+    </div>
   </section>
 
-  <!-- SECTION 7: PRE-FOOTER CTA / CONTACT FORM -->
-  <section class="pre-footer-cta lp-form-section" aria-labelledby="lp-cta-h">
-    <div class="container split lp-cta-3" style="align-items:center">
+  <!-- SERVICE AREA + FAQ -->
+  <section class="section" aria-labelledby="area-heading">
+    <div class="container split gap-10 lg:gap-14" style="align-items:start">
       <div>
-        <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">
-          READY TO GET STARTED?
-        </p>
+        <SectionHead eyebrow="Where we work" title="Northern Indiana + Southwest Michigan" id="area-heading" />
+        <p class="text-[#4a5568] leading-relaxed">We work from our office in Mishawaka across the South Bend area and the communities around it, in Indiana and in Michigan.</p>
+        {cities.length > 0 && (
+          <div class="chip-row mt-5">
+            {cities.map((c) => <a class="chip" href={c.href}>{c.label}</a>)}
+          </div>
+        )}
+        {live("/service-areas.html") && <p class="mt-5"><a class="underline font-semibold" href="/service-areas.html">See all service areas</a></p>}
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Mishawaka,+IN&output=embed" title="Map of the No Limit Roofing service area around Mishawaka" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--fog" aria-labelledby="faq-heading">
+    <div class="container" style="max-width:820px">
+      <SectionHead center eyebrow="FAQ" title="Common Questions" id="faq-heading" />
+      <div>
+        {faqs.map((f, i) => (
+          <details class="faq-item" open={i === 0}>
+            <summary>{f.q}<span class="plus" aria-hidden="true"></span></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA: the short inspection form -->
+  <section class="pre-footer-cta" aria-labelledby="lp-cta-h">
+    <div class="container split gap-10 lg:gap-14" style="align-items:start">
+      <div>
+        <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.22em] text-white/80 mb-2">READY TO GET STARTED?</p>
         <h2 id="lp-cta-h" class="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl leading-[1.1] tracking-tight">
           SCHEDULE YOUR<br />
           <span class="text-accent">FREE ROOF INSPECTION</span> TODAY.
         </h2>
-        <p class="mt-4 max-w-[460px] text-[#c7cdd3] leading-relaxed">
-          No cost, no obligation. We'll inspect your roof, provide clear documentation, and walk you through every option honestly.
-        </p>
+        <p class="mt-4 max-w-[460px] text-[#c7cdd3] leading-relaxed">No cost, no obligation. We'll inspect your roof, provide clear documentation, and walk you through every option honestly.</p>
         <a href="tel:+15743600525" class="cta-action-row group mt-6">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-6">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
           <span class="font-black uppercase tracking-wider text-[1.05rem]">CALL (574) 360-0525</span>
         </a>
       </div>
-      <ServicesRow />
-      <div class="flex flex-col gap-4 lg:items-end">
-        <a class="btn-hero-primary" href="#inspection">SCHEDULE FREE ROOF INSPECTION</a>
-        <ServiceArea />
+      <div id="inspection">
+        <LeadForm
+          source="homepage"
+          ctaLabel="SCHEDULE FREE ROOF INSPECTION"
+          before="Schedule your"
+          highlight="free roof inspection"
+          after="today."
+          intro="Tell us a little about your roof and we'll call you back."
+          notesPlaceholder="What can we help you with? (optional)"
+          success="Thank you! We'll reach out within <strong>24 hours</strong> to schedule your free inspection."
+        />
       </div>
     </div>
   </section>
 
 </BaseLayout>
+
+<style>
+  .project-ph { aspect-ratio: 4 / 3; display: flex; align-items: flex-start; justify-content: center; padding-top: 1.1rem; background: repeating-linear-gradient(135deg, #2b343c 0 14px, #252d34 14px 28px); color: #8b949c; font-size: .72rem; font-weight: 800; letter-spacing: .14em; }
+</style>

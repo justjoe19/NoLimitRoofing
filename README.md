@@ -21,12 +21,12 @@ Live repo: https://github.com/justjoe19/NoLimitRoofing
 - **Ad tracking:** the roof replacement page (only) loads the client's **OpenAI Ads pixel** (`oaiq`, pixel id in `roof-replacement.astro`, passed to `LandingPage` through its `headHtml` prop so it lands in this page's `<head>`). It is the production form: `debug` is off. No conversion event is sent yet; when the form succeeds, `main.js` shows the "Request received" panel, which is the place to call `oaiq(...)` once OpenAI's event name is known. The site has no privacy policy page now; the client should publish one that mentions advertising trackers.
 - **Certification wording:** the footer and "Why choose" text say **"CertainTeed factory-certified"** at the client's request (they previously said GAF). The client is responsible for the claims on the pages; get changes to claims confirmed in writing.
 
-### The 65-page plan and how to publish a phase (Session 43)
+### The 65-page plan and how to publish a section (Sessions 43-44)
 
-The site is growing from 4 pages to the client's 65-page plan in phases. Every page is listed in `src/data/site-pages.mjs` with a `phase` and a `live` flag. **Only `live: true` pages are built for production**; everything else can be previewed locally and links to it are stripped from the published pages automatically.
+The site is growing from 4 pages to the client's 65-page plan one section of the brief at a time. Every page is listed in `src/data/site-pages.mjs` with a `section` and a `live` flag. **Only `live: true` pages are built for production**; everything else can be previewed locally and links to it are stripped from the published pages automatically.
 
 - Preview everything locally, fully linked: `PREVIEW_ALL=1 npm run dev`.
-- Publish a phase: confirm the client's items for that phase, set `live: true` on its pages in `site-pages.mjs`, run `npm run build` and check there are no broken links, then commit and push. Menu, footer, sitemap and internal links update themselves.
+- Publish a section: confirm the client's items for that section, set `live: true` on its pages in `site-pages.mjs`, run `npm run build` and check there are no broken links, then commit and push. Menu, footer, sitemap and internal links update themselves.
 - Page sources: markdown service pages in `src/content/services`, city pages in `src/content/locations`, guides in `src/content/learning-center` (URLs come from the registry, not from the file names); hand-written pages in `src/page-bodies`.
 - Not live by design: no page ships with claims the client has not confirmed (see the "unverified claims" list in CHANGELOG Session 43).
 

@@ -9,8 +9,14 @@ import PageHero from "../components/PageHero.astro";
 import PageCta from "../components/PageCta.astro";
 import PageCard from "../components/PageCard.astro";
 import SectionHead from "../components/SectionHead.astro";
-import { findEntry, isPublishedPath } from "../data/site-pages.mjs";
+import { byPath, findEntry, isPublishedPath } from "../data/site-pages.mjs";
 
+// Hand-written pages that exist as files; service/city pages come from content.
+const bodies = import.meta.glob("./*.astro");
+const isBuilt = (path: string) => {
+  const e = byPath.get(path);
+  return !e || e.kind !== "page" || e.section === 0 || `.${path.replace(/\.html$/, "")}.astro` in bodies;
+};
 const heroImage = "/images/services-hero.webp";
 const services = await getCollection("services");
 const fromContent = (id: string) => {
@@ -23,9 +29,9 @@ const groups = [
     id: "residential",
     title: "Residential Roofing",
     cards: [
-      { path: "/residential-roofing.html", img: "/images/service-card-roof-installations.webp", title: "Residential Roofing", body: "Replacement, repair, inspections and storm work for homeowners, all in one place." },
-      { path: "/roof-replacement.html", img: "/images/service-card-roof-installations.webp", title: "Roof Replacement", body: "A professional evaluation, straightforward options and a detailed written estimate, with no pressure." },
-      { path: "/asphalt-shingle-roofing.html", img: "/images/service-card-roof-installations.webp", title: "Asphalt Shingle Roofing", body: "Architectural and 3-tab asphalt shingles from a local, CertainTeed factory-certified crew." },
+      { path: "/residential-roofing.html", img: "/images/crew-lakeside-install.webp", title: "Residential Roofing", body: "Replacement, repair, inspections and storm work for homeowners, all in one place." },
+      { path: "/roof-replacement.html", img: "/images/service-tear-off-replacement.webp", title: "Roof Replacement", body: "A professional evaluation, straightforward options and a detailed written estimate, with no pressure." },
+      { path: "/asphalt-shingle-roofing.html", img: "/images/completed-roof-shingle-detail.webp", title: "Asphalt Shingle Roofing", body: "Architectural and 3-tab asphalt shingles from a local, CertainTeed factory-certified crew." },
       fromContent("roof-repair"),
       fromContent("emergency-roof-repair"),
       fromContent("roof-inspections"),
@@ -57,14 +63,15 @@ const groups = [
     id: "exterior",
     title: "Siding, Gutters And More",
     cards: [
-      { path: "/siding-soffit-fascia.html", img: "/images/service-card-roof-repairs.webp", title: "Siding, Soffit And Fascia", body: "Siding, soffit and fascia repair and replacement." },
-      { path: "/gutters.html", img: "/images/service-card-roof-repairs.webp", title: "Gutters", body: "Seamless gutter installation." },
-      { path: "/gutter-protection.html", img: "/images/service-card-roof-repairs.webp", title: "Gutter Protection", body: "Gutter guards that keep debris out." },
-      { path: "/skylights.html", img: "/images/service-card-roof-repairs.webp", title: "Skylights", body: "Skylight repair and replacement." },
+      fromContent("siding-soffit-fascia"),
+      fromContent("gutters"),
+      fromContent("gutter-protection"),
+      fromContent("skylights"),
     ],
   },
 ]
-  .map((g) => ({ ...g, cards: g.cards.filter((c) => isPublishedPath(c.path)) }))
+  // Skip pages that are not built yet (later sections) as well as unpublished ones.
+  .map((g) => ({ ...g, cards: g.cards.filter((c) => isPublishedPath(c.path) && isBuilt(c.path)) }))
   .filter((g) => g.cards.length > 0);
 
 const canonical = "https://nolimitroofingin.com/services.html";
@@ -82,7 +89,7 @@ const schema = [
 
 <BaseLayout
   title="Roofing Services in Michiana | No Limit Roofing"
-  description="Every No Limit Roofing service in one place: residential roofing, storm damage, commercial roofing and exterior work across Northern Indiana and Southwest Michigan."
+  description="Every No Limit Roofing service in one place: residential, storm damage and commercial roofing across Northern Indiana and Southwest Michigan."
   canonical={canonical}
   ogImage="https://nolimitroofingin.com/images/services.webp"
   preloadImage={heroImage}

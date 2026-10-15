@@ -11,7 +11,7 @@ const services = defineCollection({
   schema: z.object({
     title: z.string(),
     navLabel: z.string(),
-    group: z.enum(["roofing", "storm-damage", "commercial"]),
+    group: z.enum(["roofing", "storm-damage", "commercial", "exterior"]),
     slug: z.string(),
     searchIntent: z.string(),
     metaTitle: z.string(),

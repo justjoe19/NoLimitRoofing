@@ -3,6 +3,7 @@
  * Service areas (a free listing page, not one of the 65): every published city page, by state, with a map.
  * Keeps the Areas menu short. Cities that are not published yet are left out.
  */
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import PageCta from "../components/PageCta.astro";
@@ -10,7 +11,9 @@ import SectionHead from "../components/SectionHead.astro";
 import { isLive, pages } from "../data/site-pages.mjs";
 
 const heroImage = "/images/service-areas-hero.webp";
-const cities = pages.filter((p) => p.kind === "city" && isLive(p));
+// Only cities that have a built page (the later cities have no content yet, even in a PREVIEW_ALL view).
+const built = new Set((await getCollection("locations")).map((l) => l.id));
+const cities = pages.filter((p) => p.kind === "city" && isLive(p) && built.has(p.id));
 const states = [
   { title: "Indiana", suffix: ", IN" },
   { title: "Michigan", suffix: ", MI" },
@@ -38,7 +41,7 @@ const schema = [
 ---
 
 <BaseLayout
-  title="Roofing Service Areas | Northern Indiana and Southwest Michigan | No Limit Roofing"
+  title="Roofing Service Areas in Northern Indiana & Michigan | No Limit Roofing"
   description="No Limit Roofing serves South Bend, Mishawaka, Elkhart and communities across Northern Indiana and Southwest Michigan. Find your town."
   canonical={canonical}
   ogImage="https://nolimitroofingin.com/images/service-areas.webp"

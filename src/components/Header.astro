@@ -48,7 +48,7 @@ const serviceGroups = [
   { title: "Exterior", href: "", links: pick(["/siding-soffit-fascia.html", "/gutters.html", "/gutter-protection.html", "/skylights.html"]) },
 ].filter((g) => g.links.length > 0 || (g.href && live(g.href)));
 const cityLinks = pages.filter((p) => p.kind === "city" && isLive(p)).map((p) => ({ href: p.path, label: p.title }));
-// Areas dropdown: just the priority cities (phase 2), by state; every city is on /service-areas.html.
+// Areas dropdown: just the priority cities, by state; every city is on /service-areas.html.
 const cityGroups = [
   { title: "Indiana", suffix: ", IN" },
   { title: "Michigan", suffix: ", MI" },
@@ -56,7 +56,7 @@ const cityGroups = [
   .map((g) => ({
     title: g.title,
     links: pages
-      .filter((p) => p.kind === "city" && p.phase <= 2 && isLive(p) && p.title.endsWith(g.suffix))
+      .filter((p) => p.kind === "city" && p.priority && isLive(p) && p.title.endsWith(g.suffix))
       .map((p) => ({ href: p.path, label: p.title.slice(0, -g.suffix.length) })),
   }))
   .filter((g) => g.links.length > 0);

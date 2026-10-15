@@ -94,7 +94,7 @@ We would rather look at a roof that turns out to be fine than have you find a le
 
 ## What To Expect From Us
 
-A free inspection, photos of what we find, a plain explanation and a written estimate. We'll tell you if the roof is fine, needs a small repair or needs more. The work is done by an owner-supervised, CertainTeed factory-certified crew.
+A free inspection, photos of what we find, a plain explanation and a written estimate. We'll tell you if the roof is fine, needs a small repair or needs more. The work is done by a CertainTeed factory-certified crew.
 
 ## If Water Is Already Getting In
 

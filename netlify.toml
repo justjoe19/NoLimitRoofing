@@ -3,12 +3,12 @@
   publish = "dist"
 
 # Client preview: every branch deploy and deploy preview (never the production domain) builds with
-# phases 1 and 2 switched on and noindex added to every page. See PREVIEW_PHASES in src/data/site-pages.mjs.
+# section 4 of the client brief switched on and noindex added to every page. See PREVIEW_SECTION in src/data/site-pages.mjs.
 [context.branch-deploy.environment]
-  PREVIEW_PHASES = "2"
+  PREVIEW_SECTION = "4"
 
 [context.deploy-preview.environment]
-  PREVIEW_PHASES = "2"
+  PREVIEW_SECTION = "4"
 
 [[headers]]
   for = "/*"

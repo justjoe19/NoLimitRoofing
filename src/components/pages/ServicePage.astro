@@ -3,7 +3,7 @@
  * One service page (roof repair, hail damage, TPO, ...), built from a file in src/content/services.
  * Rendered by src/pages/[slug].astro. Links to pages that are not published yet are left out.
  */
-import { render } from "astro:content";
+import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../PageHero.astro";
@@ -21,6 +21,7 @@ const groups = {
   roofing: { href: "/residential-roofing.html", label: "Residential Roofing" },
   "storm-damage": { href: "/storm-damage.html", label: "Storm Damage" },
   commercial: { href: "/commercial-roofing.html", label: "Commercial Roofing" },
+  exterior: { href: "/services.html", label: "Services" },
 } as const;
 const group = groups[d.group];
 const commercial = d.group === "commercial";
@@ -29,7 +30,9 @@ const groupLive = isPublishedPath(group.href);
 const canonical = `https://nolimitroofingin.com${path}`;
 const ogImage = `https://nolimitroofingin.com${d.heroImage.replace("-hero.webp", ".webp")}`;
 const related = publishedLinks(d.relatedLinks);
-const cityLinks = pages.filter((p) => p.kind === "city" && isLive(p));
+// Only cities that have a built page (later cities have no content yet, even in a PREVIEW_ALL view).
+const builtCities = new Set((await getCollection("locations")).map((l) => l.id));
+const cityLinks = pages.filter((p) => p.kind === "city" && isLive(p) && builtCities.has(p.id));
 const crumbs = groupLive ? [{ label: group.label, href: group.href }, { label: d.title }] : [{ label: d.title }];
 
 const schema = [

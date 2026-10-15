@@ -5,7 +5,7 @@ group: "roofing"
 slug: "roof-inspections"
 searchIntent: "Roof inspection"
 metaTitle: "Roof Inspections in Michiana | No Limit Roofing"
-metaDescription: "Free roof inspections from a CertainTeed factory-certified crew — shingles, flashing, vents, ridges and decking, explained in plain language. Serving Michiana since 2010."
+metaDescription: "Free roof inspections from a CertainTeed factory-certified crew — shingles, flashing, vents, ridges and decking, explained in plain language, across Michiana."
 heroEyebrow: "Roof Inspections"
 heroHeadline: "We Inspect It. We Explain It. You Decide."
 heroLede: "A thorough, honest inspection catches small problems while they're still small — and gives you a clear answer instead of a sales pitch."
@@ -40,7 +40,7 @@ Not every roof problem is visible from the ground, and not every homeowner needs
 
 A typical inspection covers accessible shingles, flashing around chimneys and walls, roof penetrations like vents and pipes, ridges and valleys, gutters, and visible decking condition — the places small problems actually start. If we find something worth addressing, we'll explain what it is, why it matters, and what it would take to fix, as part of a free written estimate. If the roof checks out, we'll tell you that too.
 
-Inspections are useful on a regular schedule (catching wear before it becomes a leak) and especially after a storm, when hail or wind damage isn't always obvious from a ladder or the ground. No Limit Roofing has performed inspections across the Michiana region since 2010, and every one is free, with no obligation.
+Inspections are useful on a regular schedule (catching wear before it becomes a leak) and especially after a storm, when hail or wind damage isn't always obvious from a ladder or the ground. No Limit Roofing has performed inspections across the Michiana region, and every one is free, with no obligation.
 
 ## What We Look For
 

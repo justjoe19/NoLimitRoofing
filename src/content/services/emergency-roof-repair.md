@@ -14,7 +14,7 @@ highlights:
   - "Priority response for active leaks and storm damage"
   - "Tarping and stabilization to stop water intrusion while a permanent fix is planned"
   - "Straightforward explanation of what happened and what it will take to fix"
-  - "Same owner-supervised crew and free written estimate as any other job"
+  - "Same crew and free written estimate as any other job"
 faqs:
   - question: "What counts as a roofing emergency?"
     answer: "An active leak, visible storm damage (missing shingles, exposed decking, a tree limb on the roof), or anything letting water into the home. If water is actively getting in, call us — that's exactly what this service is for."
@@ -39,7 +39,7 @@ When a roof fails suddenly — a wind-torn section of shingles, a tree limb thro
 
 Emergency response usually means stabilizing the roof first — tarping exposed areas, securing loose material, addressing the immediate source of water intrusion — and then giving you a clear, honest explanation of what actually happened and what it will take to fix it properly. That might be a repair, or it might mean a larger conversation about replacement if the damage is extensive; either way, you get a free written estimate before any repair work beyond the emergency stabilization begins.
 
-No Limit Roofing has served St. Joseph, LaPorte and Marshall Counties in Indiana and Berrien and Cass Counties in Michigan since 2010. For anything urgent, the fastest way to reach us is by phone: (574) 360-0525.
+No Limit Roofing has served St. Joseph, LaPorte and Marshall Counties in Indiana and Berrien and Cass Counties in Michigan. For anything urgent, the fastest way to reach us is by phone: (574) 360-0525.
 
 ## What Counts As A Roofing Emergency
 
